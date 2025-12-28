@@ -1,0 +1,59 @@
+import express from 'express';
+import { db } from '../db.js'; // Путь может отличаться, проверь где лежит db.js
+
+const router = express.Router();
+
+// Вспомогательная функция для формата даты MySQL
+const toMysqlDate = (isoStr) => {
+    if (!isoStr) return null;
+    try {
+        return new Date(isoStr).toISOString().slice(0, 19).replace('T', ' ');
+    } catch (e) {
+        console.warn(`Не удалось распарсить дату: ${isoStr}`);
+        return null;
+    }
+};
+
+// Эндпоинт для синхронизации пользователя
+router.post('/sync-user', async (req, res) => {
+    console.log("=== ПОЛУЧЕН ЗАПРОС НА СИНХРОНИЗАЦИЮ ===");
+    const { 
+        uid, email, isAnonymous, displayName, 
+        photoURL, creationTime, lastSignInTime 
+    } = req.body;
+
+    if (!uid) {
+        return res.status(400).json({ error: 'UID is required' });
+    }
+
+    try {
+        const sql = `
+            INSERT INTO users (uid, email, is_anonymous, display_name, photo_url, created_at, last_login_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+            ON DUPLICATE KEY UPDATE 
+                email = VALUES(email),
+                display_name = VALUES(display_name),
+                photo_url = VALUES(photo_url),
+                last_login_at = VALUES(last_login_at)
+        `;
+
+        const values = [
+            uid,
+            email || null,
+            isAnonymous ? 1 : 0,
+            displayName || 'User',
+            photoURL || null,
+            toMysqlDate(creationTime),
+            toMysqlDate(lastSignInTime)
+        ];
+
+        await db.query(sql, values);
+        console.log(`Пользователь ${uid} синхронизирован`);
+        res.status(200).json({ success: true });
+    } catch (err) {
+        console.error('Ошибка в БД:', err);
+        res.status(500).json({ error: 'Database error' });
+    }
+});
+
+export default router;
