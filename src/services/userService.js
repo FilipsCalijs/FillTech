@@ -1,4 +1,3 @@
-// В твоем React проекте (например, src/services/userService.js)
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5200';
 
 export const syncUserWithBackend = async (user) => {
@@ -15,12 +14,20 @@ export const syncUserWithBackend = async (user) => {
     };
 
     try {
-        await fetch(`${API_URL}/api/sync-user`, {
+        const response = await fetch(`${API_URL}/api/sync-user`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(userData),
         });
+
+        const data = await response.json();
+
+        if (data.success && data.role) {
+            localStorage.setItem('userRole', data.role);
+            return data.role; 
+        }
     } catch (error) {
         console.error("Ошибка синхронизации:", error);
+        return null;
     }
 };

@@ -1,30 +1,25 @@
 import express from 'express';
-import { db } from '../db.js'; // Путь может отличаться, проверь где лежит db.js
+import { db } from '../db.js';
+import { checkAdmin } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
-// Вспомогательная функция для формата даты MySQL
 const toMysqlDate = (isoStr) => {
     if (!isoStr) return null;
     try {
         return new Date(isoStr).toISOString().slice(0, 19).replace('T', ' ');
     } catch (e) {
-        console.warn(`Не удалось распарсить дату: ${isoStr}`);
         return null;
     }
 };
 
-// Эндпоинт для синхронизации пользователя
 router.post('/sync-user', async (req, res) => {
-    console.log("=== ПОЛУЧЕН ЗАПРОС НА СИНХРОНИЗАЦИЮ ===");
     const { 
         uid, email, isAnonymous, displayName, 
         photoURL, creationTime, lastSignInTime 
     } = req.body;
 
-    if (!uid) {
-        return res.status(400).json({ error: 'UID is required' });
-    }
+    if (!uid) return res.status(400).json({ error: 'UID is required' });
 
     try {
         const sql = `
@@ -38,20 +33,31 @@ router.post('/sync-user', async (req, res) => {
         `;
 
         const values = [
-            uid,
-            email || null,
-            isAnonymous ? 1 : 0,
-            displayName || 'User',
-            photoURL || null,
-            toMysqlDate(creationTime),
-            toMysqlDate(lastSignInTime)
+            uid, email || null, isAnonymous ? 1 : 0,
+            displayName || 'User', photoURL || null,
+            toMysqlDate(creationTime), toMysqlDate(lastSignInTime)
         ];
 
         await db.query(sql, values);
-        console.log(`Пользователь ${uid} синхронизирован`);
-        res.status(200).json({ success: true });
+
+        // Получаем роль пользователя из БД, чтобы вернуть её фронтенду
+        const [rows] = await db.query('SELECT role FROM users WHERE uid = ?', [uid]);
+        const role = rows[0]?.role || 'user';
+
+        res.status(200).json({ success: true, role });
     } catch (err) {
         console.error('Ошибка в БД:', err);
+        res.status(500).json({ error: 'Database error' });
+    }
+});
+
+// ПРИМЕР ЗАЩИЩЕННОГО РОУТА
+// Этот эндпоинт вернет всех пользователей только если заголовок x-user-uid принадлежит админу
+router.get('/admin/users', checkAdmin, async (req, res) => {
+    try {
+        const [users] = await db.query('SELECT uid, email, display_name, role FROM users');
+        res.json(users);
+    } catch (err) {
         res.status(500).json({ error: 'Database error' });
     }
 });

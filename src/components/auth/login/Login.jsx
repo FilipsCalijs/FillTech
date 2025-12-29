@@ -11,6 +11,7 @@ import {
 } from '../../../firebase/auth';
 import { useAuth } from '../../../contexts/authContext';
 import { syncUserWithBackend } from '../../../services/userService';
+import { Button } from '@/components/ui/Button';
 
 const Login = () => {
     const { userLoggedIn } = useAuth();
@@ -128,6 +129,7 @@ const Login = () => {
                     <h3 className="text-gray-800 text-xl font-semibold sm:text-2xl">Welcome Back</h3>
                 </div>
                 
+                
                 <form onSubmit={onSubmit} className="space-y-5">
                     <div>
                         <label className="text-sm font-bold">Email</label>
@@ -154,12 +156,15 @@ const Login = () => {
                     {errorMessage && <p className='text-red-600 text-xs font-bold text-center'>{errorMessage}</p>}
                     {successMessage && <p className='text-green-600 text-xs font-bold text-center'>{successMessage}</p>}
 
-                    <button
+                    
+                    <Button
+                        variant="primary"
+                        size="sm"
                         type="submit" disabled={isSigningIn}
-                        className={`w-full py-2 text-white font-medium rounded-lg transition duration-300 ${isSigningIn ? 'bg-gray-300' : 'bg-indigo-600 hover:bg-indigo-700'}`}
-                    >
-                        {isSigningIn ? 'Signing In...' : 'Sign In'}
-                    </button>
+                        className="w-full"
+                        >
+                         {isSigningIn ? 'Signing In...' : 'Sign In'}
+                    </Button>
                 </form>
                 
                 <p className="text-center text-sm">Don't have an account? <Link to='/register' className="font-bold hover:underline">Sign up</Link></p>
