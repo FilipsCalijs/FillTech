@@ -40,3 +40,15 @@ public/testing/
 upcaler/weights/
 upcaler/Real-ESRGAN/
 upcaler/*.png
+
+bg-remover/
+upcaler/
+public/watermark-remover/
+public/testing/
+*.mp4
+*.mov
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.pth
