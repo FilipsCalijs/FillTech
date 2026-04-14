@@ -24,7 +24,8 @@ export const syncUserWithBackend = async (user) => {
 
         if (data.success && data.role) {
             localStorage.setItem('userRole', data.role);
-            return data.role; 
+            localStorage.setItem('userUID', userData.uid);
+            return data.role;
         }
     } catch (error) {
         console.error("Ошибка синхронизации:", error);

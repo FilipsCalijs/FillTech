@@ -2,20 +2,31 @@
 import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
-import authRoutes from './routes/usersAuth.js'; // Импортируем новый роутер
+import authRoutes from './routes/usersAuth.js';
+import toolsRoutes from './routes/tools/index.js';
+import blogRoutes from './routes/blog.js';
+import mediaRoutes from './routes/media.js';
+import { runMigrations } from './db.js';
 
 const app = express();
-
-app.use(cors());
 app.use(express.json());
 
-// Подключаем роутер. Все пути в auth.js теперь будут начинаться с /api
+app.use(cors({
+  origin: ['http://localhost:5173', 'http://localhost:5174'],
+  credentials: true,
+}));
+
 app.use('/api', authRoutes);
+app.use('/', authRoutes);
+app.use('/api/tools', toolsRoutes);
+app.use('/api/blog', blogRoutes);
+app.use('/api/media', mediaRoutes);
 
 // Проверка здоровья
-app.get('/health', (req, res) => res.send('Server is alive!'));
+app.get('/health', (_req, res) => res.send('Server is alive!'));
 
 const PORT = process.env.PORT || 5200;
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, '0.0.0.0', async () => {
+    await runMigrations();
     console.log(`🚀 Server running on http://localhost:${PORT}`);
 });

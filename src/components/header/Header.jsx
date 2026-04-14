@@ -2,44 +2,79 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../contexts/authContext'
 import { doSignOut } from '../../firebase/auth'
-import { Button } from '@/components/ui/Button';
+import {Button} from "@/components/ui/Button"
 
-const Header = () => {
-    const navigate = useNavigate()
-    const { userLoggedIn, currentUser } = useAuth()
-    
-    // Получаем роль (из контекста или localStorage)
-    const userRole = localStorage.getItem('userRole');
+const Header = ({ isDark, toggleTheme }) => {
+  const { userLoggedIn, currentUser } = useAuth();
+  const navigate = useNavigate();
+  const userRole = localStorage.getItem('userRole');
+  const placeholderAvatar = '/vite.svg';
 
-    return (
-        <nav className='flex flex-row gap-x-4 w-full z-20 fixed top-0 left-0 h-12 border-b place-content-center items-center bg-gray-200'>
-            <Link className='text-sm text-blue-700 font-bold' to='/i2i'>i2i</Link>
-            <Link className='text-sm text-blue-700 font-bold' to='/i2t'>i2t</Link>
-            <Link className='text-sm text-blue-700 font-bold' to='/t2v'>t2v</Link>
-            <Link className='text-sm text-blue-700 font-bold' to='/delivery-chat'>delivery chat</Link>
+  return (
+    <nav className='bg-background text-foreground flex items-center w-full h-12 top-0 left-0 z-20 border-b border-border px-4 gap-x-4 mb-4'>
+      <Link className='text-sm font-bold text-primary hover:underline' to='/explore'>Explore</Link>
+      <Link className='text-sm font-bold text-primary hover:underline' to='/blog'>Blog</Link>
+      <Link className='text-sm font-bold text-primary hover:underline' to='/testing'>Test</Link>
+      <Link className='text-sm font-bold text-primary hover:underline' to='/plan'>Plan</Link>
 
-            {/* Ссылка видна ТОЛЬКО админу */}
-            {userLoggedIn && userRole === 'admin' && (
-                <Link className='text-sm text-red-600 font-bold border border-red-600 px-2 rounded' to='/admin/users'>
-                    Admin Panel
-                </Link>
-            )}
-            
+      {userLoggedIn && userRole === 'admin' && (
+        <>
+          <Link
+            className='text-sm font-bold text-destructive border border-destructive px-2 rounded hover:bg-destructive/10'
+            to='/admin/users'
+          >
+            Admin
+          </Link>
+        </>
+      )}
 
-            {userLoggedIn
-                ? <button onClick={() => { 
-                    doSignOut().then(() => { 
-                        localStorage.removeItem('userRole'); // Чистим роль при выходе
-                        navigate('/login');
-                    }) 
-                }} className='text-sm text-blue-600 underline'>Logout</button>
-                : <>
-                    <Link className='text-sm text-blue-600 underline' to={'/login'}>Login</Link>
-                    <Link className='text-sm text-blue-600 underline' to={'/register'}>Register</Link>
-                </>
-            }
-        </nav>
-    )
-}
+      <div className='flex-1'></div>
 
-export default Header
+      <Button
+        onClick={toggleTheme}
+        variant="outline"
+        size="sm"
+        >
+        {isDark ? 'Light Mode' : 'Dark Mode'}
+        </Button>
+
+
+      {userLoggedIn && currentUser ? (
+        <div className='flex items-center gap-x-3 ml-4'>
+          <div className='flex flex-col items-end'>
+            <span className='text-[10px] text-muted-foreground leading-none'>Logged in as:</span>
+            <span className='text-xs font-medium text-foreground'>{currentUser.email}</span>
+          </div>
+
+          <img 
+            src={currentUser.photoURL || placeholderAvatar} 
+            alt="Profile" 
+            className='w-8 h-8 rounded-full border border-border object-cover'
+            onError={(e) => { e.target.src = placeholderAvatar }} 
+          />
+
+          <Button
+            onClick={() => {
+                doSignOut().then(() => {
+                localStorage.removeItem('userRole');
+                navigate('/login');
+                });
+            }}
+            variant="outline"
+            size="sm"
+            >
+            Logout
+            </Button>
+
+        </div>
+      ) : (
+        <div className='flex gap-x-4'>
+          <Link className='text-sm text-primary underline' to={'/login'}>Login</Link>
+          <Link className='text-sm text-primary underline' to={'/register'}>Register</Link>
+        </div>
+      )}
+    </nav>
+  );
+};
+
+export default Header;

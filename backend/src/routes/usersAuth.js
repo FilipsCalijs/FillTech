@@ -40,7 +40,7 @@ router.post('/sync-user', async (req, res) => {
 
         await db.query(sql, values);
 
-        // Получаем роль пользователя из БД, чтобы вернуть её фронтенду
+        
         const [rows] = await db.query('SELECT role FROM users WHERE uid = ?', [uid]);
         const role = rows[0]?.role || 'user';
 
@@ -50,16 +50,17 @@ router.post('/sync-user', async (req, res) => {
         res.status(500).json({ error: 'Database error' });
     }
 });
-
-// ПРИМЕР ЗАЩИЩЕННОГО РОУТА
-// Этот эндпоинт вернет всех пользователей только если заголовок x-user-uid принадлежит админу
 router.get('/admin/users', checkAdmin, async (req, res) => {
-    try {
-        const [users] = await db.query('SELECT uid, email, display_name, role FROM users');
-        res.json(users);
-    } catch (err) {
-        res.status(500).json({ error: 'Database error' });
-    }
+  try {
+    const [rows] = await db.query(`
+      SELECT uid, email, display_name, photo_url, role, created_at, last_login_at, updated_at 
+      FROM users
+    `);
+    res.json(rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 export default router;
