@@ -34,3 +34,9 @@ fire-debug.log*
 
 # Vite
 *.timestamp-*
+
+public/testing/
+
+upcaler/weights/
+upcaler/Real-ESRGAN/
+upcaler/*.png
