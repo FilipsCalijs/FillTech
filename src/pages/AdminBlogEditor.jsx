@@ -3,8 +3,9 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import AdminLayout from '@/components/admin/AdminLayout';
 import MediaPicker from '@/components/admin/MediaPicker';
+import RichEditor from '@/components/admin/RichEditor';
 import { Button } from '@/components/ui/Button';
-import { ArrowLeft, Globe, ImagePlus, X } from 'lucide-react';
+import { ArrowLeft, Globe, FileText, ImagePlus, X, Save, Eye } from 'lucide-react';
 
 const API = 'http://localhost:5200/api/blog/admin/posts';
 
@@ -14,42 +15,106 @@ const AdminBlogEditor = () => {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    title: '',
-    content: '',
-    excerpt: '',
-    seo_title: '',
-    seo_description: '',
+    title: '', content: '', excerpt: '', seo_title: '', seo_description: '',
   });
   const [coverUrl, setCoverUrl] = useState('');
   const [tags, setTags] = useState([]);
   const [tagInput, setTagInput] = useState('');
   const [postStatus, setPostStatus] = useState('draft');
-  const [loading, setLoading] = useState(false);
+  const [currentSlug, setCurrentSlug] = useState('');
+  const [saving, setSaving] = useState(false);
+  const [publishing, setPublishing] = useState(false);
   const [error, setError] = useState('');
   const [fieldErrors, setFieldErrors] = useState({});
   const [showPicker, setShowPicker] = useState(false);
 
   const headers = { 'x-user-uid': localStorage.getItem('userUID') };
 
+  // Загрузка поста при редактировании (полный контент через новый endpoint)
   useEffect(() => {
     if (!isEdit) return;
-    axios.get(API, { headers }).then(({ data }) => {
-      const post = data.find((p) => String(p.id) === String(id));
-      if (!post) return;
+    axios.get(`${API}/${id}`, { headers }).then(({ data }) => {
       setForm({
-        title: post.title || '',
-        content: post.content || '',
-        excerpt: post.excerpt || '',
-        seo_title: post.seo_title || '',
-        seo_description: post.seo_description || '',
+        title: data.title || '',
+        content: data.content || '',
+        excerpt: data.excerpt || '',
+        seo_title: data.seo_title || '',
+        seo_description: data.seo_description || '',
       });
-      setCoverUrl(post.cover_url || '');
-      setTags(Array.isArray(post.tags) ? post.tags : []);
-      setPostStatus(post.status || 'draft');
+      setCoverUrl(data.cover_url || '');
+      setTags(Array.isArray(data.tags) ? data.tags : []);
+      setPostStatus(data.status || 'draft');
+      setCurrentSlug(data.slug || '');
     });
   }, [id]);
 
   const set = (field) => (e) => setForm((f) => ({ ...f, [field]: e.target.value }));
+
+  const validate = () => {
+    const errs = {};
+    if (!form.title.trim()) errs.title = 'Обязательное поле';
+    if (!form.content.trim()) errs.content = 'Обязательное поле';
+    if (!coverUrl) errs.cover = 'Обложка обязательна';
+    setFieldErrors(errs);
+    return Object.keys(errs).length === 0;
+  };
+
+  const buildPayload = (extra = {}) => ({
+    ...form, cover_url: coverUrl, tags, ...extra,
+  });
+
+  // Обновить (сохранить без смены статуса) → перейти на превью
+  const handleSave = async () => {
+    if (!validate()) return;
+    setSaving(true);
+    setError('');
+    try {
+      let slug = currentSlug;
+      if (isEdit) {
+        const { data } = await axios.put(`${API}/${id}`, buildPayload(), { headers });
+        slug = data.slug;
+      } else {
+        const { data } = await axios.post(API, buildPayload(), { headers });
+        slug = data.slug;
+      }
+      navigate(`/blog/${slug}`);
+    } catch {
+      setError('Ошибка при сохранении');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  // Опубликовать / В черновик → перейти на превью
+  const handleTogglePublish = async () => {
+    if (postStatus !== 'published' && !validate()) return;
+    setPublishing(true);
+    setError('');
+    try {
+      let slug = currentSlug;
+
+      if (postStatus === 'published') {
+        // Снять с публикации (только переключить статус)
+        await axios.patch(`${API}/${id}/publish`, {}, { headers });
+        setPostStatus('draft');
+        navigate(`/blog/${slug}`);
+      } else {
+        // Опубликовать (сохранить + publish)
+        if (isEdit) {
+          const { data } = await axios.put(`${API}/${id}`, buildPayload({ publish: true }), { headers });
+          slug = data.slug;
+        } else {
+          const { data } = await axios.post(API, buildPayload({ publish: true }), { headers });
+          slug = data.slug;
+        }
+        navigate(`/blog/${slug}`);
+      }
+    } catch {
+      setError('Ошибка при изменении статуса');
+    } finally {
+      setPublishing(false);
+    }
+  };
 
   const addTag = (raw) => {
     const tag = raw.trim().toLowerCase().replace(/^#/, '');
@@ -58,51 +123,10 @@ const AdminBlogEditor = () => {
   };
 
   const handleTagKeyDown = (e) => {
-    if (e.key === 'Enter' || e.key === ',') {
-      e.preventDefault();
-      addTag(tagInput);
-    }
+    if (e.key === 'Enter' || e.key === ',') { e.preventDefault(); addTag(tagInput); }
   };
 
-  const handlePublish = async () => {
-    const errs = {};
-    if (!form.title.trim()) errs.title = 'Обязательное поле';
-    if (!form.content.trim()) errs.content = 'Обязательное поле';
-    if (!coverUrl) errs.cover = 'Обложка обязательна';
-    if (Object.keys(errs).length) {
-      setFieldErrors(errs);
-      return;
-    }
-    setFieldErrors({});
-    setLoading(true);
-    setError('');
-    try {
-      const payload = { ...form, cover_url: coverUrl, tags, publish: true };
-      if (isEdit) {
-        await axios.put(`${API}/${id}`, payload, { headers });
-      } else {
-        await axios.post(API, payload, { headers });
-      }
-      navigate('/admin/blog');
-    } catch {
-      setError('Ошибка при сохранении');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleUnpublish = async () => {
-    setLoading(true);
-    setError('');
-    try {
-      const { data } = await axios.patch(`${API}/${id}/publish`, {}, { headers });
-      setPostStatus(data.status);
-    } catch {
-      setError('Ошибка при снятии с публикации');
-    } finally {
-      setLoading(false);
-    }
-  };
+  const isLoading = saving || publishing;
 
   return (
     <AdminLayout>
@@ -113,20 +137,46 @@ const AdminBlogEditor = () => {
         />
       )}
 
+      {/* Шапка */}
       <div className="flex items-center gap-4 mb-6">
         <button onClick={() => navigate('/admin/blog')} className="text-muted-foreground hover:text-foreground transition-colors">
           <ArrowLeft size={20} />
         </button>
         <h1 className="text-2xl font-bold flex-1">{isEdit ? 'Редактировать пост' : 'Новый пост'}</h1>
-        <div className="flex gap-2">
-          {isEdit && postStatus === 'published' ? (
-            <Button variant="outline" size="sm" onClick={handleUnpublish} disabled={loading}>
-              {loading ? '...' : 'Снять с публикации'}
-            </Button>
-          ) : (
-            <Button size="sm" onClick={handlePublish} disabled={loading}>
-              <Globe size={15} className="mr-1.5" />
-              {loading ? '...' : 'Опубликовать'}
+
+        <div className="flex items-center gap-2">
+          {/* Статус-бейдж */}
+          {isEdit && (
+            <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium
+              ${postStatus === 'published' ? 'bg-primary/20 text-primary' : 'bg-muted text-muted-foreground'}`}>
+              {postStatus === 'published' ? <Globe size={11} /> : <FileText size={11} />}
+              {postStatus === 'published' ? 'Опубликован' : 'Черновик'}
+            </span>
+          )}
+
+          {/* Обновить */}
+          <Button variant="outline" size="sm" onClick={handleSave} disabled={isLoading}>
+            <Save size={14} className="mr-1.5" />
+            {saving ? 'Сохранение...' : 'Обновить'}
+          </Button>
+
+          {/* Опубликовать / В черновик */}
+          <Button
+            size="sm"
+            variant={postStatus === 'published' ? 'outline' : 'default'}
+            onClick={handleTogglePublish}
+            disabled={isLoading}
+          >
+            {postStatus === 'published'
+              ? <><FileText size={14} className="mr-1.5" />{publishing ? '...' : 'В черновик'}</>
+              : <><Globe size={14} className="mr-1.5" />{publishing ? '...' : 'Опубликовать'}</>
+            }
+          </Button>
+
+          {/* Предпросмотр (только если есть slug) */}
+          {currentSlug && (
+            <Button variant="ghost" size="sm" onClick={() => navigate(`/blog/${currentSlug}`)}>
+              <Eye size={14} className="mr-1.5" /> Просмотр
             </Button>
           )}
         </div>
@@ -140,9 +190,7 @@ const AdminBlogEditor = () => {
         {/* Основной контент */}
         <div className="lg:col-span-2 flex flex-col gap-4">
           <div className="flex flex-col gap-1.5">
-            <label className="text-sm font-medium">
-              Заголовок <span className="text-destructive">*</span>
-            </label>
+            <label className="text-sm font-medium">Заголовок <span className="text-destructive">*</span></label>
             <input
               value={form.title}
               onChange={(e) => { set('title')(e); setFieldErrors((p) => ({ ...p, title: '' })); }}
@@ -153,16 +201,14 @@ const AdminBlogEditor = () => {
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <label className="text-sm font-medium">
-              Контент <span className="text-destructive">*</span>
-            </label>
-            <textarea
-              value={form.content}
-              onChange={(e) => { set('content')(e); setFieldErrors((p) => ({ ...p, content: '' })); }}
-              placeholder="Текст поста..."
-              rows={20}
-              className={`w-full px-4 py-3 rounded-lg border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring resize-y font-mono text-sm ${fieldErrors.content ? 'border-destructive' : 'border-border'}`}
-            />
+            <label className="text-sm font-medium">Контент <span className="text-destructive">*</span></label>
+            <div className={fieldErrors.content ? 'ring-1 ring-destructive rounded-lg' : ''}>
+              <RichEditor
+                value={form.content}
+                onChange={(html) => { setForm((f) => ({ ...f, content: html })); setFieldErrors((p) => ({ ...p, content: '' })); }}
+                placeholder="Текст поста..."
+              />
+            </div>
             {fieldErrors.content && <span className="text-xs text-destructive">{fieldErrors.content}</span>}
           </div>
         </div>
@@ -172,9 +218,7 @@ const AdminBlogEditor = () => {
 
           {/* Обложка */}
           <div className="bg-card border border-border rounded-lg p-4 flex flex-col gap-3">
-            <p className="text-sm font-semibold">
-              Обложка <span className="text-destructive">*</span>
-            </p>
+            <p className="text-sm font-semibold">Обложка <span className="text-destructive">*</span></p>
             {coverUrl ? (
               <div className="relative group rounded-lg overflow-hidden aspect-video">
                 <img src={coverUrl} alt="cover" className="w-full h-full object-cover" />
@@ -195,11 +239,7 @@ const AdminBlogEditor = () => {
               </button>
             )}
             {fieldErrors.cover && <span className="text-xs text-destructive">{fieldErrors.cover}</span>}
-            {coverUrl && (
-              <Button variant="outline" size="sm" onClick={() => setShowPicker(true)}>
-                Заменить
-              </Button>
-            )}
+            {coverUrl && <Button variant="outline" size="sm" onClick={() => setShowPicker(true)}>Заменить</Button>}
           </div>
 
           {/* Теги */}
@@ -261,17 +301,6 @@ const AdminBlogEditor = () => {
             </div>
           </div>
 
-          {/* Статус */}
-          {isEdit && (
-            <div className="bg-card border border-border rounded-lg p-4">
-              <p className="text-sm font-semibold mb-2">Статус</p>
-              <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium
-                ${postStatus === 'published' ? 'bg-primary/20 text-primary' : 'bg-muted text-muted-foreground'}`}>
-                <Globe size={11} />
-                {postStatus === 'published' ? 'Опубликован' : 'Черновик'}
-              </span>
-            </div>
-          )}
         </div>
       </div>
     </AdminLayout>

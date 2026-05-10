@@ -1,7 +1,8 @@
 import express from 'express';
 import multer from 'multer';
 import { uploadBuffer } from '../../lib/r2.js';
-import { saveGeneration } from '../../lib/saveGeneration.js';
+import { createPendingGeneration } from '../../lib/saveGeneration.js';
+import { enqueueWatermarkRemove } from '../../lib/aiQueue.js';
 
 const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 50 * 1024 * 1024 } });
@@ -20,14 +21,14 @@ router.post('/', (req, res, next) => {
   if (!req.file) return res.status(400).json({ error: 'No image provided' });
 
   try {
-    // TODO: заменить на реальный API когда найдёшь сервис
-    const resultUrl = await uploadBuffer(req.file.buffer, req.file.mimetype, userUid, 'watermark-remove');
-    const generationId = await saveGeneration(userUid, resultUrl, 'watermark-remove');
+    const inputUrl = await uploadBuffer(req.file.buffer, req.file.mimetype, userUid, 'watermark-remove');
+    const generationId = await createPendingGeneration(userUid, inputUrl, 'watermark-remove');
+    await enqueueWatermarkRemove({ generationId, inputUrl, userUid });
 
-    res.json({ success: true, resultUrl, generationId });
+    res.json({ success: true, generationId });
   } catch (err) {
     console.error('[watermark-remove]', err);
-    res.status(500).json({ error: 'Processing failed' });
+    res.status(500).json({ error: 'Processing failed', detail: err.message });
   }
 });
 

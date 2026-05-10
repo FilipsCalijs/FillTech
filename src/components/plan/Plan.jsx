@@ -83,7 +83,7 @@ const Plan = () => {
           ))}
         </div>
       </div>
-      <WatermarkRemover />
+      
     </div>
   );
 };

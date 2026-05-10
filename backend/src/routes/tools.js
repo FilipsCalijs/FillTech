@@ -3,6 +3,7 @@ import multer from 'multer';
 import { v4 as uuidv4 } from 'uuid';
 import { uploadBuffer } from '../lib/r2.js';
 import { db } from '../db.js';
+import { resolveUserLabel } from '../lib/userLabel.js';
 
 const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 10 * 1024 * 1024 } });
@@ -15,10 +16,11 @@ router.post('/watermark-remove', upload.single('image'), async (req, res) => {
 
   try {
     // Upload original to R2 (placeholder — same image returned as result)
+    const userLabel = await resolveUserLabel(userUid);
     const resultUrl = await uploadBuffer(
       req.file.buffer,
       req.file.mimetype,
-      userUid,
+      userLabel,
       'watermark-remove'
     );
 

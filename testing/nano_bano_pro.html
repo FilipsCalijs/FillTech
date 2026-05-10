@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nano Bano Pro — Image Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d0d0f; --surface: #141417; --surface2: #1c1c21;
+      --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.13);
+      --text: #f0efe8; --muted: #7a7a82;
+      --accent: #e8d44d; --accent2: #f0a500;
+      --danger: #e05252; --success: #4eca8b; --info: #5b9cf6;
+      --r: 12px; --rs: 8px;
+      --font: 'Syne', sans-serif; --mono: 'DM Mono', monospace;
+    }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); min-height: 100vh; padding: 2rem 1rem; display: flex; justify-content: center; }
+    .wrap { width: 100%; max-width: 720px; }
+    header { display: flex; align-items: center; gap: 14px; margin-bottom: 2.5rem; }
+    .logo { width: 44px; height: 44px; background: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+    header h1 { font-size: 22px; font-weight: 700; }
+    header span { display: block; font-size: 12px; color: var(--muted); font-family: var(--mono); margin-top: 2px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .lbl { font-size: 11px; font-family: var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 10px; }
+    .hint { background: linear-gradient(135deg,rgba(232,212,77,.08),rgba(240,165,0,.05)); border: 1px solid rgba(232,212,77,.2); border-radius: var(--rs); padding: 12px 14px; font-size: 12px; font-family: var(--mono); color: var(--accent); line-height: 1.8; margin-bottom: 10px; }
+    .hint strong { color: var(--accent2); }
+    input[type=password] { width: 100%; background: var(--surface2); border: 1px solid var(--border2); border-radius: var(--rs); color: var(--text); font-family: var(--mono); font-size: 13px; padding: 9px 12px; outline: none; transition: border-color .2s; }
+    input:focus { border-color: var(--accent); }
+    input::placeholder { color: var(--muted); }
+    textarea { width: 100%; min-height: 110px; resize: vertical; background: var(--surface2); border: 1px solid var(--border2); border-radius: var(--rs); color: var(--text); font-family: var(--mono); font-size: 13px; line-height: 1.7; padding: 12px 14px; outline: none; transition: border-color .2s; }
+    textarea:focus { border-color: var(--accent); }
+    textarea::placeholder { color: var(--muted); }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .tag { background: var(--surface2); border: 1px solid var(--border2); border-radius: 20px; padding: 4px 12px; font-size: 12px; font-family: var(--mono); color: var(--muted); cursor: pointer; transition: all .15s; user-select: none; }
+    .tag:hover { border-color: var(--accent); color: var(--accent); }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .fl { display: block; font-size: 11px; font-family: var(--mono); color: var(--muted); margin-bottom: 6px; }
+    select { width: 100%; background: var(--surface2); border: 1px solid var(--border2); border-radius: var(--rs); color: var(--text); font-family: var(--mono); font-size: 13px; padding: 9px 12px; outline: none; cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%237a7a82' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; }
+    select option { background: #1c1c21; }
+    .btn-row { display: flex; gap: 10px; margin-bottom: 1rem; }
+    .btn { flex: 1; background: var(--accent); color: #0d0d0f; border: none; border-radius: var(--r); padding: 13px; font-family: var(--font); font-size: 15px; font-weight: 700; cursor: pointer; transition: opacity .2s, transform .1s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .btn:hover { opacity: .9; }
+    .btn:active { transform: scale(.99); }
+    .btn:disabled { opacity: .4; cursor: not-allowed; }
+    .btn-sec { flex: 0 0 auto; background: var(--surface2); color: var(--muted); border: 1px solid var(--border2); font-size: 13px; padding: 13px 18px; font-weight: 500; border-radius: var(--r); cursor: pointer; font-family: var(--font); transition: color .15s; }
+    .btn-sec:hover { color: var(--text); }
+    #status { display: none; padding: 11px 14px; border-radius: var(--rs); font-size: 13px; font-family: var(--mono); margin-bottom: 1rem; line-height: 1.5; }
+    #status.info    { background: rgba(91,156,246,.1);  border: 1px solid rgba(91,156,246,.25);  color: var(--info); }
+    #status.danger  { background: rgba(224,82,82,.1);   border: 1px solid rgba(224,82,82,.25);   color: var(--danger); }
+    #status.success { background: rgba(78,202,139,.1);  border: 1px solid rgba(78,202,139,.25);  color: var(--success); }
+    #results { display: none; }
+    .res-lbl { font-size: 11px; font-family: var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 10px; }
+    #imageGrid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 12px; margin-bottom: 1rem; }
+    #imageGrid img { width: 100%; border-radius: var(--r); border: 1px solid var(--border2); display: block; }
+    #imageGrid a { display: block; text-align: center; padding: 6px; font-size: 12px; font-family: var(--mono); color: var(--muted); text-decoration: none; }
+    #imageGrid a:hover { color: var(--accent); }
+    .resp-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 1rem 1.25rem; }
+    pre { font-family: var(--mono); font-size: 11px; color: var(--muted); white-space: pre-wrap; word-break: break-all; max-height: 220px; overflow-y: auto; line-height: 1.6; }
+    footer { text-align: center; font-size: 11px; font-family: var(--mono); color: var(--muted); margin-top: 2rem; opacity: .4; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo">🍌</div>
+    <div>
+      <h1>Nano Bano Pro</h1>
+      <span>Google Imagen · локальный запуск</span>
+    </div>
+  </header>
+
+  <div class="card">
+    <div class="lbl">🔑 api ключ</div>
+    <div class="hint">
+      <strong>Постоянно:</strong> открой файл в редакторе, найди строку<br>
+      <strong>const HARDCODED_API_KEY = "AIzaSyCvvL9MLMG7pHdqN28eCau-rus9H003eks";</strong> и вставь ключ между кавычек.<br><br>
+      <strong>Только сейчас:</strong> вставь ключ в поле ниже.
+    </div>
+    <input type="password" id="apiKeyInput" placeholder="AIzaSy..." />
+  </div>
+
+  <div class="card">
+    <div class="lbl">✏️ промпт</div>
+    <textarea id="promptInput" placeholder="Nano bano character, cute banana robot, cyberpunk style, neon lights, ultra detailed, 8k..."></textarea>
+    <div class="tags">
+      <span class="tag" onclick="addTag('cute banana robot')">🍌 banana robot</span>
+      <span class="tag" onclick="addTag('cyberpunk neon lights')">🌆 cyberpunk</span>
+      <span class="tag" onclick="addTag('pixel art style')">🎮 pixel art</span>
+      <span class="tag" onclick="addTag('ultra detailed 8k')">✨ 8k</span>
+      <span class="tag" onclick="addTag('watercolor painting')">🎨 watercolor</span>
+      <span class="tag" onclick="addTag('anime style')">🗾 anime</span>
+      <span class="tag" onclick="addTag('photorealistic')">📷 photo</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="lbl">⚙️ параметры</div>
+    <div class="grid2" style="margin-bottom:12px;">
+      <div>
+        <label class="fl">Соотношение сторон</label>
+        <select id="aspectSelect">
+          <option value="1:1">1:1 — квадрат</option>
+          <option value="9:16">9:16 — портрет</option>
+          <option value="16:9">16:9 — пейзаж</option>
+          <option value="4:3">4:3 — широкий</option>
+          <option value="3:4">3:4 — высокий</option>
+        </select>
+      </div>
+      <div>
+        <label class="fl">Кол-во изображений</label>
+        <select id="countSelect">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+    </div>
+    <div>
+      <label class="fl">Модель</label>
+      <select id="modelSelect">
+        <option value="gemini-3-pro-image-preview">🌟 Nano Banana Pro (gemini-3-pro-image-preview)</option>
+        <option value="gemini-3.1-flash-image-preview">⚡ Nano Banana 2 (gemini-3.1-flash-image-preview)</option>
+        <option value="gemini-2.5-flash-image">🍌 Nano Banana (gemini-2.5-flash-image)</option>
+        <option value="imagen-4.0-generate-001">🎨 Imagen 4</option>
+        <option value="imagen-4.0-fast-generate-001">🚀 Imagen 4 Fast</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- EDIT MODE -->
+  <div class="card" id="editCard">
+    <div class="lbl">🖼 редактирование (необязательно)</div>
+    <div style="font-size:12px;color:var(--muted);font-family:var(--mono);margin-bottom:10px;line-height:1.6;">
+      Загрузи изображение если хочешь его отредактировать.<br>Оставь пустым для генерации с нуля (t2i).
+    </div>
+    <input type="file" id="editImageInput" accept="image/*" style="width:100%;background:var(--surface2);border:1px solid var(--border2);border-radius:var(--rs);color:var(--muted);font-family:var(--mono);font-size:12px;padding:8px 12px;cursor:pointer;" />
+    <div id="editPreview" style="display:none;margin-top:10px;">
+      <img id="editPreviewImg" style="max-height:160px;border-radius:var(--rs);border:1px solid var(--border2);" />
+      <span onclick="clearEdit()" style="display:inline-block;margin-top:6px;font-size:12px;font-family:var(--mono);color:var(--danger);cursor:pointer;">✕ убрать</span>
+    </div>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn" id="generateBtn" onclick="generate()">✦ Генерировать</button>
+    <button class="btn-sec" onclick="checkModels()" title="Посмотреть какие модели доступны с твоим ключом">📋 Модели</button>
+  </div>
+
+  <div id="status"></div>
+
+  <div id="results">
+    <div class="res-lbl">результат</div>
+    <div id="imageGrid"></div>
+    <div class="resp-box">
+      <div class="lbl">📡 ответ api</div>
+      <pre id="apiResponse"></pre>
+    </div>
+  </div>
+
+  <footer>nano bano pro · локальный генератор · google imagen</footer>
+</div>
+
+<script>
+  // ══════════════════════════════════════════════
+  // 🔑 ВСТАВЬ СВОЙ GOOGLE API КЛЮЧ СЮДА ↓
+  const HARDCODED_API_KEY = "AIzaSyCvvL9MLMG7pHdqN28eCau-rus9H003eks";
+  // ══════════════════════════════════════════════
+
+  // Imagen 4 использует predict, Gemini — generateContent
+  const IMAGEN_MODELS = ['imagen-4.0-generate-001', 'imagen-4.0-fast-generate-001'];
+
+  let editImageB64 = null;
+  let editImageMime = 'image/png';
+
+  function getApiKey() {
+    return document.getElementById('apiKeyInput').value.trim() || HARDCODED_API_KEY;
+  }
+
+  function addTag(tag) {
+    const el = document.getElementById('promptInput');
+    el.value = el.value.trim() ? el.value.trim() + ', ' + tag : tag;
+  }
+
+  function setStatus(msg, type) {
+    const el = document.getElementById('status');
+    el.className = type;
+    el.textContent = msg;
+    el.style.display = 'block';
+  }
+
+  // Загрузка изображения для редактирования
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('editImageInput').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      editImageMime = file.type || 'image/png';
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        editImageB64 = ev.target.result.split(',')[1];
+        const preview = document.getElementById('editPreview');
+        document.getElementById('editPreviewImg').src = ev.target.result;
+        preview.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+
+  function clearEdit() {
+    editImageB64 = null;
+    document.getElementById('editImageInput').value = '';
+    document.getElementById('editPreview').style.display = 'none';
+  }
+
+  // Вызов Imagen 4 через predict
+  async function callImagen(apiKey, model, prompt, count, aspect) {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:predict?key=${apiKey}`;
+    const body = { instances: [{ prompt }], parameters: { sampleCount: count, aspectRatio: aspect } };
+    const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+    const data = await res.json();
+    return { ok: res.ok, data, model, type: 'predict' };
+  }
+
+  // Вызов Gemini через generateContent (t2i или edit)
+  async function callGemini(apiKey, model, prompt, imageB64, imageMime) {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+    const parts = [];
+    if (imageB64) {
+      parts.push({ inlineData: { mimeType: imageMime, data: imageB64 } });
+    }
+    parts.push({ text: prompt });
+    const body = {
+      contents: [{ role: 'user', parts }],
+      generationConfig: { responseModalities: ['TEXT', 'IMAGE'] }
+    };
+    const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+    const data = await res.json();
+    return { ok: res.ok, data, model, type: 'generateContent' };
+  }
+
+  // Извлечь base64 изображения из ответа generateContent
+  function extractImagesFromGemini(data) {
+    const images = [];
+    const parts = data?.candidates?.[0]?.content?.parts || [];
+    for (const part of parts) {
+      if (part.inlineData?.data) {
+        images.push({ b64: part.inlineData.data, mime: part.inlineData.mimeType || 'image/png' });
+      }
+    }
+    return images;
+  }
+
+  function renderImages(images, model) {
+    const grid = document.getElementById('imageGrid');
+    grid.innerHTML = '';
+    images.forEach((img, i) => {
+      const wrap = document.createElement('div');
+      const el = document.createElement('img');
+      el.src = `data:${img.mime};base64,${img.b64}`;
+      el.alt = 'Изображение ' + (i + 1);
+      const dl = document.createElement('a');
+      dl.href = el.src;
+      dl.download = 'nanobano_' + (i + 1) + '.png';
+      dl.textContent = '⬇ скачать';
+      wrap.appendChild(el);
+      wrap.appendChild(dl);
+      grid.appendChild(wrap);
+    });
+    setStatus('✓ Готово! ' + images.length + ' изображений · ' + model, 'success');
+  }
+
+  async function generate() {
+    const apiKey  = getApiKey();
+    const prompt  = document.getElementById('promptInput').value.trim();
+    const aspect  = document.getElementById('aspectSelect').value;
+    const count   = parseInt(document.getElementById('countSelect').value);
+    const model   = document.getElementById('modelSelect').value;
+    const btn     = document.getElementById('generateBtn');
+
+    if (!apiKey) { setStatus('⚠ Вставь API ключ', 'danger'); return; }
+    if (!prompt)  { setStatus('⚠ Введи промпт', 'danger'); return; }
+
+    btn.disabled = true;
+    btn.textContent = '⏳ Генерируем...';
+    document.getElementById('results').style.display = 'none';
+    setStatus('Запрос к ' + model + ' ...', 'info');
+
+    try {
+      let result;
+
+      if (IMAGEN_MODELS.includes(model)) {
+        result = await callImagen(apiKey, model, prompt, count, aspect);
+        document.getElementById('apiResponse').textContent = 'Модель: ' + result.model + '\n\n' + JSON.stringify(result.data, null, 2);
+        document.getElementById('results').style.display = 'block';
+        if (!result.ok) { setStatus('✗ ' + (result.data?.error?.message || 'Ошибка API'), 'danger'); return; }
+        const preds = result.data.predictions || [];
+        if (!preds.length) { setStatus('Ответ ОК, но изображений нет.', 'info'); return; }
+        const images = preds.map(p => ({ b64: p.bytesBase64Encoded || p.imageBytes, mime: 'image/png' })).filter(i => i.b64);
+        renderImages(images, model);
+      } else {
+        // Gemini generateContent
+        result = await callGemini(apiKey, model, prompt, editImageB64, editImageMime);
+        document.getElementById('apiResponse').textContent = 'Модель: ' + result.model + '\n\n' + JSON.stringify(result.data, null, 2);
+        document.getElementById('results').style.display = 'block';
+        if (!result.ok) { setStatus('✗ ' + (result.data?.error?.message || 'Ошибка API'), 'danger'); return; }
+        const images = extractImagesFromGemini(result.data);
+        if (!images.length) { setStatus('Ответ ОК, но изображений нет. Возможно модель вернула только текст — смотри ответ API.', 'info'); return; }
+        renderImages(images, model);
+      }
+
+    } catch(e) {
+      setStatus('✗ Ошибка сети: ' + e.message, 'danger');
+    }
+
+    btn.disabled = false;
+    btn.textContent = '✦ Генерировать';
+  }
+
+  async function checkModels() {
+    const apiKey = getApiKey();
+    if (!apiKey) { setStatus('⚠ Сначала введи API ключ', 'danger'); return; }
+    setStatus('Загружаем список моделей...', 'info');
+    try {
+      const res  = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
+      const data = await res.json();
+      const imgModels = (data.models || []).filter(m =>
+        m.name.toLowerCase().includes('image') || m.name.toLowerCase().includes('imagen')
+      );
+      document.getElementById('apiResponse').textContent = JSON.stringify(data, null, 2);
+      document.getElementById('results').style.display = 'block';
+      if (imgModels.length) {
+        setStatus('✓ Image-модели: ' + imgModels.map(m => m.name.replace('models/','')).join(' · '), 'success');
+      } else {
+        setStatus('Image-моделей не найдено. Полный список — в ответе API.', 'info');
+      }
+    } catch(e) { setStatus('✗ ' + e.message, 'danger'); }
+  }
+</script>
+</body>
+</html>

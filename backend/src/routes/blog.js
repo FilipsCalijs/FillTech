@@ -4,8 +4,12 @@ import { checkAdmin } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
+const CYRILLIC = { а:'a',б:'b',в:'v',г:'g',д:'d',е:'e',ё:'yo',ж:'zh',з:'z',и:'i',й:'y',к:'k',л:'l',м:'m',н:'n',о:'o',п:'p',р:'r',с:'s',т:'t',у:'u',ф:'f',х:'kh',ц:'ts',ч:'ch',ш:'sh',щ:'shch',ъ:'',ы:'y',ь:'',э:'e',ю:'yu',я:'ya' };
+
 const toSlug = (title) => {
-  const slug = title.toLowerCase().trim()
+  const transliterated = title.toLowerCase().trim()
+    .split('').map(c => CYRILLIC[c] ?? c).join('');
+  const slug = transliterated
     .replace(/[^\w\s-]/gu, '')
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-')
@@ -53,6 +57,18 @@ router.get('/posts/:slug', async (req, res) => {
 });
 
 // ─── Admin ────────────────────────────────────────────────────────────────
+
+// GET /api/blog/admin/posts/:id — один пост полностью (для редактора)
+router.get('/admin/posts/:id', checkAdmin, async (req, res) => {
+  try {
+    const [rows] = await db.query('SELECT * FROM posts WHERE id = ?', [req.params.id]);
+    if (!rows.length) return res.status(404).json({ error: 'Post not found' });
+    res.json({ ...rows[0], tags: parseTags(rows[0].tags) });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 
 // GET /api/blog/admin/posts
 router.get('/admin/posts', checkAdmin, async (_req, res) => {

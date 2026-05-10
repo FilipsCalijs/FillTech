@@ -2,7 +2,11 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import axios from 'axios';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Pencil } from 'lucide-react';
+import { CONTAINER } from '@/config/sizes';
+import { Typography } from '@/components/ui/Typography';
+import { Button } from '@/components/ui/Button';
+import Comments from '@/components/blog/Comments';
 
 const API = 'http://localhost:5200';
 
@@ -19,11 +23,18 @@ const BlogPost = () => {
       .finally(() => setLoading(false));
   }, [slug]);
 
-  if (loading) return <div className="py-12 text-center text-muted-foreground">Загрузка...</div>;
-  if (notFound) return (
+  if (loading) return (
     <div className="py-12 text-center">
-      <p className="text-muted-foreground mb-4">Статья не найдена</p>
-      <Link to="/blog" className="text-primary hover:underline text-sm">← Вернуться в блог</Link>
+      <Typography variant="body2" color="muted">Загрузка...</Typography>
+    </div>
+  );
+
+  if (notFound) return (
+    <div className="py-12 text-center flex flex-col items-center gap-4">
+      <Typography variant="body1" color="muted">Статья не найдена</Typography>
+      <Link to="/blog" className="text-primary hover:underline">
+        <Typography variant="body2" color="primary">← Вернуться в блог</Typography>
+      </Link>
     </div>
   );
 
@@ -38,26 +49,63 @@ const BlogPost = () => {
         <meta property="og:title" content={seoTitle} />
         <meta property="og:description" content={seoDesc} />
         <meta property="og:type" content="article" />
+        {post.cover_url && <meta property="og:image" content={post.cover_url} />}
         {post.published_at && <meta property="article:published_time" content={post.published_at} />}
       </Helmet>
 
-      <div className="py-12 max-w-3xl mx-auto px-4">
-        <Link to="/blog" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8">
-          <ArrowLeft size={14} /> Блог
-        </Link>
+      {/* Навигация + кнопка редактирования */}
+      <div className={`pt-12 pb-6 ${CONTAINER.post}`}>
+        <div className="flex items-center justify-between">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <ArrowLeft size={14} />
+            <Typography variant="body2" color="muted">Блог</Typography>
+          </Link>
 
-        <article>
-          <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
-          <p className="text-sm text-muted-foreground mb-8">
-            {new Date(post.published_at).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' })}
-          </p>
+          {localStorage.getItem('userRole') === 'admin' && (
+            <Link to={`/admin/blog/${post.id}/edit`}>
+              <Button variant="outline" size="sm">
+                <Pencil size={14} className="mr-1.5" /> Редактировать
+              </Button>
+            </Link>
+          )}
+        </div>
+      </div>
+
+      {/* Обложка — на всю ширину страницы */}
+      {post.cover_url && (
+        <div className="w-full aspect-[21/9] overflow-hidden">
+          <img
+            src={post.cover_url}
+            alt={post.title}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
+
+      {/* Контент статьи */}
+      <div className={`pb-16 ${CONTAINER.post}`}>
+        <article className="pt-8">
+          <Typography variant="h2" weight="bold" className="block mb-3">
+            {post.title}
+          </Typography>
+
+          <Typography variant="body2" color="muted" className="block mb-10">
+            {new Date(post.published_at).toLocaleDateString('ru-RU', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
+            })}
+          </Typography>
 
           <div
-            className="prose prose-neutral dark:prose-invert max-w-none leading-relaxed text-foreground"
-            style={{ whiteSpace: 'pre-wrap' }}
-          >
-            {post.content}
-          </div>
+            className="rich-editor-output leading-relaxed text-foreground"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
+
+          <Comments postId={post.id} />
         </article>
       </div>
     </>

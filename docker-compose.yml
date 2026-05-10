@@ -1,0 +1,27 @@
+services:
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  ai-service:
+    build:
+      context: ./ai-service
+      # For GPU server: add --build-arg PYTORCH_INDEX_URL=https://download.pytorch.org/whl/cu121
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/models
+    env_file:
+      - ./backend/.env
+    environment:
+      - MODELS_DIR=/models
+    restart: unless-stopped
+    depends_on:
+      - redis
+
+volumes:
+  redis_data:

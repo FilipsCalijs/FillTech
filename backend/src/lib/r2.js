@@ -14,12 +14,27 @@ const r2 = new S3Client({
 });
 
 /**
+ * Превращает имя пользователя в безопасный идентификатор папки.
+ * "Иван Петров" → "ivan-petrov", "John Doe" → "john-doe"
+ */
+function toFolderName(label) {
+  return label
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9\-_]/g, '')
+    .replace(/-+/g, '-')
+    .replace(/^-+|-+$/g, '') || 'user';
+}
+
+/**
  * Загружает Buffer напрямую в R2.
  * Возвращает публичный URL файла в R2.
+ * @param {string} userLabel — display_name или email пользователя (человекочитаемый)
  */
-export async function uploadBuffer(buffer, contentType, userUid, folder = 'generations') {
+export async function uploadBuffer(buffer, contentType, userLabel, folder = 'generations') {
   const ext = contentType.split('/')[1]?.split('+')[0] || 'png';
-  const key = `users/${userUid}/${folder}/${uuidv4()}.${ext}`;
+  const key = `users/${toFolderName(userLabel)}/${folder}/${uuidv4()}.${ext}`;
 
   await r2.send(new PutObjectCommand({
     Bucket: process.env.R2_BUCKET_NAME,
@@ -34,15 +49,16 @@ export async function uploadBuffer(buffer, contentType, userUid, folder = 'gener
 /**
  * Скачивает файл по URL и загружает в R2.
  * Возвращает публичный URL файла в R2.
+ * @param {string} userLabel — display_name или email пользователя (человекочитаемый)
  */
-export async function uploadFromUrl(sourceUrl, userUid, folder = 'generations') {
+export async function uploadFromUrl(sourceUrl, userLabel, folder = 'generations') {
   const response = await fetch(sourceUrl);
   if (!response.ok) throw new Error(`Failed to fetch file: ${response.status}`);
 
   const buffer = Buffer.from(await response.arrayBuffer());
   const contentType = response.headers.get('content-type') || 'image/png';
   const ext = contentType.split('/')[1]?.split('+')[0] || 'png';
-  const key = `users/${userUid}/${folder}/${uuidv4()}.${ext}`;
+  const key = `users/${toFolderName(userLabel)}/${folder}/${uuidv4()}.${ext}`;
 
   await r2.send(new PutObjectCommand({
     Bucket: process.env.R2_BUCKET_NAME,

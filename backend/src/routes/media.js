@@ -3,6 +3,7 @@ import multer from 'multer';
 import { db } from '../db.js';
 import { checkAdmin } from '../middleware/authMiddleware.js';
 import { uploadBuffer, uploadFromUrl, deleteFromR2 } from '../lib/r2.js';
+import { resolveUserLabel } from '../lib/userLabel.js';
 
 const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 10 * 1024 * 1024 } });
@@ -31,8 +32,9 @@ router.post('/upload', checkAdmin, upload.single('file'), async (req, res) => {
   if (!req.file) return res.status(400).json({ error: 'No file provided' });
 
   const uid = req.headers['x-user-uid'] || 'admin';
+  const userLabel = await resolveUserLabel(uid);
   try {
-    const url = await uploadBuffer(req.file.buffer, req.file.mimetype, uid, 'media');
+    const url = await uploadBuffer(req.file.buffer, req.file.mimetype, userLabel, 'media');
     const r2Key = new URL(url).pathname.slice(1);
 
     const [result] = await db.query(
@@ -52,8 +54,9 @@ router.post('/from-url', checkAdmin, async (req, res) => {
   if (!sourceUrl) return res.status(400).json({ error: 'url is required' });
 
   const uid = req.headers['x-user-uid'] || 'admin';
+  const userLabel = await resolveUserLabel(uid);
   try {
-    const url = await uploadFromUrl(sourceUrl, uid, 'media');
+    const url = await uploadFromUrl(sourceUrl, userLabel, 'media');
     const r2Key = new URL(url).pathname.slice(1);
     const filename = sourceUrl.split('/').pop().split('?')[0] || 'image';
 

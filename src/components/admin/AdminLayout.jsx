@@ -1,9 +1,10 @@
 import { NavLink } from 'react-router-dom';
-import { Users, FileText } from 'lucide-react';
+import { Users, FileText, Sparkles } from 'lucide-react';
 
 const nav = [
-  { to: '/admin/users', label: 'Пользователи', icon: Users },
-  { to: '/admin/blog',  label: 'Блог',          icon: FileText },
+  { to: '/admin/users',   label: 'Пользователи', icon: Users },
+  { to: '/admin/blog',    label: 'Блог',          icon: FileText },
+  { to: '/admin/effects', label: 'Эффекты',       icon: Sparkles },
 ];
 
 const AdminLayout = ({ children }) => (

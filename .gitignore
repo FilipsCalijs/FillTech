@@ -52,3 +52,12 @@ public/testing/
 *.jpeg
 *.webp
 *.pth
+
+# AI model weights
+models/*
+!models/.gitkeep
+
+# Python
+ai-service/__pycache__/
+ai-service/**/__pycache__/
+ai-service/.venv/

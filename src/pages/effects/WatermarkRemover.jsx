@@ -32,7 +32,7 @@ const WatermarkRemover = () => {
 
               <CardFooter padding="sm" className="text-center">
                 <Button
-                  variant={plan.highlight ? 'primary' : 'outline'}
+                  variant="outline"
                   size="md"
                   className="w-full"
                 >

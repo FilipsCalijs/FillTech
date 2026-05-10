@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /cdn-cgi/
+
+Sitemap: https://7skins.org/sitemap.xml

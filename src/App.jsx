@@ -1,6 +1,7 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { useAuth } from './contexts/authContext';
+import Footer from '@/components/ui/Footer';
 
 import Login from '@/components/auth/login/Login';
 import Register from './components/auth/register/Register';
@@ -17,6 +18,12 @@ import Plan from './components/plan/Plan';
 import Explore from './pages/Explore';
 import Testing from './pages/Testing';
 import ToolPage from './pages/ToolPage';
+import BgRemover from './pages/effects/BgRemover';
+import Portrait from './pages/effects/Portrait';
+import Primer from './pages/Primer';
+import AdminEffects from './pages/AdminEffects';
+import AdminEffectEditor from './pages/AdminEffectEditor';
+import History from './pages/History';
 import React from 'react';
 import NotFound from './components/ui/NotFound';
 
@@ -52,6 +59,9 @@ function App() {
     return children;
   };
 
+  const location = useLocation();
+  const hideFooter = /^\/(login|register)/.test(location.pathname) || location.pathname.startsWith('/admin');
+
   if (loading) return null;
 
   return (
@@ -68,23 +78,32 @@ function App() {
             <Route path="/admin/blog" element={<AdminRoute><AdminBlog /></AdminRoute>} />
             <Route path="/admin/blog/new" element={<AdminRoute><AdminBlogEditor /></AdminRoute>} />
             <Route path="/admin/blog/:id/edit" element={<AdminRoute><AdminBlogEditor /></AdminRoute>} />
+            <Route path="/admin/effects" element={<AdminRoute><AdminEffects /></AdminRoute>} />
+            <Route path="/admin/effects/new" element={<AdminRoute><AdminEffectEditor /></AdminRoute>} />
+            <Route path="/admin/effects/:id/edit" element={<AdminRoute><AdminEffectEditor /></AdminRoute>} />
 
             {/* Protected */}
             <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
             <Route path="/plan" element={<ProtectedRoute><Plan /></ProtectedRoute>} />
+            <Route path="/history" element={<ProtectedRoute><History /></ProtectedRoute>} />
 
             {/* Public */}
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/testing" element={<Testing />} />
             <Route path="/explore" element={<Explore />} />
+            <Route path="/tools/portrait" element={<Portrait />} />
+            <Route path="/tools/bg-remover" element={<BgRemover />} />
+            <Route path="/tools/watermark-remover" element={<Testing />} />
             <Route path="/tools/:effectPath" element={<ToolPage />} />
+            <Route path="/primer" element={<Primer />} />
 
             <Route path="/" element={<Navigate to="/home" replace />} />
             <Route path="*" element={userLoggedIn ? <NotFound /> : <Navigate to="/login" replace />} />
           </Routes>
         </div>
       </main>
+      {!hideFooter && <Footer />}
     </HelmetProvider>
   );
 }

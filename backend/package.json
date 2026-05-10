@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "workers": "node src/workers/index.js",
+    "workers:dev": "nodemon src/workers/index.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +16,8 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1027.0",
     "@aws-sdk/lib-storage": "^3.1027.0",
+    "axios": "^1.16.0",
+    "bullmq": "^5.76.6",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",

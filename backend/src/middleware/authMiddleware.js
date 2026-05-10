@@ -1,5 +1,12 @@
 import { db } from '../db.js';
 
+export const checkAuth = (req, res, next) => {
+  const uid = req.headers['x-user-uid'];
+  if (!uid) return res.status(401).json({ error: 'Unauthorized' });
+  req.userUid = uid;
+  next();
+};
+
 export const checkAdmin = async (req, res, next) => {
     const uid = req.headers['x-user-uid']; 
 
