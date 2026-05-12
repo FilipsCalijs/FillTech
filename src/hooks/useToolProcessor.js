@@ -46,7 +46,7 @@ export function useToolProcessor(toolName) {
         },
       });
 
-      setResultUrl(res.data.resultUrl);
+      setResultUrl(res.data.resultUrl ?? res.data.imageUrl);
     } catch (err) {
       setError(err.response?.data?.error || 'Something went wrong. Please try again.');
     } finally {

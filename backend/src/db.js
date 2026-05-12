@@ -96,6 +96,7 @@ export async function runMigrations() {
     { name: 'started_at',     def: 'DATETIME NULL AFTER created_at' },
     { name: 'completed_at',   def: 'DATETIME NULL AFTER started_at' },
     { name: 'expires_at',     def: 'DATETIME NULL AFTER completed_at' },
+    { name: 'cost',           def: 'DECIMAL(10,4) NOT NULL DEFAULT 0.0000 AFTER expires_at' },
   ];
 
   for (const col of newCols) {
@@ -162,6 +163,9 @@ export async function runMigrations() {
       updated_at   DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )
   `)
+
+  // Добавить balance к users если нет
+  await pool.query(`ALTER TABLE users ADD COLUMN balance DECIMAL(10,4) NOT NULL DEFAULT 0.0000`).catch(() => {});
 
   console.log('✅ Migrations done')
 }

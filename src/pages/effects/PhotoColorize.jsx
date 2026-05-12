@@ -1,24 +1,21 @@
 import { useState, useRef, useCallback } from 'react';
 import { Typography } from '@/components/ui/Typography';
 import { CONTAINER } from '@/config/sizes';
-import PortraitControls from '@/components/portrait/PortraitControls';
-import { buildPrompt } from '@/config/portraitPrompts';
 import ResultPanel from '@/components/ui/ResultPanel';
 
 const API = 'http://localhost:5200';
+const MAX_MB   = 22;
+const MAX_SIZE = MAX_MB * 1024 * 1024;
 
-const AiPortrait = () => {
-  const [file,      setFile]      = useState(null);
-  const [preview,   setPreview]   = useState(null);
-  const [dragging,  setDragging]  = useState(false);
-  const [loading,   setLoading]   = useState(false);
+const PhotoColorize = () => {
+  const [file,         setFile]         = useState(null);
+  const [preview,      setPreview]      = useState(null);
+  const [dragging,     setDragging]     = useState(false);
+  const [loading,      setLoading]      = useState(false);
   const [resultUrl,    setResultUrl]    = useState(null);
   const [generationId, setGenerationId] = useState(null);
   const [error,        setError]        = useState(null);
   const fileRef = useRef(null);
-
-  const MAX_MB   = 22;
-  const MAX_SIZE = MAX_MB * 1024 * 1024;
 
   const pickFile = (f) => {
     if (!f) return;
@@ -38,24 +35,21 @@ const AiPortrait = () => {
     pickFile(e.dataTransfer.files?.[0]);
   }, []);
 
-  const handleGenerate = async ({ prompt, gender, style, poseId, ratio }) => {
+  const handleGenerate = async () => {
     if (!file) return;
-    const fullPrompt = buildPrompt({ gender, style, userPrompt: prompt, poseId });
     setLoading(true);
     setError(null);
     setResultUrl(null);
 
     try {
-      const form = new FormData();
-      form.append('image', file);
-      form.append('prompt', fullPrompt);
-      form.append('aspect_ratio', ratio ?? '1:1');
-
       const userUid = localStorage.getItem('userUID') || '';
-      const res  = await fetch(`${API}/api/tools/portrait`, {
-        method: 'POST',
+      const form    = new FormData();
+      form.append('image', file);
+
+      const res  = await fetch(`${API}/api/tools/photo-colorize`, {
+        method:  'POST',
         headers: { 'x-user-uid': userUid },
-        body: form,
+        body:    form,
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Generation failed');
@@ -71,21 +65,19 @@ const AiPortrait = () => {
   return (
     <div className={`py-12 ${CONTAINER.blog}`}>
       <Typography variant="h2" weight="bold" className="block mb-2">
-        AI Portrait Editor
+        Photo Colorizer
       </Typography>
       <Typography variant="body1" color="muted" className="block mb-10">
-        Upload your photo and describe the edit — AI will transform it.
+        Bring black-and-white photos to life with AI-powered colorization.
       </Typography>
 
-      {/* Two-column layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
 
-        {/* LEFT — photo drop zone */}
+        {/* LEFT — drop zone */}
         <div className="flex flex-col gap-3">
-          <div className="flex justify-between items-center">
-            <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">Your Photo</span>
-            <span className="text-xs text-muted-foreground">Upload or pick a character</span>
-          </div>
+          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">
+            Your Photo
+          </span>
 
           <div
             onClick={() => fileRef.current?.click()}
@@ -107,21 +99,11 @@ const AiPortrait = () => {
                 </svg>
                 <div>
                   <p className="text-lg font-bold text-foreground mb-1">Drop your photo</p>
-                  <p className="text-sm text-muted-foreground">
-                    or click to browse · JPG or PNG · clear, well-lit selfie works best
-                  </p>
-                </div>
-                <div className="flex flex-wrap justify-center gap-2 mt-2">
-                  {['11 styles', 'Body pose reference'].map(tag => (
-                    <span key={tag} className="text-xs border border-border rounded-full px-3 py-1 text-muted-foreground">
-                      {tag}
-                    </span>
-                  ))}
+                  <p className="text-sm text-muted-foreground">Black & white or grayscale images work best</p>
                 </div>
               </div>
             )}
 
-            {/* Replace photo overlay */}
             {preview && (
               <div className="absolute inset-0 rounded-2xl bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
                 <span className="text-white text-sm font-semibold">Click to change photo</span>
@@ -129,27 +111,56 @@ const AiPortrait = () => {
             )}
           </div>
 
-          <input
-            ref={fileRef}
-            type="file"
-            accept="image/*"
-            className="hidden"
-            onChange={e => pickFile(e.target.files?.[0])}
-          />
-          <p className="text-xs text-muted-foreground mt-1">JPG or PNG · max {MAX_MB} MB</p>
+          <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={e => pickFile(e.target.files?.[0])} />
+          <p className="text-xs text-muted-foreground">JPG or PNG · max {MAX_MB} MB</p>
         </div>
 
-        {/* RIGHT — controls */}
-        <PortraitControls
-          onGenerate={handleGenerate}
-          loading={loading}
-          fileSelected={!!file}
-        />
-      </div>
+        {/* RIGHT — info + generate */}
+        <div className="flex flex-col gap-6">
+          <div className="rounded-2xl border border-border bg-card p-6 flex flex-col gap-4">
+            <Typography variant="h4" weight="semibold">How it works</Typography>
+            <ul className="flex flex-col gap-3 text-sm text-muted-foreground">
+              {[
+                'Upload a black & white or grayscale photo',
+                'AI analyzes the scene and adds realistic colors',
+                'Download the colorized result in full quality',
+              ].map((s, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="shrink-0 w-5 h-5 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center font-bold mt-0.5">
+                    {i + 1}
+                  </span>
+                  {s}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-      {error && (
-        <p className="mt-6 text-red-500 text-sm text-center">{error}</p>
-      )}
+          <button
+            onClick={handleGenerate}
+            disabled={loading || !file}
+            className="w-full py-4 rounded-full bg-primary text-primary-foreground font-bold text-xs tracking-[0.16em] uppercase flex items-center justify-center gap-2 hover:opacity-90 transition-all duration-200 disabled:opacity-50"
+          >
+            {loading ? (
+              <>
+                <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
+                </svg>
+                Colorizing…
+              </>
+            ) : (
+              <>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+                </svg>
+                {file ? 'Colorize Photo' : 'Upload a photo first'}
+              </>
+            )}
+          </button>
+
+          {error && <p className="text-red-500 text-sm">{error}</p>}
+        </div>
+      </div>
 
       {resultUrl && (
         <ResultPanel
@@ -162,4 +173,4 @@ const AiPortrait = () => {
   );
 };
 
-export default AiPortrait;
+export default PhotoColorize;

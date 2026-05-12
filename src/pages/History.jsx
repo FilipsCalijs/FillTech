@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { Typography } from '@/components/ui/Typography';
 import { CONTAINER } from '@/config/sizes';
+import AudioPlayer from '@/components/ui/AudioPlayer';
 
 const API = 'http://localhost:5200';
 
@@ -11,7 +12,11 @@ const TOOL_MAP = {
   'bg-remove':        { name: 'BG Remover',         path: '/tools/bg-remover' },
   'upscaler':         { name: 'Upscaler',           path: '/tools/upscaler' },
   'ps2-filter':       { name: 'Game Filter',         path: '/testing' },
+  'voice-clone':      { name: 'Voice Cloning',       path: '/testing-2' },
 };
+
+const AUDIO_TYPES = new Set(['voice-clone']);
+const isAudio = (gen) => AUDIO_TYPES.has(gen.tool_type) || /\.(mp3|wav|m4a|ogg|mpeg|aac)(\?|$)/i.test(gen.output_url ?? '');
 
 const STATUS_STYLES = {
   completed:  'text-green-600 dark:text-green-400',
@@ -77,12 +82,48 @@ const ImageModal = ({ gen, onClose }) => {
   );
 };
 
+/* ── Audio modal ──────────────────────────────────────────── */
+const AudioModal = ({ gen, onClose }) => {
+  useEffect(() => {
+    const h = (e) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', h);
+    return () => document.removeEventListener('keydown', h);
+  }, [onClose]);
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4" onClick={onClose}>
+      <div className="relative flex flex-col gap-5 w-full max-w-xl bg-card border border-border rounded-2xl p-6 shadow-xl" onClick={e => e.stopPropagation()}>
+        <button onClick={onClose} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+
+        <p className="text-sm font-semibold text-foreground pr-8">Voice Clone</p>
+        <AudioPlayer src={gen.output_url} />
+
+        <div className="flex gap-3">
+          <a href={gen.output_url} download className="flex items-center gap-2 px-4 py-2 rounded-xl border border-border text-sm text-foreground hover:border-foreground/40 transition-all">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download
+          </a>
+          <a href={gen.output_url} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-xl border border-border text-sm text-foreground hover:border-foreground/40 transition-all">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Open URL
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 /* ── Table ────────────────────────────────────────────────── */
+const PAGE_SIZE = 25;
+
 const GenerationsTable = ({ items, onDelete, adminMode }) => {
   const [selected, setSelected] = useState(new Set());
   const [sortBy,   setSortBy]   = useState('date');
   const [search,   setSearch]   = useState('');
   const [modal,    setModal]    = useState(null);
+  const [page,     setPage]     = useState(1);
 
   const filtered = items
     .filter(i => search ? i.id.toLowerCase().includes(search.toLowerCase()) : true)
@@ -91,8 +132,12 @@ const GenerationsTable = ({ items, onDelete, adminMode }) => {
       : (TOOL_MAP[a.tool_type]?.name ?? a.tool_type).localeCompare(TOOL_MAP[b.tool_type]?.name ?? b.tool_type)
     );
 
-  const allChecked = filtered.length > 0 && filtered.every(i => selected.has(i.id));
-  const toggleAll  = (v) => setSelected(v ? new Set(filtered.map(i => i.id)) : new Set());
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const paginated  = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+
+  const allChecked = paginated.length > 0 && paginated.every(i => selected.has(i.id));
+  const resetPage  = () => setPage(1);
+  const toggleAll  = (v) => setSelected(v ? new Set(paginated.map(i => i.id)) : new Set());
   const toggleOne  = (id) => setSelected(prev => { const s = new Set(prev); s.has(id) ? s.delete(id) : s.add(id); return s; });
 
   const handleDelete = async (id) => {
@@ -107,11 +152,11 @@ const GenerationsTable = ({ items, onDelete, adminMode }) => {
       {/* Controls */}
       <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
         <div className="flex items-center gap-3">
-          <select value={sortBy} onChange={e => setSortBy(e.target.value)} className="text-sm border border-border rounded-lg px-3 py-1.5 bg-card text-foreground focus:outline-none">
+          <select value={sortBy} onChange={e => { setSortBy(e.target.value); resetPage(); }} className="text-sm border border-border rounded-lg px-3 py-1.5 bg-card text-foreground focus:outline-none">
             <option value="date">Sort by date</option>
             <option value="model">Sort by model</option>
           </select>
-          <input type="text" placeholder="Search by ID…" value={search} onChange={e => setSearch(e.target.value)} className="text-sm border border-border rounded-lg px-3 py-1.5 bg-card text-foreground placeholder:text-muted-foreground focus:outline-none w-52" />
+          <input type="text" placeholder="Search by ID…" value={search} onChange={e => { setSearch(e.target.value); resetPage(); }} className="text-sm border border-border rounded-lg px-3 py-1.5 bg-card text-foreground placeholder:text-muted-foreground focus:outline-none w-52" />
         </div>
       </div>
 
@@ -146,12 +191,14 @@ const GenerationsTable = ({ items, onDelete, adminMode }) => {
                 <th className="px-4 py-3 text-left">Model</th>
                 <th className="px-4 py-3 text-left">Status</th>
                 <th className="px-4 py-3 text-left">Created</th>
+                <th className="px-4 py-3 text-left">Cost</th>
                 <th className="px-4 py-3 text-right">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
-              {filtered.map(gen => {
-                const tool = TOOL_MAP[gen.tool_type] ?? { name: gen.tool_type, path: '/explore' };
+              {paginated.map(gen => {
+                const tool  = TOOL_MAP[gen.tool_type] ?? { name: gen.tool_type, path: '/explore' };
+                const audio = isAudio(gen);
                 return (
                   <tr key={gen.id} className={`hover:bg-muted/50 transition-colors ${selected.has(gen.id) ? 'bg-primary/5' : 'bg-card'}`}>
                     <td className="px-4 py-3"><input type="checkbox" checked={selected.has(gen.id)} onChange={() => toggleOne(gen.id)} className="accent-primary cursor-pointer" /></td>
@@ -159,7 +206,14 @@ const GenerationsTable = ({ items, onDelete, adminMode }) => {
                     <td className="px-4 py-3">
                       {gen.output_url ? (
                         <button onClick={() => setModal(gen)} className="w-[50px] h-[80px] rounded-lg border border-border overflow-hidden bg-muted flex items-center justify-center hover:opacity-80 transition-opacity">
-                          <img src={gen.output_url} alt="output" className="w-full h-full object-contain" />
+                          {audio ? (
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-primary">
+                              <path d="M9 18V5l12-2v13"/>
+                              <circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+                            </svg>
+                          ) : (
+                            <img src={gen.output_url} alt="output" className="w-full h-full object-contain" />
+                          )}
                         </button>
                       ) : (
                         <div className="w-[50px] h-[80px] rounded-lg border border-dashed border-border bg-muted flex items-center justify-center text-muted-foreground text-xs">—</div>
@@ -188,6 +242,10 @@ const GenerationsTable = ({ items, onDelete, adminMode }) => {
 
                     <td className="px-4 py-3 text-muted-foreground">{timeAgo(gen.created_at)}</td>
 
+                    <td className="px-4 py-3 text-muted-foreground font-mono text-xs">
+                      ${parseFloat(gen.cost ?? 0).toFixed(2)}
+                    </td>
+
                     <td className="px-4 py-3">
                       <div className="flex items-center justify-end gap-1.5">
                         {gen.output_url && (
@@ -213,7 +271,33 @@ const GenerationsTable = ({ items, onDelete, adminMode }) => {
         </div>
       )}
 
-      {modal && <ImageModal gen={modal} onClose={() => setModal(null)} />}
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className="flex items-center justify-center gap-3 mt-5">
+          <button
+            onClick={() => setPage(p => Math.max(1, p - 1))}
+            disabled={page === 1}
+            className="w-8 h-8 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/40 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <span className="text-sm text-muted-foreground">
+            {page} / {totalPages}
+          </span>
+          <button
+            onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+            disabled={page === totalPages}
+            className="w-8 h-8 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/40 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      )}
+
+      {modal && (isAudio(modal)
+        ? <AudioModal gen={modal} onClose={() => setModal(null)} />
+        : <ImageModal gen={modal} onClose={() => setModal(null)} />
+      )}
     </>
   );
 };

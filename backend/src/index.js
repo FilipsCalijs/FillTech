@@ -12,6 +12,7 @@ import effectsRouter from './routes/effects.js';
 import generationsRouter from './routes/generations.js';
 import { runMigrations } from './db.js';
 import { cleanupExpiredGenerations } from './lib/cleanup.js';
+import billingRouter from './routes/billing.js';
 
 const app = express();
 app.use(express.json());
@@ -29,6 +30,7 @@ app.use('/api/media', mediaRoutes);
 app.use('/api/jobs', jobsRouter);
 app.use('/api/comments', commentsRouter);
 app.use('/api/effects', effectsRouter);
+app.use('/api/billing', billingRouter);
 app.use('/api/generations', generationsRouter);
 
 // Проверка здоровья

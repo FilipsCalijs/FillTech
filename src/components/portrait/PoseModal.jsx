@@ -15,7 +15,7 @@ const PoseModal = ({ selected, onSelect, onClose }) => {
       onClick={onClose}
     >
       <div
-        className="bg-card border border-border rounded-2xl p-6 w-full max-w-md shadow-xl"
+        className="bg-card border border-border rounded-2xl p-6 w-full max-w-xl shadow-xl"
         onClick={e => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-5">
@@ -30,7 +30,7 @@ const PoseModal = ({ selected, onSelect, onClose }) => {
           </button>
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-3 gap-2">
           {POSES.map(pose => (
             <button
               key={pose.id}
@@ -42,7 +42,7 @@ const PoseModal = ({ selected, onSelect, onClose }) => {
               <img
                 src={pose.image}
                 alt={pose.name}
-                className="w-full aspect-square object-cover"
+                className="w-full aspect-[3/2] object-cover"
               />
               <div className={`px-3 py-2 text-sm font-medium ${selected === pose.id ? 'bg-primary text-primary-foreground' : 'bg-card text-foreground'}`}>
                 {pose.name}

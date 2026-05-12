@@ -17,13 +17,20 @@ import BlogPost from './pages/BlogPost';
 import Plan from './components/plan/Plan';
 import Explore from './pages/Explore';
 import Testing from './pages/Testing';
+import Testing2 from './pages/Testing2';
 import ToolPage from './pages/ToolPage';
 import BgRemover from './pages/effects/BgRemover';
+import WatermarkRemover from './pages/effects/WatermarkRemover';
+import PhotoColorize from './pages/effects/PhotoColorize';
+import ClothesSwap from './pages/effects/ClothesSwap';
+import VideoWatermarkRemover from './pages/effects/VideoWatermarkRemover';
 import Portrait from './pages/effects/Portrait';
+import Upscaler from './pages/effects/Upscaler';
 import Primer from './pages/Primer';
 import AdminEffects from './pages/AdminEffects';
 import AdminEffectEditor from './pages/AdminEffectEditor';
 import History from './pages/History';
+import Billing from './pages/Billing';
 import React from 'react';
 import NotFound from './components/ui/NotFound';
 
@@ -66,6 +73,7 @@ function App() {
 
   return (
     <HelmetProvider>
+      <div className="flex flex-col min-h-screen">
       {userLoggedIn && <Header isDark={isDark} toggleTheme={toggleTheme} />}
       <main className="flex-1 flex flex-col">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -86,15 +94,22 @@ function App() {
             <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
             <Route path="/plan" element={<ProtectedRoute><Plan /></ProtectedRoute>} />
             <Route path="/history" element={<ProtectedRoute><History /></ProtectedRoute>} />
+            <Route path="/billing" element={<ProtectedRoute><Billing /></ProtectedRoute>} />
 
             {/* Public */}
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/testing" element={<Testing />} />
+            <Route path="/testing-2" element={<Testing2 />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/tools/portrait" element={<Portrait />} />
             <Route path="/tools/bg-remover" element={<BgRemover />} />
-            <Route path="/tools/watermark-remover" element={<Testing />} />
+            <Route path="/tools/upscaler" element={<Upscaler />} />
+            <Route path="/tools/ps2-filter" element={<Testing />} />
+            <Route path="/tools/watermark-remover" element={<WatermarkRemover />} />
+            <Route path="/tools/photo-colorize" element={<PhotoColorize />} />
+            <Route path="/tools/clothes-swap" element={<ClothesSwap />} />
+            <Route path="/tools/watermark-remover-video" element={<VideoWatermarkRemover />} />
             <Route path="/tools/:effectPath" element={<ToolPage />} />
             <Route path="/primer" element={<Primer />} />
 
@@ -104,6 +119,7 @@ function App() {
         </div>
       </main>
       {!hideFooter && <Footer />}
+      </div>
     </HelmetProvider>
   );
 }

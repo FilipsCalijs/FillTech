@@ -22,8 +22,15 @@ const Ps2Filter = () => {
   const fileRef  = useRef(null);
   const ratioRef = useRef(null);
 
+  const MAX_MB   = 22;
+  const MAX_SIZE = MAX_MB * 1024 * 1024;
+
   const pickFile = (f) => {
     if (!f) return;
+    if (f.size > MAX_SIZE) {
+      setError(`Image too large: ${(f.size / 1024 / 1024).toFixed(1)} MB. Max ${MAX_MB} MB.`);
+      return;
+    }
     setFile(f);
     setPreview(URL.createObjectURL(f));
     setResultUrl(null);
@@ -114,6 +121,7 @@ const Ps2Filter = () => {
             )}
           </div>
           <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={e => pickFile(e.target.files?.[0])} />
+          <p className="text-xs text-muted-foreground mt-1">JPG or PNG · max {MAX_MB} MB</p>
         </div>
 
         {/* RIGHT — controls */}

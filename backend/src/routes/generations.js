@@ -15,9 +15,9 @@ const requireUid = (req, res, next) => {
 // GET /api/generations — история текущего пользователя
 router.get('/', requireUid, async (req, res) => {
   const [rows] = await pool.execute(
-    `SELECT id, tool_type, output_url, status, created_at, expires_at
+    `SELECT id, tool_type, output_url, status, cost, created_at, expires_at
      FROM generations
-     WHERE user_uid = ? AND output_url IS NOT NULL
+     WHERE user_uid = ?
      ORDER BY created_at DESC`,
     [req.userUid]
   );
@@ -27,11 +27,10 @@ router.get('/', requireUid, async (req, res) => {
 // GET /api/generations/admin — все генерации (только для админов)
 router.get('/admin', checkAdmin, async (_req, res) => {
   const [rows] = await pool.execute(
-    `SELECT g.id, g.user_uid, g.tool_type, g.output_url, g.status, g.created_at, g.expires_at,
+    `SELECT g.id, g.user_uid, g.tool_type, g.output_url, g.status, g.cost, g.created_at, g.expires_at,
             u.email AS user_email
      FROM generations g
      LEFT JOIN users u ON u.uid = g.user_uid
-     WHERE g.output_url IS NOT NULL
      ORDER BY g.created_at DESC`
   );
   res.json(rows);

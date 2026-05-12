@@ -6,12 +6,18 @@ export const GENDER_PROMPTS = {
 };
 
 export const POSES = [
-  {
-    id: 'three-quarter',
-    name: 'Three-quarter',
-    image: 'https://placehold.co/300x300',
-    prompt: `pose: three-quarter body portrait, subject turned slightly to the left, weight resting on one arm on a surface, face looking directly at the viewer, upright and composed posture`,
-  },
+  { id: 'arms-crossed',      name: 'Arms Crossed',      image: '/pose/arms crossed.png',      prompt: '' },
+  { id: 'arms-on-hips',      name: 'Arms on Hips',      image: '/pose/arms on hips.png',      prompt: '' },
+  { id: 'arms-rised',        name: 'Arms Rised',        image: '/pose/arms rised.png',        prompt: '' },
+  { id: 'heroitic-look',     name: 'Heroitic Look',     image: '/pose/heroitic look.png',     prompt: '' },
+  { id: 'hips-on-chin',      name: 'Hips on Chin',      image: '/pose/hips on chin.png',      prompt: '' },
+  { id: 'leaning-cassually', name: 'Leaning Cassually', image: '/pose/leaning cassually.png', prompt: '' },
+  { id: 'looking-back',      name: 'Looking Back',      image: '/pose/looking back.png',      prompt: '' },
+  { id: 'looking-view',      name: 'Looking View',      image: '/pose/looking_view.png',      prompt: '' },
+  { id: 'normal-standing',   name: 'Normal Standing',   image: '/pose/normal stnading.png',   prompt: '' },
+  { id: 'on-chair',          name: 'On Chair',          image: '/pose/on_chair.png',          prompt: '' },
+  { id: 'raised-hand',       name: 'Raised Hand',       image: '/pose/raised hand.png',       prompt: '' },
+  { id: 'three-quarter',     name: 'Three Quarter',     image: '/pose/three quarter.png',     prompt: '' },
 ];
 
 export const buildPrompt = ({ gender, style, userPrompt, poseId }) => {
