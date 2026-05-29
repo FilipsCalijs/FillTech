@@ -1,10 +1,13 @@
 import { useState, useRef, useCallback } from 'react';
 import { CONTAINER } from '@/config/sizes';
 import AudioPlayer from '@/components/ui/AudioPlayer';
+import { useTranslation } from 'react-i18next';
+import PageSEO from '@/components/seo/PageSEO';
 
 const API = 'http://localhost:5200';
 
 const VoiceCloning = () => {
+  const { t } = useTranslation('tools');
   const [text,     setText]     = useState('');
   const [file,     setFile]     = useState(null);
   const [dragging, setDragging] = useState(false);
@@ -26,7 +29,6 @@ const VoiceCloning = () => {
     if (!text.trim() || !file) return;
     setLoading(true);
     setError(null);
-    setAudioUrl(null);
 
     try {
       const userUid = localStorage.getItem('userUID') || '';
@@ -61,6 +63,7 @@ const VoiceCloning = () => {
 
   return (
     <div className={`py-10 ${CONTAINER.blog}`}>
+      <PageSEO title={t('seo.voiceClone.title')} description={t('seo.voiceClone.desc')} path="/tools/voice-clone" />
       <h1 className="text-2xl font-bold text-foreground mb-8">Voice Cloning</h1>
 
       <div className="rounded-2xl border border-border bg-card overflow-hidden">
@@ -69,12 +72,12 @@ const VoiceCloning = () => {
           {/* LEFT — text */}
           <div className="p-8 border-b border-border lg:border-b-0 lg:border-r flex flex-col gap-3">
             <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">
-              Enter your text
+              {t('voice.enterText')}
             </span>
             <textarea
               value={text}
               onChange={e => setText(e.target.value)}
-              placeholder="Type or paste the text you want to convert to speech…"
+              placeholder={t('voice.textPlaceholder')}
               rows={14}
               className="w-full rounded-2xl border border-border bg-transparent text-foreground px-5 py-4 text-sm resize-none focus:outline-none focus:ring-1 focus:ring-foreground/30 transition-all"
             />
@@ -86,7 +89,7 @@ const VoiceCloning = () => {
             {/* Voice upload */}
             <div className="flex flex-col gap-2 flex-1">
               <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">
-                Voice sample <span className="normal-case font-normal">(3–10 sec)</span>
+                {t('upload.voiceSample')} <span className="normal-case font-normal">({t('upload.sampleHint')})</span>
               </span>
               <div
                 onClick={() => fileRef.current?.click()}
@@ -105,8 +108,8 @@ const VoiceCloning = () => {
                   <p className="text-sm font-medium text-foreground text-center px-3 break-all">{file.name}</p>
                 ) : (
                   <>
-                    <p className="text-sm font-medium text-foreground mb-1">Drag and drop</p>
-                    <p className="text-xs text-muted-foreground">MP3, WAV, M4A</p>
+                    <p className="text-sm font-medium text-foreground mb-1">{t('upload.dropAudio')}</p>
+                    <p className="text-xs text-muted-foreground">{t('upload.audioHint')}</p>
                   </>
                 )}
               </div>
@@ -116,7 +119,7 @@ const VoiceCloning = () => {
             {/* Speed */}
             <div className="flex flex-col gap-2">
               <div className="flex justify-between items-center">
-                <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">Speed</span>
+                <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">{t('voice.speed')}</span>
                 <span className="text-sm font-mono text-foreground">{speed.toFixed(1)}x</span>
               </div>
               <input
@@ -146,9 +149,9 @@ const VoiceCloning = () => {
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
                   </svg>
-                  Generating…
+                  {t('actions.generating')}
                 </>
-              ) : 'Generate'}
+              ) : t('actions.generate')}
             </button>
           </div>
         </div>
@@ -159,7 +162,7 @@ const VoiceCloning = () => {
             {results.map((r, i) => (
               <div key={r.url} className="flex flex-col gap-3">
                 <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">
-                  {i === 0 ? 'Current' : fmtLabel(r.ts)}
+                  {i === 0 ? t('voice.current') : fmtLabel(r.ts)}
                 </span>
                 <AudioPlayer src={r.url} />
                 <div className="flex gap-3">

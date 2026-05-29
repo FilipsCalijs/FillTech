@@ -1,76 +1,81 @@
 import { useState, useRef, useCallback } from 'react';
 import { CONTAINER } from '@/config/sizes';
 import ResultPanel from '@/components/ui/ResultPanel';
+import { useTranslation } from 'react-i18next';
+import PageSEO from '@/components/seo/PageSEO';
 
 const API = 'http://localhost:5200';
 
-const MODEL_PRESETS = [
-  '/effects/08c7e346-b689-4a1f-b467-250c232c47b3-u1_c7a886ed-75b3-420d-a0c1-c4bc050f277f.jpeg',
-  '/effects/b5ae8533-7804-4dad-9c04-6667a5f81317.png',
-  '/effects/coloriezed.png',
+const MODEL_URLS = [
+  'https://static.wavespeed.ai/examples/d2fc9d2482cf4cc28d915ae61e16eb02/1773776417433956840_AQfpxHQ0.jpeg',
+  'https://static.wavespeed.ai/examples/73235a53b4e84309be65412267979d02/1773893458265591961_hHQZ9hqA.jpeg',
+  'https://placehold.co/300x400/e8e8e8/555?text=Man',
+];
+const OUTFIT_URLS = [
+  'https://static.wavespeed.ai/examples/73235a53b4e84309be65412267979d02/1773893458265591961_hHQZ9hqA.jpeg',
+  'https://placehold.co/300x400/f0f0f0/555?text=Outfit+2',
+  'https://placehold.co/300x400/e4e4e4/555?text=Outfit+3',
 ];
 
-const OUTFIT_PRESETS = [
-  '/effects/ps_filters.png',
-  '/effects/upcaler16_9.png',
-  '/effects/upscaler.png',
-];
+/* ── Upload zone ─────────────────────────────────── */
+const UploadZone = ({ label, preview, previewUrl, onFile, onPreset, presets, fileRef, t }) => {
+  const [dragging, setDragging] = useState(false);
 
-const UploadZone = ({ label, preview, onFile, onPreset, presets, dragging, setDragging, fileRef }) => {
   const onDrop = useCallback((e) => {
     e.preventDefault();
     setDragging(false);
     const f = e.dataTransfer.files?.[0];
     if (f) onFile(f);
-  }, [onFile, setDragging]);
+  }, [onFile]);
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-3">
       <h2 className="text-base font-bold text-foreground text-center">{label}</h2>
 
+      {/* Drop zone */}
       <div
         onClick={() => fileRef.current?.click()}
         onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
         onDragLeave={() => setDragging(false)}
         onDrop={onDrop}
-        className={`relative flex flex-col items-center justify-center rounded-2xl border-2 border-dashed cursor-pointer transition-all duration-200 min-h-[280px] overflow-hidden
+        className={`relative flex flex-col items-center justify-center rounded-2xl border-2 border-dashed cursor-pointer transition-all duration-200 min-h-[260px] overflow-hidden
           ${dragging ? 'border-primary bg-primary/5' : 'border-border hover:border-foreground/40 bg-muted/30'}
         `}
       >
         {preview ? (
-          <img src={preview} alt="uploaded" className="w-full h-full object-contain max-h-[280px]" />
+          <img src={preview} alt="selected" className="w-full h-full object-contain max-h-[260px]" />
         ) : (
           <div className="flex flex-col items-center gap-3 px-6 text-center">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" className="text-muted-foreground">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" className="text-muted-foreground">
               <rect x="3" y="3" width="18" height="18" rx="2"/>
               <circle cx="8.5" cy="8.5" r="1.5"/>
               <polyline points="21 15 16 10 5 21"/>
-              <line x1="14" y1="3" x2="14" y2="7"/>
-              <line x1="12" y1="5" x2="16" y2="5"/>
+              <line x1="14" y1="3" x2="14" y2="7"/><line x1="12" y1="5" x2="16" y2="5"/>
             </svg>
-            <span className="text-sm font-medium text-muted-foreground">Upload Image</span>
+            <span className="text-sm font-medium text-muted-foreground">{t('clothes.uploadImage')}</span>
           </div>
         )}
         {preview && (
           <div className="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center rounded-2xl">
-            <span className="text-white text-sm font-semibold">Click to change</span>
+            <span className="text-white text-sm font-semibold">{t('clothes.clickToChange')}</span>
           </div>
         )}
       </div>
       <input ref={fileRef} type="file" accept="image/*" className="hidden"
         onChange={e => { const f = e.target.files?.[0]; if (f) onFile(f); }} />
 
+      {/* Presets */}
       <div>
-        <p className="text-xs text-muted-foreground mb-2">Examples</p>
+        <p className="text-xs text-muted-foreground mb-2">{t('clothes.examples')}</p>
         <div className="grid grid-cols-3 gap-2">
-          {presets.map((src, i) => (
+          {presets.map((p) => (
             <button
-              key={i}
-              onClick={() => onPreset(src)}
-              className={`rounded-xl overflow-hidden border-2 transition-all duration-200 aspect-[3/2]
-                ${preview === src ? 'border-primary' : 'border-border hover:border-primary/60'}`}
+              key={p.url}
+              onClick={() => onPreset(p.url)}
+              className={`rounded-xl overflow-hidden border-2 transition-all duration-200 aspect-[3/4]
+                ${previewUrl === p.url ? 'border-primary' : 'border-border hover:border-primary/60'}`}
             >
-              <img src={src} alt={`preset ${i + 1}`} className="w-full h-full object-cover" />
+              <img src={p.url} alt={p.label} className="w-full h-full object-cover" />
             </button>
           ))}
         </div>
@@ -79,14 +84,25 @@ const UploadZone = ({ label, preview, onFile, onPreset, presets, dragging, setDr
   );
 };
 
+/* ── Page ────────────────────────────────────────── */
 const ClothesSwap = () => {
+  const { t } = useTranslation('tools');
+  const MODEL_PRESETS = [
+    { label: t('clothes.woman'),       url: MODEL_URLS[0] },
+    { label: t('clothes.woman') + ' 2', url: MODEL_URLS[1] },
+    { label: t('clothes.man'),         url: MODEL_URLS[2] },
+  ];
+  const OUTFIT_PRESETS = [
+    { label: t('clothes.uploadImage'), url: OUTFIT_URLS[0] },
+    { label: t('clothes.step2') + ' 2', url: OUTFIT_URLS[1] },
+    { label: t('clothes.step2') + ' 3', url: OUTFIT_URLS[2] },
+  ];
   const [modelFile,     setModelFile]     = useState(null);
   const [modelPreview,  setModelPreview]  = useState(null);
+  const [modelUrl,      setModelUrl]      = useState(null);
   const [outfitFile,    setOutfitFile]    = useState(null);
   const [outfitPreview, setOutfitPreview] = useState(null);
-  const [outfitIsUrl,   setOutfitIsUrl]   = useState(false);
-  const [modelDrag,     setModelDrag]     = useState(false);
-  const [outfitDrag,    setOutfitDrag]    = useState(false);
+  const [outfitUrl,     setOutfitUrl]     = useState(null);
   const [loading,       setLoading]       = useState(false);
   const [resultUrl,     setResultUrl]     = useState(null);
   const [generationId,  setGenerationId]  = useState(null);
@@ -98,30 +114,32 @@ const ClothesSwap = () => {
   const handleModelFile = (f) => {
     setModelFile(f);
     setModelPreview(URL.createObjectURL(f));
+    setModelUrl(null);
     setResultUrl(null);
   };
 
   const handleOutfitFile = (f) => {
     setOutfitFile(f);
     setOutfitPreview(URL.createObjectURL(f));
-    setOutfitIsUrl(false);
+    setOutfitUrl(null);
     setResultUrl(null);
   };
 
-  const handleModelPreset = (src) => {
+  const handleModelPreset = (url) => {
     setModelFile(null);
-    setModelPreview(src);
+    setModelPreview(url);
+    setModelUrl(url);
     setResultUrl(null);
   };
 
-  const handleOutfitPreset = (src) => {
+  const handleOutfitPreset = (url) => {
     setOutfitFile(null);
-    setOutfitPreview(src);
-    setOutfitIsUrl(true);
+    setOutfitPreview(url);
+    setOutfitUrl(url);
     setResultUrl(null);
   };
 
-  const canGenerate = modelPreview && outfitPreview && !loading;
+  const canGenerate = (modelFile || modelUrl) && (outfitFile || outfitUrl) && !loading;
 
   const handleGenerate = async () => {
     if (!canGenerate) return;
@@ -133,24 +151,11 @@ const ClothesSwap = () => {
       const userUid = localStorage.getItem('userUID') || '';
       const form    = new FormData();
 
-      // Model — always a file (either uploaded or we'll need to fetch preset)
-      if (modelFile) {
-        form.append('model', modelFile);
-      } else {
-        // fetch preset URL and convert to blob
-        const blob = await fetch(modelPreview).then(r => r.blob());
-        form.append('model', blob, 'model.jpg');
-      }
+      if (modelFile)  form.append('model', modelFile);
+      else            form.append('model_url', modelUrl);
 
-      // Outfit — file or URL
-      if (outfitFile) {
-        form.append('outfit', outfitFile);
-      } else if (outfitIsUrl) {
-        form.append('outfit_url', outfitPreview);
-      } else {
-        const blob = await fetch(outfitPreview).then(r => r.blob());
-        form.append('outfit', blob, 'outfit.jpg');
-      }
+      if (outfitFile) form.append('outfit', outfitFile);
+      else            form.append('outfit_url', outfitUrl);
 
       const res  = await fetch(`${API}/api/tools/clothes-swap`, {
         method:  'POST',
@@ -170,26 +175,27 @@ const ClothesSwap = () => {
 
   return (
     <div className={`py-12 ${CONTAINER.blog}`}>
+      <PageSEO title={t('seo.clothesSwap.title')} description={t('seo.clothesSwap.desc')} path="/tools/clothes-swap" />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <UploadZone
-          label="Step 1: Upload Your Model"
+          label={t('clothes.step1')}
           preview={modelPreview}
+          previewUrl={modelUrl}
           onFile={handleModelFile}
           onPreset={handleModelPreset}
           presets={MODEL_PRESETS}
-          dragging={modelDrag}
-          setDragging={setModelDrag}
           fileRef={modelRef}
+          t={t}
         />
         <UploadZone
-          label="Step 2: Select Your Outfit"
+          label={t('clothes.step2')}
           preview={outfitPreview}
+          previewUrl={outfitUrl}
           onFile={handleOutfitFile}
           onPreset={handleOutfitPreset}
           presets={OUTFIT_PRESETS}
-          dragging={outfitDrag}
-          setDragging={setOutfitDrag}
           fileRef={outfitRef}
+          t={t}
         />
       </div>
 
@@ -208,7 +214,7 @@ const ClothesSwap = () => {
             </svg>
             Generating…
           </>
-        ) : 'Generate'}
+        ) : t('actions.generate')}
       </button>
 
       {resultUrl && (

@@ -1,0 +1,186 @@
+{
+  "upload": {
+    "dropPhoto": "Drop your photo",
+    "dropVideo": "Drop your video",
+    "dropAudio": "Drag and drop",
+    "orClick": "or click to browse",
+    "jpgPng": "JPG or PNG",
+    "jpgPngHint": "JPG or PNG · clear subject works best",
+    "videoHint": "MP4, MOV, AVI, MKV",
+    "audioHint": "MP3, WAV, M4A",
+    "maxSize": "max {{max}} MB",
+    "clickToChange": "Click to change photo",
+    "uploadFirst": "Upload a photo first",
+    "uploadVideoFirst": "Upload a video first",
+    "selfieHint": "clear, well-lit selfie works best",
+    "yourPhoto": "Your Photo",
+    "voiceSample": "Voice sample",
+    "sampleHint": "3–10 sec",
+    "uploadOrPick": "Upload or pick a character"
+  },
+  "actions": {
+    "generate": "Generate",
+    "generating": "Generating...",
+    "removeBackground": "Remove Background",
+    "removingBackground": "Removing background…",
+    "removeWatermark": "Remove Watermark",
+    "removingWatermark": "Removing watermark…",
+    "colorize": "Colorize Photo",
+    "colorizing": "Colorizing…",
+    "applyFilter": "Apply Filter",
+    "uploadFirst": "Add a photo to generate",
+    "removeWatermarkFull": "Remove Watermark",
+    "processing": "Processing...",
+    "tryIt": "Try it"
+  },
+  "steps": {
+    "howItWorks": "How it works"
+  },
+  "result": {
+    "reference": "Reference",
+    "result": "Result"
+  },
+  "portrait": {
+    "title": "AI Portrait Editor",
+    "subtitle": "Upload your photo and describe the edit — AI will transform it.",
+    "gender": "Gender",
+    "pickOne": "Pick one",
+    "woman": "Woman",
+    "man": "Man",
+    "style": "Style",
+    "prompt": "Prompt",
+    "promptHint": "Be specific about scene, lighting and mood.",
+    "bodyPose": "Body Pose",
+    "optional": "Optional",
+    "addPose": "Add pose",
+    "aspectRatio": "Aspect Ratio",
+    "clearPose": "Clear pose"
+  },
+  "gameFilter": {
+    "title": "Game Filter",
+    "subtitle": "Transform any photo into a video game screenshot — from 8-bit to modern AAA.",
+    "chooseStyle": "Choose Style",
+    "yourPhoto": "Your Photo",
+    "sceneHint": "JPG or PNG · any scene works best"
+  },
+  "bgRemover": {
+    "title": "BG Remover",
+    "subtitle": "Remove the background from any photo instantly with AI.",
+    "step1": "Upload any photo with a clear subject",
+    "step2": "AI detects and removes the background",
+    "step3": "Download as transparent PNG"
+  },
+  "watermark": {
+    "title": "Watermark Remover",
+    "subtitle": "Intelligently removes text and logo watermarks while preserving the original texture.",
+    "videoTitle": "Video Watermark Remover",
+    "videoSubtitle": "Remove text and logo watermarks from videos while preserving original quality.",
+    "step1": "Upload any photo with a text or logo watermark",
+    "step2": "AI detects and removes the watermark intelligently",
+    "step3": "Background texture is preserved — no artifacts",
+    "videoStep1": "Upload any video with text or logo watermarks",
+    "videoStep2": "AI detects and removes watermarks frame by frame",
+    "videoStep3": "Download the clean video in original quality",
+    "videoNote": "Processing time depends on video length — may take several minutes.",
+    "image": "Image",
+    "video": "Video"
+  },
+  "colorize": {
+    "title": "Photo Colorizer",
+    "subtitle": "Bring black-and-white photos to life with AI-powered colorization.",
+    "step1": "Upload a black & white or grayscale photo",
+    "step2": "AI analyzes the scene and adds realistic colors",
+    "step3": "Download the colorized result in full quality",
+    "bwHint": "Black & white or grayscale images work best"
+  },
+  "clothes": {
+    "step1": "Step 1: Upload Your Model",
+    "step2": "Step 2: Select Your Outfit",
+    "examples": "Examples",
+    "uploadImage": "Upload Image",
+    "clickToChange": "Click to change",
+    "woman": "Woman",
+    "man": "Man"
+  },
+  "upscaler": {
+    "title": "AI Upscaler",
+    "subtitle": "Upscale images up to 4× without losing quality.",
+    "scale": "Scale",
+    "backendSoon": "Backend coming soon",
+    "lowResHint": "JPG or PNG · low-res images work best"
+  },
+  "voice": {
+    "title": "Voice Cloning",
+    "enterText": "Enter your text",
+    "textPlaceholder": "Type or paste the text you want to convert to speech…",
+    "speed": "Speed",
+    "current": "Current"
+  },
+  "vocalIsolator": {
+    "title": "Vocal Isolator",
+    "subtitle": "Separate vocals from music in any audio track. Upload a song and get the isolated vocals.",
+    "isolate": "Isolate Vocals"
+  },
+  "seo": {
+    "portrait": {
+      "title": "AI Portrait Editor — Transform Your Photos | FillTech",
+      "desc": "Upload your photo and transform it with AI portrait editing. Choose gender, style, pose and lighting. Powered by Google Gemini."
+    },
+    "gameFilter": {
+      "title": "Game Filter — Turn Photos into Game Screenshots | FillTech",
+      "desc": "Convert any photo into a retro video game screenshot. 7 styles: PS2, Arcade, 8-bit, PS3, Anime, AAA and more."
+    },
+    "bgRemover": {
+      "title": "Background Remover — Free AI Background Removal | FillTech",
+      "desc": "Remove image backgrounds instantly with AI. Get transparent PNG in seconds. Perfect for product photos and portraits."
+    },
+    "watermark": {
+      "title": "Watermark Remover — Remove Watermarks with AI | FillTech",
+      "desc": "Intelligently remove text and logo watermarks from photos while preserving original texture and quality."
+    },
+    "videoWatermark": {
+      "title": "Video Watermark Remover — Remove Watermarks from Video | FillTech",
+      "desc": "Remove watermarks from any video with AI. Frame-by-frame processing preserves original video quality."
+    },
+    "colorize": {
+      "title": "Photo Colorizer — Colorize Black & White Photos | FillTech",
+      "desc": "Bring old black and white photos to life with AI colorization. Realistic colors added automatically in seconds."
+    },
+    "clothesSwap": {
+      "title": "Clothes Swap — Try On Outfits with AI | FillTech",
+      "desc": "Try on different outfits virtually with AI. Upload your portrait and a clothing image to see the instant result."
+    },
+    "videoBg": {
+      "title": "Video BG Replace — Replace Video Backgrounds with AI | FillTech",
+      "desc": "Remove or replace the background of any video using AI. Upload a video and an optional background image."
+    },
+    "upscaler": {
+      "title": "AI Upscaler — Enlarge Images 4× Without Quality Loss | FillTech",
+      "desc": "Upscale photos and images up to 4× using AI super-resolution. Recover fine details without any quality loss."
+    },
+    "voiceClone": {
+      "title": "Voice Cloning — Clone Any Voice with AI | FillTech",
+      "desc": "Clone any voice from a 3–10 second audio sample. Convert text to speech in 600+ languages with your voice."
+    },
+    "vocalIsolator": {
+      "title": "Vocal Isolator — Separate Vocals from Music | FillTech",
+      "desc": "AI-powered vocal isolation. Upload any song and extract clean vocals from the instrumental track instantly."
+    },
+    "explore": {
+      "title": "Explore AI Tools — All Effects | FillTech",
+      "desc": "Discover all AI-powered tools: portrait editor, background remover, watermark remover, photo colorizer and more."
+    },
+    "blog": {
+      "title": "Blog — AI Tools Tips & News | FillTech",
+      "desc": "Read articles, tutorials and news about AI image and video processing tools from the FillTech team."
+    },
+    "history": {
+      "title": "My History — Generated Content | FillTech",
+      "desc": "View and manage all your AI-generated content. Download or delete your generations. Results kept for 7 days."
+    },
+    "billing": {
+      "title": "Billing — Account Balance | FillTech",
+      "desc": "Manage your balance, view spending history and configure automatic top-ups for AI generations."
+    }
+  }
+}

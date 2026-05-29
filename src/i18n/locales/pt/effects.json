@@ -1,0 +1,13 @@
+{
+  "watermark-remover": { "name": "Removedor de Marca d'Água", "desc": "Remova marcas d'água de qualquer imagem com IA" },
+  "bg-remover": { "name": "Removedor de Fundo", "desc": "Remova o fundo de fotos em segundos" },
+  "upscaler": { "name": "Upscaler", "desc": "Amplie imagens até 4× sem perder qualidade" },
+  "layers-cutter": { "name": "Cortador de Camadas", "desc": "Corte objetos de imagens em camadas separadas" },
+  "ps2-filter": { "name": "Filtro PS2", "desc": "Aplique filtro retrô estilo PS2 a qualquer foto" },
+  "ai-svg-maker": { "name": "Criador de SVG com IA", "desc": "Converta qualquer imagem em vetor SVG limpo" },
+  "clothes-swap": { "name": "Troca de Roupas", "desc": "Experimente roupas diferentes com IA" },
+  "photo-colorize": { "name": "Colorização de Foto", "desc": "Colorize fotos preto e branco com IA" },
+  "pdf-extractor": { "name": "Extrator de PDF", "desc": "Extraia texto e dados de arquivos PDF" },
+  "portrait": { "name": "Retrato", "desc": "Crie fotos de retrato incríveis com IA" },
+  "tryIt": "→ Experimentar"
+}

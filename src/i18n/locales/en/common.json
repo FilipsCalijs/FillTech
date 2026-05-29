@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "explore": "Explore",
+    "blog": "Blog",
+    "gameFilter": "Game Filter",
+    "voice": "Voice Clone",
+    "vocalIsolator": "Vocal Isolator",
+    "clothes": "Clothes",
+    "plan": "Plan",
+    "history": "History",
+    "billing": "Billing",
+    "signOut": "Sign out",
+    "admin": "Admin",
+    "loggedInAs": "Logged in as",
+    "login": "Login",
+    "register": "Register",
+    "portrait": "Portrait"
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode"
+  },
+  "actions": {
+    "download": "Download",
+    "openUrl": "Open URL",
+    "delete": "Delete",
+    "generate": "Generate",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "back": "Back",
+    "upload": "Upload",
+    "change": "Change",
+    "addFunds": "Add funds"
+  },
+  "status": {
+    "completed": "Completed",
+    "failed": "Failed",
+    "pending": "Pending",
+    "processing": "Processing"
+  },
+  "errors": {
+    "fileTooLarge": "File too large: {{size}} MB. Max {{max}} MB.",
+    "generationFailed": "Generation failed",
+    "required": "This field is required",
+    "wentWrong": "Something went wrong. Please try again."
+  },
+  "loading": "Loading...",
+  "comingSoon": "Coming soon",
+  "result": "Result",
+  "reference": "Reference",
+  "current": "Current",
+  "footer": {
+    "rights": "All rights reserved.",
+    "description": "FillTech offers AI-powered tools for image and video processing. Remove backgrounds, enhance photos, swap clothes and more — instantly and effortlessly. Try FillTech today.",
+    "legal": "Legal",
+    "tools": "Tools",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy"
+  },
+  "exploreSubtitle": "Powerful AI tools to transform your images and files.",
+  "notFound": {
+    "title": "Page not found",
+    "desc": "Sorry, this page doesn't exist or has been moved.",
+    "back": "Back to home"
+  },
+  "seo": {
+    "explore": {
+      "title": "Explore AI Tools — All Effects | FillTech",
+      "desc": "Discover all AI-powered tools: portrait editor, background remover, watermark remover, photo colorizer and more."
+    },
+    "history": {
+      "title": "My History — Generated Content | FillTech",
+      "desc": "View and manage all your AI-generated content. Download or delete your generations. Results kept for 7 days."
+    },
+    "billing": {
+      "title": "Billing — Account Balance | FillTech",
+      "desc": "Manage your balance, view spending history and configure automatic top-ups for AI generations."
+    },
+    "terms": {
+      "title": "Terms of Service | FillTech",
+      "desc": "Read FillTech's terms of service and usage conditions."
+    },
+    "privacy": {
+      "title": "Privacy Policy | FillTech",
+      "desc": "Learn how FillTech collects, uses and protects your personal data."
+    },
+    "cookies": {
+      "title": "Cookie Policy | FillTech",
+      "desc": "Understand how FillTech uses cookies and similar tracking technologies."
+    }
+  }
+}

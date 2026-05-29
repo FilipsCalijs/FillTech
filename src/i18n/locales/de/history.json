@@ -1,0 +1,29 @@
+{
+  "title": "Verlauf",
+  "myHistory": "Mein Verlauf",
+  "total": "Gesamt",
+  "table": {
+    "output": "Ergebnis",
+    "model": "Werkzeug",
+    "status": "Status",
+    "created": "Erstellt",
+    "cost": "Kosten",
+    "actions": "Aktionen",
+    "user": "Benutzer"
+  },
+  "noGenerations": "Keine Generierungen gefunden.",
+  "sortByDate": "Nach Datum",
+  "sortByModel": "Nach Werkzeug",
+  "searchById": "Nach ID suchen…",
+  "selected": "{{count}} ausgewählt",
+  "justNow": "gerade eben",
+  "pagination": "{{page}} / {{total}}",
+  "generationDeleted": "Generierung gelöscht.",
+  "completed": "Abgeschlossen",
+  "failed": "Fehlgeschlagen",
+  "pending": "Ausstehend",
+  "processing": "Verarbeitung",
+  "prev": "Zurück",
+  "next": "Weiter",
+  "perPage": "/Seite"
+}

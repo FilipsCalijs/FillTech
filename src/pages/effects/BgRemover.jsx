@@ -1,5 +1,7 @@
 import { Scissors, Zap, Shield, ImageDown } from 'lucide-react';
 import { useToolProcessor } from '@/hooks/useToolProcessor';
+import { useTranslation } from 'react-i18next';
+import PageSEO from '@/components/seo/PageSEO';
 
 import ToolHero from '@/lib/ToolHero';
 import Result from '@/lib/Result';
@@ -79,11 +81,13 @@ const FAQS = [
 ];
 
 const BgRemover = () => {
+  const { t } = useTranslation('tools');
   const { file, previewUrl, loading, resultUrl, error, handleFileDrop, handleSubmit } =
     useToolProcessor('bg-remove');
 
   return (
     <div className="py-8 md:py-12 flex flex-col items-center gap-16">
+      <PageSEO title={t('seo.bgRemover.title')} description={t('seo.bgRemover.desc')} path="/tools/bg-remover" />
 
       <ToolHero
         title="Remove Background with AI"

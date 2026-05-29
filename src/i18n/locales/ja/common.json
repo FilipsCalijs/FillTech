@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "explore": "探索",
+    "blog": "ブログ",
+    "gameFilter": "ゲームフィルター",
+    "voice": "音声クローン",
+    "vocalIsolator": "ボーカル分離",
+    "clothes": "衣装",
+    "plan": "プラン",
+    "history": "履歴",
+    "billing": "請求",
+    "signOut": "サインアウト",
+    "admin": "管理者",
+    "loggedInAs": "ログイン中",
+    "login": "ログイン",
+    "register": "登録",
+    "portrait": "ポートレート"
+  },
+  "theme": {
+    "light": "ライトモード",
+    "dark": "ダークモード"
+  },
+  "actions": {
+    "download": "ダウンロード",
+    "openUrl": "URLを開く",
+    "delete": "削除",
+    "generate": "生成",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "close": "閉じる",
+    "back": "戻る",
+    "upload": "アップロード",
+    "change": "変更",
+    "addFunds": "資金を追加"
+  },
+  "status": {
+    "completed": "完了",
+    "failed": "失敗",
+    "pending": "保留中",
+    "processing": "処理中"
+  },
+  "errors": {
+    "fileTooLarge": "ファイルが大きすぎます: {{size}} MB。最大 {{max}} MB。",
+    "generationFailed": "生成に失敗しました",
+    "required": "このフィールドは必須です",
+    "wentWrong": "エラーが発生しました。もう一度お試しください。"
+  },
+  "exploreSubtitle": "画像やファイルを変換する強力なAIツール。",
+  "notFound": {
+    "title": "ページが見つかりません",
+    "desc": "申し訳ありませんが、このページは存在しないか移動されました。",
+    "back": "ホームに戻る"
+  },
+  "loading": "読み込み中...",
+  "comingSoon": "近日公開",
+  "result": "結果",
+  "reference": "参照",
+  "current": "現在",
+  "footer": {
+    "rights": "全著作権所有。",
+    "description": "FillTechは画像・動画処理のAIツールを提供します。背景削除、写真強化、衣装交換など、即座に簡単に。",
+    "legal": "法的情報",
+    "tools": "ツール",
+    "terms": "利用規約",
+    "privacy": "プライバシーポリシー",
+    "cookies": "Cookieポリシー"
+  },
+  "seo": {
+    "explore": {
+      "title": "AIツールを探索 — 全エフェクト | FillTech",
+      "desc": "すべてのAIツールを発見: ポートレートエディター、背景削除、透かし削除、写真カラー化など。"
+    },
+    "history": {
+      "title": "マイ履歴 — 生成コンテンツ | FillTech",
+      "desc": "AI生成コンテンツをすべて表示・管理。生成物をダウンロードまたは削除できます。結果は7日間保持。"
+    },
+    "billing": {
+      "title": "請求 — アカウント残高 | FillTech",
+      "desc": "残高管理、支出履歴の確認、AI生成の自動チャージ設定。"
+    },
+    "terms": {
+      "title": "利用規約 | FillTech",
+      "desc": "FillTechの利用規約と使用条件をお読みください。"
+    },
+    "privacy": {
+      "title": "プライバシーポリシー | FillTech",
+      "desc": "FillTechが個人データをどのように収集・使用・保護するかをご覧ください。"
+    },
+    "cookies": {
+      "title": "Cookieポリシー | FillTech",
+      "desc": "FillTechがCookieおよび追跡技術をどのように使用するかをご理解ください。"
+    }
+  }
+}

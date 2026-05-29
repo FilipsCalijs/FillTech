@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "explore": "Explorar",
+    "blog": "Blog",
+    "gameFilter": "Filtro de Juego",
+    "voice": "Clonar Voz",
+    "vocalIsolator": "Aislador Vocal",
+    "clothes": "Ropa",
+    "plan": "Plan",
+    "history": "Historial",
+    "billing": "Facturación",
+    "signOut": "Cerrar sesión",
+    "admin": "Admin",
+    "loggedInAs": "Conectado como",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "portrait": "Retrato"
+  },
+  "theme": {
+    "light": "Modo Claro",
+    "dark": "Modo Oscuro"
+  },
+  "actions": {
+    "download": "Descargar",
+    "openUrl": "Abrir URL",
+    "delete": "Eliminar",
+    "generate": "Generar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "upload": "Subir",
+    "change": "Cambiar",
+    "addFunds": "Añadir fondos"
+  },
+  "status": {
+    "completed": "Completado",
+    "failed": "Fallido",
+    "pending": "Pendiente",
+    "processing": "Procesando"
+  },
+  "errors": {
+    "fileTooLarge": "Archivo demasiado grande: {{size}} MB. Máx {{max}} MB.",
+    "generationFailed": "Error en la generación",
+    "required": "Este campo es obligatorio",
+    "wentWrong": "Algo salió mal. Por favor, inténtalo de nuevo."
+  },
+  "exploreSubtitle": "Herramientas de IA potentes para transformar tus imágenes y archivos.",
+  "notFound": {
+    "title": "Página no encontrada",
+    "desc": "Lo sentimos, esta página no existe o ha sido movida.",
+    "back": "Volver al inicio"
+  },
+  "loading": "Cargando...",
+  "comingSoon": "Próximamente",
+  "result": "Resultado",
+  "reference": "Referencia",
+  "current": "Actual",
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "description": "FillTech ofrece herramientas de IA para el procesamiento de imágenes y vídeos. Elimina fondos, mejora fotos, cambia ropa y más — al instante.",
+    "legal": "Legal",
+    "tools": "Herramientas",
+    "terms": "Términos de Servicio",
+    "privacy": "Política de Privacidad",
+    "cookies": "Política de Cookies"
+  },
+  "seo": {
+    "explore": {
+      "title": "Explorar Herramientas de IA — Todos los Efectos | FillTech",
+      "desc": "Descubre todas las herramientas de IA: editor de retratos, eliminador de fondo, eliminador de marcas de agua, colorizador de fotos y más."
+    },
+    "history": {
+      "title": "Mi Historial — Contenido Generado | FillTech",
+      "desc": "Visualiza y gestiona todo tu contenido generado por IA. Descarga o elimina tus generaciones. Resultados guardados 7 días."
+    },
+    "billing": {
+      "title": "Facturación — Saldo de Cuenta | FillTech",
+      "desc": "Gestiona tu saldo, visualiza el historial de gastos y configura recargas automáticas para generaciones de IA."
+    },
+    "terms": {
+      "title": "Términos de Servicio | FillTech",
+      "desc": "Lee los términos de servicio y condiciones de uso de FillTech."
+    },
+    "privacy": {
+      "title": "Política de Privacidad | FillTech",
+      "desc": "Conoce cómo FillTech recopila, usa y protege tus datos personales."
+    },
+    "cookies": {
+      "title": "Política de Cookies | FillTech",
+      "desc": "Entiende cómo FillTech usa cookies y tecnologías de seguimiento."
+    }
+  }
+}

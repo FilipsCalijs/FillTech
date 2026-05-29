@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
+import { useLang } from '@/contexts/LangContext';
+import LangLink from '@/components/routing/LangLink';
+import PageSEO from '@/components/seo/PageSEO';
 import { ArrowLeft, Pencil } from 'lucide-react';
 import { CONTAINER } from '@/config/sizes';
 import { Typography } from '@/components/ui/Typography';
@@ -11,6 +15,9 @@ import Comments from '@/components/blog/Comments';
 const API = 'http://localhost:5200';
 
 const BlogPost = () => {
+  const { t }    = useTranslation('blog');
+  const { t: tc } = useTranslation('common');
+  const lang     = useLang();
   const { slug } = useParams();
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -25,16 +32,16 @@ const BlogPost = () => {
 
   if (loading) return (
     <div className="py-12 text-center">
-      <Typography variant="body2" color="muted">Загрузка...</Typography>
+      <Typography variant="body2" color="muted">{tc('loading')}</Typography>
     </div>
   );
 
   if (notFound) return (
     <div className="py-12 text-center flex flex-col items-center gap-4">
-      <Typography variant="body1" color="muted">Статья не найдена</Typography>
-      <Link to="/blog" className="text-primary hover:underline">
-        <Typography variant="body2" color="primary">← Вернуться в блог</Typography>
-      </Link>
+      <Typography variant="body1" color="muted">{t('noPosts')}</Typography>
+      <LangLink to="/blog" className="text-primary hover:underline text-sm">
+        ← {t('backToBlog')}
+      </LangLink>
     </div>
   );
 
@@ -53,23 +60,23 @@ const BlogPost = () => {
         {post.published_at && <meta property="article:published_time" content={post.published_at} />}
       </Helmet>
 
-      {/* Навигация + кнопка редактирования */}
+      {/* Back + edit */}
       <div className={`pt-12 pb-6 ${CONTAINER.post}`}>
         <div className="flex items-center justify-between">
-          <Link
+          <LangLink
             to="/blog"
             className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors"
           >
             <ArrowLeft size={14} />
-            <Typography variant="body2" color="muted">Блог</Typography>
-          </Link>
+            <Typography variant="body2" color="muted">{t('backToBlog')}</Typography>
+          </LangLink>
 
           {localStorage.getItem('userRole') === 'admin' && (
-            <Link to={`/admin/blog/${post.id}/edit`}>
+            <LangLink to={`/admin/blog/${post.id}/edit`}>
               <Button variant="outline" size="sm">
-                <Pencil size={14} className="mr-1.5" /> Редактировать
+                <Pencil size={14} className="mr-1.5" /> {t('admin.edit')}
               </Button>
-            </Link>
+            </LangLink>
           )}
         </div>
       </div>
@@ -93,7 +100,7 @@ const BlogPost = () => {
           </Typography>
 
           <Typography variant="body2" color="muted" className="block mb-10">
-            {new Date(post.published_at).toLocaleDateString('ru-RU', {
+            {new Date(post.published_at).toLocaleDateString(lang, {
               day: 'numeric',
               month: 'long',
               year: 'numeric',

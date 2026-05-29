@@ -1,18 +1,14 @@
-import React from "react";
-import { Navigate } from "react-router-dom";
-import { useAuth } from "../../contexts/authContext"; 
+import { Navigate, useParams } from 'react-router-dom';
+import { useAuth } from '../../contexts/authContext';
+import { SUPPORTED_LANGS } from '@/i18n/index';
 
 const ProtectedRoute = ({ children }) => {
   const { userLoggedIn, loading } = useAuth();
+  const { lang } = useParams();
+  const validLang = SUPPORTED_LANGS.includes(lang) ? lang : 'en';
 
-  if (loading) {
-    return <div>Loading...</div>; 
-  }
-
-  if (!userLoggedIn) {
-    return <Navigate to="/login" replace />;
-  }
-
+  if (loading) return null;
+  if (!userLoggedIn) return <Navigate to={`/${validLang}/login`} replace />;
   return children;
 };
 

@@ -1,0 +1,30 @@
+{
+  "title": "History",
+  "myHistory": "My History",
+  "total": "Total",
+  "table": {
+    "output": "Output",
+    "model": "Model",
+    "status": "Status",
+    "created": "Created",
+    "cost": "Cost",
+    "actions": "Actions",
+    "user": "User"
+  },
+  "noGenerations": "No generations found.",
+  "sortByDate": "Sort by date",
+  "sortByModel": "Sort by model",
+  "searchById": "Search by ID…",
+  "selected": "{{count}} selected",
+  "justNow": "just now",
+  "pagination": "{{page}} / {{total}}",
+  "deleteGeneration": "Generation deleted.",
+  "generationDeleted": "Generation deleted.",
+  "completed": "Completed",
+  "failed": "Failed",
+  "pending": "Pending",
+  "processing": "Processing",
+  "prev": "Back",
+  "next": "Next",
+  "perPage": "/page"
+}

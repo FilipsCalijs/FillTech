@@ -2,12 +2,15 @@ import { useState, useRef, useCallback } from 'react';
 import { Typography } from '@/components/ui/Typography';
 import { CONTAINER } from '@/config/sizes';
 import ResultPanel from '@/components/ui/ResultPanel';
+import { useTranslation } from 'react-i18next';
+import PageSEO from '@/components/seo/PageSEO';
 
 const API = 'http://localhost:5200';
 const MAX_MB   = 22;
 const MAX_SIZE = MAX_MB * 1024 * 1024;
 
 const PhotoColorize = () => {
+  const { t } = useTranslation('tools');
   const [file,         setFile]         = useState(null);
   const [preview,      setPreview]      = useState(null);
   const [dragging,     setDragging]     = useState(false);
@@ -64,12 +67,9 @@ const PhotoColorize = () => {
 
   return (
     <div className={`py-12 ${CONTAINER.blog}`}>
-      <Typography variant="h2" weight="bold" className="block mb-2">
-        Photo Colorizer
-      </Typography>
-      <Typography variant="body1" color="muted" className="block mb-10">
-        Bring black-and-white photos to life with AI-powered colorization.
-      </Typography>
+      <PageSEO title={t('seo.colorize.title')} description={t('seo.colorize.desc')} path="/tools/photo-colorize" />
+      <Typography variant="h2" weight="bold" className="block mb-2">{t('colorize.title')}</Typography>
+      <Typography variant="body1" color="muted" className="block mb-10">{t('colorize.subtitle')}</Typography>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
 
@@ -121,9 +121,9 @@ const PhotoColorize = () => {
             <Typography variant="h4" weight="semibold">How it works</Typography>
             <ul className="flex flex-col gap-3 text-sm text-muted-foreground">
               {[
-                'Upload a black & white or grayscale photo',
-                'AI analyzes the scene and adds realistic colors',
-                'Download the colorized result in full quality',
+                t('colorize.step1'),
+                t('colorize.step2'),
+                t('colorize.step3'),
               ].map((s, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span className="shrink-0 w-5 h-5 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center font-bold mt-0.5">
@@ -153,7 +153,7 @@ const PhotoColorize = () => {
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
                 </svg>
-                {file ? 'Colorize Photo' : 'Upload a photo first'}
+                {file ? t('actions.colorize') : t('upload.uploadFirst')}
               </>
             )}
           </button>

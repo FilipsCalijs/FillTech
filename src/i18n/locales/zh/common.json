@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "explore": "探索",
+    "blog": "博客",
+    "gameFilter": "游戏滤镜",
+    "voice": "声音克隆",
+    "vocalIsolator": "人声分离",
+    "clothes": "换装",
+    "plan": "套餐",
+    "history": "历史",
+    "billing": "账单",
+    "signOut": "退出登录",
+    "admin": "管理员",
+    "loggedInAs": "已登录为",
+    "login": "登录",
+    "register": "注册",
+    "portrait": "人像"
+  },
+  "theme": {
+    "light": "浅色模式",
+    "dark": "深色模式"
+  },
+  "actions": {
+    "download": "下载",
+    "openUrl": "打开链接",
+    "delete": "删除",
+    "generate": "生成",
+    "save": "保存",
+    "cancel": "取消",
+    "close": "关闭",
+    "back": "返回",
+    "upload": "上传",
+    "change": "更改",
+    "addFunds": "充值"
+  },
+  "status": {
+    "completed": "已完成",
+    "failed": "失败",
+    "pending": "待处理",
+    "processing": "处理中"
+  },
+  "errors": {
+    "fileTooLarge": "文件过大：{{size}} MB。最大 {{max}} MB。",
+    "generationFailed": "生成失败",
+    "required": "此字段为必填项",
+    "wentWrong": "出现错误，请重试。"
+  },
+  "exploreSubtitle": "强大的 AI 工具，轻松变换您的图片和文件。",
+  "notFound": {
+    "title": "页面未找到",
+    "desc": "抱歉，此页面不存在或已被移动。",
+    "back": "返回首页"
+  },
+  "loading": "加载中...",
+  "comingSoon": "即将推出",
+  "result": "结果",
+  "reference": "参考",
+  "current": "当前",
+  "footer": {
+    "rights": "版权所有。",
+    "description": "FillTech 提供 AI 驱动的图像和视频处理工具。即时轻松地去除背景、增强照片、换装等。",
+    "legal": "法律",
+    "tools": "工具",
+    "terms": "服务条款",
+    "privacy": "隐私政策",
+    "cookies": "Cookie 政策"
+  },
+  "seo": {
+    "explore": {
+      "title": "探索 AI 工具 — 所有效果 | FillTech",
+      "desc": "发现所有 AI 工具：人像编辑器、背景去除器、水印去除器、照片上色器等。"
+    },
+    "history": {
+      "title": "我的历史 — 生成内容 | FillTech",
+      "desc": "查看和管理所有 AI 生成内容。下载或删除您的生成结果。结果保留 7 天。"
+    },
+    "billing": {
+      "title": "账单 — 账户余额 | FillTech",
+      "desc": "管理余额、查看消费历史并配置 AI 生成的自动充值。"
+    },
+    "terms": {
+      "title": "服务条款 | FillTech",
+      "desc": "阅读 FillTech 的服务条款和使用条件。"
+    },
+    "privacy": {
+      "title": "隐私政策 | FillTech",
+      "desc": "了解 FillTech 如何收集、使用和保护您的个人数据。"
+    },
+    "cookies": {
+      "title": "Cookie 政策 | FillTech",
+      "desc": "了解 FillTech 如何使用 Cookie 和追踪技术。"
+    }
+  }
+}

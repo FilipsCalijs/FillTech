@@ -7,6 +7,8 @@ import bgRemove from './bgRemove.js';
 import photoColorize from './photoColorize.js';
 import clothesSwap from './clothesSwap.js';
 import videoWatermarkRemove from './videoWatermarkRemove.js';
+import videoBgReplace from './videoBgReplace.js';
+import vocalIsolator from './vocalIsolator.js';
 
 const router = express.Router();
 
@@ -18,5 +20,7 @@ router.use('/bg-remove', bgRemove);
 router.use('/photo-colorize', photoColorize);
 router.use('/clothes-swap', clothesSwap);
 router.use('/video-watermark-remove', videoWatermarkRemove);
+router.use('/video-bg-replace', videoBgReplace);
+router.use('/vocal-isolator', vocalIsolator);
 
 export default router;

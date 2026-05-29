@@ -1,0 +1,30 @@
+{
+  "title": "历史",
+  "myHistory": "我的历史",
+  "total": "总计",
+  "table": {
+    "output": "输出",
+    "model": "模型",
+    "status": "状态",
+    "created": "创建时间",
+    "cost": "费用",
+    "actions": "操作",
+    "user": "用户"
+  },
+  "noGenerations": "未找到生成记录。",
+  "sortByDate": "按日期排序",
+  "sortByModel": "按模型排序",
+  "searchById": "按 ID 搜索…",
+  "selected": "已选 {{count}} 个",
+  "justNow": "刚刚",
+  "pagination": "{{page}} / {{total}}",
+  "deleteGeneration": "生成记录已删除。",
+  "generationDeleted": "生成记录已删除。",
+  "completed": "已完成",
+  "failed": "失败",
+  "pending": "待处理",
+  "processing": "处理中",
+  "prev": "上一页",
+  "next": "下一页",
+  "perPage": "/页"
+}

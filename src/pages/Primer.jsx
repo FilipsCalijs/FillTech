@@ -10,6 +10,7 @@ import CardRightImage from '@/lib/CardRightImage';
 import FAQSection from '@/lib/FAQSection';
 import OtherProducts from '@/lib/OtherProducts';
 import Result from '@/lib/Result';
+import TextSection from '@/lib/TextSection';
 
 const DEMO_STEPS = [
   { title: '1. Upload your image', description: 'Drag & drop or click to upload any photo.' },
@@ -125,6 +126,13 @@ const Primer = () => {
 
       <PrimerBlock name="FAQSection">
         <FAQSection title="Frequently Asked Questions" faqs={DEMO_FAQS} />
+      </PrimerBlock>
+
+      <PrimerBlock name="TextSection">
+        <TextSection
+          title="Why This Tool Changes Everything"
+          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        />
       </PrimerBlock>
 
       <PrimerBlock name="OtherProducts">

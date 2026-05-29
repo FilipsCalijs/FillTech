@@ -148,9 +148,9 @@ const Login = () => {
                                 <label className="text-sm font-semibold text-foreground">Password</label>
                                 <Button
                                     type="button"
-                                    variant="primary"
+                                    variant="ghost"
                                     size="sm"
-                                    className="text-primary hover:underline p-4"
+                                    className="text-foreground hover:underline p-4"
                                     onClick={onResetPassword}
                                 >
                                     Forgot password?

@@ -3,17 +3,17 @@ import { cva } from 'class-variance-authority';
 export const typographyVariants = cva('', {
   variants: {
     variant: {
-      h1: 'text-3xl font-bold',
-      h2: 'text-2xl font-semibold',
-      h3: 'text-3xl font-semibold',
-      h4: 'text-lg font-semibold',
-      h5: 'text-sm font-medium',
-      h6: 'text-xs font-medium',
-      body1: 'text-base',
-      body2: 'text-sm',
-      body3: 'text-xs',
-      caption: 'text-xs',
-      label: 'text-sm font-medium',
+      h1: 'text-[40px] leading-tight font-bold',
+      h2: 'text-h2 font-semibold',
+      h3: 'text-h3 font-semibold',
+      h4: 'text-xl font-semibold',
+      h5: 'text-base font-medium',
+      h6: 'text-sm font-medium',
+      body1: 'text-body',
+      body2: 'text-base',
+      body3: 'text-sm',
+      caption: 'text-sm',
+      label: 'text-base font-medium',
     },
     color: {
       primary: 'text-primary',

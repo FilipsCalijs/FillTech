@@ -1,0 +1,29 @@
+{
+  "title": "История",
+  "myHistory": "Моя история",
+  "total": "Все",
+  "table": {
+    "output": "Результат",
+    "model": "Инструмент",
+    "status": "Статус",
+    "created": "Создано",
+    "cost": "Стоимость",
+    "actions": "Действия",
+    "user": "Пользователь"
+  },
+  "noGenerations": "Генераций не найдено.",
+  "sortByDate": "По дате",
+  "sortByModel": "По инструменту",
+  "searchById": "Поиск по ID…",
+  "selected": "Выбрано: {{count}}",
+  "justNow": "только что",
+  "pagination": "{{page}} / {{total}}",
+  "generationDeleted": "Генерация удалена.",
+  "completed": "Завершено",
+  "failed": "Ошибка",
+  "pending": "Ожидание",
+  "processing": "Обработка",
+  "prev": "Назад",
+  "next": "Далее",
+  "perPage": "/стр."
+}

@@ -1,6 +1,8 @@
 import { useState, useRef, useCallback } from 'react';
 import { Typography } from '@/components/ui/Typography';
 import { CONTAINER } from '@/config/sizes';
+import { useTranslation } from 'react-i18next';
+import PageSEO from '@/components/seo/PageSEO';
 
 const MAX_MB   = 22;
 const MAX_SIZE = MAX_MB * 1024 * 1024;
@@ -8,6 +10,7 @@ const MAX_SIZE = MAX_MB * 1024 * 1024;
 const SCALES = ['2×', '4×'];
 
 const Upscaler = () => {
+  const { t } = useTranslation('tools');
   const [,         setFile]     = useState(null);
   const [preview,  setPreview]  = useState(null);
   const [dragging, setDragging] = useState(false);
@@ -34,6 +37,7 @@ const Upscaler = () => {
 
   return (
     <div className={`py-12 ${CONTAINER.blog}`}>
+      <PageSEO title={t('seo.upscaler.title')} description={t('seo.upscaler.desc')} path="/tools/upscaler" />
       <Typography variant="h2" weight="bold" className="block mb-2">
         AI Upscaler
       </Typography>
@@ -115,7 +119,7 @@ const Upscaler = () => {
             <p>Upscales images using AI super-resolution. Recovers fine details, removes compression artifacts, and sharpens edges.</p>
             <div className="flex items-center gap-2 mt-1">
               <span className="w-2 h-2 rounded-full bg-yellow-400" />
-              <span>Backend coming soon</span>
+              <span>{t('upscaler.backendSoon')}</span>
             </div>
           </div>
 

@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "explore": "Pārlūkot",
+    "blog": "Blogs",
+    "gameFilter": "Spēļu filtrs",
+    "voice": "Balss klons",
+    "vocalIsolator": "Vokāla izolators",
+    "clothes": "Apģērbs",
+    "plan": "Tarifi",
+    "history": "Vēsture",
+    "billing": "Norēķini",
+    "signOut": "Izrakstīties",
+    "admin": "Admin",
+    "loggedInAs": "Pieteicies kā",
+    "login": "Pieteikties",
+    "register": "Reģistrēties",
+    "portrait": "Portrets"
+  },
+  "theme": {
+    "light": "Gaišais režīms",
+    "dark": "Tumšais režīms"
+  },
+  "actions": {
+    "download": "Lejupielādēt",
+    "openUrl": "Atvērt URL",
+    "delete": "Dzēst",
+    "generate": "Ģenerēt",
+    "save": "Saglabāt",
+    "cancel": "Atcelt",
+    "close": "Aizvērt",
+    "back": "Atpakaļ",
+    "upload": "Augšupielādēt",
+    "change": "Mainīt",
+    "addFunds": "Papildināt"
+  },
+  "status": {
+    "completed": "Pabeigts",
+    "failed": "Kļūda",
+    "pending": "Gaida",
+    "processing": "Apstrādā"
+  },
+  "errors": {
+    "fileTooLarge": "Fails pārāk liels: {{size}} MB. Maks {{max}} MB.",
+    "generationFailed": "Ģenerēšana neizdevās",
+    "required": "Šis lauks ir obligāts",
+    "wentWrong": "Kaut kas nogāja greizi. Lūdzu, mēģiniet vēlreiz."
+  },
+  "exploreSubtitle": "Jaudīgi AI rīki attēlu un failu apstrādei.",
+  "notFound": {
+    "title": "Lapa nav atrasta",
+    "desc": "Diemžēl šāda lapa neeksistē vai ir pārvietota.",
+    "back": "Atpakaļ uz sākumlapu"
+  },
+  "loading": "Ielādē...",
+  "comingSoon": "Drīzumā",
+  "result": "Rezultāts",
+  "reference": "Oriģināls",
+  "current": "Pašreizējais",
+  "footer": {
+    "rights": "Visas tiesības aizsargātas.",
+    "description": "FillTech piedāvā AI rīkus attēlu un video apstrādei. Noņem fonus, uzlabo fotogrāfijas, maini apģērbu un daudz ko citu — uzreiz un bez piepūles. Izmēģini FillTech šodien.",
+    "legal": "Juridiskā info",
+    "tools": "Rīki",
+    "terms": "Lietošanas noteikumi",
+    "privacy": "Privātuma politika",
+    "cookies": "Sīkdatņu politika"
+  },
+  "seo": {
+    "explore": {
+      "title": "AI rīki — Visi efekti | FillTech",
+      "desc": "Atklāj visus AI rīkus: portreta redaktors, fona noņemšana, ūdenszīmju noņemšana, foto iekrāsošana un citi."
+    },
+    "history": {
+      "title": "Vēsture — Manas ģenerācijas | FillTech",
+      "desc": "Skatīt un pārvaldīt visas AI ģenerācijas. Lejupielādēt vai dzēst rezultātus. Saglabājas 7 dienas."
+    },
+    "billing": {
+      "title": "Norēķini — Konta atlikums | FillTech",
+      "desc": "Pārvaldīt atlikumu, skatīt tēriņu vēsturi un konfigurēt automātisko papildināšanu."
+    },
+    "terms": {
+      "title": "Lietošanas noteikumi | FillTech",
+      "desc": "Iepazīstieties ar FillTech lietošanas noteikumiem."
+    },
+    "privacy": {
+      "title": "Privātuma politika | FillTech",
+      "desc": "Uzziniet, kā FillTech vāc, izmanto un aizsargā jūsu personas datus."
+    },
+    "cookies": {
+      "title": "Sīkdatņu politika | FillTech",
+      "desc": "Uzziniet, kā FillTech izmanto sīkdatnes un līdzīgas tehnoloģijas."
+    }
+  }
+}

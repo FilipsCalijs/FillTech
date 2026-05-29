@@ -1,0 +1,110 @@
+{
+  "upload": {
+    "dropPhoto": "사진을 여기에 놓으세요",
+    "dropVideo": "동영상을 여기에 놓으세요",
+    "dropAudio": "드래그 앤 드롭",
+    "orClick": "또는 클릭하여 찾아보기",
+    "jpgPng": "JPG 또는 PNG",
+    "jpgPngHint": "JPG 또는 PNG · 명확한 피사체가 최적",
+    "videoHint": "MP4, MOV, AVI, MKV",
+    "audioHint": "MP3, WAV, M4A",
+    "maxSize": "최대 {{max}} MB",
+    "clickToChange": "클릭하여 사진 변경",
+    "uploadFirst": "먼저 사진을 업로드하세요",
+    "uploadVideoFirst": "먼저 동영상을 업로드하세요",
+    "selfieHint": "밝고 선명한 셀피가 최적",
+    "yourPhoto": "내 사진",
+    "voiceSample": "음성 샘플",
+    "sampleHint": "3–10초",
+    "uploadOrPick": "업로드하거나 캐릭터 선택"
+  },
+  "actions": {
+    "generate": "생성",
+    "generating": "생성 중...",
+    "removeBackground": "배경 제거",
+    "removingBackground": "배경 제거 중…",
+    "removeWatermark": "워터마크 제거",
+    "removingWatermark": "워터마크 제거 중…",
+    "colorize": "사진 채색",
+    "colorizing": "채색 중…",
+    "applyFilter": "필터 적용",
+    "uploadFirst": "사진을 추가하여 생성",
+    "removeWatermarkFull": "워터마크 제거",
+    "processing": "처리 중...",
+    "tryIt": "사용해보기"
+  },
+  "steps": { "howItWorks": "사용 방법" },
+  "result": { "reference": "참조", "result": "결과" },
+  "portrait": {
+    "title": "AI 포트레이트 에디터",
+    "subtitle": "사진을 업로드하고 편집을 설명하면 AI가 변환합니다.",
+    "gender": "성별", "pickOne": "선택", "woman": "여성", "man": "남성",
+    "style": "스타일", "prompt": "프롬프트", "promptHint": "장면, 조명, 분위기를 구체적으로 작성하세요.",
+    "bodyPose": "포즈", "optional": "선택 사항", "addPose": "포즈 추가",
+    "aspectRatio": "화면 비율", "clearPose": "포즈 제거"
+  },
+  "gameFilter": {
+    "title": "게임 필터", "subtitle": "모든 사진을 게임 스크린샷으로 변환.",
+    "chooseStyle": "스타일 선택", "yourPhoto": "내 사진", "sceneHint": "JPG 또는 PNG"
+  },
+  "bgRemover": {
+    "title": "배경 제거기", "subtitle": "AI로 모든 사진의 배경을 즉시 제거.",
+    "step1": "명확한 피사체가 있는 사진 업로드",
+    "step2": "AI가 배경을 감지하고 제거",
+    "step3": "투명 PNG로 다운로드"
+  },
+  "watermark": {
+    "title": "워터마크 제거기", "subtitle": "원본 질감을 유지하며 워터마크 제거.",
+    "videoTitle": "동영상 워터마크 제거기", "videoSubtitle": "동영상에서 워터마크 제거.",
+    "step1": "워터마크가 있는 사진 업로드",
+    "step2": "AI가 워터마크를 감지하고 제거",
+    "step3": "질감 유지 — 아티팩트 없음",
+    "videoStep1": "워터마크가 있는 동영상 업로드",
+    "videoStep2": "AI가 프레임별로 제거",
+    "videoStep3": "원본 품질로 깨끗한 동영상 다운로드",
+    "videoNote": "처리 시간은 동영상 길이에 따라 다릅니다.",
+    "image": "이미지", "video": "동영상"
+  },
+  "colorize": {
+    "title": "사진 채색기", "subtitle": "AI로 흑백 사진에 색상 추가.",
+    "step1": "흑백 사진 업로드",
+    "step2": "AI가 장면을 분석하고 사실적인 색상 추가",
+    "step3": "채색된 결과 다운로드",
+    "bwHint": "흑백 이미지가 최적"
+  },
+  "clothes": {
+    "step1": "1단계: 모델 업로드", "step2": "2단계: 의상 선택",
+    "examples": "예시", "uploadImage": "이미지 업로드", "clickToChange": "클릭하여 변경",
+    "woman": "여성", "man": "남성"
+  },
+  "upscaler": {
+    "title": "AI 업스케일러", "subtitle": "품질 손실 없이 이미지를 최대 4배 확대.",
+    "scale": "배율", "backendSoon": "백엔드 곧 출시", "lowResHint": "JPG 또는 PNG · 저해상도 이미지가 최적"
+  },
+  "voice": {
+    "title": "음성 복제", "enterText": "텍스트 입력",
+    "textPlaceholder": "음성으로 변환할 텍스트를 입력하거나 붙여넣으세요…",
+    "speed": "속도", "current": "현재"
+  },
+  "vocalIsolator": {
+    "title": "보컬 분리기", "subtitle": "모든 오디오 트랙에서 보컬을 분리.",
+    "isolate": "보컬 분리"
+  },
+  "seo": {
+    "portrait": { "title": "AI 포트레이트 에디터 | FillTech", "desc": "AI로 사진 변환." },
+    "gameFilter": { "title": "게임 필터 | FillTech", "desc": "사진을 게임 스크린샷으로 변환." },
+    "bgRemover": { "title": "배경 제거기 | FillTech", "desc": "AI로 즉시 배경 제거." },
+    "watermark": { "title": "워터마크 제거기 | FillTech", "desc": "AI로 워터마크 제거." },
+    "videoWatermark": { "title": "동영상 워터마크 제거기 | FillTech", "desc": "AI로 동영상 워터마크 제거." },
+    "colorize": { "title": "사진 채색기 | FillTech", "desc": "AI로 흑백 사진 채색." },
+    "clothesSwap": { "title": "옷 교체 | FillTech", "desc": "AI로 가상 착용." },
+    "videoBg": { "title": "동영상 배경 교체 | FillTech", "desc": "AI로 동영상 배경 교체." },
+    "upscaler": { "title": "AI 업스케일러 | FillTech", "desc": "이미지 최대 4배 확대." },
+    "voiceClone": { "title": "음성 복제 | FillTech", "desc": "AI로 음성 복제." },
+    "vocalIsolator": { "title": "보컬 분리기 | FillTech", "desc": "AI로 보컬 분리." },
+    "explore": { "title": "AI 도구 탐색 | FillTech", "desc": "모든 AI 도구 발견." },
+    "blog": { "title": "블로그 | FillTech", "desc": "AI 관련 기사 및 뉴스." },
+    "history": { "title": "내 기록 | FillTech", "desc": "생성된 콘텐츠 보기." },
+    "billing": { "title": "결제 | FillTech", "desc": "잔액 및 내역 관리." }
+  }
+}

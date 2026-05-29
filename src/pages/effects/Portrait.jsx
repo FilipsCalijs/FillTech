@@ -3,11 +3,14 @@ import { Typography } from '@/components/ui/Typography';
 import { CONTAINER } from '@/config/sizes';
 import PortraitControls from '@/components/portrait/PortraitControls';
 import { buildPrompt } from '@/config/portraitPrompts';
+import { useTranslation } from 'react-i18next';
+import PageSEO from '@/components/seo/PageSEO';
 import ResultPanel from '@/components/ui/ResultPanel';
 
 const API = 'http://localhost:5200';
 
 const AiPortrait = () => {
+  const { t } = useTranslation('tools');
   const [file,      setFile]      = useState(null);
   const [preview,   setPreview]   = useState(null);
   const [dragging,  setDragging]  = useState(false);
@@ -70,12 +73,9 @@ const AiPortrait = () => {
 
   return (
     <div className={`py-12 ${CONTAINER.blog}`}>
-      <Typography variant="h2" weight="bold" className="block mb-2">
-        AI Portrait Editor
-      </Typography>
-      <Typography variant="body1" color="muted" className="block mb-10">
-        Upload your photo and describe the edit — AI will transform it.
-      </Typography>
+      <PageSEO title={t('seo.portrait.title')} description={t('seo.portrait.desc')} path="/tools/portrait" />
+      <Typography variant="h2" weight="bold" className="block mb-2">{t('portrait.title')}</Typography>
+      <Typography variant="body1" color="muted" className="block mb-10">{t('portrait.subtitle')}</Typography>
 
       {/* Two-column layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">

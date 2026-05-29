@@ -127,26 +127,26 @@ export async function runMigrations() {
     )
   `)
 
-  // Сид начальных эффектов
+  // Сид начальных эффектов [name, slug, short_desc, icon, cover_url, status, sort_order]
   const effects = [
-    ['Watermark Remover', 'watermark-remover', 'Remove watermarks from any image with AI',        '🚫', 'published', 1],
-    ['BG Remover',        'bg-remover',        'Remove background from photos in seconds',         '✂️', 'published', 2],
-    ['Upscaler',          'upscaler',          'Upscale images up to 4x without losing quality',  '🔍', 'published', 3],
-    ['Layers Cutter',     'layers-cutter',     'Cut objects from images into separate layers',     '🪄', 'published', 4],
-    ['PS2 Filter',        'ps2-filter',        'Apply retro PS2-era filter to any photo',         '🎮', 'published', 5],
-    ['AI SVG Maker',      'ai-svg-maker',      'Convert any image to clean SVG vector',           '🖼️', 'published', 6],
-    ['Clothes Swap',      'clothes-swap',      'Try on different clothes with AI',                '👕', 'published', 7],
-    ['Photo Colorize',    'photo-colorize',    'Colorize black & white photos with AI',           '🎨', 'published', 8],
-    ['PDF Extractor',     'pdf-extractor',     'Extract text and data from PDF files',            '📄', 'published', 9],
-    ['Portrait',          'portrait',          'Create stunning AI portrait photos with style',    '🎭', 'published', 10],
+    ['Watermark Remover', 'watermark-remover', 'Remove watermarks from any image with AI',       '🚫', null,                          'published', 1],
+    ['BG Remover',        'bg-remover',        'Remove background from photos in seconds',        '✂️', null,                          'published', 2],
+    ['Upscaler',          'upscaler',          'Upscale images up to 4x without losing quality', '🔍', '/effects/upscaler.png',        'published', 3],
+    ['Layers Cutter',     'layers-cutter',     'Cut objects from images into separate layers',    '🪄', null,                          'published', 4],
+    ['PS2 Filter',        'ps2-filter',        'Apply retro PS2-era filter to any photo',        '🎮', '/effects/ps_filters.png',     'published', 5],
+    ['AI SVG Maker',      'ai-svg-maker',      'Convert any image to clean SVG vector',          '🖼️', null,                          'published', 6],
+    ['Clothes Swap',      'clothes-swap',      'Try on different clothes with AI',               '👕', null,                          'published', 7],
+    ['Photo Colorize',    'photo-colorize',    'Colorize black & white photos with AI',          '🎨', '/effects/coloriezed.png',     'published', 8],
+    ['PDF Extractor',     'pdf-extractor',     'Extract text and data from PDF files',           '📄', null,                          'published', 9],
+    ['Portrait',          'portrait',          'Create stunning AI portrait photos with style',  '🎭', null,                          'published', 10],
   ];
-  for (const [name, slug, short_desc, icon, status, sort_order] of effects) {
+  for (const [name, slug, short_desc, icon, cover_url, status, sort_order] of effects) {
     await pool.query(
-      `INSERT INTO effects (name, slug, short_desc, icon, status, sort_order)
-       VALUES (?, ?, ?, ?, ?, ?)
+      `INSERT INTO effects (name, slug, short_desc, icon, cover_url, status, sort_order)
+       VALUES (?, ?, ?, ?, ?, ?, ?)
        ON DUPLICATE KEY UPDATE name=VALUES(name), short_desc=VALUES(short_desc),
-         icon=VALUES(icon), status=VALUES(status), sort_order=VALUES(sort_order)`,
-      [name, slug, short_desc, icon, status, sort_order]
+         icon=VALUES(icon), cover_url=VALUES(cover_url), status=VALUES(status), sort_order=VALUES(sort_order)`,
+      [name, slug, short_desc, icon, cover_url, status, sort_order]
     );
   }
 
@@ -166,6 +166,11 @@ export async function runMigrations() {
 
   // Добавить balance к users если нет
   await pool.query(`ALTER TABLE users ADD COLUMN balance DECIMAL(10,4) NOT NULL DEFAULT 0.0000`).catch(() => {});
+
+  // i18n: добавить lang и translations к posts
+  await pool.query(`ALTER TABLE posts ADD COLUMN lang ENUM('en','ru','lv','de') NOT NULL DEFAULT 'en' AFTER tags`).catch(() => {});
+  await pool.query(`ALTER TABLE posts ADD COLUMN translations JSON NULL AFTER lang`).catch(() => {});
+  await pool.query(`ALTER TABLE posts ADD INDEX idx_posts_lang_status (lang, status, published_at)`).catch(() => {});
 
   console.log('✅ Migrations done')
 }

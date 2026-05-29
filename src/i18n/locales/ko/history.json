@@ -1,0 +1,30 @@
+{
+  "title": "기록",
+  "myHistory": "내 기록",
+  "total": "전체",
+  "table": {
+    "output": "출력",
+    "model": "모델",
+    "status": "상태",
+    "created": "생성일",
+    "cost": "비용",
+    "actions": "작업",
+    "user": "사용자"
+  },
+  "noGenerations": "생성 결과가 없습니다.",
+  "sortByDate": "날짜순 정렬",
+  "sortByModel": "모델순 정렬",
+  "searchById": "ID로 검색…",
+  "selected": "{{count}}개 선택됨",
+  "justNow": "방금",
+  "pagination": "{{page}} / {{total}}",
+  "deleteGeneration": "생성물이 삭제되었습니다.",
+  "generationDeleted": "생성물이 삭제되었습니다.",
+  "completed": "완료",
+  "failed": "실패",
+  "pending": "대기 중",
+  "processing": "처리 중",
+  "prev": "이전",
+  "next": "다음",
+  "perPage": "/페이지"
+}

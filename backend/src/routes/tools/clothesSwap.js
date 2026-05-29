@@ -20,22 +20,26 @@ router.post('/', (req, res, next) => {
 }, async (req, res) => {
   const modelFile  = req.files?.model?.[0];
   const outfitFile = req.files?.outfit?.[0];
+  const modelUrl   = req.body.model_url;
   const outfitUrl  = req.body.outfit_url;
 
-  if (!modelFile)                    return res.status(400).json({ error: 'Model image is required' });
-  if (!outfitFile && !outfitUrl)     return res.status(400).json({ error: 'Outfit image is required' });
+  if (!modelFile  && !modelUrl)  return res.status(400).json({ error: 'Model image is required' });
+  if (!outfitFile && !outfitUrl) return res.status(400).json({ error: 'Outfit image is required' });
 
   const userUid = req.headers['x-user-uid'] || 'anonymous';
 
   try {
-    const modelUri  = `data:${modelFile.mimetype};base64,${modelFile.buffer.toString('base64')}`;
+    const modelImage = modelFile
+      ? `data:${modelFile.mimetype};base64,${modelFile.buffer.toString('base64')}`
+      : modelUrl;
+
     const clothesImage = outfitFile
       ? `data:${outfitFile.mimetype};base64,${outfitFile.buffer.toString('base64')}`
       : outfitUrl;
 
     const { genId, imageUrl } = await runWavespeed({
       createUrl: CREATE_URL,
-      body: { image: modelUri, clothes_images: [clothesImage] },
+      body:      { image: modelImage, clothes_images: [clothesImage] },
       userUid,
       toolType:  'clothes-swap',
       r2Folder:  'clothes-swap',

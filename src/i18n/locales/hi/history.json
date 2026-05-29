@@ -1,0 +1,30 @@
+{
+  "title": "इतिहास",
+  "myHistory": "मेरा इतिहास",
+  "total": "कुल",
+  "table": {
+    "output": "आउटपुट",
+    "model": "मॉडल",
+    "status": "स्थिति",
+    "created": "बनाया गया",
+    "cost": "लागत",
+    "actions": "क्रियाएं",
+    "user": "उपयोगकर्ता"
+  },
+  "noGenerations": "कोई जनरेशन नहीं मिली।",
+  "sortByDate": "तारीख से क्रमबद्ध",
+  "sortByModel": "मॉडल से क्रमबद्ध",
+  "searchById": "ID से खोजें…",
+  "selected": "{{count}} चयनित",
+  "justNow": "अभी-अभी",
+  "pagination": "{{page}} / {{total}}",
+  "deleteGeneration": "जनरेशन हटाई गई।",
+  "generationDeleted": "जनरेशन हटाई गई।",
+  "completed": "पूर्ण",
+  "failed": "असफल",
+  "pending": "लंबित",
+  "processing": "प्रोसेसिंग",
+  "prev": "पिछला",
+  "next": "अगला",
+  "perPage": "/पृष्ठ"
+}

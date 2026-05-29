@@ -1,0 +1,185 @@
+{
+  "upload": {
+    "dropPhoto": "Foto hier ablegen",
+    "dropVideo": "Video hier ablegen",
+    "dropAudio": "Datei hier ablegen",
+    "orClick": "oder klicken zum Auswählen",
+    "jpgPng": "JPG oder PNG",
+    "jpgPngHint": "JPG oder PNG · bestes Ergebnis mit klarem Motiv",
+    "videoHint": "MP4, MOV, AVI, MKV",
+    "audioHint": "MP3, WAV, M4A",
+    "maxSize": "max {{max}} MB",
+    "clickToChange": "Klicken zum Ändern",
+    "uploadFirst": "Foto hochladen",
+    "uploadVideoFirst": "Video hochladen",
+    "selfieHint": "klares Foto bei guter Beleuchtung",
+    "yourPhoto": "Ihr Foto",
+    "voiceSample": "Stimmprobe",
+    "sampleHint": "3–10 Sek",
+    "uploadOrPick": "Hochladen oder Charakter auswählen"
+  },
+  "actions": {
+    "generate": "Generieren",
+    "generating": "Wird generiert...",
+    "removeBackground": "Hintergrund entfernen",
+    "removingBackground": "Hintergrund wird entfernt…",
+    "removeWatermark": "Wasserzeichen entfernen",
+    "removingWatermark": "Wasserzeichen wird entfernt…",
+    "colorize": "Foto einfärben",
+    "colorizing": "Wird eingefärbt…",
+    "applyFilter": "Filter anwenden",
+    "uploadFirst": "Foto hochladen zum Generieren",
+    "processing": "Wird verarbeitet...",
+    "tryIt": "Ausprobieren"
+  },
+  "steps": {
+    "howItWorks": "So funktioniert es"
+  },
+  "result": {
+    "reference": "Original",
+    "result": "Ergebnis"
+  },
+  "portrait": {
+    "title": "KI-Porträt-Editor",
+    "subtitle": "Laden Sie Ihr Foto hoch und beschreiben Sie die gewünschte Bearbeitung.",
+    "gender": "Geschlecht",
+    "pickOne": "Auswählen",
+    "woman": "Frau",
+    "man": "Mann",
+    "style": "Stil",
+    "prompt": "Beschreibung",
+    "promptHint": "Beschreiben Sie Szene, Beleuchtung und Stimmung.",
+    "bodyPose": "Körperhaltung",
+    "optional": "Optional",
+    "addPose": "Pose hinzufügen",
+    "aspectRatio": "Seitenverhältnis",
+    "clearPose": "Pose entfernen"
+  },
+  "gameFilter": {
+    "title": "Spielfilter",
+    "subtitle": "Verwandeln Sie jedes Foto in einen Videospiel-Screenshot.",
+    "chooseStyle": "Stil wählen",
+    "yourPhoto": "Ihr Foto",
+    "sceneHint": "JPG oder PNG · jede Szene geeignet"
+  },
+  "bgRemover": {
+    "title": "Hintergrundentferner",
+    "subtitle": "Entfernen Sie den Hintergrund sofort mit KI.",
+    "step1": "Laden Sie ein Foto mit klarem Motiv hoch",
+    "step2": "KI erkennt und entfernt den Hintergrund",
+    "step3": "Als transparentes PNG herunterladen"
+  },
+  "watermark": {
+    "title": "Wasserzeichen entfernen",
+    "subtitle": "Entfernt Text- und Logo-Wasserzeichen intelligent.",
+    "videoTitle": "Video-Wasserzeichen entfernen",
+    "videoSubtitle": "Entfernen Sie Wasserzeichen aus Videos.",
+    "step1": "Foto mit Wasserzeichen hochladen",
+    "step2": "KI erkennt und entfernt das Wasserzeichen",
+    "step3": "Hintergrundtextur bleibt erhalten",
+    "videoStep1": "Video mit Wasserzeichen hochladen",
+    "videoStep2": "KI entfernt Wasserzeichen Bild für Bild",
+    "videoStep3": "Sauberes Video herunterladen",
+    "videoNote": "Verarbeitungszeit hängt von der Videolänge ab.",
+    "image": "Foto",
+    "video": "Video"
+  },
+  "colorize": {
+    "title": "Foto einfärben",
+    "subtitle": "Erwecken Sie Schwarzweißfotos mit KI zum Leben.",
+    "step1": "Schwarzweißfoto hochladen",
+    "step2": "KI analysiert die Szene und fügt Farben hinzu",
+    "step3": "Eingefärbtes Ergebnis herunterladen",
+    "bwHint": "Bestes Ergebnis mit Schwarzweißfotos"
+  },
+  "clothes": {
+    "step1": "Schritt 1: Ihr Foto",
+    "step2": "Schritt 2: Outfit wählen",
+    "examples": "Beispiele",
+    "uploadImage": "Bild hochladen",
+    "clickToChange": "Klicken zum Ändern",
+    "woman": "Frau",
+    "man": "Mann"
+  },
+  "upscaler": {
+    "title": "KI-Upscaler",
+    "subtitle": "Vergrößern Sie Bilder bis zu 4× ohne Qualitätsverlust.",
+    "scale": "Skalierung",
+    "backendSoon": "Demnächst verfügbar",
+    "lowResHint": "JPG oder PNG · bestes Ergebnis mit niedrig aufgelösten Bildern"
+  },
+  "voice": {
+    "title": "Stimmklonen",
+    "enterText": "Text eingeben",
+    "textPlaceholder": "Geben Sie den Text ein, der in Sprache umgewandelt werden soll…",
+    "speed": "Geschwindigkeit",
+    "current": "Aktuell"
+  },
+  "vocalIsolator": {
+    "title": "Vokal-Isolator",
+    "subtitle": "Trenne Gesang von Musik in jedem Audiotrack. Lade einen Song hoch und erhalte den isolierten Gesang.",
+    "isolate": "Gesang isolieren"
+  },
+  "seo": {
+    "portrait": {
+      "title": "KI-Porträt-Editor — Fotos transformieren | FillTech",
+      "desc": "Lade dein Foto hoch und transformiere es mit KI. Wähle Geschlecht, Stil, Pose und Beleuchtung."
+    },
+    "gameFilter": {
+      "title": "Spielfilter — Fotos in Spielscreenshots umwandeln | FillTech",
+      "desc": "Verwandle jedes Foto in einen Retro-Videospiel-Screenshot. 7 Stile: PS2, Arcade, 8-bit, PS3, Anime, AAA und mehr."
+    },
+    "bgRemover": {
+      "title": "Hintergrundentferner — Kostenlose KI-Hintergrundentfernung | FillTech",
+      "desc": "Entferne Bildhintergründe sofort mit KI. Erhalte transparente PNGs in Sekunden. Perfekt für Produkt- und Portraitfotos."
+    },
+    "watermark": {
+      "title": "Wasserzeichen entfernen — Logos aus Fotos entfernen | FillTech",
+      "desc": "Entferne Text- und Logo-Wasserzeichen intelligent, während die ursprüngliche Textur erhalten bleibt."
+    },
+    "videoWatermark": {
+      "title": "Video-Wasserzeichen entfernen | FillTech",
+      "desc": "Entferne Wasserzeichen aus jedem Video mit KI. Bild-für-Bild-Verarbeitung erhält die ursprüngliche Qualität."
+    },
+    "colorize": {
+      "title": "Foto einfärben — Schwarzweißfotos mit KI colorieren | FillTech",
+      "desc": "Erwecke alte Schwarzweißfotos mit KI-Colorierung zum Leben. Realistische Farben werden automatisch hinzugefügt."
+    },
+    "clothesSwap": {
+      "title": "Kleidungstausch — Outfits virtuell anprobieren mit KI | FillTech",
+      "desc": "Probiere verschiedene Kleidung virtuell mit KI an. Lade dein Portrait und ein Kleidungsbild hoch."
+    },
+    "videoBg": {
+      "title": "Video-Hintergrundersatz — Videohintergrund ersetzen | FillTech",
+      "desc": "Entferne oder ersetze den Hintergrund eines Videos mit KI. Lade ein Video und ein optionales Hintergrundbild hoch."
+    },
+    "upscaler": {
+      "title": "KI-Bildvergrößerer — 4× ohne Qualitätsverlust | FillTech",
+      "desc": "Vergrößere Fotos bis zu 4× mit KI-Hochskalierung. Feine Details werden ohne Qualitätsverlust wiederhergestellt."
+    },
+    "voiceClone": {
+      "title": "Stimmklonen — Jede Stimme mit KI klonen | FillTech",
+      "desc": "Klone jede Stimme aus einer 3–10-sekündigen Audioprobe. Konvertiere Text in Sprache in 600+ Sprachen."
+    },
+    "vocalIsolator": {
+      "title": "Vokal-Isolator — Gesang aus Musik trennen | FillTech",
+      "desc": "KI-gestützte Vokal-Isolierung. Lade jeden Song hoch und extrahiere sofort sauberen Gesang vom Instrumental."
+    },
+    "explore": {
+      "title": "KI-Werkzeuge entdecken — Alle Effekte | FillTech",
+      "desc": "Entdecke alle KI-Werkzeuge: Porträt-Editor, Hintergrundentferner, Wasserzeichen-Entferner, Foto-Colorizer und mehr."
+    },
+    "blog": {
+      "title": "Blog — KI-Werkzeug-Tipps und Neuigkeiten | FillTech",
+      "desc": "Lese Artikel, Tutorials und Neuigkeiten über KI-Bild- und Videoverarbeitungswerkzeuge vom FillTech-Team."
+    },
+    "history": {
+      "title": "Verlauf — Meine Generierungen | FillTech",
+      "desc": "Alle KI-Generierungen anzeigen und verwalten. Ergebnisse herunterladen oder löschen. Wird 7 Tage gespeichert."
+    },
+    "billing": {
+      "title": "Abrechnung — Kontoguthaben | FillTech",
+      "desc": "Guthaben verwalten, Ausgabenhistorie anzeigen und automatische Aufladung für KI-Generierungen konfigurieren."
+    }
+  }
+}

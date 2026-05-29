@@ -1,0 +1,110 @@
+{
+  "upload": {
+    "dropPhoto": "अपनी फोटो छोड़ें",
+    "dropVideo": "अपना वीडियो छोड़ें",
+    "dropAudio": "खींचें और छोड़ें",
+    "orClick": "या ब्राउज़ करने के लिए क्लिक करें",
+    "jpgPng": "JPG या PNG",
+    "jpgPngHint": "JPG या PNG · स्पष्ट विषय सबसे अच्छा काम करता है",
+    "videoHint": "MP4, MOV, AVI, MKV",
+    "audioHint": "MP3, WAV, M4A",
+    "maxSize": "अधिकतम {{max}} MB",
+    "clickToChange": "फोटो बदलने के लिए क्लिक करें",
+    "uploadFirst": "पहले फोटो अपलोड करें",
+    "uploadVideoFirst": "पहले वीडियो अपलोड करें",
+    "selfieHint": "स्पष्ट, अच्छी रोशनी वाली सेल्फी सबसे अच्छी होती है",
+    "yourPhoto": "आपकी फोटो",
+    "voiceSample": "वॉयस सैंपल",
+    "sampleHint": "3–10 सेकंड",
+    "uploadOrPick": "अपलोड करें या कैरेक्टर चुनें"
+  },
+  "actions": {
+    "generate": "जनरेट करें",
+    "generating": "जनरेट हो रहा है...",
+    "removeBackground": "बैकग्राउंड हटाएं",
+    "removingBackground": "बैकग्राउंड हटाया जा रहा है…",
+    "removeWatermark": "वॉटरमार्क हटाएं",
+    "removingWatermark": "वॉटरमार्क हटाया जा रहा है…",
+    "colorize": "फोटो कलराइज़ करें",
+    "colorizing": "कलराइज़ हो रहा है…",
+    "applyFilter": "फ़िल्टर लगाएं",
+    "uploadFirst": "जनरेट करने के लिए फोटो जोड़ें",
+    "removeWatermarkFull": "वॉटरमार्क हटाएं",
+    "processing": "प्रोसेसिंग हो रही है...",
+    "tryIt": "आज़माएं"
+  },
+  "steps": { "howItWorks": "यह कैसे काम करता है" },
+  "result": { "reference": "संदर्भ", "result": "परिणाम" },
+  "portrait": {
+    "title": "AI पोर्ट्रेट एडिटर",
+    "subtitle": "अपनी फोटो अपलोड करें और एडिट बताएं — AI इसे बदल देगा।",
+    "gender": "लिंग", "pickOne": "एक चुनें", "woman": "महिला", "man": "पुरुष",
+    "style": "स्टाइल", "prompt": "प्रॉम्प्ट", "promptHint": "दृश्य, प्रकाश और मूड के बारे में विशिष्ट रहें।",
+    "bodyPose": "बॉडी पोज़", "optional": "वैकल्पिक", "addPose": "पोज़ जोड़ें",
+    "aspectRatio": "पहलू अनुपात", "clearPose": "पोज़ हटाएं"
+  },
+  "gameFilter": {
+    "title": "गेम फ़िल्टर", "subtitle": "किसी भी फोटो को वीडियो गेम स्क्रीनशॉट में बदलें।",
+    "chooseStyle": "स्टाइल चुनें", "yourPhoto": "आपकी फोटो", "sceneHint": "JPG या PNG"
+  },
+  "bgRemover": {
+    "title": "BG रिमूवर", "subtitle": "AI से किसी भी फोटो का बैकग्राउंड तुरंत हटाएं।",
+    "step1": "स्पष्ट विषय वाली फोटो अपलोड करें",
+    "step2": "AI बैकग्राउंड का पता लगाकर हटाता है",
+    "step3": "पारदर्शी PNG के रूप में डाउनलोड करें"
+  },
+  "watermark": {
+    "title": "वॉटरमार्क रिमूवर", "subtitle": "मूल टेक्सचर को संरक्षित करते हुए वॉटरमार्क हटाएं।",
+    "videoTitle": "वीडियो वॉटरमार्क रिमूवर", "videoSubtitle": "वीडियो से वॉटरमार्क हटाएं।",
+    "step1": "वॉटरमार्क वाली फोटो अपलोड करें",
+    "step2": "AI वॉटरमार्क का पता लगाकर हटाता है",
+    "step3": "टेक्सचर संरक्षित — कोई आर्टिफैक्ट नहीं",
+    "videoStep1": "वॉटरमार्क वाला वीडियो अपलोड करें",
+    "videoStep2": "AI फ्रेम दर फ्रेम हटाता है",
+    "videoStep3": "मूल गुणवत्ता में साफ वीडियो डाउनलोड करें",
+    "videoNote": "प्रोसेसिंग समय वीडियो की अवधि पर निर्भर करता है।",
+    "image": "इमेज", "video": "वीडियो"
+  },
+  "colorize": {
+    "title": "फोटो कलराइज़र", "subtitle": "AI से ब्लैक & व्हाइट फोटो को रंगीन बनाएं।",
+    "step1": "ब्लैक & व्हाइट फोटो अपलोड करें",
+    "step2": "AI दृश्य का विश्लेषण करके रंग जोड़ता है",
+    "step3": "कलराइज़ परिणाम डाउनलोड करें",
+    "bwHint": "ब्लैक & व्हाइट इमेज सबसे अच्छी होती हैं"
+  },
+  "clothes": {
+    "step1": "चरण 1: अपना मॉडल अपलोड करें", "step2": "चरण 2: अपनी पोशाक चुनें",
+    "examples": "उदाहरण", "uploadImage": "इमेज अपलोड करें", "clickToChange": "बदलने के लिए क्लिक करें",
+    "woman": "महिला", "man": "पुरुष"
+  },
+  "upscaler": {
+    "title": "AI अपस्केलर", "subtitle": "बिना गुणवत्ता खोए इमेज को 4× तक बड़ा करें।",
+    "scale": "स्केल", "backendSoon": "बैकएंड जल्द आ रहा है", "lowResHint": "JPG या PNG · कम रिज़ॉल्यूशन इमेज सबसे अच्छी होती हैं"
+  },
+  "voice": {
+    "title": "वॉयस क्लोनिंग", "enterText": "अपना टेक्स्ट दर्ज करें",
+    "textPlaceholder": "वह टेक्स्ट टाइप या पेस्ट करें जिसे आप स्पीच में बदलना चाहते हैं…",
+    "speed": "गति", "current": "वर्तमान"
+  },
+  "vocalIsolator": {
+    "title": "वोकल आइसोलेटर", "subtitle": "किसी भी ऑडियो ट्रैक से वोकल अलग करें।",
+    "isolate": "वोकल अलग करें"
+  },
+  "seo": {
+    "portrait": { "title": "AI पोर्ट्रेट एडिटर | FillTech", "desc": "AI से फोटो बदलें।" },
+    "gameFilter": { "title": "गेम फ़िल्टर | FillTech", "desc": "फोटो को गेम स्क्रीनशॉट में बदलें।" },
+    "bgRemover": { "title": "BG रिमूवर | FillTech", "desc": "AI से बैकग्राउंड हटाएं।" },
+    "watermark": { "title": "वॉटरमार्क रिमूवर | FillTech", "desc": "AI से वॉटरमार्क हटाएं।" },
+    "videoWatermark": { "title": "वीडियो वॉटरमार्क रिमूवर | FillTech", "desc": "AI से वीडियो वॉटरमार्क हटाएं।" },
+    "colorize": { "title": "फोटो कलराइज़र | FillTech", "desc": "AI से ब्लैक & व्हाइट फोटो रंगीन करें।" },
+    "clothesSwap": { "title": "कपड़े बदलें | FillTech", "desc": "AI से वर्चुअल ट्राई-ऑन।" },
+    "videoBg": { "title": "वीडियो BG बदलें | FillTech", "desc": "AI से वीडियो बैकग्राउंड बदलें।" },
+    "upscaler": { "title": "AI अपस्केलर | FillTech", "desc": "इमेज को 4× तक बड़ा करें।" },
+    "voiceClone": { "title": "वॉयस क्लोनिंग | FillTech", "desc": "AI से आवाज़ क्लोन करें।" },
+    "vocalIsolator": { "title": "वोकल आइसोलेटर | FillTech", "desc": "AI से वोकल अलग करें।" },
+    "explore": { "title": "AI टूल्स एक्सप्लोर करें | FillTech", "desc": "सभी AI टूल्स खोजें।" },
+    "blog": { "title": "ब्लॉग | FillTech", "desc": "AI पर लेख और समाचार।" },
+    "history": { "title": "मेरा इतिहास | FillTech", "desc": "जनरेट की गई सामग्री देखें।" },
+    "billing": { "title": "बिलिंग | FillTech", "desc": "बैलेंस और इतिहास प्रबंधित करें।" }
+  }
+}

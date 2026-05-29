@@ -1,7 +1,9 @@
 import express from 'express';
+import Stripe from 'stripe';
 import { pool } from '../db.js';
 
 const router = express.Router();
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const requireUid = (req, res, next) => {
   const uid = req.headers['x-user-uid'];
@@ -39,21 +41,84 @@ router.get('/history', requireUid, async (req, res) => {
   const limit = 20;
   const offset = (page - 1) * limit;
 
-  const [rows] = await pool.execute(
+  const [rows] = await pool.query(
     `SELECT id, tool_type, cost, status, created_at
      FROM generations
      WHERE user_uid = ? AND cost > 0
      ORDER BY created_at DESC
-     LIMIT ? OFFSET ?`,
-    [req.userUid, limit, offset]
+     LIMIT ${limit} OFFSET ${offset}`,
+    [req.userUid]
   );
 
-  const [[{ total }]] = await pool.execute(
+  const [[{ total }]] = await pool.query(
     `SELECT COUNT(*) AS total FROM generations WHERE user_uid = ? AND cost > 0`,
     [req.userUid]
   );
 
   res.json({ rows, total, page, pages: Math.ceil(total / limit) });
 });
+
+// POST /api/billing/create-checkout-session
+router.post('/create-checkout-session', requireUid, async (req, res) => {
+  try {
+    const amount = parseFloat(req.body.amount);
+    const lang   = req.body.lang || 'en';
+
+    if (!amount || isNaN(amount) || amount < 5 || amount > 5000) {
+      return res.status(400).json({ error: 'Amount must be between $5 and $5,000' });
+    }
+
+    const base = process.env.FRONTEND_URL || 'http://localhost:5174';
+    const session = await stripe.checkout.sessions.create({
+      mode: 'payment',
+      line_items: [{
+        price_data: {
+          currency: 'usd',
+          product_data: { name: 'FillTech Balance Top-up' },
+          unit_amount: Math.round(amount * 100),
+        },
+        quantity: 1,
+      }],
+      success_url: `${base}/${lang}/billing?success=true`,
+      cancel_url:  `${base}/${lang}/billing?cancel=true`,
+      metadata: { userUid: req.userUid },
+    });
+
+    res.json({ url: session.url });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Mounted in index.js BEFORE express.json() so Stripe can verify the raw body
+export const stripeWebhookHandler = async (req, res) => {
+  const sig           = req.headers['stripe-signature'];
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+
+  let event;
+  try {
+    if (webhookSecret && !webhookSecret.startsWith('whsec_REPLACE')) {
+      event = stripe.webhooks.constructEvent(req.body, sig, webhookSecret);
+    } else {
+      event = JSON.parse(req.body.toString());
+    }
+  } catch (err) {
+    return res.status(400).send(`Webhook Error: ${err.message}`);
+  }
+
+  if (event.type === 'checkout.session.completed') {
+    const session  = event.data.object;
+    const { userUid } = session.metadata ?? {};
+    const amount   = session.amount_total / 100;
+    if (userUid) {
+      await pool.execute(
+        'UPDATE users SET balance = balance + ? WHERE uid = ?',
+        [amount, userUid]
+      );
+    }
+  }
+
+  res.json({ received: true });
+};
 
 export default router;

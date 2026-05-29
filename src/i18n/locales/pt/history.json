@@ -1,0 +1,30 @@
+{
+  "title": "Histórico",
+  "myHistory": "Meu Histórico",
+  "total": "Total",
+  "table": {
+    "output": "Saída",
+    "model": "Modelo",
+    "status": "Status",
+    "created": "Criado",
+    "cost": "Custo",
+    "actions": "Ações",
+    "user": "Usuário"
+  },
+  "noGenerations": "Nenhuma geração encontrada.",
+  "sortByDate": "Ordenar por data",
+  "sortByModel": "Ordenar por modelo",
+  "searchById": "Buscar por ID…",
+  "selected": "{{count}} selecionado(s)",
+  "justNow": "agora mesmo",
+  "pagination": "{{page}} / {{total}}",
+  "deleteGeneration": "Geração excluída.",
+  "generationDeleted": "Geração excluída.",
+  "completed": "Concluído",
+  "failed": "Falhou",
+  "pending": "Pendente",
+  "processing": "Processando",
+  "prev": "Anterior",
+  "next": "Próximo",
+  "perPage": "/página"
+}

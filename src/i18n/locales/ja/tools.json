@@ -1,0 +1,110 @@
+{
+  "upload": {
+    "dropPhoto": "写真をドロップ",
+    "dropVideo": "動画をドロップ",
+    "dropAudio": "ドラッグ&ドロップ",
+    "orClick": "またはクリックして参照",
+    "jpgPng": "JPGまたはPNG",
+    "jpgPngHint": "JPGまたはPNG · はっきりした被写体が最適",
+    "videoHint": "MP4, MOV, AVI, MKV",
+    "audioHint": "MP3, WAV, M4A",
+    "maxSize": "最大 {{max}} MB",
+    "clickToChange": "クリックして写真を変更",
+    "uploadFirst": "まず写真をアップロード",
+    "uploadVideoFirst": "まず動画をアップロード",
+    "selfieHint": "明るく鮮明な自撮りが最適",
+    "yourPhoto": "あなたの写真",
+    "voiceSample": "音声サンプル",
+    "sampleHint": "3〜10秒",
+    "uploadOrPick": "アップロードまたはキャラクターを選択"
+  },
+  "actions": {
+    "generate": "生成",
+    "generating": "生成中...",
+    "removeBackground": "背景を削除",
+    "removingBackground": "背景削除中…",
+    "removeWatermark": "透かしを削除",
+    "removingWatermark": "透かし削除中…",
+    "colorize": "写真をカラー化",
+    "colorizing": "カラー化中…",
+    "applyFilter": "フィルターを適用",
+    "uploadFirst": "写真を追加して生成",
+    "removeWatermarkFull": "透かしを削除",
+    "processing": "処理中...",
+    "tryIt": "試す"
+  },
+  "steps": { "howItWorks": "使い方" },
+  "result": { "reference": "参照", "result": "結果" },
+  "portrait": {
+    "title": "AIポートレートエディター",
+    "subtitle": "写真をアップロードして編集を説明 — AIが変換します。",
+    "gender": "性別", "pickOne": "選択", "woman": "女性", "man": "男性",
+    "style": "スタイル", "prompt": "プロンプト", "promptHint": "シーン、照明、雰囲気を具体的に。",
+    "bodyPose": "ボーズ", "optional": "任意", "addPose": "ポーズを追加",
+    "aspectRatio": "アスペクト比", "clearPose": "ポーズをクリア"
+  },
+  "gameFilter": {
+    "title": "ゲームフィルター", "subtitle": "任意の写真をゲームスクリーンショットに変換。",
+    "chooseStyle": "スタイルを選択", "yourPhoto": "あなたの写真", "sceneHint": "JPGまたはPNG"
+  },
+  "bgRemover": {
+    "title": "背景削除", "subtitle": "AIで瞬時に写真の背景を削除。",
+    "step1": "はっきりした被写体の写真をアップロード",
+    "step2": "AIが背景を検出して削除",
+    "step3": "透過PNGとしてダウンロード"
+  },
+  "watermark": {
+    "title": "透かし削除", "subtitle": "元のテクスチャを保ちながら透かしを削除。",
+    "videoTitle": "動画透かし削除", "videoSubtitle": "動画から透かしを削除。",
+    "step1": "透かし入りの写真をアップロード",
+    "step2": "AIが透かしを検出して削除",
+    "step3": "テクスチャ保持 — アーティファクトなし",
+    "videoStep1": "透かし入りの動画をアップロード",
+    "videoStep2": "AIがフレームごとに削除",
+    "videoStep3": "元品質でクリーンな動画をダウンロード",
+    "videoNote": "処理時間は動画の長さによって異なります。",
+    "image": "画像", "video": "動画"
+  },
+  "colorize": {
+    "title": "写真カラー化", "subtitle": "AIで白黒写真に色をつける。",
+    "step1": "白黒またはグレースケール写真をアップロード",
+    "step2": "AIがシーンを分析してリアルな色を追加",
+    "step3": "カラー化した結果をダウンロード",
+    "bwHint": "白黒またはグレースケール画像が最適"
+  },
+  "clothes": {
+    "step1": "ステップ1: モデルをアップロード", "step2": "ステップ2: 衣装を選択",
+    "examples": "サンプル", "uploadImage": "画像をアップロード", "clickToChange": "クリックして変更",
+    "woman": "女性", "man": "男性"
+  },
+  "upscaler": {
+    "title": "AIアップスケーラー", "subtitle": "品質を損なわずに画像を最大4倍に拡大。",
+    "scale": "スケール", "backendSoon": "バックエンド近日公開", "lowResHint": "JPGまたはPNG · 低解像度画像が最適"
+  },
+  "voice": {
+    "title": "音声クローン", "enterText": "テキストを入力",
+    "textPlaceholder": "音声に変換したいテキストを入力または貼り付け…",
+    "speed": "速度", "current": "現在"
+  },
+  "vocalIsolator": {
+    "title": "ボーカル分離", "subtitle": "任意のオーディオトラックから音楽とボーカルを分離。",
+    "isolate": "ボーカルを分離"
+  },
+  "seo": {
+    "portrait": { "title": "AIポートレートエディター | FillTech", "desc": "AIで写真を変換。" },
+    "gameFilter": { "title": "ゲームフィルター | FillTech", "desc": "写真をゲームスクリーンショットに変換。" },
+    "bgRemover": { "title": "背景削除 | FillTech", "desc": "AIで瞬時に背景を削除。" },
+    "watermark": { "title": "透かし削除 | FillTech", "desc": "AIで写真の透かしを削除。" },
+    "videoWatermark": { "title": "動画透かし削除 | FillTech", "desc": "AIで動画の透かしを削除。" },
+    "colorize": { "title": "写真カラー化 | FillTech", "desc": "AIで白黒写真をカラー化。" },
+    "clothesSwap": { "title": "衣装交換 | FillTech", "desc": "AIで仮想試着。" },
+    "videoBg": { "title": "動画背景置換 | FillTech", "desc": "AIで動画の背景を置換。" },
+    "upscaler": { "title": "AIアップスケーラー | FillTech", "desc": "画像を最大4倍に拡大。" },
+    "voiceClone": { "title": "音声クローン | FillTech", "desc": "AIで音声をクローン。" },
+    "vocalIsolator": { "title": "ボーカル分離 | FillTech", "desc": "AIで音楽からボーカルを分離。" },
+    "explore": { "title": "AIツールを探索 | FillTech", "desc": "すべてのAIツールを発見。" },
+    "blog": { "title": "ブログ | FillTech", "desc": "AIに関する記事とニュース。" },
+    "history": { "title": "マイ履歴 | FillTech", "desc": "生成コンテンツを表示。" },
+    "billing": { "title": "請求 | FillTech", "desc": "残高と履歴を管理。" }
+  }
+}

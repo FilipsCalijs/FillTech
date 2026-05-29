@@ -12,9 +12,14 @@ import effectsRouter from './routes/effects.js';
 import generationsRouter from './routes/generations.js';
 import { runMigrations } from './db.js';
 import { cleanupExpiredGenerations } from './lib/cleanup.js';
-import billingRouter from './routes/billing.js';
+import billingRouter, { stripeWebhookHandler } from './routes/billing.js';
+import sitemapRouter from './routes/sitemap.js';
 
 const app = express();
+
+// Must be registered BEFORE express.json() so Stripe can verify the raw body signature
+app.post('/api/billing/webhook', express.raw({ type: 'application/json' }), stripeWebhookHandler);
+
 app.use(express.json());
 
 app.use(cors({
@@ -31,6 +36,7 @@ app.use('/api/jobs', jobsRouter);
 app.use('/api/comments', commentsRouter);
 app.use('/api/effects', effectsRouter);
 app.use('/api/billing', billingRouter);
+app.use('/sitemap.xml', sitemapRouter);
 app.use('/api/generations', generationsRouter);
 
 // Проверка здоровья

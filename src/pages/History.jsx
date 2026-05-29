@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Typography } from '@/components/ui/Typography';
 import { CONTAINER } from '@/config/sizes';
 import AudioPlayer from '@/components/ui/AudioPlayer';
+import { useTranslation } from 'react-i18next';
+import PageSEO from '@/components/seo/PageSEO';
 
 const API = 'http://localhost:5200';
 
@@ -13,9 +15,14 @@ const TOOL_MAP = {
   'upscaler':         { name: 'Upscaler',           path: '/tools/upscaler' },
   'ps2-filter':       { name: 'Game Filter',         path: '/testing' },
   'voice-clone':      { name: 'Voice Cloning',       path: '/testing-2' },
+  'photo-colorize':   { name: 'Photo Colorize',      path: '/tools/photo-colorize' },
+  'clothes-swap':     { name: 'Clothes Swap',         path: '/tools/clothes-swap' },
+  'video-watermark-remove': { name: 'Video Watermark', path: '/tools/watermark-remover-video' },
+  'video-bg-replace': { name: 'Video BG Replace',     path: '/tools/video-bg-replace' },
+  'vocal-isolator':   { name: 'Vocal Isolator',       path: '/tools/vocal-isolator' },
 };
 
-const AUDIO_TYPES = new Set(['voice-clone']);
+const AUDIO_TYPES = new Set(['voice-clone', 'vocal-isolator']);
 const isAudio = (gen) => AUDIO_TYPES.has(gen.tool_type) || /\.(mp3|wav|m4a|ogg|mpeg|aac)(\?|$)/i.test(gen.output_url ?? '');
 
 const STATUS_STYLES = {
@@ -25,14 +32,17 @@ const STATUS_STYLES = {
   processing: 'text-blue-500',
 };
 
-function timeAgo(dateStr) {
-  const diff = Date.now() - new Date(dateStr).getTime();
-  const m = Math.floor(diff / 60000);
-  if (m < 1)  return 'just now';
-  if (m < 60) return `${m}m ago`;
-  const h = Math.floor(m / 60);
-  if (h < 24) return `${h}h ago`;
-  return `${Math.floor(h / 24)}d ago`;
+function useTimeAgo() {
+  const { t } = useTranslation('history');
+  return (dateStr) => {
+    const diff = Date.now() - new Date(dateStr).getTime();
+    const m = Math.floor(diff / 60000);
+    if (m < 1)  return t('justNow');
+    if (m < 60) return `${m}m`;
+    const h = Math.floor(m / 60);
+    if (h < 24) return `${h}h`;
+    return `${Math.floor(h / 24)}d`;
+  };
 }
 
 /* ── Image modal ──────────────────────────────────────────── */
@@ -116,14 +126,15 @@ const AudioModal = ({ gen, onClose }) => {
 };
 
 /* ── Table ────────────────────────────────────────────────── */
-const PAGE_SIZE = 25;
-
 const GenerationsTable = ({ items, onDelete, adminMode }) => {
+  const { t } = useTranslation('history');
+  const timeAgo = useTimeAgo();
   const [selected, setSelected] = useState(new Set());
   const [sortBy,   setSortBy]   = useState('date');
   const [search,   setSearch]   = useState('');
   const [modal,    setModal]    = useState(null);
   const [page,     setPage]     = useState(1);
+  const [pageSize, setPageSize] = useState(25);
 
   const filtered = items
     .filter(i => search ? i.id.toLowerCase().includes(search.toLowerCase()) : true)
@@ -132,8 +143,8 @@ const GenerationsTable = ({ items, onDelete, adminMode }) => {
       : (TOOL_MAP[a.tool_type]?.name ?? a.tool_type).localeCompare(TOOL_MAP[b.tool_type]?.name ?? b.tool_type)
     );
 
-  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
-  const paginated  = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+  const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+  const paginated  = filtered.slice((page - 1) * pageSize, page * pageSize);
 
   const allChecked = paginated.length > 0 && paginated.every(i => selected.has(i.id));
   const resetPage  = () => setPage(1);
@@ -153,10 +164,10 @@ const GenerationsTable = ({ items, onDelete, adminMode }) => {
       <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
         <div className="flex items-center gap-3">
           <select value={sortBy} onChange={e => { setSortBy(e.target.value); resetPage(); }} className="text-sm border border-border rounded-lg px-3 py-1.5 bg-card text-foreground focus:outline-none">
-            <option value="date">Sort by date</option>
-            <option value="model">Sort by model</option>
+            <option value="date">{t('sortByDate')}</option>
+            <option value="model">{t('sortByModel')}</option>
           </select>
-          <input type="text" placeholder="Search by ID…" value={search} onChange={e => { setSearch(e.target.value); resetPage(); }} className="text-sm border border-border rounded-lg px-3 py-1.5 bg-card text-foreground placeholder:text-muted-foreground focus:outline-none w-52" />
+          <input type="text" placeholder={t('searchById')} value={search} onChange={e => { setSearch(e.target.value); resetPage(); }} className="text-sm border border-border rounded-lg px-3 py-1.5 bg-card text-foreground placeholder:text-muted-foreground focus:outline-none w-52" />
         </div>
       </div>
 
@@ -186,13 +197,13 @@ const GenerationsTable = ({ items, onDelete, adminMode }) => {
             <thead className="bg-muted text-muted-foreground text-xs uppercase tracking-wide">
               <tr>
                 <th className="w-10 px-4 py-3"><input type="checkbox" checked={allChecked} onChange={e => toggleAll(e.target.checked)} className="accent-primary cursor-pointer" /></th>
-                <th className="px-4 py-3 text-left">Output</th>
+                <th className="px-4 py-3 text-left">{t('table.output')}</th>
                 {adminMode && <th className="px-4 py-3 text-left">User</th>}
-                <th className="px-4 py-3 text-left">Model</th>
-                <th className="px-4 py-3 text-left">Status</th>
-                <th className="px-4 py-3 text-left">Created</th>
-                <th className="px-4 py-3 text-left">Cost</th>
-                <th className="px-4 py-3 text-right">Actions</th>
+                <th className="px-4 py-3 text-left">{t('table.model')}</th>
+                <th className="px-4 py-3 text-left">{t('table.status')}</th>
+                <th className="px-4 py-3 text-left">{t('table.created')}</th>
+                <th className="px-4 py-3 text-left">{t('table.cost')}</th>
+                <th className="px-4 py-3 text-right">{t('table.actions')}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -212,7 +223,7 @@ const GenerationsTable = ({ items, onDelete, adminMode }) => {
                               <circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
                             </svg>
                           ) : (
-                            <img src={gen.output_url} alt="output" className="w-full h-full object-contain" />
+                            <img src={gen.output_url} alt={gen.tool_type} className="w-full h-full object-contain" />
                           )}
                         </button>
                       ) : (
@@ -236,7 +247,7 @@ const GenerationsTable = ({ items, onDelete, adminMode }) => {
                     <td className="px-4 py-3">
                       <span className={`flex items-center gap-1.5 ${STATUS_STYLES[gen.status] ?? 'text-muted-foreground'}`}>
                         <span className="w-1.5 h-1.5 rounded-full bg-current" />
-                        {gen.status}
+                        {t(gen.status, gen.status)}
                       </span>
                     </td>
 
@@ -272,27 +283,45 @@ const GenerationsTable = ({ items, onDelete, adminMode }) => {
       )}
 
       {/* Pagination */}
-      {totalPages > 1 && (
-        <div className="flex items-center justify-center gap-3 mt-5">
-          <button
-            onClick={() => setPage(p => Math.max(1, p - 1))}
-            disabled={page === 1}
-            className="w-8 h-8 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/40 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
-          </button>
-          <span className="text-sm text-muted-foreground">
-            {page} / {totalPages}
-          </span>
-          <button
-            onClick={() => setPage(p => Math.min(totalPages, p + 1))}
-            disabled={page === totalPages}
-            className="w-8 h-8 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/40 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
+      <div className="flex items-center justify-between mt-5 gap-3 flex-wrap">
+        {/* Per-page selector */}
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          {[10, 25, 50, 100].map(n => (
+            <button
+              key={n}
+              onClick={() => { setPageSize(n); setPage(1); }}
+              className={`px-2.5 py-1 rounded-lg border text-xs font-medium transition-all
+                ${pageSize === n ? 'bg-primary text-primary-foreground border-primary' : 'border-border hover:border-foreground/40'}`}
+            >
+              {n}
+            </button>
+          ))}
+          <span className="ml-1">{t('perPage', '/стр.')}</span>
         </div>
-      )}
+
+        {/* Prev / page / Next */}
+        {totalPages > 1 && (
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setPage(p => Math.max(1, p - 1))}
+              disabled={page === 1}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border text-sm text-muted-foreground hover:text-foreground hover:border-foreground/40 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
+              {t('prev', 'Назад')}
+            </button>
+            <span className="text-sm text-muted-foreground px-1">{page} / {totalPages}</span>
+            <button
+              onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+              disabled={page === totalPages}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border text-sm text-muted-foreground hover:text-foreground hover:border-foreground/40 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+            >
+              {t('next', 'Далее')}
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        )}
+      </div>
 
       {modal && (isAudio(modal)
         ? <AudioModal gen={modal} onClose={() => setModal(null)} />
@@ -304,6 +333,8 @@ const GenerationsTable = ({ items, onDelete, adminMode }) => {
 
 /* ── Page ─────────────────────────────────────────────────── */
 const History = () => {
+  const { t } = useTranslation('history');
+  const { t: tc } = useTranslation('common');
   const [tab,         setTab]         = useState('mine');
   const [myItems,     setMyItems]     = useState([]);
   const [allItems,    setAllItems]    = useState([]);
@@ -345,7 +376,8 @@ const History = () => {
     <div className={`py-10 ${CONTAINER.blog}`}>
       {/* Header */}
       <div className="flex items-center gap-4 mb-8">
-        <Typography variant="h2" weight="bold">History</Typography>
+        <Typography variant="h2" weight="bold">{t('title')}</Typography>
+        <PageSEO title={tc('seo.history.title')} description={tc('seo.history.desc')} path="/history" />
 
         {isAdmin && (
           <div className="flex items-center gap-2 ml-2">
@@ -353,14 +385,14 @@ const History = () => {
               onClick={() => setTab('mine')}
               className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${tab === 'mine' ? 'bg-primary text-primary-foreground' : 'border border-border text-foreground hover:border-foreground/40'}`}
             >
-              My History
+              {t('myHistory')}
             </button>
             <button
               onClick={() => setTab('all')}
               className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-all flex items-center gap-1.5 ${tab === 'all' ? 'bg-destructive text-white' : 'border border-destructive text-destructive hover:bg-destructive/10'}`}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-current" />
-              Total
+              {t('total')}
             </button>
           </div>
         )}

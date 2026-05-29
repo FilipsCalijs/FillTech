@@ -1,0 +1,110 @@
+{
+  "upload": {
+    "dropPhoto": "Suelta tu foto",
+    "dropVideo": "Suelta tu vídeo",
+    "dropAudio": "Arrastra y suelta",
+    "orClick": "o haz clic para explorar",
+    "jpgPng": "JPG o PNG",
+    "jpgPngHint": "JPG o PNG · sujeto claro funciona mejor",
+    "videoHint": "MP4, MOV, AVI, MKV",
+    "audioHint": "MP3, WAV, M4A",
+    "maxSize": "máx {{max}} MB",
+    "clickToChange": "Clic para cambiar foto",
+    "uploadFirst": "Sube una foto primero",
+    "uploadVideoFirst": "Sube un vídeo primero",
+    "selfieHint": "selfie clara y bien iluminada funciona mejor",
+    "yourPhoto": "Tu Foto",
+    "voiceSample": "Muestra de voz",
+    "sampleHint": "3–10 seg",
+    "uploadOrPick": "Sube o elige un personaje"
+  },
+  "actions": {
+    "generate": "Generar",
+    "generating": "Generando...",
+    "removeBackground": "Eliminar Fondo",
+    "removingBackground": "Eliminando fondo…",
+    "removeWatermark": "Eliminar Marca de Agua",
+    "removingWatermark": "Eliminando marca de agua…",
+    "colorize": "Colorizar Foto",
+    "colorizing": "Colorizando…",
+    "applyFilter": "Aplicar Filtro",
+    "uploadFirst": "Añade una foto para generar",
+    "removeWatermarkFull": "Eliminar Marca de Agua",
+    "processing": "Procesando...",
+    "tryIt": "Probar"
+  },
+  "steps": { "howItWorks": "Cómo funciona" },
+  "result": { "reference": "Referencia", "result": "Resultado" },
+  "portrait": {
+    "title": "Editor de Retratos con IA",
+    "subtitle": "Sube tu foto y describe la edición — la IA la transformará.",
+    "gender": "Género", "pickOne": "Elige uno", "woman": "Mujer", "man": "Hombre",
+    "style": "Estilo", "prompt": "Prompt", "promptHint": "Sé específico sobre escena, iluminación y ambiente.",
+    "bodyPose": "Pose Corporal", "optional": "Opcional", "addPose": "Añadir pose",
+    "aspectRatio": "Proporción", "clearPose": "Quitar pose"
+  },
+  "gameFilter": {
+    "title": "Filtro de Juego", "subtitle": "Transforma cualquier foto en una captura de videojuego.",
+    "chooseStyle": "Elegir Estilo", "yourPhoto": "Tu Foto", "sceneHint": "JPG o PNG"
+  },
+  "bgRemover": {
+    "title": "Eliminador de Fondo", "subtitle": "Elimina el fondo de cualquier foto al instante con IA.",
+    "step1": "Sube cualquier foto con sujeto claro",
+    "step2": "La IA detecta y elimina el fondo",
+    "step3": "Descarga como PNG transparente"
+  },
+  "watermark": {
+    "title": "Eliminador de Marca de Agua", "subtitle": "Elimina marcas de agua preservando la textura original.",
+    "videoTitle": "Eliminador de Marca de Agua en Vídeo", "videoSubtitle": "Elimina marcas de agua de vídeos.",
+    "step1": "Sube cualquier foto con marca de agua",
+    "step2": "La IA detecta y elimina la marca de agua",
+    "step3": "Textura preservada — sin artefactos",
+    "videoStep1": "Sube cualquier vídeo con marcas de agua",
+    "videoStep2": "La IA elimina fotograma a fotograma",
+    "videoStep3": "Descarga el vídeo limpio en calidad original",
+    "videoNote": "El tiempo de procesamiento depende de la duración del vídeo.",
+    "image": "Imagen", "video": "Vídeo"
+  },
+  "colorize": {
+    "title": "Colorizador de Fotos", "subtitle": "Dale vida a fotos en blanco y negro con colorización por IA.",
+    "step1": "Sube una foto en blanco y negro",
+    "step2": "La IA analiza la escena y añade colores realistas",
+    "step3": "Descarga el resultado colorizado",
+    "bwHint": "Las imágenes en blanco y negro funcionan mejor"
+  },
+  "clothes": {
+    "step1": "Paso 1: Sube Tu Modelo", "step2": "Paso 2: Selecciona Tu Atuendo",
+    "examples": "Ejemplos", "uploadImage": "Subir Imagen", "clickToChange": "Clic para cambiar",
+    "woman": "Mujer", "man": "Hombre"
+  },
+  "upscaler": {
+    "title": "Escalador de IA", "subtitle": "Amplía imágenes hasta 4× sin perder calidad.",
+    "scale": "Escala", "backendSoon": "Backend próximamente", "lowResHint": "JPG o PNG · imágenes de baja resolución funcionan mejor"
+  },
+  "voice": {
+    "title": "Clonación de Voz", "enterText": "Introduce tu texto",
+    "textPlaceholder": "Escribe o pega el texto que quieres convertir a voz…",
+    "speed": "Velocidad", "current": "Actual"
+  },
+  "vocalIsolator": {
+    "title": "Aislador Vocal", "subtitle": "Separa vocales de la música en cualquier pista de audio.",
+    "isolate": "Aislar Vocales"
+  },
+  "seo": {
+    "portrait": { "title": "Editor de Retratos con IA | FillTech", "desc": "Transforma tus fotos con edición de retratos por IA." },
+    "gameFilter": { "title": "Filtro de Juego | FillTech", "desc": "Convierte fotos en capturas de videojuego retro." },
+    "bgRemover": { "title": "Eliminador de Fondo | FillTech", "desc": "Elimina fondos de imágenes al instante con IA." },
+    "watermark": { "title": "Eliminador de Marca de Agua | FillTech", "desc": "Elimina marcas de agua de fotos con IA." },
+    "videoWatermark": { "title": "Eliminador de Marca de Agua en Vídeo | FillTech", "desc": "Elimina marcas de agua de vídeos con IA." },
+    "colorize": { "title": "Colorizador de Fotos | FillTech", "desc": "Coloriza fotos en blanco y negro con IA." },
+    "clothesSwap": { "title": "Cambio de Ropa | FillTech", "desc": "Prueba ropa virtualmente con IA." },
+    "videoBg": { "title": "Reemplazo de Fondo en Vídeo | FillTech", "desc": "Reemplaza el fondo de cualquier vídeo con IA." },
+    "upscaler": { "title": "Escalador de IA | FillTech", "desc": "Amplía imágenes hasta 4× sin pérdida de calidad." },
+    "voiceClone": { "title": "Clonación de Voz | FillTech", "desc": "Clona cualquier voz con IA." },
+    "vocalIsolator": { "title": "Aislador Vocal | FillTech", "desc": "Aísla vocales de la música con IA." },
+    "explore": { "title": "Explorar Herramientas de IA | FillTech", "desc": "Descubre todas las herramientas de IA." },
+    "blog": { "title": "Blog | FillTech", "desc": "Artículos y noticias sobre IA." },
+    "history": { "title": "Mi Historial | FillTech", "desc": "Visualiza tu contenido generado." },
+    "billing": { "title": "Facturación | FillTech", "desc": "Gestiona tu saldo e historial." }
+  }
+}

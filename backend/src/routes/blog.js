@@ -25,14 +25,23 @@ const parseTags = (raw) => {
 
 // ─── Публичные ────────────────────────────────────────────────────────────
 
-// GET /api/blog/posts
-router.get('/posts', async (_req, res) => {
+const VALID_LANGS = ['en', 'ru', 'lv', 'de'];
+const safeLang = (l) => VALID_LANGS.includes(l) ? l : null;
+
+// GET /api/blog/posts?lang=en
+router.get('/posts', async (req, res) => {
   try {
-    const [rows] = await db.query(`
-      SELECT id, title, slug, excerpt, cover_url, tags, seo_title, seo_description, published_at
-      FROM posts WHERE status = 'published'
-      ORDER BY published_at DESC
-    `);
+    const lang = safeLang(req.query.lang);
+    const [rows] = await db.query(
+      lang
+        ? `SELECT id, title, slug, excerpt, cover_url, tags, lang, translations, seo_title, seo_description, published_at
+           FROM posts WHERE status = 'published' AND lang = ?
+           ORDER BY published_at DESC`
+        : `SELECT id, title, slug, excerpt, cover_url, tags, lang, translations, seo_title, seo_description, published_at
+           FROM posts WHERE status = 'published'
+           ORDER BY published_at DESC`,
+      lang ? [lang] : []
+    );
     res.json(rows.map(r => ({ ...r, tags: parseTags(r.tags) })));
   } catch (err) {
     console.error(err);
@@ -40,12 +49,13 @@ router.get('/posts', async (_req, res) => {
   }
 });
 
-// GET /api/blog/posts/:slug
+// GET /api/blog/posts/:slug?lang=en
 router.get('/posts/:slug', async (req, res) => {
   try {
+    const lang = safeLang(req.query.lang);
     const [rows] = await db.query(
-      `SELECT * FROM posts WHERE slug = ? AND status = 'published'`,
-      [req.params.slug]
+      `SELECT * FROM posts WHERE slug = ? AND status = 'published'${lang ? ' AND lang = ?' : ''}`,
+      lang ? [req.params.slug, lang] : [req.params.slug]
     );
     if (!rows.length) return res.status(404).json({ error: 'Post not found' });
     const post = rows[0];

@@ -1,0 +1,43 @@
+{
+  "watermark-remover": {
+    "name": "Wasserzeichen entfernen",
+    "desc": "Entfernt Wasserzeichen aus jedem Bild"
+  },
+  "bg-remover": {
+    "name": "Hintergrundentferner",
+    "desc": "Hintergrund in Sekunden entfernen"
+  },
+  "upscaler": {
+    "name": "Hochskalierung",
+    "desc": "Bilder bis zu 4× ohne Qualitätsverlust"
+  },
+  "layers-cutter": {
+    "name": "Ebenen-Ausschneider",
+    "desc": "Objekte in separate Ebenen ausschneiden"
+  },
+  "ps2-filter": {
+    "name": "PS2-Filter",
+    "desc": "Retro-PS2-Filter auf Fotos anwenden"
+  },
+  "ai-svg-maker": {
+    "name": "KI-SVG-Ersteller",
+    "desc": "Bild in sauberes SVG-Vektor konvertieren"
+  },
+  "clothes-swap": {
+    "name": "Kleidungstausch",
+    "desc": "Verschiedene Kleidung mit KI anprobieren"
+  },
+  "photo-colorize": {
+    "name": "Foto einfärben",
+    "desc": "Schwarzweißfotos einfärben"
+  },
+  "pdf-extractor": {
+    "name": "PDF-Extraktor",
+    "desc": "Text und Daten aus PDF-Dateien extrahieren"
+  },
+  "portrait": {
+    "name": "Porträt",
+    "desc": "Atemberaubende KI-Porträtfotos erstellen"
+  },
+  "tryIt": "→ Ausprobieren"
+}

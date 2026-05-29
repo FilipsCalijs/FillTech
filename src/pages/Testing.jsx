@@ -2,6 +2,8 @@ import { useState, useRef, useCallback } from 'react';
 import { Typography } from '@/components/ui/Typography';
 import { CONTAINER } from '@/config/sizes';
 import { PS2_STYLES, buildPs2Prompt } from '@/config/ps2Prompts';
+import { useTranslation } from 'react-i18next';
+import PageSEO from '@/components/seo/PageSEO';
 import ResultPanel from '@/components/ui/ResultPanel';
 
 const API = 'http://localhost:5200';
@@ -9,6 +11,7 @@ const API = 'http://localhost:5200';
 const RATIOS = ['1:1', '3:2', '2:3', '4:3', '3:4', '16:9', '9:16', '4:5', '5:4', '21:9'];
 
 const Ps2Filter = () => {
+  const { t } = useTranslation('tools');
   const [file,       setFile]       = useState(null);
   const [preview,    setPreview]    = useState(null);
   const [dragging,   setDragging]   = useState(false);
@@ -75,19 +78,16 @@ const Ps2Filter = () => {
 
   return (
     <div className={`py-12 ${CONTAINER.blog}`}>
-      <Typography variant="h2" weight="bold" className="block mb-2">
-        Game Filter
-      </Typography>
-      <Typography variant="body1" color="muted" className="block mb-10">
-        Transform any photo into a video game screenshot — from 8-bit to modern AAA.
-      </Typography>
+      <PageSEO title={t('seo.gameFilter.title')} description={t('seo.gameFilter.desc')} path="/tools/game-filter" />
+      <Typography variant="h2" weight="bold" className="block mb-2">{t('gameFilter.title')}</Typography>
+      <Typography variant="body1" color="muted" className="block mb-10">{t('gameFilter.subtitle')}</Typography>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
 
         {/* LEFT — drop zone */}
         <div className="flex flex-col gap-3">
           <div className="flex justify-between items-center">
-            <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">Your Photo</span>
+            <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">{t('gameFilter.yourPhoto')}</span>
           </div>
 
           <div
@@ -109,19 +109,19 @@ const Ps2Filter = () => {
                   <line x1="12" y1="3" x2="12" y2="15"/>
                 </svg>
                 <div>
-                  <p className="text-lg font-bold text-foreground mb-1">Drop your photo</p>
-                  <p className="text-sm text-muted-foreground">JPG or PNG · any scene works best</p>
+                  <p className="text-lg font-bold text-foreground mb-1">{t('upload.dropPhoto')}</p>
+                  <p className="text-sm text-muted-foreground">{t('gameFilter.sceneHint')}</p>
                 </div>
               </div>
             )}
             {preview && (
               <div className="absolute inset-0 rounded-2xl bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white text-sm font-semibold">Click to change photo</span>
+                <span className="text-white text-sm font-semibold">{t('upload.clickToChange')}</span>
               </div>
             )}
           </div>
           <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={e => pickFile(e.target.files?.[0])} />
-          <p className="text-xs text-muted-foreground mt-1">JPG or PNG · max {MAX_MB} MB</p>
+          <p className="text-xs text-muted-foreground mt-1">{t('upload.jpgPng')} · max {MAX_MB} MB</p>
         </div>
 
         {/* RIGHT — controls */}
@@ -130,7 +130,7 @@ const Ps2Filter = () => {
           {/* STYLE */}
           <div>
             <div className="mb-3">
-              <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">Choose Style</span>
+              <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">{t('gameFilter.chooseStyle')}</span>
             </div>
             <div className="grid grid-cols-3 gap-1.5">
               {PS2_STYLES.map(s => (
@@ -152,7 +152,7 @@ const Ps2Filter = () => {
           {/* ASPECT RATIO */}
           <div>
             <div className="mb-3">
-              <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">Aspect Ratio</span>
+              <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">{t('portrait.aspectRatio')}</span>
             </div>
             <div ref={ratioRef} className="relative inline-block">
               <button
@@ -199,14 +199,14 @@ const Ps2Filter = () => {
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
                 </svg>
-                Generating...
+                {t('actions.generating')}
               </>
             ) : (
               <>
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
                 </svg>
-                {file ? 'Apply Filter' : 'Add a photo to apply'}
+                {file ? t('actions.applyFilter') : t('upload.uploadFirst')}
               </>
             )}
           </button>

@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom';
 import { Typography } from '@/components/ui/Typography';
 import { CONTAINER } from '@/config/sizes';
 import ResultPanel from '@/components/ui/ResultPanel';
+import { useTranslation } from 'react-i18next';
+import PageSEO from '@/components/seo/PageSEO';
 
 const API = 'http://localhost:5200';
 const MAX_MB   = 22;
 const MAX_SIZE = MAX_MB * 1024 * 1024;
 
 const WatermarkRemover = () => {
+  const { t } = useTranslation('tools');
   const [file,         setFile]         = useState(null);
   const [preview,      setPreview]      = useState(null);
   const [dragging,     setDragging]     = useState(false);
@@ -65,8 +68,9 @@ const WatermarkRemover = () => {
 
   return (
     <div className={`py-12 ${CONTAINER.blog}`}>
+      <PageSEO title={t('seo.watermark.title')} description={t('seo.watermark.desc')} path="/tools/watermark-remover" />
       <div className="flex items-center gap-3 mb-2">
-        <Typography variant="h2" weight="bold">Watermark Remover</Typography>
+        <Typography variant="h2" weight="bold">{t('watermark.title')}</Typography>
         <div className="flex gap-2 ml-2">
           <span className="px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-semibold">Image</span>
           <Link to="/tools/watermark-remover-video" className="px-3 py-1 rounded-full border border-border text-xs font-semibold text-muted-foreground hover:border-foreground/40 transition-all">
@@ -74,9 +78,7 @@ const WatermarkRemover = () => {
           </Link>
         </div>
       </div>
-      <Typography variant="body1" color="muted" className="block mb-10">
-        Intelligently removes text and logo watermarks while preserving the original texture.
-      </Typography>
+      <Typography variant="body1" color="muted" className="block mb-10">{t('watermark.subtitle')}</Typography>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
 
@@ -160,7 +162,7 @@ const WatermarkRemover = () => {
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
                 </svg>
-                {file ? 'Remove Watermark' : 'Upload a photo first'}
+                {file ? t('actions.removeWatermark') : t('upload.uploadFirst')}
               </>
             )}
           </button>

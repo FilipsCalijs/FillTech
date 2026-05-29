@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { POSES } from '@/config/portraitPrompts';
+import { useTranslation } from 'react-i18next';
 import PoseModal from './PoseModal';
 
 const STYLES = ['No style', 'Photographic', 'Cinematic', 'Disney', 'Digital Art', 'Anime', 'Oil Painting'];
@@ -10,6 +11,7 @@ const pillBase   = 'border border-border text-foreground bg-transparent hover:bo
 const pillActive = 'bg-primary text-primary-foreground border-primary';
 
 const PortraitControls = ({ onGenerate, loading, fileSelected }) => {
+  const { t } = useTranslation('tools');
   const [gender,      setGender]      = useState('Woman');
   const [style,       setStyle]       = useState('No style');
   const [prompt,      setPrompt]      = useState('');
@@ -42,11 +44,11 @@ const PortraitControls = ({ onGenerate, loading, fileSelected }) => {
       {/* GENDER */}
       <div>
         <div className="flex justify-between items-center mb-3">
-          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">Gender</span>
-          <span className="text-xs text-muted-foreground">Pick one</span>
+          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">{t('portrait.gender')}</span>
+          <span className="text-xs text-muted-foreground">{t('portrait.pickOne')}</span>
         </div>
         <div className="grid grid-cols-2 gap-3">
-          {['Woman', 'Man'].map(g => (
+          {[t('portrait.woman'), t('portrait.man')].map(g => (
             <button
               key={g}
               onClick={() => setGender(g)}
@@ -61,7 +63,7 @@ const PortraitControls = ({ onGenerate, loading, fileSelected }) => {
       {/* STYLE */}
       <div>
         <div className="mb-3">
-          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">Style</span>
+          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">{t('portrait.style')}</span>
         </div>
         <div className="relative flex items-center gap-2">
           <button
@@ -93,7 +95,7 @@ const PortraitControls = ({ onGenerate, loading, fileSelected }) => {
       {/* PROMPT */}
       <div>
         <div className="flex justify-between items-center mb-3">
-          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">Prompt</span>
+          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">{t('portrait.prompt')}</span>
           <span className="text-xs text-muted-foreground">{prompt.length} / {MAX}</span>
         </div>
         <textarea
@@ -108,8 +110,8 @@ const PortraitControls = ({ onGenerate, loading, fileSelected }) => {
       {/* BODY POSE + ASPECT RATIO */}
       <div>
         <div className="flex justify-between items-center mb-3">
-          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">Body Pose</span>
-          <span className="text-xs text-muted-foreground">Optional</span>
+          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">{t('portrait.bodyPose')}</span>
+          <span className="text-xs text-muted-foreground">{t('portrait.optional')}</span>
         </div>
         <div className="flex gap-2 items-stretch">
           {/* Pose button */}
@@ -123,7 +125,7 @@ const PortraitControls = ({ onGenerate, loading, fileSelected }) => {
                 <path d="M12 7v6M9 10l-2 4M15 10l2 4M9 22l3-5 3 5"/>
               </svg>
               <span className={`text-sm ${poseId ? 'text-foreground font-medium' : 'text-muted-foreground'}`}>
-                {selectedPose ? selectedPose.name : 'Add pose'}
+                {selectedPose ? selectedPose.name : t('portrait.addPose')}
               </span>
             </div>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-muted-foreground">
@@ -176,14 +178,14 @@ const PortraitControls = ({ onGenerate, loading, fileSelected }) => {
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
             </svg>
-            Generating...
+            {t('actions.generating')}
           </>
         ) : (
           <>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
             </svg>
-            {fileSelected ? 'Generate' : 'Add a photo to generate'}
+            {fileSelected ? t('actions.generate') : t('actions.uploadFirst')}
           </>
         )}
       </button>

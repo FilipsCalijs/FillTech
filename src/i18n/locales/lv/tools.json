@@ -1,0 +1,185 @@
+{
+  "upload": {
+    "dropPhoto": "Nometiet fotoattēlu šeit",
+    "dropVideo": "Nometiet video šeit",
+    "dropAudio": "Nometiet failu šeit",
+    "orClick": "vai noklikšķiniet, lai izvēlētos",
+    "jpgPng": "JPG vai PNG",
+    "jpgPngHint": "JPG vai PNG · labāk darbojas ar skaidru objektu",
+    "videoHint": "MP4, MOV, AVI, MKV",
+    "audioHint": "MP3, WAV, M4A",
+    "maxSize": "maks {{max}} MB",
+    "clickToChange": "Noklikšķiniet, lai mainītu",
+    "uploadFirst": "Augšupielādējiet fotoattēlu",
+    "uploadVideoFirst": "Augšupielādējiet video",
+    "selfieHint": "skaidrs foto labā apgaismojumā",
+    "yourPhoto": "Jūsu foto",
+    "voiceSample": "Balss paraugs",
+    "sampleHint": "3–10 sek",
+    "uploadOrPick": "Augšupielādēt vai izvēlēties personāžu"
+  },
+  "actions": {
+    "generate": "Ģenerēt",
+    "generating": "Ģenerē...",
+    "removeBackground": "Noņemt fonu",
+    "removingBackground": "Noņem fonu…",
+    "removeWatermark": "Noņemt ūdenszīmi",
+    "removingWatermark": "Noņem ūdenszīmi…",
+    "colorize": "Iekrāsot foto",
+    "colorizing": "Iekrāso…",
+    "applyFilter": "Pielietot filtru",
+    "uploadFirst": "Pievienojiet foto ģenerēšanai",
+    "processing": "Apstrādā...",
+    "tryIt": "Izmēģināt"
+  },
+  "steps": {
+    "howItWorks": "Kā tas darbojas"
+  },
+  "result": {
+    "reference": "Oriģināls",
+    "result": "Rezultāts"
+  },
+  "portrait": {
+    "title": "AI Portreta redaktors",
+    "subtitle": "Augšupielādējiet fotoattēlu un aprakstiet izmaiņas — AI to pārveidos.",
+    "gender": "Dzimums",
+    "pickOne": "Izvēlieties",
+    "woman": "Sieviete",
+    "man": "Vīrietis",
+    "style": "Stils",
+    "prompt": "Apraksts",
+    "promptHint": "Aprakstiet ainu, apgaismojumu un noskaņu.",
+    "bodyPose": "Poza",
+    "optional": "Neobligāti",
+    "addPose": "Pievienot pozu",
+    "aspectRatio": "Attēla proporcija",
+    "clearPose": "Noņemt pozu"
+  },
+  "gameFilter": {
+    "title": "Spēļu filtrs",
+    "subtitle": "Pārvērtiet jebkuru fotoattēlu par videospēles ekrānuzņēmumu.",
+    "chooseStyle": "Izvēlieties stilu",
+    "yourPhoto": "Jūsu foto",
+    "sceneHint": "JPG vai PNG · jebkura aina"
+  },
+  "bgRemover": {
+    "title": "Fona noņemšana",
+    "subtitle": "Uzreiz noņemiet fonu no jebkura fotoattēla ar AI palīdzību.",
+    "step1": "Augšupielādējiet fotoattēlu ar skaidru objektu",
+    "step2": "AI konstatē un noņem fonu",
+    "step3": "Lejupielādējiet caurspīdīgu PNG"
+  },
+  "watermark": {
+    "title": "Ūdenszīmju noņemšana",
+    "subtitle": "Inteliģenti noņem teksta un logotipu ūdenszīmes.",
+    "videoTitle": "Video ūdenszīmju noņemšana",
+    "videoSubtitle": "Noņemiet ūdenszīmes no video bez kvalitātes zuduma.",
+    "step1": "Augšupielādējiet foto ar ūdenszīmi",
+    "step2": "AI konstatē un noņem ūdenszīmi",
+    "step3": "Fona tekstūra tiek saglabāta",
+    "videoStep1": "Augšupielādējiet video ar ūdenszīmēm",
+    "videoStep2": "AI noņem ūdenszīmes kadru pa kadram",
+    "videoStep3": "Lejupielādējiet tīru video",
+    "videoNote": "Apstrādes laiks atkarīgs no video garuma.",
+    "image": "Foto",
+    "video": "Video"
+  },
+  "colorize": {
+    "title": "Foto iekrāsošana",
+    "subtitle": "Atdzīviniet melnbaltus fotoattēlus ar AI.",
+    "step1": "Augšupielādējiet melnbaltu foto",
+    "step2": "AI analizē ainu un pievieno reālistiskas krāsas",
+    "step3": "Lejupielādējiet iekrāsoto rezultātu",
+    "bwHint": "Vislabāk darbojas ar melnbaltiem fotoattēliem"
+  },
+  "clothes": {
+    "step1": "1. solis: Jūsu foto",
+    "step2": "2. solis: Izvēlieties apģērbu",
+    "examples": "Piemēri",
+    "uploadImage": "Augšupielādēt attēlu",
+    "clickToChange": "Noklikšķiniet, lai mainītu",
+    "woman": "Sieviete",
+    "man": "Vīrietis"
+  },
+  "upscaler": {
+    "title": "AI Palielinātājs",
+    "subtitle": "Palieliniet attēlu līdz 4× bez kvalitātes zuduma.",
+    "scale": "Mērogs",
+    "backendSoon": "Drīzumā pieejams",
+    "lowResHint": "JPG vai PNG · vislabāk darbojas ar zemas izšķirtspējas attēliem"
+  },
+  "voice": {
+    "title": "Balss klonēšana",
+    "enterText": "Ievadiet tekstu",
+    "textPlaceholder": "Ievadiet tekstu, ko vēlaties pārvērst runā…",
+    "speed": "Ātrums",
+    "current": "Pašreizējais"
+  },
+  "vocalIsolator": {
+    "title": "Vokāla izolators",
+    "subtitle": "Atdaliet vokālu no mūzikas jebkurā audio ierakstā. Augšupielādējiet dziesmu un iegūstiet tīru vokālu.",
+    "isolate": "Izolēt vokālu"
+  },
+  "seo": {
+    "portrait": {
+      "title": "AI Portreta redaktors — Pārveido fotogrāfijas | FillTech",
+      "desc": "Augšupielādē fotogrāfiju un pārveido to ar AI. Izvēlies dzimumu, stilu, pozu un apgaismojumu."
+    },
+    "gameFilter": {
+      "title": "Spēļu filtrs — Pārveido fotogrāfijas par spēļu ekrānuzņēmumiem | FillTech",
+      "desc": "Pārvērt jebkuru fotogrāfiju retro spēles ekrānuzņēmumā. 7 stili: PS2, Arcade, 8-bit, PS3, Anime, AAA un citi."
+    },
+    "bgRemover": {
+      "title": "Fona noņemšana — Bezmaksas AI fona noņemšana | FillTech",
+      "desc": "Noņem attēlu fonus uzreiz ar AI. Iegūsti caurspīdīgu PNG sekundēs. Lieliski piemērots produktu un portreta fotogrāfijām."
+    },
+    "watermark": {
+      "title": "Ūdenszīmju noņemšana — Noņem logotipus no fotogrāfijām | FillTech",
+      "desc": "Inteliģenti noņem teksta un logotipu ūdenszīmes, saglabājot oriģinālo tekstūru."
+    },
+    "videoWatermark": {
+      "title": "Video ūdenszīmju noņemšana | FillTech",
+      "desc": "Noņem ūdenszīmes no jebkura video ar AI. Kadru pa kadram apstrāde saglabā oriģinālo kvalitāti."
+    },
+    "colorize": {
+      "title": "Foto iekrāsošana — Atdzīvini melnbaltos attēlus ar AI | FillTech",
+      "desc": "Atdzīvini vecas melnbaltas fotogrāfijas ar AI iekrāsošanu. Reālistiskas krāsas tiek pievienotas automātiski."
+    },
+    "clothesSwap": {
+      "title": "Apģērbu maiņa — Virtuāli izmēģini apģērbu ar AI | FillTech",
+      "desc": "Izmēģini dažādus apģērbus virtuāli ar AI. Augšupielādē savu portreta un apģērba attēlu — redzi rezultātu uzreiz."
+    },
+    "videoBg": {
+      "title": "Video fona nomaiņa — Noņem vai nomainiet video fonu | FillTech",
+      "desc": "Noņem vai nomainiet jebkura video fonu ar AI. Augšupielādē video un izvēlieties fona attēlu."
+    },
+    "upscaler": {
+      "title": "AI Attēlu palielināšana — 4× bez kvalitātes zuduma | FillTech",
+      "desc": "Palielini fotogrāfijas līdz 4× ar AI super-izšķirtspēju. Atjaunini smalkas detaļas bez kvalitātes zuduma."
+    },
+    "voiceClone": {
+      "title": "Balss klonēšana — Klonē jebkuru balsi ar AI | FillTech",
+      "desc": "Klonē jebkuru balsi no 3–10 sekunžu audio parauga. Pārveido tekstu runā 600+ valodās ar savu balsi."
+    },
+    "vocalIsolator": {
+      "title": "Vokāla izolators — Atdaliet vokālu no mūzikas | FillTech",
+      "desc": "AI vokāla izolācija. Augšupielādējiet jebkuru dziesmu un uzreiz iegūstiet tīru vokālu bez instrumentāla."
+    },
+    "explore": {
+      "title": "AI rīki — Visi efekti | FillTech",
+      "desc": "Atklāj visus AI rīkus: portreta redaktors, fona noņemšana, ūdenszīmju noņemšana, foto iekrāsošana un citi."
+    },
+    "blog": {
+      "title": "Blogs — AI rīku padomi un jaunumi | FillTech",
+      "desc": "Lasi rakstus, pamācības un jaunumus par AI attēlu un video apstrādes rīkiem no FillTech komandas."
+    },
+    "history": {
+      "title": "Vēsture — Manas ģenerācijas | FillTech",
+      "desc": "Skatīt un pārvaldīt visas AI ģenerācijas. Lejupielādēt vai dzēst rezultātus. Saglabājas 7 dienas."
+    },
+    "billing": {
+      "title": "Norēķini — Konta atlikums | FillTech",
+      "desc": "Pārvaldīt atlikumu, skatīt tēriņu vēsturi un konfigurēt automātisko papildināšanu."
+    }
+  }
+}

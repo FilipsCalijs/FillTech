@@ -1,12 +1,15 @@
 import { useState, useRef, useCallback } from 'react';
 import { Typography } from '@/components/ui/Typography';
 import { CONTAINER } from '@/config/sizes';
+import { useTranslation } from 'react-i18next';
+import PageSEO from '@/components/seo/PageSEO';
 
 const API     = 'http://localhost:5200';
 const MAX_MB  = 500;
 const MAX_SIZE = MAX_MB * 1024 * 1024;
 
 const VideoWatermarkRemover = () => {
+  const { t } = useTranslation('tools');
   const [file,         setFile]         = useState(null);
   const [preview,      setPreview]      = useState(null);
   const [dragging,     setDragging]     = useState(false);
@@ -63,6 +66,7 @@ const VideoWatermarkRemover = () => {
 
   return (
     <div className={`py-12 ${CONTAINER.blog}`}>
+      <PageSEO title={t('seo.videoWatermark.title')} description={t('seo.videoWatermark.desc')} path="/tools/video-watermark-remove" />
       <Typography variant="h2" weight="bold" className="block mb-2">
         Video Watermark Remover
       </Typography>

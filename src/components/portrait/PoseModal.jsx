@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import { POSES } from '@/config/portraitPrompts';
+import { useTranslation } from 'react-i18next';
 import { Typography } from '@/components/ui/Typography';
 
 const PoseModal = ({ selected, onSelect, onClose }) => {
+  const { t } = useTranslation('tools');
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', onKey);
@@ -19,7 +21,7 @@ const PoseModal = ({ selected, onSelect, onClose }) => {
         onClick={e => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-5">
-          <Typography variant="h4" weight="semibold">Body Pose</Typography>
+          <Typography variant="h4" weight="semibold">{t('portrait.bodyPose')}</Typography>
           <button
             onClick={onClose}
             className="text-muted-foreground hover:text-foreground transition-colors"

@@ -1,0 +1,43 @@
+{
+  "watermark-remover": {
+    "name": "Ūdenszīmju noņemšana",
+    "desc": "Noņem ūdenszīmes no jebkura attēla"
+  },
+  "bg-remover": {
+    "name": "Fona noņemšana",
+    "desc": "Noņem fonu no fotogrāfijām sekundēs"
+  },
+  "upscaler": {
+    "name": "Palielinātājs",
+    "desc": "Palielina attēlus līdz 4× bez kvalitātes zuduma"
+  },
+  "layers-cutter": {
+    "name": "Slāņu griezējs",
+    "desc": "Izgriež objektus atsevišķos slāņos"
+  },
+  "ps2-filter": {
+    "name": "PS2 filtrs",
+    "desc": "Pielieto retro PS2 laikmeta filtru"
+  },
+  "ai-svg-maker": {
+    "name": "AI SVG veidotājs",
+    "desc": "Pārveido attēlu tīrā SVG vektorā"
+  },
+  "clothes-swap": {
+    "name": "Apģērbu maiņa",
+    "desc": "Izmēģiniet dažādus apģērbus ar AI"
+  },
+  "photo-colorize": {
+    "name": "Foto iekrāsošana",
+    "desc": "Iekrāso melnbaltos fotoattēlus"
+  },
+  "pdf-extractor": {
+    "name": "PDF ekstraktors",
+    "desc": "Iegūst tekstu un datus no PDF"
+  },
+  "portrait": {
+    "name": "Portrets",
+    "desc": "Veidojiet satriecošus AI portreta fotoattēlus"
+  },
+  "tryIt": "→ Izmēģināt"
+}

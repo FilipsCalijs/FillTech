@@ -7,6 +7,23 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: [
+          '"PingFang SC"',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          'Helvetica',
+          'Arial',
+          'sans-serif',
+        ],
+      },
+      fontSize: {
+        'h2': ['36px', { lineHeight: '1.2', fontWeight: '600' }],
+        'h3': ['28px', { lineHeight: '1.3', fontWeight: '600' }],
+        'body': ['18px', { lineHeight: '1.6' }],
+      },
       colors: {
         border: "var(--border)",
         input: "var(--input)",

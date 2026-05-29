@@ -1,0 +1,110 @@
+{
+  "upload": {
+    "dropPhoto": "将照片拖放到此处",
+    "dropVideo": "将视频拖放到此处",
+    "dropAudio": "拖放文件",
+    "orClick": "或点击浏览",
+    "jpgPng": "JPG 或 PNG",
+    "jpgPngHint": "JPG 或 PNG · 主体清晰的图片效果最佳",
+    "videoHint": "MP4, MOV, AVI, MKV",
+    "audioHint": "MP3, WAV, M4A",
+    "maxSize": "最大 {{max}} MB",
+    "clickToChange": "点击更换照片",
+    "uploadFirst": "请先上传照片",
+    "uploadVideoFirst": "请先上传视频",
+    "selfieHint": "清晰、光线充足的自拍效果最佳",
+    "yourPhoto": "您的照片",
+    "voiceSample": "语音样本",
+    "sampleHint": "3–10 秒",
+    "uploadOrPick": "上传或选择角色"
+  },
+  "actions": {
+    "generate": "生成",
+    "generating": "生成中...",
+    "removeBackground": "去除背景",
+    "removingBackground": "去除背景中…",
+    "removeWatermark": "去除水印",
+    "removingWatermark": "去除水印中…",
+    "colorize": "照片上色",
+    "colorizing": "上色中…",
+    "applyFilter": "应用滤镜",
+    "uploadFirst": "添加照片以生成",
+    "removeWatermarkFull": "去除水印",
+    "processing": "处理中...",
+    "tryIt": "立即体验"
+  },
+  "steps": { "howItWorks": "使用方法" },
+  "result": { "reference": "参考", "result": "结果" },
+  "portrait": {
+    "title": "AI 人像编辑器",
+    "subtitle": "上传照片并描述编辑需求 — AI 将为您变换。",
+    "gender": "性别", "pickOne": "选择一个", "woman": "女性", "man": "男性",
+    "style": "风格", "prompt": "提示词", "promptHint": "请具体描述场景、光线和氛围。",
+    "bodyPose": "姿势", "optional": "可选", "addPose": "添加姿势",
+    "aspectRatio": "宽高比", "clearPose": "清除姿势"
+  },
+  "gameFilter": {
+    "title": "游戏滤镜", "subtitle": "将任意照片变成游戏截图风格。",
+    "chooseStyle": "选择风格", "yourPhoto": "您的照片", "sceneHint": "JPG 或 PNG"
+  },
+  "bgRemover": {
+    "title": "背景去除器", "subtitle": "AI 即时去除任意照片背景。",
+    "step1": "上传主体清晰的照片",
+    "step2": "AI 检测并去除背景",
+    "step3": "下载透明 PNG 文件"
+  },
+  "watermark": {
+    "title": "水印去除器", "subtitle": "智能去除水印，同时保留原始纹理。",
+    "videoTitle": "视频水印去除器", "videoSubtitle": "去除视频中的水印。",
+    "step1": "上传带有水印的照片",
+    "step2": "AI 检测并去除水印",
+    "step3": "纹理完整保留 — 无瑕疵",
+    "videoStep1": "上传带有水印的视频",
+    "videoStep2": "AI 逐帧去除水印",
+    "videoStep3": "以原始质量下载干净视频",
+    "videoNote": "处理时间取决于视频时长。",
+    "image": "图片", "video": "视频"
+  },
+  "colorize": {
+    "title": "照片上色器", "subtitle": "AI 为黑白照片添加色彩。",
+    "step1": "上传黑白或灰度照片",
+    "step2": "AI 分析场景并添加真实色彩",
+    "step3": "下载上色后的结果",
+    "bwHint": "黑白或灰度图片效果最佳"
+  },
+  "clothes": {
+    "step1": "第一步：上传您的模特", "step2": "第二步：选择您的服装",
+    "examples": "示例", "uploadImage": "上传图片", "clickToChange": "点击更换",
+    "woman": "女性", "man": "男性"
+  },
+  "upscaler": {
+    "title": "AI 图片放大器", "subtitle": "无损放大图片至 4 倍。",
+    "scale": "倍率", "backendSoon": "后端即将推出", "lowResHint": "JPG 或 PNG · 低分辨率图片效果最佳"
+  },
+  "voice": {
+    "title": "声音克隆", "enterText": "输入您的文字",
+    "textPlaceholder": "输入或粘贴要转换为语音的文字…",
+    "speed": "速度", "current": "当前"
+  },
+  "vocalIsolator": {
+    "title": "人声分离器", "subtitle": "从任意音频中分离人声。",
+    "isolate": "分离人声"
+  },
+  "seo": {
+    "portrait": { "title": "AI 人像编辑器 | FillTech", "desc": "AI 变换您的照片。" },
+    "gameFilter": { "title": "游戏滤镜 | FillTech", "desc": "将照片变成游戏截图。" },
+    "bgRemover": { "title": "背景去除器 | FillTech", "desc": "AI 即时去除背景。" },
+    "watermark": { "title": "水印去除器 | FillTech", "desc": "AI 去除照片水印。" },
+    "videoWatermark": { "title": "视频水印去除器 | FillTech", "desc": "AI 去除视频水印。" },
+    "colorize": { "title": "照片上色器 | FillTech", "desc": "AI 为黑白照片上色。" },
+    "clothesSwap": { "title": "换装 | FillTech", "desc": "AI 虚拟试穿。" },
+    "videoBg": { "title": "视频背景替换 | FillTech", "desc": "AI 替换视频背景。" },
+    "upscaler": { "title": "AI 图片放大器 | FillTech", "desc": "图片放大至 4 倍。" },
+    "voiceClone": { "title": "声音克隆 | FillTech", "desc": "AI 克隆任意声音。" },
+    "vocalIsolator": { "title": "人声分离器 | FillTech", "desc": "AI 分离人声。" },
+    "explore": { "title": "探索 AI 工具 | FillTech", "desc": "发现所有 AI 工具。" },
+    "blog": { "title": "博客 | FillTech", "desc": "AI 相关文章和新闻。" },
+    "history": { "title": "我的历史 | FillTech", "desc": "查看生成内容。" },
+    "billing": { "title": "账单 | FillTech", "desc": "管理余额和历史。" }
+  }
+}

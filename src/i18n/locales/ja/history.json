@@ -1,0 +1,30 @@
+{
+  "title": "履歴",
+  "myHistory": "マイ履歴",
+  "total": "合計",
+  "table": {
+    "output": "出力",
+    "model": "モデル",
+    "status": "ステータス",
+    "created": "作成日",
+    "cost": "コスト",
+    "actions": "アクション",
+    "user": "ユーザー"
+  },
+  "noGenerations": "生成物が見つかりません。",
+  "sortByDate": "日付順に並べ替え",
+  "sortByModel": "モデル順に並べ替え",
+  "searchById": "IDで検索…",
+  "selected": "{{count}} 件選択中",
+  "justNow": "たった今",
+  "pagination": "{{page}} / {{total}}",
+  "deleteGeneration": "生成物を削除しました。",
+  "generationDeleted": "生成物を削除しました。",
+  "completed": "完了",
+  "failed": "失敗",
+  "pending": "保留中",
+  "processing": "処理中",
+  "prev": "前へ",
+  "next": "次へ",
+  "perPage": "/ページ"
+}

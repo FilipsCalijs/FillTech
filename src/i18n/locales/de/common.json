@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "explore": "Entdecken",
+    "blog": "Blog",
+    "gameFilter": "Spielfilter",
+    "voice": "Stimmklon",
+    "vocalIsolator": "Vokal-Isolator",
+    "clothes": "Kleidung",
+    "plan": "Tarife",
+    "history": "Verlauf",
+    "billing": "Abrechnung",
+    "signOut": "Abmelden",
+    "admin": "Admin",
+    "loggedInAs": "Angemeldet als",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "portrait": "Porträt"
+  },
+  "theme": {
+    "light": "Helles Design",
+    "dark": "Dunkles Design"
+  },
+  "actions": {
+    "download": "Herunterladen",
+    "openUrl": "URL öffnen",
+    "delete": "Löschen",
+    "generate": "Generieren",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "back": "Zurück",
+    "upload": "Hochladen",
+    "change": "Ändern",
+    "addFunds": "Guthaben aufladen"
+  },
+  "status": {
+    "completed": "Abgeschlossen",
+    "failed": "Fehlgeschlagen",
+    "pending": "Ausstehend",
+    "processing": "Wird verarbeitet"
+  },
+  "errors": {
+    "fileTooLarge": "Datei zu groß: {{size}} MB. Max {{max}} MB.",
+    "generationFailed": "Generierung fehlgeschlagen",
+    "required": "Dieses Feld ist erforderlich",
+    "wentWrong": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+  },
+  "exploreSubtitle": "Leistungsstarke KI-Werkzeuge zur Bearbeitung von Bildern und Dateien.",
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "desc": "Diese Seite existiert leider nicht oder wurde verschoben.",
+    "back": "Zur Startseite"
+  },
+  "loading": "Lädt...",
+  "comingSoon": "Demnächst",
+  "result": "Ergebnis",
+  "reference": "Original",
+  "current": "Aktuell",
+  "footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "description": "FillTech bietet KI-gestützte Werkzeuge für Bild- und Videoverarbeitung. Hintergründe entfernen, Fotos verbessern, Kleidung tauschen und mehr — sofort und mühelos. Probieren Sie FillTech heute aus.",
+    "legal": "Rechtliches",
+    "tools": "Werkzeuge",
+    "terms": "Nutzungsbedingungen",
+    "privacy": "Datenschutzrichtlinie",
+    "cookies": "Cookie-Richtlinie"
+  },
+  "seo": {
+    "explore": {
+      "title": "KI-Werkzeuge entdecken — Alle Effekte | FillTech",
+      "desc": "Entdecke alle KI-Werkzeuge: Porträt-Editor, Hintergrundentferner, Wasserzeichen-Entferner, Foto-Colorizer und mehr."
+    },
+    "history": {
+      "title": "Verlauf — Meine Generierungen | FillTech",
+      "desc": "Alle KI-Generierungen anzeigen und verwalten. Ergebnisse herunterladen oder löschen. Wird 7 Tage gespeichert."
+    },
+    "billing": {
+      "title": "Abrechnung — Kontoguthaben | FillTech",
+      "desc": "Guthaben verwalten, Ausgabenhistorie anzeigen und automatische Aufladung für KI-Generierungen konfigurieren."
+    },
+    "terms": {
+      "title": "Nutzungsbedingungen | FillTech",
+      "desc": "Lesen Sie die Nutzungsbedingungen von FillTech."
+    },
+    "privacy": {
+      "title": "Datenschutzrichtlinie | FillTech",
+      "desc": "Erfahren Sie, wie FillTech Ihre persönlichen Daten erhebt, verwendet und schützt."
+    },
+    "cookies": {
+      "title": "Cookie-Richtlinie | FillTech",
+      "desc": "Erfahren Sie, wie FillTech Cookies und ähnliche Technologien verwendet."
+    }
+  }
+}

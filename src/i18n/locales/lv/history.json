@@ -1,0 +1,29 @@
+{
+  "title": "Vēsture",
+  "myHistory": "Mana vēsture",
+  "total": "Visi",
+  "table": {
+    "output": "Rezultāts",
+    "model": "Rīks",
+    "status": "Statuss",
+    "created": "Izveidots",
+    "cost": "Izmaksas",
+    "actions": "Darbības",
+    "user": "Lietotājs"
+  },
+  "noGenerations": "Ģenerācijas nav atrastas.",
+  "sortByDate": "Pēc datuma",
+  "sortByModel": "Pēc rīka",
+  "searchById": "Meklēt pēc ID…",
+  "selected": "Izvēlēts: {{count}}",
+  "justNow": "tikko",
+  "pagination": "{{page}} / {{total}}",
+  "generationDeleted": "Ģenerācija dzēsta.",
+  "completed": "Pabeigts",
+  "failed": "Kļūda",
+  "pending": "Gaida",
+  "processing": "Apstrādā",
+  "prev": "Atpakaļ",
+  "next": "Tālāk",
+  "perPage": "/lpp."
+}
