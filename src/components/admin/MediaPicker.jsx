@@ -175,7 +175,7 @@ export default function MediaPicker({ onSelect, onClose }) {
               >
                 <Upload size={32} className="text-muted-foreground" />
                 <p className="text-sm text-muted-foreground">Нажми чтобы выбрать файл</p>
-                <p className="text-xs text-muted-foreground">JPG, PNG, WebP — до 10 МБ</p>
+                <p className="text-xs text-muted-foreground">JPG, PNG, WebP - до 10 МБ</p>
               </div>
               <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={handleFileUpload} />
               {uploading && <p className="text-sm text-muted-foreground">Загружаю...</p>}
@@ -185,7 +185,7 @@ export default function MediaPicker({ onSelect, onClose }) {
           {/* URL tab */}
           {tab === 'url' && (
             <div className="flex flex-col gap-4 py-8 max-w-lg mx-auto">
-              <p className="text-sm text-muted-foreground">Вставь URL изображения — оно будет скачано и сохранено в R2.</p>
+              <p className="text-sm text-muted-foreground">Вставь URL изображения - оно будет скачано и сохранено в R2.</p>
               <input
                 value={urlInput}
                 onChange={(e) => setUrlInput(e.target.value)}

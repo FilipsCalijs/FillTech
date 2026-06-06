@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Card, CardContent } from "@/components/ui/Card";
 import { Typography } from "@/components/ui/Typography";
 import { Button } from "@/components/ui/Button";
@@ -9,6 +10,7 @@ import LangLink from "@/components/routing/LangLink";
 const AUTO_INTERVAL = 5000;
 
 const OtherProducts = ({ currentSlug }) => {
+  const { t } = useTranslation('tools');
   const [index, setIndex] = useState(0);
 
   const relatedTools = currentSlug ? getRelatedTools(currentSlug, ALL_TOOLS) : null;
@@ -27,7 +29,7 @@ const OtherProducts = ({ currentSlug }) => {
       <div className="w-full max-w-[1440px] px-4">
         <div className="flex flex-col items-center gap-4">
           <Typography variant="h1" weight="semibold" className="text-center">
-            Try Our Other Products
+            {t('otherProducts.title')}
           </Typography>
           <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4">
             {relatedTools.map((tool) => (
@@ -35,14 +37,14 @@ const OtherProducts = ({ currentSlug }) => {
                 <Card bordered="disable" className="rounded-xl bg-card text-card-foreground h-[400px]">
                   <CardContent className="p-8 flex flex-col items-center text-center gap-6 h-full">
                     <Typography variant="h3" weight="semibold">
-                      {tool.title}
+                      {t(`toolCards.${tool.slug}.title`, tool.title)}
                     </Typography>
                     <Typography variant="body1" className="opacity-80 flex-grow">
-                      {tool.description}
+                      {t(`toolCards.${tool.slug}.desc`, tool.description)}
                     </Typography>
                     <LangLink to={tool.path} className="w-full">
                       <Button className={`bg-gradient-to-r ${tool.gradient} text-white border-0 w-full`}>
-                        {tool.buttonText}
+                        {t(`toolCards.${tool.slug}.btn`, tool.buttonText)}
                       </Button>
                     </LangLink>
                   </CardContent>
@@ -60,7 +62,7 @@ const OtherProducts = ({ currentSlug }) => {
       <div className="flex flex-col items-center gap-4">
 
         <Typography variant="h1" weight="semibold" className="text-center">
-          Try Our Other Products
+          {t('otherProducts.title')}
         </Typography>
 
         {/* Carousel */}

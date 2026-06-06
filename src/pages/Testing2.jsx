@@ -4,6 +4,7 @@ import AudioPlayer from '@/components/ui/AudioPlayer';
 import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
 import OtherProducts from '@/lib/OtherProducts';
+import RelevantBlogs from '@/components/ui/RelevantBlogs';
 
 const API = 'http://localhost:5200';
 
@@ -70,7 +71,7 @@ const VoiceCloning = () => {
       <div className="rounded-2xl border border-border bg-card overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px]">
 
-          {/* LEFT — text */}
+          {/* LEFT - text */}
           <div className="p-8 border-b border-border lg:border-b-0 lg:border-r flex flex-col gap-3">
             <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">
               {t('voice.enterText')}
@@ -84,7 +85,7 @@ const VoiceCloning = () => {
             />
           </div>
 
-          {/* RIGHT — voice upload + speed + generate */}
+          {/* RIGHT - voice upload + speed + generate */}
           <div className="p-6 flex flex-col gap-5">
 
             {/* Voice upload */}
@@ -198,6 +199,7 @@ const VoiceCloning = () => {
           </div>
         )}
       </div>
+      <RelevantBlogs currentSlug="voice-clone" />
       <OtherProducts currentSlug="voice-clone" />
     </div>
   );

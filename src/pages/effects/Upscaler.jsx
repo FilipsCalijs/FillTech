@@ -4,6 +4,7 @@ import { CONTAINER } from '@/config/sizes';
 import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
 import OtherProducts from '@/lib/OtherProducts';
+import RelevantBlogs from '@/components/ui/RelevantBlogs';
 import { Construction } from 'lucide-react';
 
 const MAX_MB   = 22;
@@ -51,7 +52,7 @@ const Upscaler = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
 
-        {/* LEFT — drop zone */}
+        {/* LEFT - drop zone */}
         <div className="flex flex-col gap-3">
           <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">
             {t('upload.yourPhoto')}
@@ -93,7 +94,7 @@ const Upscaler = () => {
           <p className="text-xs text-muted-foreground">{t('upload.jpgPng')} · max {MAX_MB} MB</p>
         </div>
 
-        {/* RIGHT — scale + generate */}
+        {/* RIGHT - scale + generate */}
         <div className="flex flex-col gap-6">
 
           <div>
@@ -131,6 +132,7 @@ const Upscaler = () => {
           {error && <p className="text-red-500 text-sm">{error}</p>}
         </div>
       </div>
+      <RelevantBlogs currentSlug="upscaler" />
       <OtherProducts currentSlug="upscaler" />
     </div>
   );

@@ -19,7 +19,7 @@ const ToolHero = ({
     <div className="w-full max-w-[1440px] px-4">
       <Card className="flex flex-col md:flex-row rounded-xl overflow-hidden">
 
-        {/* Left — upload side */}
+        {/* Left - upload side */}
         <div className="flex-1 p-6 md:p-8 flex flex-col justify-between gap-6">
           {(title || subtitle) && (
             <div className="flex flex-col gap-2">
@@ -59,7 +59,7 @@ const ToolHero = ({
           </div>
         </div>
 
-        {/* Right — hero image */}
+        {/* Right - hero image */}
         {rightImage && (
           <div className="hidden md:block md:w-1/2">
             <img

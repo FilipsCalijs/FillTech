@@ -51,7 +51,7 @@ const Primer = () => {
       {/* Header */}
       <div className="w-full max-w-[1440px] px-4 flex flex-col gap-2">
         <Typography variant="h1" weight="bold" className="block gradient-text">
-          Primer — Page Modules
+          Primer - Page Modules
         </Typography>
         <Typography variant="body1" color="muted" className="block">
           All reusable page sections. Pick what you need when building a new tool page.

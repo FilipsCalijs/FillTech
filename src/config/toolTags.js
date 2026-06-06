@@ -31,7 +31,7 @@ export const ALL_TOOLS = [
   {
     slug: 'watermark-remover-video',
     title: 'Video Watermark Remover',
-    description: 'Remove watermarks and logos from videos automatically using AI — no editing software needed.',
+    description: 'Remove watermarks and logos from videos automatically using AI - no editing software needed.',
     buttonText: 'Remove from Video',
     gradient: 'from-orange-400 to-yellow-500',
     path: '/tools/watermark-remover-video',
@@ -71,7 +71,7 @@ export const ALL_TOOLS = [
   {
     slug: 'ps2-filter',
     title: 'Game Filter',
-    description: 'Turn any photo into a retro game-style image — PS2, anime, arcade, and more.',
+    description: 'Turn any photo into a retro game-style image - PS2, anime, arcade, and more.',
     buttonText: 'Apply Filter',
     gradient: 'from-teal-400 to-cyan-600',
     path: '/tools/ps2-filter',
@@ -103,6 +103,34 @@ export function getRelatedTools(currentSlug, allTools, limit = 3) {
       const score = toolTags.filter(tag => currentTags.includes(tag)).length;
       return { ...tool, score };
     })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit);
+}
+
+export const BLOG_TAGS = {
+  'bg-remover':              ['background', 'remove', 'image'],
+  'watermark-remover':       ['watermark', 'remove', 'image'],
+  'watermark-remover-video': ['watermark', 'remove', 'video'],
+  'photo-colorize':          ['color', 'photo', 'enhance'],
+  'portrait':                ['portrait', 'face', 'enhance'],
+  'clothes-swap':            ['fashion', 'clothes', 'image'],
+  'upscaler':                ['quality', 'enhance', 'image'],
+  'ps2-filter':              ['filter', 'style', 'image'],
+  'voice-clone':             ['voice', 'audio', 'clone'],
+  'video-bg-replace':        ['background', 'remove', 'video'],
+};
+
+export function getRelatedBlogs(currentSlug, allPosts, limit = 3) {
+  const currentTags = BLOG_TAGS[currentSlug] || [];
+  if (!currentTags.length) return [];
+
+  return allPosts
+    .map(post => {
+      const postTags = Array.isArray(post.tags) ? post.tags : [];
+      const score = postTags.filter(tag => currentTags.includes(tag)).length;
+      return { ...post, score };
+    })
+    .filter(post => post.score > 0)
     .sort((a, b) => b.score - a.score)
     .slice(0, limit);
 }

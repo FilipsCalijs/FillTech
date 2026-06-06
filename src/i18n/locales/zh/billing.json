@@ -7,7 +7,7 @@
   "paymentSoon": "支付方式即将推出",
   "autoTopUp": "自动充值",
   "autoDisabled": "已禁用",
-  "autoDesc": "当余额低于阈值时自动充值 — 即将推出",
+  "autoDesc": "当余额低于阈值时自动充值 - 即将推出",
   "history": "账单历史",
   "autoBilling": "自动计费",
   "noHistory": "暂无账单历史。",
@@ -31,6 +31,6 @@
   "stripeDesc": "银行卡 · Apple Pay · Google Pay 等",
   "payWith": "通过 Stripe 支付",
   "redirecting": "正在跳转至 Stripe…",
-  "paySuccess": "支付成功 — 您的余额已更新。",
-  "payCancel": "支付已取消 — 未产生任何费用。"
+  "paySuccess": "支付成功 - 您的余额已更新。",
+  "payCancel": "支付已取消 - 未产生任何费用。"
 }

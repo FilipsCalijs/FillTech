@@ -4,6 +4,7 @@ import { CONTAINER } from '@/config/sizes';
 import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
 import OtherProducts from '@/lib/OtherProducts';
+import RelevantBlogs from '@/components/ui/RelevantBlogs';
 
 const API    = 'http://localhost:5200';
 const MAX_MB = 500;
@@ -94,7 +95,7 @@ const VideoBgReplace = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
 
-        {/* LEFT — Video */}
+        {/* LEFT - Video */}
         <div className="flex flex-col gap-3">
           <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">
             Your Video
@@ -135,13 +136,13 @@ const VideoBgReplace = () => {
           <p className="text-xs text-muted-foreground">MP4, MOV, AVI, MKV · max {MAX_MB} MB</p>
         </div>
 
-        {/* RIGHT — BG image + generate */}
+        {/* RIGHT - BG image + generate */}
         <div className="flex flex-col gap-5">
 
           {/* Background image upload */}
           <div className="flex flex-col gap-2">
             <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">
-              Background Image <span className="normal-case font-normal text-muted-foreground">(optional — leave empty to remove background)</span>
+              Background Image <span className="normal-case font-normal text-muted-foreground">(optional - leave empty to remove background)</span>
             </span>
             <div
               onClick={() => bgRef.current?.click()}
@@ -181,7 +182,7 @@ const VideoBgReplace = () => {
             <p className="font-semibold text-foreground">How it works</p>
             <ul className="flex flex-col gap-2">
               {[
-                'Upload your video — AI removes the background',
+                'Upload your video - AI removes the background',
                 'Optionally add a background image to replace it',
                 'Download the composited result video',
               ].map((s, i) => (
@@ -258,6 +259,7 @@ const VideoBgReplace = () => {
           </div>
         </div>
       )}
+      <RelevantBlogs currentSlug="video-bg-replace" />
       <OtherProducts currentSlug="video-bg-replace" />
     </div>
   );

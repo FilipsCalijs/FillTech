@@ -67,15 +67,15 @@
   },
   "seo": {
     "explore": {
-      "title": "AI 도구 탐색 — 모든 효과 | FillTech",
+      "title": "AI 도구 탐색 - 모든 효과 | FillTech",
       "desc": "모든 AI 도구 발견: 포트레이트 에디터, 배경 제거기, 워터마크 제거기, 사진 채색기 등."
     },
     "history": {
-      "title": "내 기록 — 생성된 콘텐츠 | FillTech",
+      "title": "내 기록 - 생성된 콘텐츠 | FillTech",
       "desc": "AI로 생성된 모든 콘텐츠를 확인하고 관리하세요. 결과물은 7일간 보관됩니다."
     },
     "billing": {
-      "title": "결제 — 계정 잔액 | FillTech",
+      "title": "결제 - 계정 잔액 | FillTech",
       "desc": "잔액 관리, 지출 내역 확인, AI 생성을 위한 자동 충전 설정."
     },
     "terms": {

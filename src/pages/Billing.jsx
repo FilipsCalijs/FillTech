@@ -206,7 +206,7 @@ function TopUpBlock({ lang }) {
             disabled={loading}
             className="mt-2 w-full max-w-md h-9 rounded-xl border border-dashed border-border text-xs text-muted-foreground hover:text-foreground hover:border-foreground/30 disabled:opacity-40 transition-all"
           >
-            DEV · Test Stripe $5 — use card 4242 4242 4242 4242
+            DEV · Test Stripe $5 - use card 4242 4242 4242 4242
           </button>
         )}
       </div>
@@ -297,12 +297,12 @@ const Billing = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Block>
             <BlockLabel>{t('balance')}</BlockLabel>
-            <p className="text-4xl font-bold text-foreground">{loading ? '—' : fmt(balance)}</p>
+            <p className="text-4xl font-bold text-foreground">{loading ? '-' : fmt(balance)}</p>
             <p className="text-xs text-muted-foreground">{t('balanceDesc')}</p>
           </Block>
           <Block>
             <BlockLabel>{t('spentMonth')}</BlockLabel>
-            <p className="text-4xl font-bold text-foreground">{loading ? '—' : fmt(spentMonth)}</p>
+            <p className="text-4xl font-bold text-foreground">{loading ? '-' : fmt(spentMonth)}</p>
             <p className="text-xs text-muted-foreground">
               {new Date().toLocaleString('en', { month: 'long', year: 'numeric' })}
             </p>

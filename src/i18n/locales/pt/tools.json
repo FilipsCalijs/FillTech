@@ -1,22 +1,9 @@
 {
   "upload": {
-    "dropPhoto": "Solte sua foto",
-    "dropVideo": "Solte seu vídeo",
-    "dropAudio": "Arraste e solte",
-    "orClick": "ou clique para procurar",
-    "jpgPng": "JPG ou PNG",
-    "jpgPngHint": "JPG ou PNG · assunto claro funciona melhor",
-    "videoHint": "MP4, MOV, AVI, MKV",
-    "audioHint": "MP3, WAV, M4A",
-    "maxSize": "máx {{max}} MB",
-    "clickToChange": "Clique para mudar a foto",
-    "uploadFirst": "Envie uma foto primeiro",
-    "uploadVideoFirst": "Envie um vídeo primeiro",
-    "selfieHint": "selfie clara e bem iluminada funciona melhor",
-    "yourPhoto": "Sua Foto",
-    "voiceSample": "Amostra de voz",
-    "sampleHint": "3–10 seg",
-    "uploadOrPick": "Envie ou escolha um personagem"
+    "button": "Subir",
+    "dropHint": "Arraste a imagem aqui",
+    "maxSize": "max {{max}} MB",
+    "clickToChange": "Clique para trocar o arquivo"
   },
   "actions": {
     "generate": "Gerar",
@@ -33,84 +20,470 @@
     "processing": "Processando...",
     "tryIt": "Experimentar"
   },
-  "steps": { "howItWorks": "Como funciona" },
-  "result": { "reference": "Referência", "result": "Resultado" },
+  "steps": {
+    "howItWorks": "Como funciona"
+  },
+  "result": {
+    "reference": "Referência",
+    "result": "Resultado"
+  },
   "portrait": {
     "title": "Editor de Retratos com IA",
-    "subtitle": "Envie sua foto e descreva a edição — a IA a transformará.",
-    "gender": "Gênero", "pickOne": "Escolha um", "woman": "Mulher", "man": "Homem",
-    "style": "Estilo", "prompt": "Prompt", "promptHint": "Seja específico sobre cena, iluminação e humor.",
-    "bodyPose": "Pose Corporal", "optional": "Opcional", "addPose": "Adicionar pose",
-    "aspectRatio": "Proporção", "clearPose": "Limpar pose",
+    "subtitle": "Envie sua foto e descreva a edição - a IA a transformará.",
+    "gender": "Gênero",
+    "pickOne": "Escolha um",
+    "woman": "Mulher",
+    "man": "Homem",
+    "style": "Estilo",
+    "prompt": "Prompt",
+    "promptHint": "Seja específico sobre cena, iluminação e humor.",
+    "bodyPose": "Pose Corporal",
+    "optional": "Opcional",
+    "addPose": "Adicionar pose",
+    "aspectRatio": "Proporção",
+    "clearPose": "Limpar pose",
     "stylesHint": "11 estilos",
     "poseRef": "Referência de pose corporal"
   },
   "gameFilter": {
-    "title": "Filtro de Jogo", "subtitle": "Transforme qualquer foto em uma captura de videogame.",
-    "chooseStyle": "Escolher Estilo", "yourPhoto": "Sua Foto", "sceneHint": "JPG ou PNG"
+    "title": "Filtro de Jogo",
+    "subtitle": "Transforme qualquer foto em uma captura de videogame.",
+    "chooseStyle": "Escolher Estilo",
+    "yourPhoto": "Sua Foto",
+    "sceneHint": "JPG ou PNG"
   },
   "bgRemover": {
-    "title": "Removedor de Fundo", "subtitle": "Remova o fundo de qualquer foto instantaneamente com IA.",
+    "title": "Removedor de Fundo",
+    "subtitle": "Remova o fundo de qualquer foto instantaneamente com IA.",
     "step1": "Envie qualquer foto com assunto claro",
     "step2": "A IA detecta e remove o fundo",
     "step3": "Baixe como PNG transparente"
   },
   "watermark": {
-    "title": "Removedor de Marca d'Água", "subtitle": "Remove marcas d'água inteligentemente preservando a textura original.",
-    "videoTitle": "Removedor de Marca d'Água em Vídeo", "videoSubtitle": "Remova marcas d'água de vídeos.",
+    "title": "Removedor de Marca d'Água",
+    "subtitle": "Remove marcas d'água inteligentemente preservando a textura original.",
+    "videoTitle": "Removedor de Marca d'Água em Vídeo",
+    "videoSubtitle": "Remova marcas d'água de vídeos.",
     "step1": "Envie qualquer foto com marca d'água",
     "step2": "A IA detecta e remove a marca d'água",
-    "step3": "Textura preservada — sem artefatos",
+    "step3": "Textura preservada - sem artefatos",
     "videoStep1": "Envie qualquer vídeo com marcas d'água",
     "videoStep2": "A IA remove quadro a quadro",
     "videoStep3": "Baixe o vídeo limpo em qualidade original",
     "videoNote": "O tempo de processamento depende da duração do vídeo.",
-    "image": "Imagem", "video": "Vídeo",
+    "image": "Imagem",
+    "video": "Vídeo",
     "dropHint": "JPG ou PNG · melhor com marcas d'água de texto/logo"
   },
   "colorize": {
-    "title": "Colorizador de Fotos", "subtitle": "Dê vida a fotos em preto e branco com colorização por IA.",
+    "title": "Colorizador de Fotos",
+    "subtitle": "Dê vida a fotos em preto e branco com colorização por IA.",
     "step1": "Envie uma foto em preto e branco",
     "step2": "A IA analisa a cena e adiciona cores realistas",
     "step3": "Baixe o resultado colorizado",
     "bwHint": "Imagens em preto e branco funcionam melhor"
   },
   "clothes": {
-    "step1": "Passo 1: Envie Seu Modelo", "step2": "Passo 2: Selecione Sua Roupa",
-    "examples": "Exemplos", "uploadImage": "Enviar Imagem", "clickToChange": "Clique para mudar",
-    "woman": "Mulher", "man": "Homem"
+    "step1": "Passo 1: Envie Seu Modelo",
+    "step2": "Passo 2: Selecione Sua Roupa",
+    "examples": "Exemplos",
+    "uploadImage": "Enviar Imagem",
+    "clickToChange": "Clique para mudar",
+    "woman": "Mulher",
+    "man": "Homem"
   },
   "upscaler": {
-    "title": "Upscaler de IA", "subtitle": "Amplie imagens até 4× sem perder qualidade.",
-    "scale": "Escala", "backendSoon": "Backend em breve", "lowResHint": "JPG ou PNG · imagens de baixa resolução funcionam melhor",
+    "title": "Upscaler de IA",
+    "subtitle": "Amplie imagens até 4× sem perder qualidade.",
+    "scale": "Escala",
+    "backendSoon": "Backend em breve",
+    "lowResHint": "JPG ou PNG · imagens de baixa resolução funcionam melhor",
     "upscaleButton": "Ampliar Imagem",
     "esrganDesc": "Amplia imagens com super-resolução de IA. Recupera detalhes finos, remove artefatos de compressão e aprimora bordas.",
     "inDevelopment": "Esta ferramenta está em desenvolvimento e ainda não está disponível."
   },
   "voice": {
-    "title": "Clonagem de Voz", "enterText": "Digite seu texto",
+    "title": "Clonagem de Voz",
+    "enterText": "Digite seu texto",
     "textPlaceholder": "Digite ou cole o texto que deseja converter em fala…",
-    "speed": "Velocidade", "current": "Atual"
+    "speed": "Velocidade",
+    "current": "Atual"
   },
   "vocalIsolator": {
-    "title": "Isolador Vocal", "subtitle": "Separe vocais da música em qualquer faixa de áudio.",
+    "title": "Isolador Vocal",
+    "subtitle": "Separe vocais da música em qualquer faixa de áudio.",
     "isolate": "Isolar Vocais"
   },
   "seo": {
-    "portrait": { "title": "Editor de Retratos com IA | FillTech", "desc": "Transforme suas fotos com edição de retratos por IA." },
-    "gameFilter": { "title": "Filtro de Jogo | FillTech", "desc": "Converta fotos em capturas de videogame retro." },
-    "bgRemover": { "title": "Removedor de Fundo | FillTech", "desc": "Remova fundos de imagens instantaneamente com IA." },
-    "watermark": { "title": "Removedor de Marca d'Água | FillTech", "desc": "Remova marcas d'água de fotos com IA." },
-    "videoWatermark": { "title": "Removedor de Marca d'Água em Vídeo | FillTech", "desc": "Remova marcas d'água de vídeos com IA." },
-    "colorize": { "title": "Colorizador de Fotos | FillTech", "desc": "Colorize fotos em preto e branco com IA." },
-    "clothesSwap": { "title": "Troca de Roupas | FillTech", "desc": "Experimente roupas virtualmente com IA." },
-    "videoBg": { "title": "Substituição de Fundo em Vídeo | FillTech", "desc": "Substitua o fundo de qualquer vídeo com IA." },
-    "upscaler": { "title": "Upscaler de IA | FillTech", "desc": "Amplie imagens até 4× sem perda de qualidade." },
-    "voiceClone": { "title": "Clonagem de Voz | FillTech", "desc": "Clone qualquer voz com IA." },
-    "vocalIsolator": { "title": "Isolador Vocal | FillTech", "desc": "Isole vocais da música com IA." },
-    "explore": { "title": "Explorar Ferramentas de IA | FillTech", "desc": "Descubra todas as ferramentas de IA." },
-    "blog": { "title": "Blog | FillTech", "desc": "Artigos e notícias sobre IA." },
-    "history": { "title": "Meu Histórico | FillTech", "desc": "Visualize seu conteúdo gerado." },
-    "billing": { "title": "Cobrança | FillTech", "desc": "Gerencie seu saldo e histórico." }
+    "portrait": {
+      "title": "Editor de Retratos com IA | FillTech",
+      "desc": "Transforme suas fotos com edição de retratos por IA."
+    },
+    "gameFilter": {
+      "title": "Filtro de Jogo | FillTech",
+      "desc": "Converta fotos em capturas de videogame retro."
+    },
+    "bgRemover": {
+      "title": "Removedor de Fundo | FillTech",
+      "desc": "Remova fundos de imagens instantaneamente com IA."
+    },
+    "watermark": {
+      "title": "Removedor de Marca d'Água | FillTech",
+      "desc": "Remova marcas d'água de fotos com IA."
+    },
+    "videoWatermark": {
+      "title": "Removedor de Marca d'Água em Vídeo | FillTech",
+      "desc": "Remova marcas d'água de vídeos com IA."
+    },
+    "colorize": {
+      "title": "Colorizador de Fotos | FillTech",
+      "desc": "Colorize fotos em preto e branco com IA."
+    },
+    "clothesSwap": {
+      "title": "Troca de Roupas | FillTech",
+      "desc": "Experimente roupas virtualmente com IA."
+    },
+    "videoBg": {
+      "title": "Substituição de Fundo em Vídeo | FillTech",
+      "desc": "Substitua o fundo de qualquer vídeo com IA."
+    },
+    "upscaler": {
+      "title": "Upscaler de IA | FillTech",
+      "desc": "Amplie imagens até 4× sem perda de qualidade."
+    },
+    "voiceClone": {
+      "title": "Clonagem de Voz | FillTech",
+      "desc": "Clone qualquer voz com IA."
+    },
+    "vocalIsolator": {
+      "title": "Isolador Vocal | FillTech",
+      "desc": "Isole vocais da música com IA."
+    },
+    "explore": {
+      "title": "Explorar Ferramentas de IA | FillTech",
+      "desc": "Descubra todas as ferramentas de IA."
+    },
+    "blog": {
+      "title": "Blog | FillTech",
+      "desc": "Artigos e notícias sobre IA."
+    },
+    "history": {
+      "title": "Meu Histórico | FillTech",
+      "desc": "Visualize seu conteúdo gerado."
+    },
+    "billing": {
+      "title": "Cobrança | FillTech",
+      "desc": "Gerencie seu saldo e histórico."
+    }
+  },
+  "watermarkRemover": {
+    "seo": {
+      "title": "Remover marca d'agua de foto gratis online - IA removedor de marca d'agua",
+      "description": "Tirar marca d'agua de imagem online gratis. IA remove texto, logo, data e marca d'agua do Canva em segundos. Sem Photoshop, sem cadastro."
+    },
+    "hero": {
+      "h1": "Remover marca d'agua de foto online gratis",
+      "subtitle": "Suba sua imagem e a IA tira a marca d'agua, logo ou texto em segundos — automatico, sem selecao manual.",
+      "submit": "Remover marca d'agua",
+      "submitLoading": "Removendo marca d'agua..."
+    },
+    "description": {
+      "h2": "Ferramenta gratuita de remocao de marca d'agua com IA",
+      "text": "A forma mais facil de tirar marca d'agua de fotos sem perder qualidade."
+    },
+    "steps": {
+      "title": "Como funciona",
+      "items": [
+        {
+          "title": "1. Suba a imagem com marca d'agua",
+          "text": "Arraste e solte a foto ou clique para escolher o arquivo. Suporta JPG, PNG, WEBP, BMP, HEIC ate 22 MB. Nenhum cadastro necessario."
+        },
+        {
+          "title": "2. A IA detecta e remove a marca d'agua",
+          "text": "A IA escaneia a imagem, encontra a marca d'agua — texto, logo, data ou padrao repetido — e remove enquanto reconstroi o fundo por baixo."
+        },
+        {
+          "title": "3. Baixe a imagem limpa",
+          "text": "Veja o resultado e baixe em resolucao completa. Sem borroes, sem artefatos, sem perda de qualidade."
+        }
+      ]
+    },
+    "beforeAfter": {
+      "title": "Veja o que a IA realmente faz",
+      "text": "Arraste o controle deslizante para comparar. A IA reconstroi o fundo por baixo da marca d'agua — nao e so pintura por cima."
+    },
+    "features": {
+      "title": "Por que este removedor de marca d'agua funciona melhor",
+      "items": [
+        {
+          "title": "Deteccao automatica",
+          "text": "A IA encontra a marca d'agua sozinha — sem precisar selecionar ou marcar nada manualmente. Funciona com texto, logos, marcas semitransparentes e padroes de tela cheia."
+        },
+        {
+          "title": "Resultado em menos de 10 segundos",
+          "text": "Suba, aguarde um momento, baixe. Sem fila, sem espera, sem instalar nenhum programa."
+        },
+        {
+          "title": "Lida com marcas d'agua complexas",
+          "text": "Marcas semitransparentes, logos em multiplas camadas, padroes repetidos em toda a imagem — a IA resolve casos onde ferramentas simples falham."
+        },
+        {
+          "title": "Seus arquivos ficam privados",
+          "text": "As imagens sao processadas em servidores seguros e nunca ficam armazenadas. Nao sao usadas para treinamento nem compartilhadas com terceiros."
+        }
+      ]
+    },
+    "cardLeft": {
+      "title": "Remove qualquer tipo de marca d'agua — texto, logo ou data",
+      "text": "Texto em negrito no canto, logo semitransparente quase invisivel, data da camera antiga, assinatura do autor, aviso de copyright, sobreposicao de previa de foto de banco de imagens — esta ferramenta cuida de tudo. A IA se adapta ao que encontra em vez de aplicar uma abordagem fixa. Muito usada para tirar marca d'agua do Canva e limpar fotos de formatura com logo do fotografo."
+    },
+    "cardRight": {
+      "title": "Funciona em fotos escaneadas, fotos de formatura e prints tambem",
+      "text": "A maioria das ferramentas so funciona com fotos digitais limpas. Esta tambem resolve casos dificeis: imagens escaneadas com marcas impressas, fotos de formatura e escola com marcas d'agua do estudio fotografico, prints de tela com banners sobrepostos e marcas em cima de rostos ou detalhes finos. Se a foto e importante e tem uma marca que nao sai — tente aqui primeiro."
+    },
+    "faq": {
+      "title": "Perguntas frequentes",
+      "items": [
+        {
+          "q": "Como tirar marca d'agua de foto online de graca?",
+          "a": "Suba a imagem e remova a marca d'agua diretamente nesta pagina sem pagar nada. O uso gratuito tem limite mensal. Planos premium e em lote estao disponiveis para volumes maiores."
+        },
+        {
+          "q": "Da para remover marca d'agua do Canva?",
+          "a": "Sim. Suba a imagem com a marca d'agua do Canva e a IA detecta e remove automaticamente preservando a qualidade da imagem original."
+        },
+        {
+          "q": "Funciona para tirar marca d'agua de foto de formatura?",
+          "a": "Sim. Fotos de formatura com logo do estudio fotografico e imagens escolares com marca d'agua — a ferramenta foi treinada especificamente para esses casos que outras ferramentas nao resolvem bem."
+        },
+        {
+          "q": "Preciso selecionar a marca d'agua manualmente?",
+          "a": "Nao. A IA encontra automaticamente. Basta subir e baixar o resultado."
+        },
+        {
+          "q": "Quais formatos sao suportados?",
+          "a": "JPG, JPEG, PNG, WEBP, BMP e HEIC. Se seu arquivo estiver em outro formato converta para PNG ou JPG antes de subir."
+        },
+        {
+          "q": "A qualidade da imagem diminui depois da remocao?",
+          "a": "Nao. A IA reconstroi a area sob a marca d'agua para combinar com o conteudo ao redor. Resolucao original completa, sem compressao, sem remendos visiveis."
+        },
+        {
+          "q": "Funciona em marcas d'agua sobre rostos?",
+          "a": "Sim. Marcas d'agua sobre rostos, cabelos ou texturas complexas sao removidas usando o contexto ao redor para preencher os detalhes de forma realista."
+        },
+        {
+          "q": "Da para tirar marca d'agua de video do TikTok?",
+          "a": "Para videos use nossa ferramenta especifica de remocao de marca d'agua em video. Para imagens e prints use esta pagina."
+        },
+        {
+          "q": "Posso remover marcas d'agua de varias imagens de uma vez?",
+          "a": "O processamento em lote esta disponivel nos planos premium. O plano gratuito processa uma imagem por vez."
+        },
+        {
+          "q": "Minhas imagens ficam privadas?",
+          "a": "Sim. Processadas em servidores seguros, excluidas apos o processamento, nao usadas para treinamento e nao compartilhadas com terceiros."
+        }
+      ]
+    },
+    "seoText": {
+      "title": "Como tirar marca d'agua de foto — rapido e de graca",
+      "paragraphs": [
+        "Marca d'agua protege o trabalho de fotografos e criadores de conteudo. Mas tem muitas situacoes legitimas onde voce precisa de uma versao limpa: foto sua, imagem licenciada com preview de banco de imagens, ou foto de formatura com logo do estudio.",
+        "Fazer isso no Photoshop leva tempo e exige habilidade. Este removedor de marca d'agua com IA faz o mesmo em segundos. Suba a imagem, espera um momento, baixa o resultado limpo.",
+        "A ferramenta usa um modelo de inpainting por IA que nao so apaga — reconstroi o que deveria estar por baixo. Marca d'agua no ceu — a IA preenche o gradiente correspondente. No rosto — reconstroi a textura da pele usando os pixels ao redor.",
+        "Muito usado para tirar marca d'agua do Canva, remover logo de foto de formatura, limpar imagens de produto para loja virtual e tirar data de fotos antigas.",
+        "Funciona com JPG, PNG, WEBP, BMP, HEIC em resolucao original. Sem perda de qualidade, sem cadastro para uso basico, sem instalar nada. Funciona no celular, tablet e computador."
+      ]
+    },
+    "tabs": {
+      "image": "Imagem",
+      "video": "Video"
+    }
+  },
+  "toolCards": {
+    "bg-remover": {
+      "title": "Remover fundo",
+      "desc": "Remover o fundo de qualquer foto instantaneamente.",
+      "btn": "Remover fundo"
+    },
+    "watermark-remover": {
+      "title": "Remover marca d'agua",
+      "desc": "Apagar marcas d'agua e logos de fotos automaticamente.",
+      "btn": "Remover marca d'agua"
+    },
+    "watermark-remover-video": {
+      "title": "Marca d'agua em video",
+      "desc": "Remover marcas d'agua de videos com IA.",
+      "btn": "Remover do video"
+    },
+    "photo-colorize": {
+      "title": "Colorir foto",
+      "desc": "Trazer fotos preto e branco a vida com IA.",
+      "btn": "Colorir foto"
+    },
+    "portrait": {
+      "title": "Retrato IA",
+      "desc": "Transformar foto em um retrato artistico com IA.",
+      "btn": "Criar retrato"
+    },
+    "clothes-swap": {
+      "title": "Trocar roupa",
+      "desc": "Experimentar qualquer roupa virtualmente com IA.",
+      "btn": "Trocar roupa"
+    },
+    "upscaler": {
+      "title": "Aumentar qualidade",
+      "desc": "Aumentar resolucao da imagem ate 4x sem perder qualidade.",
+      "btn": "Melhorar imagem"
+    },
+    "ps2-filter": {
+      "title": "Filtro de jogo",
+      "desc": "Transformar foto em estilo retro de jogo.",
+      "btn": "Aplicar filtro"
+    },
+    "voice-clone": {
+      "title": "Clonar voz",
+      "desc": "Clonar qualquer voz de uma amostra de audio.",
+      "btn": "Clonar voz"
+    },
+    "video-bg-replace": {
+      "title": "Substituir fundo de video",
+      "desc": "Substituir fundo do video por imagem personalizada.",
+      "btn": "Substituir fundo"
+    }
+  },
+  "otherProducts": {
+    "title": "Outras ferramentas de IA"
+  },
+  "badges": {
+    "free": "Gratis",
+    "aiPowered": "Com IA",
+    "noSignup": "Sem cadastro",
+    "hdQuality": "Qualidade HD",
+    "instantResults": "Resultado instantaneo",
+    "securePrivate": "Seguro & Privado"
+  },
+  "imageUpscaler": {
+    "seo": {
+      "title": "Aumentar Resolução de Imagem Grátis – AI Image Upscaler Online",
+      "description": "Aumente a resolução de qualquer imagem para 4K gratuitamente. Melhore a qualidade da foto sem perder detalhes. Sem cadastro, sem marca d'água. JPG, PNG, WebP."
+    },
+    "hero": {
+      "h1": "Aumentar Resolução de Imagem com IA – Grátis",
+      "subtitle": "Deixe sua foto em HD ou 4K em segundos. Sem cadastro, sem marca d'água, 100% gratuito.",
+      "submit": "Melhorar Imagem",
+      "submitLoading": "IA melhorando sua foto..."
+    },
+    "description": {
+      "h2": "Ampliar imagem sem perder qualidade – online e grátis",
+      "text": "Nossa IA analisa cada pixel e reconstrói detalhes finos, bordas nítidas e texturas. O resultado é uma imagem em alta resolução que parece naturalmente ampliada, não esticada. Suba um arquivo JPG, PNG ou WebP e receba uma foto nítida em 4K em segundos."
+    },
+    "steps": {
+      "title": "Como aumentar a resolução da imagem em 3 passos",
+      "items": [
+        {
+          "title": "Suba sua imagem",
+          "text": "Selecione um arquivo JPG, PNG ou WebP do seu dispositivo. Você também pode arrastar e soltar diretamente na área de upload. Não precisa de conta para começar."
+        },
+        {
+          "title": "IA melhora a resolução",
+          "text": "Nossa rede neural analisa a imagem, reconstrói detalhes ausentes, melhora a nitidez das bordas e aumenta a densidade de pixels automaticamente. Nenhuma configuração manual necessária."
+        },
+        {
+          "title": "Baixe sua imagem em HD",
+          "text": "Sua imagem melhorada está pronta para download em alta resolução. Use para impressão, listagens de e-commerce, posts nas redes sociais ou qualquer outro projeto."
+        }
+      ]
+    },
+    "beforeAfter": {
+      "title": "Veja a diferença: baixa resolução vs. 4K após o upscale",
+      "text": "A comparação mostra o que o upscale com IA realmente faz: texturas mais nítidas, bordas mais limpas e mais detalhes, sem o borrão ou a pixelização que você obtém com ferramentas comuns de redimensionamento."
+    },
+    "features": {
+      "title": "Por que usar nosso upscaler de imagem com IA",
+      "items": [
+        {
+          "title": "100% grátis, sem marca d'água",
+          "text": "Aumente fotos para 4K sem cobranças, limites ocultos ou marcas d'água no resultado. Sua imagem, limpa e pronta para usar."
+        },
+        {
+          "title": "Melhora de qualidade com IA",
+          "text": "Diferente do redimensionamento comum que apenas estica pixels, nossa IA reconstrói texturas finas, detalhes faciais e bordas nítidas usando processamento de rede neural."
+        },
+        {
+          "title": "Processamento em lote",
+          "text": "Processe várias imagens de uma vez. Útil para catálogos de produtos de loja virtual, portfólios de fotografia ou qualquer fluxo de trabalho com grandes conjuntos de fotos."
+        },
+        {
+          "title": "Funciona em qualquer dispositivo",
+          "text": "O upscaler roda diretamente no navegador. Sem instalação. Funciona no desktop, tablet e celular – iOS, Android, Mac e Windows."
+        }
+      ]
+    },
+    "cardLeft": {
+      "title": "Ideal para fotos de produtos de loja virtual",
+      "text": "Imagens de baixa resolução custam vendas. Compradores dão zoom nas fotos, e imagens borradas reduzem a confiança na compra. Melhore as fotos dos seus produtos antes de subir para a loja virtual, Mercado Livre ou qualquer marketplace. Nossa IA preserva texto de etiquetas, texturas de materiais e detalhes finos para que seu anúncio pareça fotos de estúdio profissional."
+    },
+    "cardRight": {
+      "title": "Restaure fotos antigas e prepare para impressão",
+      "text": "Fotos de família escaneadas, negativos antigos ou imagens digitais de câmeras antigas podem ser melhoradas até a qualidade de impressão. Faça upscale para 4K para impressões em grande formato, álbuns de foto e exposições. A IA preenche os detalhes que o tempo ou a baixa resolução apagaram, dando à imagem um visual naturalmente restaurado."
+    },
+    "faq": {
+      "title": "Perguntas frequentes sobre o upscaler de imagem",
+      "items": [
+        {
+          "q": "O que é um upscaler de imagem com IA?",
+          "a": "Um upscaler de imagem com IA é uma ferramenta que aumenta a resolução de uma foto usando redes neurais. Em vez de simplesmente esticar os pixels existentes, ele analisa a imagem e gera novos dados de pixel para preencher os detalhes, produzindo um resultado mais nítido e em maior resolução."
+        },
+        {
+          "q": "Como ampliar imagem sem perder qualidade?",
+          "a": "Use um upscaler baseado em IA em vez de uma ferramenta básica de redimensionamento. A IA reconstrói bordas, texturas e detalhes finos em vez de interpolar entre os pixels existentes. Isso evita o borrão e a pixelização que acontecem com o aumento padrão."
+        },
+        {
+          "q": "Qual é o fator máximo de aumento?",
+          "a": "Nossa ferramenta suporta até 4x de aumento, convertendo uma imagem padrão em resolução 4K. Para a maioria dos casos de uso, incluindo impressão, e-commerce e redes sociais, 4x entrega resultados excelentes sem perda de qualidade visível."
+        },
+        {
+          "q": "Quais formatos de imagem são suportados?",
+          "a": "Você pode fazer upload de imagens em formato JPG, JPEG, PNG e WebP. O resultado pode ser baixado no formato que melhor se adequa ao seu projeto."
+        },
+        {
+          "q": "O upscaler é realmente gratuito?",
+          "a": "Sim. Sem cobranças, sem limites de teste e sem marcas d'água no resultado. Você pode melhorar imagens sem criar uma conta."
+        },
+        {
+          "q": "Posso usar imagens melhoradas em projetos comerciais?",
+          "a": "Sim. Imagens que você melhora com nossa ferramenta podem ser usadas para fins pessoais e comerciais, incluindo listagens de produtos, materiais de marketing e entregas para clientes."
+        },
+        {
+          "q": "Quanto tempo leva o upscale?",
+          "a": "A maioria das imagens é processada em menos de 30 segundos. Arquivos maiores podem demorar um pouco mais, mas você verá o progresso em tempo real."
+        },
+        {
+          "q": "Como é diferente de redimensionar uma imagem no Canva ou Photoshop?",
+          "a": "O Canva e o Photoshop usam interpolação padrão, que estica os pixels existentes e produz resultados borrados em escalas grandes. O upscale com IA usa uma rede neural treinada em milhões de imagens para reconstruir detalhes realistas. Se você usa o Canva para criar posts e precisa de imagens de fundo nítidas, nosso upscaler é o complemento ideal antes de importar."
+        },
+        {
+          "q": "Posso fazer upscale de várias imagens de uma vez?",
+          "a": "Sim, o processamento em lote é suportado. Faça upload de várias imagens e aplique as mesmas configurações de upscale em todas elas em um único fluxo de trabalho. Ideal para catálogos de produtos, galerias de imóveis e lotes de conteúdo para redes sociais."
+        },
+        {
+          "q": "O upscale funciona em rostos e retratos?",
+          "a": "Sim. A IA é treinada para lidar com fotos de retrato com precisão, restaurando textura de pele, definindo traços faciais e preservando tons de cores naturais. Funciona tanto para fotos modernas quanto para retratos antigos escaneados."
+        }
+      ]
+    },
+    "seoText": {
+      "title": "Upscale de imagem com IA: o que é e quando usar",
+      "paragraphs": [
+        "A resolução da imagem determina o quão nítida e detalhada uma foto parece em qualquer tamanho. Uma imagem de baixa resolução impressa grande ou exibida em uma tela de alta densidade de pixels parecerá borrada e pixelizada. Aumentar a resolução do jeito antigo, arrastando um controle deslizante em um editor de imagens, apenas estica os dados existentes e piora as coisas.",
+        "O upscale com IA funciona de forma diferente. O modelo é treinado em grandes conjuntos de pares de imagens: entradas de baixa resolução e suas contrapartes de alta resolução. Com isso, ele aprende a reconstruir detalhes realistas de imagens comprimidas ou de baixa qualidade. O resultado parece natural, não artificialmente nitidificado.",
+        "Para o e-commerce, a resolução afeta diretamente a conversão. Compradores examinam produtos de perto, especialmente em moda, eletrônicos e itens para casa. Uma imagem borrada falha exatamente no momento em que o comprador está decidindo. Fazer upscale das fotos dos produtos antes de publicá-los na loja virtual dá às suas imagens a qualidade profissional de uma foto de estúdio, mesmo que o original tenha sido tirado com celular.",
+        "Para impressão, os requisitos de DPI são rigorosos. Uma imagem web de 72 DPI impressa em tamanho pôster ficará terrível. O upscale com IA eleva a resolução efetiva para padrões prontos para impressão, permitindo que imagens originalmente tiradas para uso digital sejam reutilizadas para publicidade em grande formato, catálogos e impressões emolduradas.",
+        "A restauração de fotos antigas é outro uso prático. Fotos analógicas escaneadas ou imagens de câmeras digitais antigas muitas vezes têm resolução limitada para os padrões modernos. A reconstrução por IA preenche os detalhes ausentes com alta precisão, fazendo a imagem parecer como se tivesse sido tirada com hardware moderno.",
+        "A principal vantagem do upscale de IA pelo navegador é a acessibilidade. Não há software para instalar, nenhum conhecimento técnico necessário e nenhuma barreira de custo. Suba seu arquivo, aguarde alguns segundos e baixe um resultado em alta resolução que você pode usar imediatamente em qualquer plataforma."
+      ]
+    }
   }
 }

@@ -52,7 +52,7 @@
   "current": "Current",
   "footer": {
     "rights": "All rights reserved.",
-    "description": "FillTech offers AI-powered tools for image and video processing. Remove backgrounds, enhance photos, swap clothes and more — instantly and effortlessly. Try FillTech today.",
+    "description": "FillTech offers AI-powered tools for image and video processing. Remove backgrounds, enhance photos, swap clothes and more - instantly and effortlessly. Try FillTech today.",
     "legal": "Legal",
     "tools": "Tools",
     "terms": "Terms of Service",
@@ -67,15 +67,15 @@
   },
   "seo": {
     "explore": {
-      "title": "Explore AI Tools — All Effects | FillTech",
+      "title": "Explore AI Tools - All Effects | FillTech",
       "desc": "Discover all AI-powered tools: portrait editor, background remover, watermark remover, photo colorizer and more."
     },
     "history": {
-      "title": "My History — Generated Content | FillTech",
+      "title": "My History - Generated Content | FillTech",
       "desc": "View and manage all your AI-generated content. Download or delete your generations. Results kept for 7 days."
     },
     "billing": {
-      "title": "Billing — Account Balance | FillTech",
+      "title": "Billing - Account Balance | FillTech",
       "desc": "Manage your balance, view spending history and configure automatic top-ups for AI generations."
     },
     "terms": {

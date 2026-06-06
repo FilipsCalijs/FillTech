@@ -1,22 +1,9 @@
 {
   "upload": {
-    "dropPhoto": "Drop your photo",
-    "dropVideo": "Drop your video",
-    "dropAudio": "Drag and drop",
-    "orClick": "or click to browse",
-    "jpgPng": "JPG or PNG",
-    "jpgPngHint": "JPG or PNG · clear subject works best",
-    "videoHint": "MP4, MOV, AVI, MKV",
-    "audioHint": "MP3, WAV, M4A",
+    "button": "Upload",
+    "dropHint": "Drop an image here",
     "maxSize": "max {{max}} MB",
-    "clickToChange": "Click to change photo",
-    "uploadFirst": "Upload a photo first",
-    "uploadVideoFirst": "Upload a video first",
-    "selfieHint": "clear, well-lit selfie works best",
-    "yourPhoto": "Your Photo",
-    "voiceSample": "Voice sample",
-    "sampleHint": "3–10 sec",
-    "uploadOrPick": "Upload or pick a character"
+    "clickToChange": "Click to change file"
   },
   "actions": {
     "generate": "Generate",
@@ -42,7 +29,7 @@
   },
   "portrait": {
     "title": "AI Portrait Editor",
-    "subtitle": "Upload your photo and describe the edit — AI will transform it.",
+    "subtitle": "Upload your photo and describe the edit - AI will transform it.",
     "gender": "Gender",
     "pickOne": "Pick one",
     "woman": "Woman",
@@ -60,7 +47,7 @@
   },
   "gameFilter": {
     "title": "Game Filter",
-    "subtitle": "Transform any photo into a video game screenshot — from 8-bit to modern AAA.",
+    "subtitle": "Transform any photo into a video game screenshot - from 8-bit to modern AAA.",
     "chooseStyle": "Choose Style",
     "yourPhoto": "Your Photo",
     "sceneHint": "JPG or PNG · any scene works best"
@@ -79,11 +66,11 @@
     "videoSubtitle": "Remove text and logo watermarks from videos while preserving original quality.",
     "step1": "Upload any photo with a text or logo watermark",
     "step2": "AI detects and removes the watermark intelligently",
-    "step3": "Background texture is preserved — no artifacts",
+    "step3": "Background texture is preserved - no artifacts",
     "videoStep1": "Upload any video with text or logo watermarks",
     "videoStep2": "AI detects and removes watermarks frame by frame",
     "videoStep3": "Download the clean video in original quality",
-    "videoNote": "Processing time depends on video length — may take several minutes.",
+    "videoNote": "Processing time depends on video length - may take several minutes.",
     "image": "Image",
     "video": "Video",
     "dropHint": "JPG or PNG · works best with text/logo watermarks"
@@ -129,64 +116,375 @@
   },
   "seo": {
     "portrait": {
-      "title": "AI Portrait Editor — Transform Your Photos | FillTech",
+      "title": "AI Portrait Editor - Transform Your Photos | FillTech",
       "desc": "Upload your photo and transform it with AI portrait editing. Choose gender, style, pose and lighting. Powered by Google Gemini."
     },
     "gameFilter": {
-      "title": "Game Filter — Turn Photos into Game Screenshots | FillTech",
+      "title": "Game Filter - Turn Photos into Game Screenshots | FillTech",
       "desc": "Convert any photo into a retro video game screenshot. 7 styles: PS2, Arcade, 8-bit, PS3, Anime, AAA and more."
     },
     "bgRemover": {
-      "title": "Background Remover — Free AI Background Removal | FillTech",
+      "title": "Background Remover - Free AI Background Removal | FillTech",
       "desc": "Remove image backgrounds instantly with AI. Get transparent PNG in seconds. Perfect for product photos and portraits."
     },
     "watermark": {
-      "title": "Watermark Remover — Remove Watermarks with AI | FillTech",
+      "title": "Watermark Remover - Remove Watermarks with AI | FillTech",
       "desc": "Intelligently remove text and logo watermarks from photos while preserving original texture and quality."
     },
     "videoWatermark": {
-      "title": "Video Watermark Remover — Remove Watermarks from Video | FillTech",
+      "title": "Video Watermark Remover - Remove Watermarks from Video | FillTech",
       "desc": "Remove watermarks from any video with AI. Frame-by-frame processing preserves original video quality."
     },
     "colorize": {
-      "title": "Photo Colorizer — Colorize Black & White Photos | FillTech",
+      "title": "Photo Colorizer - Colorize Black & White Photos | FillTech",
       "desc": "Bring old black and white photos to life with AI colorization. Realistic colors added automatically in seconds."
     },
     "clothesSwap": {
-      "title": "Clothes Swap — Try On Outfits with AI | FillTech",
+      "title": "Clothes Swap - Try On Outfits with AI | FillTech",
       "desc": "Try on different outfits virtually with AI. Upload your portrait and a clothing image to see the instant result."
     },
     "videoBg": {
-      "title": "Video BG Replace — Replace Video Backgrounds with AI | FillTech",
+      "title": "Video BG Replace - Replace Video Backgrounds with AI | FillTech",
       "desc": "Remove or replace the background of any video using AI. Upload a video and an optional background image."
     },
     "upscaler": {
-      "title": "AI Upscaler — Enlarge Images 4× Without Quality Loss | FillTech",
+      "title": "AI Upscaler - Enlarge Images 4× Without Quality Loss | FillTech",
       "desc": "Upscale photos and images up to 4× using AI super-resolution. Recover fine details without any quality loss."
     },
     "voiceClone": {
-      "title": "Voice Cloning — Clone Any Voice with AI | FillTech",
+      "title": "Voice Cloning - Clone Any Voice with AI | FillTech",
       "desc": "Clone any voice from a 3–10 second audio sample. Convert text to speech in 600+ languages with your voice."
     },
     "vocalIsolator": {
-      "title": "Vocal Isolator — Separate Vocals from Music | FillTech",
+      "title": "Vocal Isolator - Separate Vocals from Music | FillTech",
       "desc": "AI-powered vocal isolation. Upload any song and extract clean vocals from the instrumental track instantly."
     },
     "explore": {
-      "title": "Explore AI Tools — All Effects | FillTech",
+      "title": "Explore AI Tools - All Effects | FillTech",
       "desc": "Discover all AI-powered tools: portrait editor, background remover, watermark remover, photo colorizer and more."
     },
     "blog": {
-      "title": "Blog — AI Tools Tips & News | FillTech",
+      "title": "Blog - AI Tools Tips & News | FillTech",
       "desc": "Read articles, tutorials and news about AI image and video processing tools from the FillTech team."
     },
     "history": {
-      "title": "My History — Generated Content | FillTech",
+      "title": "My History - Generated Content | FillTech",
       "desc": "View and manage all your AI-generated content. Download or delete your generations. Results kept for 7 days."
     },
     "billing": {
-      "title": "Billing — Account Balance | FillTech",
+      "title": "Billing - Account Balance | FillTech",
       "desc": "Manage your balance, view spending history and configure automatic top-ups for AI generations."
+    }
+  },
+  "watermarkRemover": {
+    "seo": {
+      "title": "Free AI Watermark Remover - Remove Watermarks Online",
+      "description": "Remove watermarks from photos online for free. AI erases text, logos, timestamps in seconds. No Photoshop, no sign-up needed."
+    },
+    "hero": {
+      "h1": "AI Online Watermark Remover",
+      "subtitle": "Drop your image and let AI erase watermarks, logos, and text overlays in seconds. No manual selection, no editing skills required.",
+      "submit": "Remove Watermark",
+      "submitLoading": "Removing watermark..."
+    },
+    "steps": {
+      "title": "How It Works",
+      "items": [
+        {
+          "title": "1. Upload your watermarked image",
+          "text": "Drag and drop your photo or click to browse. Supports JPG, PNG, WEBP, BMP, HEIC up to 22 MB. No account needed."
+        },
+        {
+          "title": "2. AI detects and erases the watermark",
+          "text": "The AI scans the image, finds the watermark - text, logo, timestamp, or repeated pattern - and removes it while rebuilding the background underneath."
+        },
+        {
+          "title": "3. Download your clean image",
+          "text": "Preview the result and download at full resolution. No blurring, no artifacts, no quality loss."
+        }
+      ]
+    },
+    "beforeAfter": {
+      "title": "See What the AI Actually Does",
+      "text": "Drag the slider to compare. The AI reconstructs the background under the watermark - not just painted over."
+    },
+    "features": {
+      "title": "Why This Watermark Remover Works Better",
+      "items": [
+        {
+          "title": "Smart Auto-Detection",
+          "text": "Finds the watermark automatically. No selection boxes, no manual highlighting. Works on text, logos, semi-transparent marks, and full-screen patterns."
+        },
+        {
+          "title": "Results in Under 10 Seconds",
+          "text": "Upload, wait a moment, download. No queue, no wait time, no software to install."
+        },
+        {
+          "title": "Handles Complex Watermarks",
+          "text": "Low-opacity marks, multi-layered logos, tiled patterns across the whole image - the AI handles cases where simpler tools give up."
+        },
+        {
+          "title": "Your Files Stay Private",
+          "text": "Images are processed securely and never stored. Not used for training, not shared with anyone. Your files stay yours."
+        }
+      ]
+    },
+    "cardLeft": {
+      "title": "Remove Any Type of Watermark - Text, Logo, or Timestamp",
+      "text": "Bold corner text, faint semi-transparent logos, date stamps from old cameras, author signatures, copyright notices, stock photo proof overlays - this tool handles all of them. The AI adapts to what it finds rather than applying a fixed approach, which is why results hold up on complex photos."
+    },
+    "cardRight": {
+      "title": "Works on Scanned Photos, Graduation Pictures, and Screenshots Too",
+      "text": "Most tools are built for clean digital photos only. This one handles scanned images with printed marks, graduation and school photos with studio watermarks, screenshots with overlay banners, and marks placed over faces or fine detail. If the photo matters to you and has a mark you cannot remove, try this first."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "Can I remove a watermark from a photo online for free?",
+          "a": "Yes. Upload and remove directly on this page at no cost. Free usage has a monthly limit. Batch and premium plans are available for higher volume."
+        },
+        {
+          "q": "Do I need to manually select the watermark?",
+          "a": "No. The AI finds it automatically. Just upload and download. For tricky images, manual brush mode is available to fine-tune specific areas."
+        },
+        {
+          "q": "Which formats are supported?",
+          "a": "JPG, JPEG, PNG, WEBP, BMP, and HEIC. Convert to PNG or JPG first if your file is in another format."
+        },
+        {
+          "q": "Will quality be reduced after removal?",
+          "a": "No. The AI reconstructs the area under the watermark to match the surrounding content. Full original resolution, no compression, no visible patching."
+        },
+        {
+          "q": "Does it work on watermarks over faces?",
+          "a": "Yes. Watermarks over faces, hair, or complex textures are removed using surrounding context to fill detail realistically."
+        },
+        {
+          "q": "Does it work on old scanned photos?",
+          "a": "Yes. Scanned photos, graduation pictures with studio marks, images from older cameras with burned-in timestamps - all handled."
+        },
+        {
+          "q": "Can I remove watermarks from multiple images at once?",
+          "a": "Batch processing is available on premium plans. Free plan processes one image at a time."
+        },
+        {
+          "q": "Is removing a watermark legal?",
+          "a": "Removing from images you own or have licensed is fine. Using cleaned images commercially without rights to the original is not. Check the license before publishing."
+        },
+        {
+          "q": "Are my images private?",
+          "a": "Yes. Processed on secure servers, deleted after processing, never used for training or shared with third parties."
+        },
+        {
+          "q": "Does it remove full-screen repeated watermarks?",
+          "a": "Yes. The AI handles tiled patterns that repeat across the entire image, not just single-position marks."
+        }
+      ]
+    },
+    "seoText": {
+      "title": "The Fastest Way to Remove Watermarks from Photos Online",
+      "paragraphs": [
+        "Watermarks protect photographers, designers, and content creators. But there are many legitimate situations where you need a clean version: you own the image, you have a licensed stock photo with a preview overlay, or you are cleaning old personal photos with timestamps burned in from an older camera.",
+        "Doing this manually in Photoshop takes time and skill, especially when the watermark sits over a complex background. This AI watermark remover does the same job in seconds. Upload the image, wait a moment, download the clean result.",
+        "The tool uses an AI inpainting model that does not just erase the mark - it reconstructs what should be underneath it. Watermark over sky - the AI fills a matching gradient. Over a face - it rebuilds skin texture using surrounding pixels. Results look natural because the model predicts the image content, not just blends pixels.",
+        "This matters most for harder cases: low-opacity marks blended into the image, repeated tile patterns, author signatures in unusual fonts, and marks placed over the main subject. These are exactly where simpler tools fail.",
+        "Works across JPG, PNG, WEBP, BMP, HEIC - full original resolution output. No extra compression, no sign-up for basic use, no software to install. Works on desktop, tablet, and mobile equally.",
+        "Photographers cleaning old archives, real estate professionals needing clean listing photos, e-commerce sellers working with product images, designers cleaning visual assets - this is the quickest path from a watermarked image to a clean one."
+      ]
+    },
+    "description": {
+      "h2": "Free AI Watermark Removal Tool",
+      "text": "The easiest tool to remove watermarks from photos without any cost, ensuring the best quality images."
+    },
+    "tabs": {
+      "image": "Image",
+      "video": "Video"
+    }
+  },
+  "toolCards": {
+    "bg-remover": {
+      "title": "Background Remover",
+      "desc": "Remove background from any photo instantly.",
+      "btn": "Remove Background"
+    },
+    "watermark-remover": {
+      "title": "Watermark Remover",
+      "desc": "Erase watermarks and logos from photos automatically.",
+      "btn": "Remove Watermark"
+    },
+    "watermark-remover-video": {
+      "title": "Video Watermark Remover",
+      "desc": "Remove watermarks from videos using AI.",
+      "btn": "Remove from Video"
+    },
+    "photo-colorize": {
+      "title": "Photo Colorizer",
+      "desc": "Bring black-and-white photos to life with AI color.",
+      "btn": "Colorize Photo"
+    },
+    "portrait": {
+      "title": "AI Portrait",
+      "desc": "Transform your photo into a stunning AI portrait.",
+      "btn": "Create Portrait"
+    },
+    "clothes-swap": {
+      "title": "Clothes Swap",
+      "desc": "Virtually try on any outfit using AI.",
+      "btn": "Swap Clothes"
+    },
+    "upscaler": {
+      "title": "AI Upscaler",
+      "desc": "Upscale image resolution up to 4x without quality loss.",
+      "btn": "Upscale Image"
+    },
+    "ps2-filter": {
+      "title": "Game Filter",
+      "desc": "Turn any photo into a retro game-style image.",
+      "btn": "Apply Filter"
+    },
+    "voice-clone": {
+      "title": "Voice Cloning",
+      "desc": "Clone any voice from a short audio sample.",
+      "btn": "Clone Voice"
+    },
+    "video-bg-replace": {
+      "title": "Video BG Replace",
+      "desc": "Replace video background with a custom image using AI.",
+      "btn": "Replace Background"
+    }
+  },
+  "otherProducts": {
+    "title": "Try Our Other Tools"
+  },
+  "badges": {
+    "free": "Free",
+    "aiPowered": "AI-Powered",
+    "noSignup": "No Sign-up",
+    "hdQuality": "HD Quality",
+    "instantResults": "Instant Results",
+    "securePrivate": "Secure & Private"
+  },
+  "imageUpscaler": {
+    "seo": {
+      "title": "Free AI Image Upscaler – Increase Resolution to 4K Online",
+      "description": "Upscale any image to 4K for free with our AI image upscaler. Increase photo resolution without losing quality. No sign-up, no watermark. Works on JPG, PNG, WebP."
+    },
+    "hero": {
+      "h1": "Free AI Image Upscaler",
+      "subtitle": "Increase image resolution to 4K instantly. No sign-up, no watermark, 100% free.",
+      "submit": "Upscale Image",
+      "submitLoading": "Enhancing your image..."
+    },
+    "description": {
+      "h2": "Upscale Images Online Without Losing Quality",
+      "text": "Our AI image upscaler analyzes every pixel and intelligently reconstructs fine details, sharp edges, and textures. The result is a high-resolution image that looks naturally enlarged, not stretched. Upload a JPG, PNG, or WebP file and get a crisp 4K-ready photo in seconds."
+    },
+    "steps": {
+      "title": "How to Upscale an Image in 3 Steps",
+      "items": [
+        {
+          "title": "Upload Your Image",
+          "text": "Select a JPG, PNG, or WebP file from your device. You can also drag and drop directly onto the upload area. No account needed to get started."
+        },
+        {
+          "title": "AI Enhances the Resolution",
+          "text": "Our neural network analyzes the image and reconstructs missing details, improves edge clarity, and increases pixel density automatically. No manual settings required."
+        },
+        {
+          "title": "Download Your HD Image",
+          "text": "Your upscaled image is ready to download in high resolution. Use it for print, e-commerce listings, social media posts, or any other project."
+        }
+      ]
+    },
+    "beforeAfter": {
+      "title": "See the Difference: Low Resolution vs. 4K Upscaled",
+      "text": "The comparison shows what AI upscaling actually does: sharper textures, cleaner edges, and more vivid detail, without the blurring or pixelation you get from standard image resizing tools."
+    },
+    "features": {
+      "title": "Why Use Our AI Image Upscaler",
+      "items": [
+        {
+          "title": "100% Free, No Watermark",
+          "text": "Upscale photos to 4K without any fees, hidden limits, or watermarks applied to the output. Your image, clean and ready to use."
+        },
+        {
+          "title": "AI-Powered Quality Enhancement",
+          "text": "Unlike basic resizing that just stretches pixels, our AI reconstructs fine textures, facial details, and crisp edges using neural network processing."
+        },
+        {
+          "title": "Batch Upscaling Supported",
+          "text": "Process multiple images in one go. Useful for e-commerce product catalogs, real estate galleries, or any workflow with large sets of photos."
+        },
+        {
+          "title": "Works on Any Device",
+          "text": "The upscaler runs entirely in the browser. No app to install. Works on desktop, tablet, and mobile across iOS, Android, Mac, and Windows."
+        }
+      ]
+    },
+    "cardLeft": {
+      "title": "Perfect for E-Commerce and Product Photos",
+      "text": "Low-resolution product images cost you sales. Buyers zoom in, and blurry photos reduce purchase confidence. Upscale your product photos to high-resolution before uploading to Amazon, Shopify, or any marketplace. Our AI preserves label text, material textures, and fine product details so your listing looks professionally shot."
+    },
+    "cardRight": {
+      "title": "Restore Old Photos and Print-Ready Images",
+      "text": "Scanned family photos, old film prints, or low-quality digital images from older cameras can all be enhanced to print quality. Upscale to 4K for large-format prints, photo books, and exhibition displays. AI fills in the details that time or low resolution removed, giving the image a natural, restored look rather than an artificial one."
+    },
+    "faq": {
+      "title": "Image Upscaler FAQ",
+      "items": [
+        {
+          "q": "What is an AI image upscaler?",
+          "a": "An AI image upscaler is a tool that increases the resolution of a photo using neural networks. Instead of simply stretching existing pixels, it analyzes the image and generates new pixel data to fill in detail, producing a sharper, higher-resolution result."
+        },
+        {
+          "q": "How do I upscale an image without losing quality?",
+          "a": "Use an AI-based upscaler rather than a basic resize tool. AI reconstructs edges, textures, and fine detail rather than interpolating between existing pixels. This prevents the blurring and pixelation that happen with standard enlargement."
+        },
+        {
+          "q": "What is the maximum upscale factor?",
+          "a": "Our tool supports up to 4x upscaling, converting a standard image to 4K resolution. For most use cases including print, e-commerce, and social media, 4x delivers excellent results with no visible quality loss."
+        },
+        {
+          "q": "Which image formats are supported?",
+          "a": "You can upload images in JPG, JPEG, PNG, and WebP format. The output can be downloaded in the format that best fits your project."
+        },
+        {
+          "q": "Is the image upscaler really free?",
+          "a": "Yes. There are no fees, no trial limits, and no watermarks on the output. You can upscale images without creating an account."
+        },
+        {
+          "q": "Can I use upscaled images for commercial projects?",
+          "a": "Yes. Images you upscale through our tool can be used for personal and commercial purposes, including product listings, marketing materials, and client deliverables."
+        },
+        {
+          "q": "How long does upscaling take?",
+          "a": "Most images are processed in under 30 seconds. Larger files or more complex enhancement requests may take slightly longer, but you will see progress in real time."
+        },
+        {
+          "q": "How is this different from resizing an image in Photoshop?",
+          "a": "Photoshop's standard resize tool uses interpolation, which stretches existing pixels and produces blurry results at large scales. AI upscaling uses a neural network trained on millions of images to reconstruct realistic detail rather than guess between existing pixels."
+        },
+        {
+          "q": "Can I upscale multiple images at once?",
+          "a": "Yes, batch upscaling is supported. Upload multiple images and apply the same upscaling settings across all of them in a single workflow. This is ideal for product catalogs, real estate photo sets, and social media content batches."
+        },
+        {
+          "q": "Does upscaling work on faces and portraits?",
+          "a": "Yes. The AI is trained to handle portrait photos with accuracy, restoring skin texture, sharpening facial features, and preserving natural color tones. This works for both modern photos and scanned older portraits."
+        }
+      ]
+    },
+    "seoText": {
+      "title": "AI Image Upscaling: What It Is and When to Use It",
+      "paragraphs": [
+        "Image resolution determines how sharp and detailed a photo looks at any given size. A low-resolution image printed large or displayed on a high-DPI screen will appear blurry and pixelated. Increasing resolution the old way, by dragging a slider in an image editor, just stretches the existing data and makes things worse.",
+        "AI upscaling works differently. The model is trained on large datasets of image pairs: low-resolution inputs and their high-resolution counterparts. From this, it learns how to reconstruct realistic detail from compressed or low-quality source images. The result looks natural rather than artificially sharpened.",
+        "For e-commerce, resolution directly affects conversion. Shoppers inspect products closely, especially in fashion, electronics, and home goods. A blurry image fails at the exact moment the buyer is deciding. Upscaling product photos before listing them gives your images the professional quality of a studio shot, even if the original was taken with a smartphone.",
+        "For print, DPI requirements are strict. A 72 DPI web image printed at poster size will look terrible. AI upscaling raises the effective resolution to print-ready standards, allowing images originally shot for digital use to be repurposed for large-format advertising, brochures, and framed prints.",
+        "Restoring old photographs is another practical use. Scanned analog photos, screenshots from old video footage, or images from early digital cameras often have limited resolution by modern standards. AI reconstruction fills in missing detail with high accuracy, making the image look as if it was shot on modern hardware.",
+        "The key advantage of browser-based AI upscaling is accessibility. There is no software to install, no technical knowledge required, and no cost barrier. Upload your file, wait a few seconds, and download a high-resolution result you can use immediately across any platform or format."
+      ]
     }
   }
 }

@@ -1,22 +1,9 @@
 {
   "upload": {
-    "dropPhoto": "Foto hier ablegen",
-    "dropVideo": "Video hier ablegen",
-    "dropAudio": "Datei hier ablegen",
-    "orClick": "oder klicken zum Auswählen",
-    "jpgPng": "JPG oder PNG",
-    "jpgPngHint": "JPG oder PNG · bestes Ergebnis mit klarem Motiv",
-    "videoHint": "MP4, MOV, AVI, MKV",
-    "audioHint": "MP3, WAV, M4A",
+    "button": "Hochladen",
+    "dropHint": "Bild hierher ziehen",
     "maxSize": "max {{max}} MB",
-    "clickToChange": "Klicken zum Ändern",
-    "uploadFirst": "Foto hochladen",
-    "uploadVideoFirst": "Video hochladen",
-    "selfieHint": "klares Foto bei guter Beleuchtung",
-    "yourPhoto": "Ihr Foto",
-    "voiceSample": "Stimmprobe",
-    "sampleHint": "3–10 Sek",
-    "uploadOrPick": "Hochladen oder Charakter auswählen"
+    "clickToChange": "Klicken um Datei zu ändern"
   },
   "actions": {
     "generate": "Generieren",
@@ -128,19 +115,19 @@
   },
   "seo": {
     "portrait": {
-      "title": "KI-Porträt-Editor — Fotos transformieren | FillTech",
+      "title": "KI-Porträt-Editor - Fotos transformieren | FillTech",
       "desc": "Lade dein Foto hoch und transformiere es mit KI. Wähle Geschlecht, Stil, Pose und Beleuchtung."
     },
     "gameFilter": {
-      "title": "Spielfilter — Fotos in Spielscreenshots umwandeln | FillTech",
+      "title": "Spielfilter - Fotos in Spielscreenshots umwandeln | FillTech",
       "desc": "Verwandle jedes Foto in einen Retro-Videospiel-Screenshot. 7 Stile: PS2, Arcade, 8-bit, PS3, Anime, AAA und mehr."
     },
     "bgRemover": {
-      "title": "Hintergrundentferner — Kostenlose KI-Hintergrundentfernung | FillTech",
+      "title": "Hintergrundentferner - Kostenlose KI-Hintergrundentfernung | FillTech",
       "desc": "Entferne Bildhintergründe sofort mit KI. Erhalte transparente PNGs in Sekunden. Perfekt für Produkt- und Portraitfotos."
     },
     "watermark": {
-      "title": "Wasserzeichen entfernen — Logos aus Fotos entfernen | FillTech",
+      "title": "Wasserzeichen entfernen - Logos aus Fotos entfernen | FillTech",
       "desc": "Entferne Text- und Logo-Wasserzeichen intelligent, während die ursprüngliche Textur erhalten bleibt."
     },
     "videoWatermark": {
@@ -148,44 +135,355 @@
       "desc": "Entferne Wasserzeichen aus jedem Video mit KI. Bild-für-Bild-Verarbeitung erhält die ursprüngliche Qualität."
     },
     "colorize": {
-      "title": "Foto einfärben — Schwarzweißfotos mit KI colorieren | FillTech",
+      "title": "Foto einfärben - Schwarzweißfotos mit KI colorieren | FillTech",
       "desc": "Erwecke alte Schwarzweißfotos mit KI-Colorierung zum Leben. Realistische Farben werden automatisch hinzugefügt."
     },
     "clothesSwap": {
-      "title": "Kleidungstausch — Outfits virtuell anprobieren mit KI | FillTech",
+      "title": "Kleidungstausch - Outfits virtuell anprobieren mit KI | FillTech",
       "desc": "Probiere verschiedene Kleidung virtuell mit KI an. Lade dein Portrait und ein Kleidungsbild hoch."
     },
     "videoBg": {
-      "title": "Video-Hintergrundersatz — Videohintergrund ersetzen | FillTech",
+      "title": "Video-Hintergrundersatz - Videohintergrund ersetzen | FillTech",
       "desc": "Entferne oder ersetze den Hintergrund eines Videos mit KI. Lade ein Video und ein optionales Hintergrundbild hoch."
     },
     "upscaler": {
-      "title": "KI-Bildvergrößerer — 4× ohne Qualitätsverlust | FillTech",
+      "title": "KI-Bildvergrößerer - 4× ohne Qualitätsverlust | FillTech",
       "desc": "Vergrößere Fotos bis zu 4× mit KI-Hochskalierung. Feine Details werden ohne Qualitätsverlust wiederhergestellt."
     },
     "voiceClone": {
-      "title": "Stimmklonen — Jede Stimme mit KI klonen | FillTech",
+      "title": "Stimmklonen - Jede Stimme mit KI klonen | FillTech",
       "desc": "Klone jede Stimme aus einer 3–10-sekündigen Audioprobe. Konvertiere Text in Sprache in 600+ Sprachen."
     },
     "vocalIsolator": {
-      "title": "Vokal-Isolator — Gesang aus Musik trennen | FillTech",
+      "title": "Vokal-Isolator - Gesang aus Musik trennen | FillTech",
       "desc": "KI-gestützte Vokal-Isolierung. Lade jeden Song hoch und extrahiere sofort sauberen Gesang vom Instrumental."
     },
     "explore": {
-      "title": "KI-Werkzeuge entdecken — Alle Effekte | FillTech",
+      "title": "KI-Werkzeuge entdecken - Alle Effekte | FillTech",
       "desc": "Entdecke alle KI-Werkzeuge: Porträt-Editor, Hintergrundentferner, Wasserzeichen-Entferner, Foto-Colorizer und mehr."
     },
     "blog": {
-      "title": "Blog — KI-Werkzeug-Tipps und Neuigkeiten | FillTech",
+      "title": "Blog - KI-Werkzeug-Tipps und Neuigkeiten | FillTech",
       "desc": "Lese Artikel, Tutorials und Neuigkeiten über KI-Bild- und Videoverarbeitungswerkzeuge vom FillTech-Team."
     },
     "history": {
-      "title": "Verlauf — Meine Generierungen | FillTech",
+      "title": "Verlauf - Meine Generierungen | FillTech",
       "desc": "Alle KI-Generierungen anzeigen und verwalten. Ergebnisse herunterladen oder löschen. Wird 7 Tage gespeichert."
     },
     "billing": {
-      "title": "Abrechnung — Kontoguthaben | FillTech",
+      "title": "Abrechnung - Kontoguthaben | FillTech",
       "desc": "Guthaben verwalten, Ausgabenhistorie anzeigen und automatische Aufladung für KI-Generierungen konfigurieren."
+    }
+  },
+  "watermarkRemover": {
+    "seo": {
+      "title": "Wasserzeichen entfernen kostenlos online - KI Wasserzeichen Entferner",
+      "description": "Wasserzeichen aus Fotos online entfernen kostenlos. KI entfernt Text, Logos und Zeitstempel in Sekunden. Kein Photoshop, keine Anmeldung, DSGVO-konform."
+    },
+    "hero": {
+      "h1": "Wasserzeichen entfernen — kostenlos und online",
+      "subtitle": "Bild hochladen und die KI entfernt Wasserzeichen, Logos und Textstempel in Sekunden — automatisch, ohne manuelle Auswahl.",
+      "submit": "Wasserzeichen entfernen",
+      "submitLoading": "Wasserzeichen wird entfernt..."
+    },
+    "description": {
+      "h2": "Kostenloses KI-Wasserzeichen-Entfernungswerkzeug",
+      "text": "Das einfachste Werkzeug um Wasserzeichen aus Fotos zu entfernen — ohne Qualitätsverlust."
+    },
+    "steps": {
+      "title": "So funktioniert es",
+      "items": [
+        {
+          "title": "1. Bild mit Wasserzeichen hochladen",
+          "text": "Foto per Drag-and-Drop hineinziehen oder Datei auswählen. Unterstützt JPG, PNG, WEBP, BMP, HEIC bis 22 MB. Keine Anmeldung erforderlich."
+        },
+        {
+          "title": "2. KI erkennt und entfernt das Wasserzeichen",
+          "text": "Die KI scannt das Bild, findet das Wasserzeichen — Text, Logo, Zeitstempel oder Wiederholungsmuster — und entfernt es während der Hintergrund wiederhergestellt wird."
+        },
+        {
+          "title": "3. Sauberes Bild herunterladen",
+          "text": "Ergebnis prüfen und in voller Auflösung herunterladen. Keine Unschärfe, keine Artefakte, kein Qualitätsverlust."
+        }
+      ]
+    },
+    "beforeAfter": {
+      "title": "Sehen Sie was die KI wirklich macht",
+      "text": "Schieberegler ziehen um zu vergleichen. Die KI rekonstruiert den Hintergrund unter dem Wasserzeichen — nicht einfach übermalen."
+    },
+    "features": {
+      "title": "Warum dieser Wasserzeichen-Entferner besser funktioniert",
+      "items": [
+        {
+          "title": "Automatische Erkennung",
+          "text": "Die KI findet das Wasserzeichen selbst — keine Auswahlboxen, kein manuelles Markieren. Funktioniert mit Text, Logos, halbtransparenten Marken und Vollbild-Mustern."
+        },
+        {
+          "title": "Ergebnis in unter 10 Sekunden",
+          "text": "Hochladen, kurz warten, herunterladen. Keine Warteschlange, keine Installation notwendig."
+        },
+        {
+          "title": "Auch komplexe Wasserzeichen",
+          "text": "Halbtransparente Marken, mehrschichtige Logos, Kachelmuster über das gesamte Bild — die KI löst Fälle wo einfachere Werkzeuge versagen."
+        },
+        {
+          "title": "DSGVO-konform und sicher",
+          "text": "Bilder werden auf sicheren Servern verarbeitet und nach der Verarbeitung sofort gelöscht. Keine Weitergabe an Dritte, keine Nutzung zum Training. Vollständig DSGVO-konform."
+        }
+      ]
+    },
+    "cardLeft": {
+      "title": "Alle Wasserzeichen-Typen entfernen — Text, Logo oder Zeitstempel",
+      "text": "Fetter Ecken-Text, kaum sichtbare halbtransparente Logos, Datumsstempel von alten Kameras, Autorunterschriften, Copyright-Hinweise, Stock-Foto-Vorschau-Stempel — dieses Werkzeug verarbeitet alle Varianten. Die KI passt sich jedem Fall an statt einen festen Ansatz anzuwenden. Besonders nützlich für Online-Shop-Betreiber die Produktfotos von Lieferanten bereinigen."
+    },
+    "cardRight": {
+      "title": "Funktioniert auch bei gescannten Fotos, Abschlussbildern und Screenshots",
+      "text": "Die meisten Werkzeuge sind nur für saubere digitale Fotos gebaut. Dieses verarbeitet auch gescannte Bilder mit aufgedruckten Marken, Abschluss- und Schulfotos mit Studio-Wasserzeichen, Screenshots mit Overlay-Bannern und Marken direkt über Gesichtern oder feinen Details. Wenn das Foto wichtig ist und eine Markierung hat die sich nicht entfernen lässt — hier zuerst versuchen."
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "items": [
+        {
+          "q": "Kann ich Wasserzeichen aus Fotos kostenlos online entfernen?",
+          "a": "Ja. Bild hochladen und Wasserzeichen direkt auf dieser Seite kostenlos entfernen. Das kostenlose Kontingent hat ein monatliches Limit. Premium- und Stapelverarbeitungs-Pläne sind für größere Mengen verfügbar."
+        },
+        {
+          "q": "Ist dieses Werkzeug DSGVO-konform?",
+          "a": "Ja. Bilder werden auf sicheren Servern verarbeitet und nach der Verarbeitung automatisch gelöscht. Keine Datenweitergabe an Dritte, keine Nutzung für KI-Training. Vollständig DSGVO-konform."
+        },
+        {
+          "q": "Welche Formate werden unterstützt?",
+          "a": "JPG, JPEG, PNG, WEBP, BMP und HEIC. Bei anderen Formaten zuerst in PNG oder JPG konvertieren."
+        },
+        {
+          "q": "Verliert das Bild nach der Bearbeitung an Qualität?",
+          "a": "Nein. Die KI rekonstruiert den Bereich unter dem Wasserzeichen passend zum umgebenden Inhalt. Volle Originalauflösung, keine Komprimierung, keine sichtbaren Flecken."
+        },
+        {
+          "q": "Funktioniert es bei Wasserzeichen über Gesichtern?",
+          "a": "Ja. Wasserzeichen über Gesichtern, Haaren oder komplexen Texturen werden mit dem umgebenden Kontext realistisch entfernt."
+        },
+        {
+          "q": "Funktioniert es bei alten gescannten Fotos?",
+          "a": "Ja. Gescannte Fotos, Abschlussbilder mit Studio-Marken, Fotos mit eingebrannten Datumsstempeln von älteren Kameras — alles wird verarbeitet."
+        },
+        {
+          "q": "Kann ich Wasserzeichen von mehreren Bildern gleichzeitig entfernen?",
+          "a": "Stapelverarbeitung ist in Premium-Plänen verfügbar. Der kostenlose Plan verarbeitet ein Bild pro Mal."
+        },
+        {
+          "q": "Ist das Entfernen von Wasserzeichen legal?",
+          "a": "Wasserzeichen von eigenen oder lizenzierten Bildern zu entfernen ist in Ordnung. Fremde Bilder ohne Rechte kommerziell zu nutzen ist es nicht. Im Zweifelsfall die Lizenz prüfen."
+        },
+        {
+          "q": "Bleiben meine Bilder privat?",
+          "a": "Ja. Auf sicheren Servern verarbeitet, nach der Verarbeitung gelöscht, nicht für Training genutzt und nicht an Dritte weitergegeben."
+        },
+        {
+          "q": "Entfernt es Wasserzeichen die das gesamte Bild überdecken?",
+          "a": "Ja. Die KI erkennt Kachelmuster die sich über das gesamte Bild wiederholen und rekonstruiert den vollständigen Bildinhalt darunter."
+        }
+      ]
+    },
+    "seoText": {
+      "title": "Wasserzeichen entfernen — der schnellste Weg online",
+      "paragraphs": [
+        "Wasserzeichen schützen die Arbeit von Fotografen und Designern. Aber es gibt viele legitime Situationen wo eine saubere Version benötigt wird: eigene Bilder, lizenzierte Stockfotos mit Vorschau-Stempel oder alte Fotos mit eingebrannten Datumsstempeln.",
+        "Manuell in Photoshop ist das zeitaufwendig — besonders wenn das Wasserzeichen auf einem komplexen Hintergrund liegt. Dieser KI-Wasserzeichen-Entferner erledigt dieselbe Aufgabe in Sekunden. Bild hochladen, kurz warten, sauberes Ergebnis herunterladen.",
+        "Das Werkzeug verwendet ein KI-Inpainting-Modell das nicht einfach nur löscht — es rekonstruiert was unter dem Wasserzeichen sein sollte. Wasserzeichen über dem Himmel — die KI füllt einen passenden Verlauf. Über einem Gesicht — sie rekonstruiert die Hauttextur anhand der umgebenden Pixel.",
+        "Das ist besonders wichtig für schwierige Fälle: halbtransparente Marken die ins Bild eingebettet sind, sich wiederholende Kachelmuster, Autorunterschriften in ungewöhnlichen Schriften und Marken direkt über dem Hauptmotiv.",
+        "Funktioniert mit JPG, PNG, WEBP, BMP, HEIC — Ausgabe in voller Originalauflösung. Keine zusätzliche Komprimierung, keine Anmeldung für die Basisnutzung, keine Software-Installation. Funktioniert gleich gut auf Desktop, Tablet und Mobilgerät.",
+        "Besonders wertvoll für Online-Shop-Betreiber die Lieferantenfotos bereinigen, Immobilienmakler die Fotos ohne Agentur-Logo benötigen und Designer die visuelle Assets für Kundenprojekte vorbereiten. Vollständig DSGVO-konform für Nutzer in Deutschland, Österreich und der Schweiz."
+      ]
+    },
+    "tabs": {
+      "image": "Bild",
+      "video": "Video"
+    }
+  },
+  "toolCards": {
+    "bg-remover": {
+      "title": "Hintergrund entfernen",
+      "desc": "Hintergrund aus jedem Foto sofort entfernen.",
+      "btn": "Hintergrund entfernen"
+    },
+    "watermark-remover": {
+      "title": "Wasserzeichen entfernen",
+      "desc": "Wasserzeichen und Logos automatisch aus Fotos entfernen.",
+      "btn": "Wasserzeichen entfernen"
+    },
+    "watermark-remover-video": {
+      "title": "Video Wasserzeichen",
+      "desc": "Wasserzeichen aus Videos mit KI entfernen.",
+      "btn": "Aus Video entfernen"
+    },
+    "photo-colorize": {
+      "title": "Foto kolorieren",
+      "desc": "Schwarz-Weiss-Fotos mit KI realistisch einfärben.",
+      "btn": "Foto kolorieren"
+    },
+    "portrait": {
+      "title": "KI-Portrait",
+      "desc": "Foto in ein beeindruckendes KI-Portrait verwandeln.",
+      "btn": "Portrait erstellen"
+    },
+    "clothes-swap": {
+      "title": "Kleidung tauschen",
+      "desc": "Virtuell jedes Outfit anprobieren mit KI.",
+      "btn": "Kleidung tauschen"
+    },
+    "upscaler": {
+      "title": "KI Upscaler",
+      "desc": "Bildauflösung bis 4x verbessern ohne Qualitätsverlust.",
+      "btn": "Bild upscalen"
+    },
+    "ps2-filter": {
+      "title": "Spielfilter",
+      "desc": "Foto in Retro-Spielstil verwandeln.",
+      "btn": "Filter anwenden"
+    },
+    "voice-clone": {
+      "title": "Stimmklonen",
+      "desc": "Stimme aus einer kurzen Audioaufnahme klonen.",
+      "btn": "Stimme klonen"
+    },
+    "video-bg-replace": {
+      "title": "Video-Hintergrund",
+      "desc": "Video-Hintergrund durch ein Bild ersetzen.",
+      "btn": "Hintergrund ersetzen"
+    }
+  },
+  "otherProducts": {
+    "title": "Weitere KI-Werkzeuge"
+  },
+  "badges": {
+    "free": "Kostenlos",
+    "aiPowered": "KI-gestützt",
+    "noSignup": "Keine Anmeldung",
+    "hdQuality": "HD-Qualität",
+    "instantResults": "Sofortiges Ergebnis",
+    "securePrivate": "Sicher & Privat"
+  },
+  "imageUpscaler": {
+    "seo": {
+      "title": "Kostenloser KI Bildvergrößerer – Bildauflösung bis 4K erhöhen",
+      "description": "Bild hochskalieren auf 4K – kostenlos, ohne Wasserzeichen und ohne Registrierung. KI verbessert Bildqualität ohne Qualitätsverlust. Unterstützt JPG, PNG, WebP."
+    },
+    "hero": {
+      "h1": "Kostenloser KI Bildvergrößerer",
+      "subtitle": "Bildauflösung in Sekunden auf 4K erhöhen – kostenlos, ohne Wasserzeichen und ohne Anmeldung.",
+      "submit": "Bild hochskalieren",
+      "submitLoading": "KI verarbeitet das Bild..."
+    },
+    "description": {
+      "h2": "Bilder online hochskalieren ohne Qualitätsverlust",
+      "text": "Unser KI-Bildvergrößerer analysiert jeden Pixel und rekonstruiert feine Details, scharfe Kanten und Texturen. Das Ergebnis ist ein hochauflösendes Bild, das natürlich vergrößert wirkt – nicht gestreckt. Lade ein JPG, PNG oder WebP hoch und erhalte ein knackig scharfes 4K-Foto in Sekunden."
+    },
+    "steps": {
+      "title": "Bild hochskalieren in 3 Schritten",
+      "items": [
+        {
+          "title": "Bild hochladen",
+          "text": "Wähle eine JPG-, PNG- oder WebP-Datei von deinem Gerät aus. Du kannst die Datei auch direkt in den Upload-Bereich ziehen. Kein Konto erforderlich."
+        },
+        {
+          "title": "KI verbessert die Auflösung",
+          "text": "Das neuronale Netz analysiert das Bild, rekonstruiert fehlende Details, verbessert die Kantenschärfe und erhöht automatisch die Pixeldichte. Keine manuellen Einstellungen nötig."
+        },
+        {
+          "title": "HD-Bild herunterladen",
+          "text": "Dein hochskaliertes Bild steht in hoher Auflösung zum Download bereit. Verwende es für den Druck, Produktlistings, Social-Media-Beiträge oder andere Projekte."
+        }
+      ]
+    },
+    "beforeAfter": {
+      "title": "Vergleich: Niedrige Auflösung vs. 4K nach dem Hochskalieren",
+      "text": "Der Vergleich zeigt, was KI-Hochskalierung wirklich bewirkt: schärfere Texturen, klarere Kanten und lebhaftere Details – ohne die Unschärfe oder Pixelierung, die bei herkömmlichen Bildvergrößerungstools entsteht."
+    },
+    "features": {
+      "title": "Warum unseren KI-Bildvergrößerer nutzen",
+      "items": [
+        {
+          "title": "100% kostenlos, kein Wasserzeichen",
+          "text": "Fotos auf 4K hochskalieren ohne Gebühren, versteckte Limits oder Wasserzeichen im Ergebnis. Dein Bild, sauber und sofort einsatzbereit."
+        },
+        {
+          "title": "KI-gestützte Qualitätsverbesserung",
+          "text": "Anders als einfaches Skalieren, das Pixel nur streckt, rekonstruiert unsere KI feine Texturen, Gesichtsdetails und scharfe Kanten mittels neuronaler Netze."
+        },
+        {
+          "title": "Stapelverarbeitung unterstützt",
+          "text": "Mehrere Bilder auf einmal verarbeiten. Ideal für E-Commerce-Produktkataloge, Immobiliengalerien oder große Bildworkflows."
+        },
+        {
+          "title": "DSGVO-konform – deine Daten sind sicher",
+          "text": "Der Upscaler läuft vollständig im Browser. Hochgeladene Bilder werden nach der Verarbeitung automatisch gelöscht und nicht gespeichert oder weitergegeben. Keine Registrierung, keine versteckte Datenspeicherung."
+        }
+      ]
+    },
+    "cardLeft": {
+      "title": "Perfekt für Produktfotos und Online-Shops",
+      "text": "Produktbilder mit niedriger Auflösung kosten dich Umsatz. Käufer zoomen rein, und unscharfe Fotos reduzieren das Vertrauen. Skaliere deine Produktfotos auf hohe Auflösung hoch, bevor du sie auf Amazon, eBay oder deinen Shopify-Shop hochlädst. Unsere KI erhält Beschriftungstext, Materialtexturen und feine Produktdetails, damit dein Angebot professionell aussieht."
+    },
+    "cardRight": {
+      "title": "Alte Fotos restaurieren und druckfertig aufbereiten",
+      "text": "Gescannte Familienfotos, alte Filmabzüge oder Digitalfotos älterer Kameras lassen sich alle auf Druckqualität verbessern. Hochskalieren auf 4K für Großformatdrucke, Fotobücher und Ausstellungsexponate. Die KI ergänzt Details, die Zeit oder niedrige Auflösung entfernt haben – das Bild sieht natürlich restauriert aus, nicht künstlich bearbeitet."
+    },
+    "faq": {
+      "title": "Häufige Fragen zum Bildvergrößerer",
+      "items": [
+        {
+          "q": "Was ist ein KI-Bildvergrößerer?",
+          "a": "Ein KI-Bildvergrößerer ist ein Tool, das die Auflösung eines Fotos mithilfe neuronaler Netze erhöht. Statt einfach vorhandene Pixel zu strecken, analysiert es das Bild und generiert neue Pixeldaten, um Details zu ergänzen – das Ergebnis ist schärfer und höher aufgelöst."
+        },
+        {
+          "q": "Wie kann ich ein Bild ohne Qualitätsverlust hochskalieren?",
+          "a": "Verwende einen KI-basierten Upscaler statt eines einfachen Größenänderungstools. KI rekonstruiert Kanten, Texturen und feine Details, anstatt zwischen vorhandenen Pixeln zu interpolieren. Das verhindert die Unschärfe und Pixelierung, die bei herkömmlichem Vergrößern entstehen."
+        },
+        {
+          "q": "Wie hoch ist der maximale Skalierungsfaktor?",
+          "a": "Das Tool unterstützt bis zu 4-faches Hochskalieren und wandelt ein Standardbild in 4K-Auflösung um. Für die meisten Anwendungen – Druck, E-Commerce und Social Media – liefert 4x ausgezeichnete Ergebnisse ohne sichtbaren Qualitätsverlust."
+        },
+        {
+          "q": "Welche Bildformate werden unterstützt?",
+          "a": "Du kannst Bilder in den Formaten JPG, JPEG, PNG und WebP hochladen. Das Ergebnis kann im Format heruntergeladen werden, das am besten zu deinem Projekt passt."
+        },
+        {
+          "q": "Ist der Bildvergrößerer wirklich kostenlos?",
+          "a": "Ja. Keine Gebühren, keine Testlimits und keine Wasserzeichen im Ergebnis. Du kannst Bilder ohne Kontoerstellung hochskalieren."
+        },
+        {
+          "q": "Sind meine hochgeladenen Bilder sicher – DSGVO-konform?",
+          "a": "Ja. Deine Bilder werden ausschließlich für die Verarbeitung verwendet und danach automatisch von unseren Servern gelöscht. Wir speichern, teilen oder nutzen deine Bilder nicht für andere Zwecke. Der Service ist DSGVO-konform."
+        },
+        {
+          "q": "Kann ich hochskalierte Bilder kommerziell nutzen?",
+          "a": "Ja. Bilder, die du mit unserem Tool hochskalierst, dürfen für persönliche und kommerzielle Zwecke genutzt werden, einschließlich Produktlistings, Marketingmaterialien und Kundenprojekte."
+        },
+        {
+          "q": "Wie lange dauert das Hochskalieren?",
+          "a": "Die meisten Bilder werden in weniger als 30 Sekunden verarbeitet. Größere Dateien können etwas länger dauern, der Fortschritt ist jedoch in Echtzeit sichtbar."
+        },
+        {
+          "q": "Wie unterscheidet sich das von der Größenänderung in Photoshop?",
+          "a": "Das Standard-Größenänderungstool in Photoshop verwendet Interpolation, die Pixel streckt und bei großem Maßstab unscharfe Ergebnisse liefert. KI-Hochskalierung nutzt ein neuronales Netz, das auf Millionen von Bildern trainiert wurde, um realistische Details zu rekonstruieren."
+        },
+        {
+          "q": "Funktioniert das Hochskalieren bei Porträts und Gesichtern?",
+          "a": "Ja. Die KI ist darauf trainiert, Porträtfotos präzise zu verarbeiten: Hauttextur wiederherstellen, Gesichtszüge schärfen und natürliche Farbtöne bewahren. Das funktioniert sowohl bei modernen Fotos als auch bei gescannten älteren Porträts."
+        }
+      ]
+    },
+    "seoText": {
+      "title": "KI-Bildvergrößerung: Was es ist und wann man es einsetzt",
+      "paragraphs": [
+        "Die Bildauflösung bestimmt, wie scharf und detailliert ein Foto bei jeder Größe aussieht. Ein niedrig aufgelöstes Bild, das groß gedruckt oder auf einem hochauflösenden Bildschirm angezeigt wird, wirkt unscharf und pixelig. Die Auflösung auf dem alten Weg zu erhöhen – durch Ziehen eines Schiebereglers in einem Bildeditor – streckt nur die vorhandenen Daten und macht die Sache schlimmer.",
+        "KI-Hochskalierung funktioniert anders. Das Modell wird auf großen Datensätzen von Bildpaaren trainiert: niedrig aufgelöste Eingaben und ihre hochaufgelösten Entsprechungen. Daraus lernt es, realistische Details aus komprimierten oder minderwertigen Quellbildern zu rekonstruieren. Das Ergebnis wirkt natürlich und nicht künstlich geschärft.",
+        "Für den E-Commerce wirkt sich die Auflösung direkt auf die Conversion aus. Käufer sehen sich Produkte genau an, besonders bei Mode, Elektronik und Einrichtungsgegenständen. Ein unscharfes Bild versagt genau in dem Moment, in dem der Käufer entscheidet. Das Hochskalieren von Produktfotos vor dem Hochladen verleiht deinen Bildern die professionelle Qualität eines Studiofotografierens.",
+        "Beim Druck gelten strenge DPI-Anforderungen. Ein Web-Bild mit 72 DPI, das im Posterformat gedruckt wird, sieht fürchterlich aus. KI-Hochskalierung erhöht die effektive Auflösung auf druckfertige Standards und ermöglicht es, Bilder, die ursprünglich für die digitale Nutzung aufgenommen wurden, für großformatige Werbung, Broschüren und gerahmte Drucke zu verwenden.",
+        "Die Wiederherstellung alter Fotos ist ein weiterer praktischer Anwendungsfall. Gescannte Analogfotos oder Bilder früher Digitalkameras haben nach heutigen Maßstäben oft eine begrenzte Auflösung. KI-Rekonstruktion ergänzt fehlende Details mit hoher Genauigkeit und lässt das Bild aussehen, als wäre es mit moderner Hardware aufgenommen worden.",
+        "Der wichtigste Vorteil des browserbasierten KI-Hochskalierens ist die Datenschutzkonformität nach DSGVO. Bilder werden ausschließlich für die Verarbeitung verwendet und danach automatisch gelöscht – keine Datenspeicherung, keine Weitergabe, keine Registrierung nötig. Das macht es zur sicheren Wahl für Unternehmen in Deutschland und der EU."
+      ]
     }
   }
 }

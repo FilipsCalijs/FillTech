@@ -67,15 +67,15 @@
   },
   "seo": {
     "explore": {
-      "title": "探索 AI 工具 — 所有效果 | FillTech",
+      "title": "探索 AI 工具 - 所有效果 | FillTech",
       "desc": "发现所有 AI 工具：人像编辑器、背景去除器、水印去除器、照片上色器等。"
     },
     "history": {
-      "title": "我的历史 — 生成内容 | FillTech",
+      "title": "我的历史 - 生成内容 | FillTech",
       "desc": "查看和管理所有 AI 生成内容。下载或删除您的生成结果。结果保留 7 天。"
     },
     "billing": {
-      "title": "账单 — 账户余额 | FillTech",
+      "title": "账单 - 账户余额 | FillTech",
       "desc": "管理余额、查看消费历史并配置 AI 生成的自动充值。"
     },
     "terms": {

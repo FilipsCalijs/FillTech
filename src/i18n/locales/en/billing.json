@@ -7,7 +7,7 @@
   "paymentSoon": "Payment methods coming soon",
   "autoTopUp": "Auto top-up",
   "autoDisabled": "Disabled",
-  "autoDesc": "Automatically top up when balance falls below a threshold — coming soon",
+  "autoDesc": "Automatically top up when balance falls below a threshold - coming soon",
   "history": "Billing History",
   "autoBilling": "Auto-billing",
   "noHistory": "No billing history yet. Costs will appear here once tools have non-zero prices.",
@@ -31,6 +31,6 @@
   "stripeDesc": "Card · Apple Pay · Google Pay and more",
   "payWith": "Pay with Stripe",
   "redirecting": "Redirecting to Stripe…",
-  "paySuccess": "Payment successful — your balance has been updated.",
-  "payCancel": "Payment cancelled — no charge was made."
+  "paySuccess": "Payment successful - your balance has been updated.",
+  "payCancel": "Payment cancelled - no charge was made."
 }

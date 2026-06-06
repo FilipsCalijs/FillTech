@@ -40,7 +40,7 @@
     "coverChoose": "Choose from media library",
     "coverReplace": "Replace",
     "tags": "Tags",
-    "tagHint": "Tag + Enter or comma",
+    "tagHint": "English keywords only, e.g: background, remove, image. Press Enter or comma to add",
     "excerpt": "Excerpt",
     "excerptHint": "Short description for blog listing",
     "seoTitle": "SEO Title",

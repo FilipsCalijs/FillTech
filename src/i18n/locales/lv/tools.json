@@ -1,22 +1,9 @@
 {
   "upload": {
-    "dropPhoto": "Nometiet fotoattēlu šeit",
-    "dropVideo": "Nometiet video šeit",
-    "dropAudio": "Nometiet failu šeit",
-    "orClick": "vai noklikšķiniet, lai izvēlētos",
-    "jpgPng": "JPG vai PNG",
-    "jpgPngHint": "JPG vai PNG · labāk darbojas ar skaidru objektu",
-    "videoHint": "MP4, MOV, AVI, MKV",
-    "audioHint": "MP3, WAV, M4A",
+    "button": "Augšupielādēt",
+    "dropHint": "Ievelc attēlu šeit",
     "maxSize": "maks {{max}} MB",
-    "clickToChange": "Noklikšķiniet, lai mainītu",
-    "uploadFirst": "Augšupielādējiet fotoattēlu",
-    "uploadVideoFirst": "Augšupielādējiet video",
-    "selfieHint": "skaidrs foto labā apgaismojumā",
-    "yourPhoto": "Jūsu foto",
-    "voiceSample": "Balss paraugs",
-    "sampleHint": "3–10 sek",
-    "uploadOrPick": "Augšupielādēt vai izvēlēties personāžu"
+    "clickToChange": "Noklikšķini lai mainītu failu"
   },
   "actions": {
     "generate": "Ģenerēt",
@@ -41,7 +28,7 @@
   },
   "portrait": {
     "title": "AI Portreta redaktors",
-    "subtitle": "Augšupielādējiet fotoattēlu un aprakstiet izmaiņas — AI to pārveidos.",
+    "subtitle": "Augšupielādējiet fotoattēlu un aprakstiet izmaiņas - AI to pārveidos.",
     "gender": "Dzimums",
     "pickOne": "Izvēlieties",
     "woman": "Sieviete",
@@ -128,19 +115,19 @@
   },
   "seo": {
     "portrait": {
-      "title": "AI Portreta redaktors — Pārveido fotogrāfijas | FillTech",
+      "title": "AI Portreta redaktors - Pārveido fotogrāfijas | FillTech",
       "desc": "Augšupielādē fotogrāfiju un pārveido to ar AI. Izvēlies dzimumu, stilu, pozu un apgaismojumu."
     },
     "gameFilter": {
-      "title": "Spēļu filtrs — Pārveido fotogrāfijas par spēļu ekrānuzņēmumiem | FillTech",
+      "title": "Spēļu filtrs - Pārveido fotogrāfijas par spēļu ekrānuzņēmumiem | FillTech",
       "desc": "Pārvērt jebkuru fotogrāfiju retro spēles ekrānuzņēmumā. 7 stili: PS2, Arcade, 8-bit, PS3, Anime, AAA un citi."
     },
     "bgRemover": {
-      "title": "Fona noņemšana — Bezmaksas AI fona noņemšana | FillTech",
+      "title": "Fona noņemšana - Bezmaksas AI fona noņemšana | FillTech",
       "desc": "Noņem attēlu fonus uzreiz ar AI. Iegūsti caurspīdīgu PNG sekundēs. Lieliski piemērots produktu un portreta fotogrāfijām."
     },
     "watermark": {
-      "title": "Ūdenszīmju noņemšana — Noņem logotipus no fotogrāfijām | FillTech",
+      "title": "Ūdenszīmju noņemšana - Noņem logotipus no fotogrāfijām | FillTech",
       "desc": "Inteliģenti noņem teksta un logotipu ūdenszīmes, saglabājot oriģinālo tekstūru."
     },
     "videoWatermark": {
@@ -148,44 +135,333 @@
       "desc": "Noņem ūdenszīmes no jebkura video ar AI. Kadru pa kadram apstrāde saglabā oriģinālo kvalitāti."
     },
     "colorize": {
-      "title": "Foto iekrāsošana — Atdzīvini melnbaltos attēlus ar AI | FillTech",
+      "title": "Foto iekrāsošana - Atdzīvini melnbaltos attēlus ar AI | FillTech",
       "desc": "Atdzīvini vecas melnbaltas fotogrāfijas ar AI iekrāsošanu. Reālistiskas krāsas tiek pievienotas automātiski."
     },
     "clothesSwap": {
-      "title": "Apģērbu maiņa — Virtuāli izmēģini apģērbu ar AI | FillTech",
-      "desc": "Izmēģini dažādus apģērbus virtuāli ar AI. Augšupielādē savu portreta un apģērba attēlu — redzi rezultātu uzreiz."
+      "title": "Apģērbu maiņa - Virtuāli izmēģini apģērbu ar AI | FillTech",
+      "desc": "Izmēģini dažādus apģērbus virtuāli ar AI. Augšupielādē savu portreta un apģērba attēlu - redzi rezultātu uzreiz."
     },
     "videoBg": {
-      "title": "Video fona nomaiņa — Noņem vai nomainiet video fonu | FillTech",
+      "title": "Video fona nomaiņa - Noņem vai nomainiet video fonu | FillTech",
       "desc": "Noņem vai nomainiet jebkura video fonu ar AI. Augšupielādē video un izvēlieties fona attēlu."
     },
     "upscaler": {
-      "title": "AI Attēlu palielināšana — 4× bez kvalitātes zuduma | FillTech",
+      "title": "AI Attēlu palielināšana - 4× bez kvalitātes zuduma | FillTech",
       "desc": "Palielini fotogrāfijas līdz 4× ar AI super-izšķirtspēju. Atjaunini smalkas detaļas bez kvalitātes zuduma."
     },
     "voiceClone": {
-      "title": "Balss klonēšana — Klonē jebkuru balsi ar AI | FillTech",
+      "title": "Balss klonēšana - Klonē jebkuru balsi ar AI | FillTech",
       "desc": "Klonē jebkuru balsi no 3–10 sekunžu audio parauga. Pārveido tekstu runā 600+ valodās ar savu balsi."
     },
     "vocalIsolator": {
-      "title": "Vokāla izolators — Atdaliet vokālu no mūzikas | FillTech",
+      "title": "Vokāla izolators - Atdaliet vokālu no mūzikas | FillTech",
       "desc": "AI vokāla izolācija. Augšupielādējiet jebkuru dziesmu un uzreiz iegūstiet tīru vokālu bez instrumentāla."
     },
     "explore": {
-      "title": "AI rīki — Visi efekti | FillTech",
+      "title": "AI rīki - Visi efekti | FillTech",
       "desc": "Atklāj visus AI rīkus: portreta redaktors, fona noņemšana, ūdenszīmju noņemšana, foto iekrāsošana un citi."
     },
     "blog": {
-      "title": "Blogs — AI rīku padomi un jaunumi | FillTech",
+      "title": "Blogs - AI rīku padomi un jaunumi | FillTech",
       "desc": "Lasi rakstus, pamācības un jaunumus par AI attēlu un video apstrādes rīkiem no FillTech komandas."
     },
     "history": {
-      "title": "Vēsture — Manas ģenerācijas | FillTech",
+      "title": "Vēsture - Manas ģenerācijas | FillTech",
       "desc": "Skatīt un pārvaldīt visas AI ģenerācijas. Lejupielādēt vai dzēst rezultātus. Saglabājas 7 dienas."
     },
     "billing": {
-      "title": "Norēķini — Konta atlikums | FillTech",
+      "title": "Norēķini - Konta atlikums | FillTech",
       "desc": "Pārvaldīt atlikumu, skatīt tēriņu vēsturi un konfigurēt automātisko papildināšanu."
+    }
+  },
+  "watermarkRemover": {
+    "seo": {
+      "title": "Noņemt ūdenszīmi no fotoattēla bez maksas - AI ūdenszīmju noņēmējs",
+      "description": "Noņemt ūdenszīmi no attēliem tiešsaistē bez maksas. AI noņem tekstu, logotipu un datuma zīmogu sekundēs. Bez Photoshop, bez reģistrācijas."
+    },
+    "hero": {
+      "h1": "AI ūdenszīmju noņēmējs - bez maksas tiešsaistē",
+      "subtitle": "Augšupielādē attēlu un AI automātiski atrod un noņem ūdenszīmi, logotipu vai tekstu dažu sekunžu laikā.",
+      "submit": "Noņemt ūdenszīmi",
+      "submitLoading": "Noņem ūdenszīmi..."
+    },
+    "description": {
+      "h2": "Bezmaksas AI ūdenszīmju noņemšanas rīks",
+      "text": "Vienkāršākais veids kā noņemt ūdenszīmi no fotoattēliem bez kvalitātes zuduma."
+    },
+    "steps": {
+      "title": "Kā tas darbojas",
+      "items": [
+        {
+          "title": "1. Augšupielādē attēlu ar ūdenszīmi",
+          "text": "Ievelc fotoattēlu vai noklikšķini lai izvēlētos failu. Atbalsta JPG, PNG, WEBP, BMP, HEIC formātus līdz 22 MB. Reģistrācija nav nepieciešama."
+        },
+        {
+          "title": "2. AI atpazīst un noņem ūdenszīmi",
+          "text": "AI skenē attēlu, atrod ūdenszīmi — tekstu, logotipu, datumu vai atkārtotu rakstu — un noņem to, vienlaikus atjaunojot fonu."
+        },
+        {
+          "title": "3. Lejupielādē tīro attēlu",
+          "text": "Apskat rezultātu un lejupielādē pilnā izšķirtspējā. Bez izplūšanas, bez artefaktiem, bez kvalitātes zuduma."
+        }
+      ]
+    },
+    "beforeAfter": {
+      "title": "Salīdzini rezultātu",
+      "text": "Velc slīdni lai salīdzinātu. AI atjauno fonu zem ūdenszīmes — nevis vienkārši nokrāso."
+    },
+    "features": {
+      "title": "Kāpēc šis rīks darbojas labāk",
+      "items": [
+        {
+          "title": "Automātiska atpazīšana",
+          "text": "AI pats atrod ūdenszīmi — nav manuāli jāiezīmē. Darbojas ar tekstu, logotipiem, daļēji caurspīdīgām zīmēm un visas ekrāna rakstiem."
+        },
+        {
+          "title": "Rezultāts 10 sekundēs",
+          "text": "Augšupielādē, uzgaidi brīdi, lejupielādē. Bez rindas, bez gaidīšanas, bez instalēšanas."
+        },
+        {
+          "title": "Sarežģītas ūdenszīmes",
+          "text": "Daļēji caurspīdīgas zīmes, daudzslāņu logotipi, raksti visā attēlā — AI tiek galā ar gadījumiem kur vienkāršāki rīki nespēj palīdzēt."
+        },
+        {
+          "title": "Tavs fails ir drošībā",
+          "text": "Attēli tiek apstrādāti drošos serveros un nekad netiek glabāti. Netiek izmantoti mācīšanās vajadzībām un netiek kopīgoti ar trešajām pusēm."
+        }
+      ]
+    },
+    "cardLeft": {
+      "title": "Jebkura veida ūdenszīmju noņemšana — teksts, logotips vai datums",
+      "text": "Treknraksts stūrī, gandrīz neredzams daļēji caurspīdīgs logotips, vecas kameras datuma zīmogs, autora paraksts, autortiesību paziņojums, fotobankas priekšskatījuma slānis — šis rīks tiek galā ar visu. AI pielāgojas katram gadījumam, nevis izmanto fiksētu pieeju."
+    },
+    "cardRight": {
+      "title": "Darbojas arī ar skenētām fotogrāfijām, absolventu bildēm un ekrānuzņēmumiem",
+      "text": "Lielākā daļa rīku ir paredzēti tikai tīrām digitālām fotogrāfijām. Šis rīks apstrādā arī skenētus attēlus ar iespiestu marķējumu, absolventu un skolas fotogrāfijas ar fotoakadēmijas zīmogiem, ekrānuzņēmumus ar pārkļautiem joslām un zīmes tieši virs sejām vai smalkiem detaļiem. Ja fotogrāfija ir svarīga un uz tās ir zīme ko nevar noņemt — izmēģini šeit vispirms."
+    },
+    "faq": {
+      "title": "Biežāk uzdotie jautājumi",
+      "items": [
+        {
+          "q": "Vai var noņemt ūdenszīmi no fotoattēla tiešsaistē bez maksas?",
+          "a": "Jā. Augšupielādē attēlu un noņem ūdenszīmi tieši šajā lapā bez maksas. Bezmaksas lietošanai ir ikmēneša limits. Premium un pakešapstrādes plāni ir pieejami lielākiem apjomiem."
+        },
+        {
+          "q": "Vai man jāiezīmē ūdenszīme manuāli?",
+          "a": "Nē. AI to atrod automātiski. Vienkārši augšupielādē un lejupielādē rezultātu."
+        },
+        {
+          "q": "Kādi formāti tiek atbalstīti?",
+          "a": "JPG, JPEG, PNG, WEBP, BMP un HEIC. Ja fails ir citā formātā — vispirms konvertē uz PNG vai JPG."
+        },
+        {
+          "q": "Vai attēla kvalitāte samazināsies pēc noņemšanas?",
+          "a": "Nē. AI atjauno apgabalu zem ūdenszīmes atbilstoši apkārtējam saturam. Pilna oriģinālā izšķirtspēja, bez saspiešanas, bez redzamiem ielāpiem."
+        },
+        {
+          "q": "Vai mani attēli paliek privāti?",
+          "a": "Jā. Apstrādāti drošos serveros, dzēsti pēc apstrādes, neizmantoti mācīšanās vajadzībām un nekopīgoti ar trešajām pusēm."
+        }
+      ]
+    },
+    "seoText": {
+      "title": "Kā noņemt ūdenszīmi no fotoattēla — ātri un bez maksas",
+      "paragraphs": [
+        "Ūdenszīmes aizsargā fotografu un dizaineru darbus. Taču bieži ir nepieciešama tīra versija: pašu uzņemtas fotogrāfijas, licencēti attēli ar priekšskatījuma zīmogu vai veci fotoattēli ar iebūvētu kameras datumu.",
+        "Šis AI ūdenszīmju noņēmējs veic to pašu darbu sekundēs. Augšupielādē attēlu, uzgaidi brīdi, lejupielādē tīro rezultātu.",
+        "Rīks izmanto AI attēlu atjaunošanas modeli kas ne tikai dzēš — tas atjauno to kas atradās zem ūdenszīmes. Ūdenszīme uz debesīm — AI aizpilda atbilstošu gradientu. Uz sejas — atjauno ādas faktūru izmantojot apkārtējos pikseļus.",
+        "Atbalsta JPG, PNG, WEBP, BMP, HEIC — oriģinālā izšķirtspēja izvadē. Bez papildu saspiešanas, bez reģistrācijas pamata lietošanai, bez programmu instalēšanas. Darbojas vienādi labi datorā, planšetē un mobilajā tālrunī."
+      ]
+    },
+    "tabs": {
+      "image": "Attēls",
+      "video": "Video"
+    }
+  },
+  "toolCards": {
+    "bg-remover": {
+      "title": "Noņemt fonu",
+      "desc": "Noņemt fonu no jebkura fotoattēla.",
+      "btn": "Noņemt fonu"
+    },
+    "watermark-remover": {
+      "title": "Noņemt ūdenszīmi",
+      "desc": "Automātiski noņemt ūdenszīmes no fotoattēliem.",
+      "btn": "Noņemt ūdenszīmi"
+    },
+    "watermark-remover-video": {
+      "title": "Video ūdenszīme",
+      "desc": "Noņemt ūdenszīmes no video ar AI.",
+      "btn": "Noņemt no video"
+    },
+    "photo-colorize": {
+      "title": "Krāsot foto",
+      "desc": "Piešķirt krāsas melnbaltiem fotoattēliem.",
+      "btn": "Krāsot foto"
+    },
+    "portrait": {
+      "title": "AI portrets",
+      "desc": "Pārveidot fotoattēlu par AI mākslas portretu.",
+      "btn": "Izveidot portretu"
+    },
+    "clothes-swap": {
+      "title": "Mainīt apģērbu",
+      "desc": "Virtuāli izmēģināt jebkuru apģērbu.",
+      "btn": "Mainīt apģērbu"
+    },
+    "upscaler": {
+      "title": "Palielināt kvalitāti",
+      "desc": "Palielināt attēla izšķirtspēju līdz 4x.",
+      "btn": "Uzlabot attēlu"
+    },
+    "ps2-filter": {
+      "title": "Spēles filtrs",
+      "desc": "Pārveidot fotoattēlu retro spēles stilā.",
+      "btn": "Pielietot filtru"
+    },
+    "voice-clone": {
+      "title": "Balss klonēšana",
+      "desc": "Klonēt jebkuru balsi no īsa audio parauga.",
+      "btn": "Klonēt balsi"
+    },
+    "video-bg-replace": {
+      "title": "Video fona maiņa",
+      "desc": "Nomainīt video fonu pret pielāgotu attēlu.",
+      "btn": "Nomainīt fonu"
+    }
+  },
+  "otherProducts": {
+    "title": "Izmēģini citus AI rīkus"
+  },
+  "badges": {
+    "free": "Bezmaksas",
+    "aiPowered": "Ar AI",
+    "noSignup": "Bez reģistrācijas",
+    "hdQuality": "HD kvalitāte",
+    "instantResults": "Tūlītējs rezultāts",
+    "securePrivate": "Drošs un privāts"
+  },
+  "imageUpscaler": {
+    "seo": {
+      "title": "Bezmaksas AI attēla palielinātājs — Palielināt izšķirtspēju līdz 4K",
+      "description": "Palieliniet attēla izšķirtspēju līdz 4K bez maksas. AI uzlabo fotoattēla kvalitāti bez pikselizācijas. Nav reģistrācijas, nav ūdenszīmes. Darbojas ar JPG, PNG, WebP."
+    },
+    "hero": {
+      "h1": "Bezmaksas AI attēla palielinātājs",
+      "subtitle": "Palieliniet izšķirtspēju līdz 4K dažās sekundēs. Bez reģistrācijas, bez ūdenszīmes, pilnīgi bez maksas.",
+      "submit": "Uzlabot attēlu",
+      "submitLoading": "AI apstrādā attēlu..."
+    },
+    "description": {
+      "h2": "Palielināt attēlu tiešsaistē bez kvalitātes zuduma",
+      "text": "AI attēla palielinātājs analizē katru pikseli un atjauno smalkas detaļas, asas malas un tekstūras. Rezultāts ir augstas izšķirtspējas attēls, kas izskatās dabiski palielināts. Augšupielādējiet JPG, PNG vai WebP failu un iegūstiet skaidru 4K fotoattēlu dažās sekundēs."
+    },
+    "steps": {
+      "title": "Kā palielināt attēla izšķirtspēju 3 soļos",
+      "items": [
+        {
+          "title": "Augšupielādējiet attēlu",
+          "text": "Izvēlieties JPG, PNG vai WebP failu no savas ierīces. Varat arī vilkt un nomest failu augšupielādes zonā. Konts nav vajadzīgs."
+        },
+        {
+          "title": "AI uzlabo izšķirtspēju",
+          "text": "Neironu tīkls analizē attēlu un automātiski atjauno trūkstošās detaļas un asās malas. Manuāli iestatījumi nav nepieciešami."
+        },
+        {
+          "title": "Lejupielādējiet HD attēlu",
+          "text": "Uzlabotais attēls ir gatavs lejupielādei augstā izšķirtspējā. Izmantojiet to drukai, e-komercijas sarakstiem vai sociālajos medijos."
+        }
+      ]
+    },
+    "beforeAfter": {
+      "title": "Salīdziniet: zema izšķirtspēja pret 4K pēc uzlabošanas",
+      "text": "Salīdzinājums parāda, ko AI uzlabošana patiešām dara: asākas tekstūras, tīrākas malas un skaidrākas detaļas bez pikselizācijas."
+    },
+    "features": {
+      "title": "Kāpēc izmantot mūsu AI attēla palielinātāju",
+      "items": [
+        {
+          "title": "100% bezmaksas, bez ūdenszīmes",
+          "text": "Palieliniet fotoattēlus līdz 4K bez maksas un bez ūdenszīmēm uz rezultāta."
+        },
+        {
+          "title": "AI kvalitātes uzlabošana",
+          "text": "AI atjauno smalkas tekstūras un asas malas, nevis vienkārši izstiepj pikseļus kā parasts izmēra maiņas rīks."
+        },
+        {
+          "title": "Pakešapstrāde",
+          "text": "Apstrādājiet vairākus attēlus vienlaikus. Noderīgi e-komercijas katalogiem un liela apjoma foto darbplūsmām."
+        },
+        {
+          "title": "Darbojas jebkurā ierīcē",
+          "text": "Palielinātājs darbojas pārlūkprogrammā. Nav jāinstalē programmatūra. Atbalsta iOS, Android, Mac un Windows."
+        }
+      ]
+    },
+    "cardLeft": {
+      "title": "Lieliski piemērots preču fotoattēliem",
+      "text": "Zemas izšķirtspējas preču attēli samazina pārdošanu. Uzlabojiet preču fotoattēlus pirms augšupielādes tiešsaistes veikalos. AI saglabā etiķešu tekstu, materiālu tekstūras un smalkas detaļas."
+    },
+    "cardRight": {
+      "title": "Atjaunojiet vecas fotogrāfijas drukai",
+      "text": "Skenētas ģimenes fotogrāfijas vai zemas kvalitātes digitālie attēli var tikt uzlaboti līdz drukāšanas kvalitātei. Palieliniet līdz 4K liela formāta drukāšanai un foto grāmatām."
+    },
+    "faq": {
+      "title": "Bieži uzdotie jautājumi",
+      "items": [
+        {
+          "q": "Kas ir AI attēla palielinātājs?",
+          "a": "AI attēla palielinātājs ir rīks, kas palielina fotoattēla izšķirtspēju, izmantojot neironu tīklus. Tā vietā, lai vienkārši izstieptu pikseļus, tas analizē attēlu un ģenerē jaunus pikseļu datus, iegūstot asāku rezultātu."
+        },
+        {
+          "q": "Kā palielināt attēlu bez kvalitātes zuduma?",
+          "a": "Izmantojiet AI palielinātāju, nevis parasto izmēra maiņas rīku. AI atjauno malas un tekstūras, nevis interpolē starp esošajiem pikseļiem, tādējādi novēršot pikselizāciju."
+        },
+        {
+          "q": "Kādus formātus atbalsta rīks?",
+          "a": "Varat augšupielādēt JPG, JPEG, PNG un WebP failus. Rezultātu var lejupielādēt jūsu projektam piemērotākajā formātā."
+        },
+        {
+          "q": "Vai rīks tiešām ir bez maksas?",
+          "a": "Jā. Nav maksājumu, izmēģinājuma ierobežojumu vai ūdenszīmju uz rezultāta. Varat uzlabot attēlus bez konta izveides."
+        },
+        {
+          "q": "Cik ilgi aizņem apstrāde?",
+          "a": "Lielākā daļa attēlu tiek apstrādāti mazāk nekā 30 sekundēs. Lielāki faili var aizņemt nedaudz ilgāku laiku, bet progress būs redzams reāllaikā."
+        },
+        {
+          "q": "Vai var apstrādāt vairākus attēlus vienlaikus?",
+          "a": "Jā, pakešapstrāde tiek atbalstīta. Augšupielādējiet vairākus attēlus un lietojiet vienus un tos pašus iestatījumus visiem vienā darbplūsmā."
+        },
+        {
+          "q": "Vai apstrāde darbojas portretiem?",
+          "a": "Jā. AI ir apmācīts precīzi apstrādāt portretus: atjauno ādas tekstūru, uzasina sejas vaibstus un saglabā dabīgos krāsu toņus."
+        },
+        {
+          "q": "Kā tas atšķiras no attēla izmēra maiņas Photoshop?",
+          "a": "Photoshop izmanto interpolāciju, kas izstiepj pikseļus un rada neskaidrus rezultātus lielā palielinājumā. AI izmanto neironu tīklu, kas apmācīts uz miljoniem attēlu, lai atjaunotu reālistiskas detaļas."
+        },
+        {
+          "q": "Vai uzlabotus attēlus var izmantot komerciāli?",
+          "a": "Jā. Attēlus, ko uzlabojat ar mūsu rīku, var izmantot gan personīgiem, gan komerciāliem mērķiem."
+        },
+        {
+          "q": "Cik reizes var palielināt attēlu?",
+          "a": "Rīks atbalsta palielināšanu līdz 4x, pārvēršot standarta attēlu 4K izšķirtspējā. Tas nodrošina labus rezultātus drukāšanai un digitālai lietošanai."
+        }
+      ]
+    },
+    "seoText": {
+      "title": "AI attēla palielināšana: kas tas ir un kad to izmantot",
+      "paragraphs": [
+        "Attēla izšķirtspēja nosaka, cik ass un detalizēts izskatās fotoattēls jebkurā izmērā. Zemas izšķirtspējas attēls, izdrukāts lielā formātā vai attēlots uz augstas DPI ekrāna, izskatīsies neskaidrs un pikselizēts. Izšķirtspējas palielināšana ar parasto metodi, velkot slīdni attēlu redaktorā, vienkārši izstiepj esošos datus un pasliktina rezultātu.",
+        "AI palielināšana darbojas citādi. Modelis ir apmācīts uz lielām attēlu pāru datu kopām: zemas izšķirtspējas ievades un to augstas izšķirtspējas analogi. No tā tas mācās atjaunot reālistiskas detaļas no saspiestiem vai zemas kvalitātes avota attēliem.",
+        "E-komercijā izšķirtspēja tieši ietekmē konversiju. Pircēji rūpīgi pārbauda produktus. Neskaidrs attēls neizdodas tieši tajā brīdī, kad pircējs pieņem lēmumu. Preču fotoattēlu uzlabošana pirms to ievietošanas tiešsaistes veikalos piešķir tiem profesionālas studijas uzņemšanas kvalitāti.",
+        "Vecas fotogrāfijas atjaunošana ir vēl viens praktisks pielietojums. Skenētas analogās fotogrāfijas vai attēli no agrīnām digitālajām kamerām bieži vien ir ar ierobežotu izšķirtspēju pēc mūsdienu standartiem. AI rekonstrukcija aizpilda trūkstošās detaļas ar augstu precizitāti.",
+        "Pārlūkprogrammā balstītas AI palielināšanas galvenā priekšrocība ir pieejamība. Nav jāinstalē programmatūra, nav nepieciešamas tehniskas zināšanas un nav finansiālo šķēršļu. Augšupielādējiet failu, uzgaidiet dažas sekundes un lejupielādējiet augstas izšķirtspējas rezultātu.",
+        "Rīks pilnībā darbojas pārlūkprogrammā un nekad neglabā jūsu fotoattēlus uz mūsu serveriem ilgāk nekā nepieciešams apstrādei. Jūsu attēli ir droši un privāti."
+      ]
     }
   }
 }

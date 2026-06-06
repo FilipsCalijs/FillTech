@@ -67,15 +67,15 @@
   },
   "seo": {
     "explore": {
-      "title": "AIツールを探索 — 全エフェクト | FillTech",
+      "title": "AIツールを探索 - 全エフェクト | FillTech",
       "desc": "すべてのAIツールを発見: ポートレートエディター、背景削除、透かし削除、写真カラー化など。"
     },
     "history": {
-      "title": "マイ履歴 — 生成コンテンツ | FillTech",
+      "title": "マイ履歴 - 生成コンテンツ | FillTech",
       "desc": "AI生成コンテンツをすべて表示・管理。生成物をダウンロードまたは削除できます。結果は7日間保持。"
     },
     "billing": {
-      "title": "請求 — アカウント残高 | FillTech",
+      "title": "請求 - アカウント残高 | FillTech",
       "desc": "残高管理、支出履歴の確認、AI生成の自動チャージ設定。"
     },
     "terms": {

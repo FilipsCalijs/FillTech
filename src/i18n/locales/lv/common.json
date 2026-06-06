@@ -58,7 +58,7 @@
   "current": "Pašreizējais",
   "footer": {
     "rights": "Visas tiesības aizsargātas.",
-    "description": "FillTech piedāvā AI rīkus attēlu un video apstrādei. Noņem fonus, uzlabo fotogrāfijas, maini apģērbu un daudz ko citu — uzreiz un bez piepūles. Izmēģini FillTech šodien.",
+    "description": "FillTech piedāvā AI rīkus attēlu un video apstrādei. Noņem fonus, uzlabo fotogrāfijas, maini apģērbu un daudz ko citu - uzreiz un bez piepūles. Izmēģini FillTech šodien.",
     "legal": "Juridiskā info",
     "tools": "Rīki",
     "terms": "Lietošanas noteikumi",
@@ -67,15 +67,15 @@
   },
   "seo": {
     "explore": {
-      "title": "AI rīki — Visi efekti | FillTech",
+      "title": "AI rīki - Visi efekti | FillTech",
       "desc": "Atklāj visus AI rīkus: portreta redaktors, fona noņemšana, ūdenszīmju noņemšana, foto iekrāsošana un citi."
     },
     "history": {
-      "title": "Vēsture — Manas ģenerācijas | FillTech",
+      "title": "Vēsture - Manas ģenerācijas | FillTech",
       "desc": "Skatīt un pārvaldīt visas AI ģenerācijas. Lejupielādēt vai dzēst rezultātus. Saglabājas 7 dienas."
     },
     "billing": {
-      "title": "Norēķini — Konta atlikums | FillTech",
+      "title": "Norēķini - Konta atlikums | FillTech",
       "desc": "Pārvaldīt atlikumu, skatīt tēriņu vēsturi un konfigurēt automātisko papildināšanu."
     },
     "terms": {

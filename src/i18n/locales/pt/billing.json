@@ -7,7 +7,7 @@
   "paymentSoon": "Métodos de pagamento em breve",
   "autoTopUp": "Recarga automática",
   "autoDisabled": "Desativado",
-  "autoDesc": "Recarga automática quando o saldo cair abaixo de um limite — em breve",
+  "autoDesc": "Recarga automática quando o saldo cair abaixo de um limite - em breve",
   "history": "Histórico de cobrança",
   "autoBilling": "Cobrança automática",
   "noHistory": "Sem histórico de cobrança ainda.",
@@ -31,6 +31,6 @@
   "stripeDesc": "Cartão · Apple Pay · Google Pay e mais",
   "payWith": "Pagar com Stripe",
   "redirecting": "Redirecionando para o Stripe…",
-  "paySuccess": "Pagamento realizado — seu saldo foi atualizado.",
-  "payCancel": "Pagamento cancelado — nenhum valor foi cobrado."
+  "paySuccess": "Pagamento realizado - seu saldo foi atualizado.",
+  "payCancel": "Pagamento cancelado - nenhum valor foi cobrado."
 }

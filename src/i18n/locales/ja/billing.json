@@ -7,7 +7,7 @@
   "paymentSoon": "支払い方法は近日公開",
   "autoTopUp": "自動チャージ",
   "autoDisabled": "無効",
-  "autoDesc": "残高が閾値を下回ったときに自動チャージ — 近日公開",
+  "autoDesc": "残高が閾値を下回ったときに自動チャージ - 近日公開",
   "history": "請求履歴",
   "autoBilling": "自動請求",
   "noHistory": "請求履歴はまだありません。",
@@ -31,6 +31,6 @@
   "stripeDesc": "カード · Apple Pay · Google Pay など",
   "payWith": "Stripeで支払う",
   "redirecting": "Stripeへ移動中…",
-  "paySuccess": "支払い完了 — 残高が更新されました。",
-  "payCancel": "支払いがキャンセルされました — 請求はありません。"
+  "paySuccess": "支払い完了 - 残高が更新されました。",
+  "payCancel": "支払いがキャンセルされました - 請求はありません。"
 }

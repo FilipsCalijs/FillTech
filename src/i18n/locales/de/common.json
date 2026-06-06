@@ -58,7 +58,7 @@
   "current": "Aktuell",
   "footer": {
     "rights": "Alle Rechte vorbehalten.",
-    "description": "FillTech bietet KI-gestützte Werkzeuge für Bild- und Videoverarbeitung. Hintergründe entfernen, Fotos verbessern, Kleidung tauschen und mehr — sofort und mühelos. Probieren Sie FillTech heute aus.",
+    "description": "FillTech bietet KI-gestützte Werkzeuge für Bild- und Videoverarbeitung. Hintergründe entfernen, Fotos verbessern, Kleidung tauschen und mehr - sofort und mühelos. Probieren Sie FillTech heute aus.",
     "legal": "Rechtliches",
     "tools": "Werkzeuge",
     "terms": "Nutzungsbedingungen",
@@ -67,15 +67,15 @@
   },
   "seo": {
     "explore": {
-      "title": "KI-Werkzeuge entdecken — Alle Effekte | FillTech",
+      "title": "KI-Werkzeuge entdecken - Alle Effekte | FillTech",
       "desc": "Entdecke alle KI-Werkzeuge: Porträt-Editor, Hintergrundentferner, Wasserzeichen-Entferner, Foto-Colorizer und mehr."
     },
     "history": {
-      "title": "Verlauf — Meine Generierungen | FillTech",
+      "title": "Verlauf - Meine Generierungen | FillTech",
       "desc": "Alle KI-Generierungen anzeigen und verwalten. Ergebnisse herunterladen oder löschen. Wird 7 Tage gespeichert."
     },
     "billing": {
-      "title": "Abrechnung — Kontoguthaben | FillTech",
+      "title": "Abrechnung - Kontoguthaben | FillTech",
       "desc": "Guthaben verwalten, Ausgabenhistorie anzeigen und automatische Aufladung für KI-Generierungen konfigurieren."
     },
     "terms": {

@@ -5,6 +5,7 @@ import ResultPanel from '@/components/ui/ResultPanel';
 import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
 import OtherProducts from '@/lib/OtherProducts';
+import RelevantBlogs from '@/components/ui/RelevantBlogs';
 
 const API = 'http://localhost:5200';
 const MAX_MB   = 22;
@@ -74,7 +75,7 @@ const BgRemover = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
 
-        {/* LEFT — drop zone */}
+        {/* LEFT - drop zone */}
         <div className="flex flex-col gap-3">
           <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">
             {t('upload.yourPhoto')}
@@ -116,7 +117,7 @@ const BgRemover = () => {
           <p className="text-xs text-muted-foreground">{t('upload.jpgPng')} · max {MAX_MB} MB</p>
         </div>
 
-        {/* RIGHT — info + generate */}
+        {/* RIGHT - info + generate */}
         <div className="flex flex-col gap-6">
           <div className="rounded-2xl border border-border bg-card p-6 flex flex-col gap-4">
             <Typography variant="h4" weight="semibold">{t('steps.howItWorks')}</Typography>
@@ -170,6 +171,7 @@ const BgRemover = () => {
           generationId={generationId}
         />
       )}
+      <RelevantBlogs currentSlug="bg-remover" />
       <OtherProducts currentSlug="bg-remover" />
     </div>
   );

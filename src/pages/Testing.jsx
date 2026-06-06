@@ -5,6 +5,7 @@ import { PS2_STYLES, buildPs2Prompt } from '@/config/ps2Prompts';
 import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
 import OtherProducts from '@/lib/OtherProducts';
+import RelevantBlogs from '@/components/ui/RelevantBlogs';
 import ResultPanel from '@/components/ui/ResultPanel';
 
 const API = 'http://localhost:5200';
@@ -85,7 +86,7 @@ const Ps2Filter = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
 
-        {/* LEFT — drop zone */}
+        {/* LEFT - drop zone */}
         <div className="flex flex-col gap-3">
           <div className="flex justify-between items-center">
             <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">{t('gameFilter.yourPhoto')}</span>
@@ -125,7 +126,7 @@ const Ps2Filter = () => {
           <p className="text-xs text-muted-foreground mt-1">{t('upload.jpgPng')} · max {MAX_MB} MB</p>
         </div>
 
-        {/* RIGHT — controls */}
+        {/* RIGHT - controls */}
         <div className="flex flex-col gap-6">
 
           {/* STYLE */}
@@ -223,6 +224,7 @@ const Ps2Filter = () => {
           generationId={generationId}
         />
       )}
+      <RelevantBlogs currentSlug="ps2-filter" />
       <OtherProducts currentSlug="ps2-filter" />
     </div>
   );

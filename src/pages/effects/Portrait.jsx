@@ -6,6 +6,7 @@ import { buildPrompt } from '@/config/portraitPrompts';
 import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
 import OtherProducts from '@/lib/OtherProducts';
+import RelevantBlogs from '@/components/ui/RelevantBlogs';
 import ResultPanel from '@/components/ui/ResultPanel';
 
 const API = 'http://localhost:5200';
@@ -81,7 +82,7 @@ const AiPortrait = () => {
       {/* Two-column layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
 
-        {/* LEFT — photo drop zone */}
+        {/* LEFT - photo drop zone */}
         <div className="flex flex-col gap-3">
           <div className="flex justify-between items-center">
             <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">{t('upload.yourPhoto')}</span>
@@ -140,7 +141,7 @@ const AiPortrait = () => {
           <p className="text-xs text-muted-foreground mt-1">{t('upload.jpgPng')} · max {MAX_MB} MB</p>
         </div>
 
-        {/* RIGHT — controls */}
+        {/* RIGHT - controls */}
         <PortraitControls
           onGenerate={handleGenerate}
           loading={loading}
@@ -159,6 +160,7 @@ const AiPortrait = () => {
           generationId={generationId}
         />
       )}
+      <RelevantBlogs currentSlug="portrait" />
       <OtherProducts currentSlug="portrait" />
     </div>
   );

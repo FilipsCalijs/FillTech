@@ -29,7 +29,7 @@ import VideoWatermarkRemover from './pages/effects/VideoWatermarkRemover';
 import VideoBgReplace from './pages/effects/VideoBgReplace';
 import VocalIsolator from './pages/effects/VocalIsolator';
 import Portrait from './pages/effects/Portrait';
-import Upscaler from './pages/effects/Upscaler';
+import ImageUpscaler from './pages/effects/image-upscaler';
 import Primer from './pages/Primer';
 import AdminEffects from './pages/AdminEffects';
 import AdminEffectEditor from './pages/AdminEffectEditor';
@@ -126,7 +126,7 @@ function AppShell() {
 
             <Route path="tools/portrait"               element={<Portrait />} />
             <Route path="tools/bg-remover"             element={<BgRemover />} />
-            <Route path="tools/upscaler"               element={<Upscaler />} />
+            <Route path="tools/upscaler"               element={<ImageUpscaler />} />
             <Route path="tools/ps2-filter"             element={<Testing />} />
             <Route path="tools/watermark-remover"      element={<WatermarkRemover />} />
             <Route path="watermark-remover"             element={<WatermarkRemover />} />
@@ -151,7 +151,7 @@ function App() {
   return (
     <HelmetProvider>
       <Routes>
-        {/* /:lang prefix — all app routes live here */}
+        {/* /:lang prefix - all app routes live here */}
         <Route path="/:lang" element={<LangRouter />}>
           <Route path="*" element={<AppShell />} />
         </Route>

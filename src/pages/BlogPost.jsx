@@ -51,7 +51,7 @@ const BlogPost = () => {
   return (
     <>
       <Helmet>
-        <title>{seoTitle} — FillTech</title>
+        <title>{seoTitle} - FillTech</title>
         <meta name="description" content={seoDesc} />
         <meta property="og:title" content={seoTitle} />
         <meta property="og:description" content={seoDesc} />
@@ -81,7 +81,7 @@ const BlogPost = () => {
         </div>
       </div>
 
-      {/* Обложка — на всю ширину страницы */}
+      {/* Обложка - на всю ширину страницы */}
       {post.cover_url && (
         <div className="w-full aspect-[21/9] overflow-hidden">
           <img

@@ -227,7 +227,7 @@ const GenerationsTable = ({ items, onDelete, adminMode }) => {
                           )}
                         </button>
                       ) : (
-                        <div className="w-[50px] h-[80px] rounded-lg border border-dashed border-border bg-muted flex items-center justify-center text-muted-foreground text-xs">—</div>
+                        <div className="w-[50px] h-[80px] rounded-lg border border-dashed border-border bg-muted flex items-center justify-center text-muted-foreground text-xs">-</div>
                       )}
                     </td>
 

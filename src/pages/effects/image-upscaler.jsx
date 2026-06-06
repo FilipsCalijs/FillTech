@@ -2,8 +2,6 @@ import { useState, useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Zap, ShieldCheck, ScanSearch, Layers } from 'lucide-react';
 import PageSEO from '@/components/seo/PageSEO';
-import LangLink from '@/components/routing/LangLink';
-import Result from '@/lib/Result';
 import StepsSection from '@/lib/StepsSection';
 import BeforeAfterSection from '@/lib/BeforeAfterSection';
 import BeforeAfterSlider from '@/lib/beforeAfterSlider';
@@ -19,37 +17,35 @@ const API = 'http://localhost:5200';
 const MAX_MB = 22;
 const MAX_SIZE = MAX_MB * 1024 * 1024;
 
-const WatermarkRemover = () => {
+const ImageUpscaler = () => {
   const { t } = useTranslation('tools');
 
   const STEPS = [
-    { title: t('watermarkRemover.steps.items.0.title'), description: t('watermarkRemover.steps.items.0.text') },
-    { title: t('watermarkRemover.steps.items.1.title'), description: t('watermarkRemover.steps.items.1.text') },
-    { title: t('watermarkRemover.steps.items.2.title'), description: t('watermarkRemover.steps.items.2.text') },
+    { title: t('imageUpscaler.steps.items.0.title'), description: t('imageUpscaler.steps.items.0.text') },
+    { title: t('imageUpscaler.steps.items.1.title'), description: t('imageUpscaler.steps.items.1.text') },
+    { title: t('imageUpscaler.steps.items.2.title'), description: t('imageUpscaler.steps.items.2.text') },
   ];
 
   const FEATURES = [
-    { icon: <ScanSearch size={28} />, title: t('watermarkRemover.features.items.0.title'), desc: t('watermarkRemover.features.items.0.text') },
-    { icon: <Zap size={28} />,        title: t('watermarkRemover.features.items.1.title'), desc: t('watermarkRemover.features.items.1.text') },
-    { icon: <Layers size={28} />,     title: t('watermarkRemover.features.items.2.title'), desc: t('watermarkRemover.features.items.2.text') },
-    { icon: <ShieldCheck size={28} />,title: t('watermarkRemover.features.items.3.title'), desc: t('watermarkRemover.features.items.3.text') },
+    { icon: <Zap size={28} />,         title: t('imageUpscaler.features.items.0.title'), desc: t('imageUpscaler.features.items.0.text') },
+    { icon: <ScanSearch size={28} />,  title: t('imageUpscaler.features.items.1.title'), desc: t('imageUpscaler.features.items.1.text') },
+    { icon: <Layers size={28} />,      title: t('imageUpscaler.features.items.2.title'), desc: t('imageUpscaler.features.items.2.text') },
+    { icon: <ShieldCheck size={28} />, title: t('imageUpscaler.features.items.3.title'), desc: t('imageUpscaler.features.items.3.text') },
   ];
 
   const FAQS = Array.from({ length: 10 }, (_, i) => ({
-    q: t(`watermarkRemover.faq.items.${i}.q`),
-    a: t(`watermarkRemover.faq.items.${i}.a`),
+    q: t(`imageUpscaler.faq.items.${i}.q`),
+    a: t(`imageUpscaler.faq.items.${i}.a`),
   }));
 
-  const rawParas = t('watermarkRemover.seoText.paragraphs', { returnObjects: true });
+  const rawParas = t('imageUpscaler.seoText.paragraphs', { returnObjects: true });
   const SEO_TEXT = Array.isArray(rawParas) ? rawParas.join('\n\n') : '';
 
-  const [file,          setFile]          = useState(null);
-  const [loading,       setLoading]       = useState(false);
-  const [error,         setError]         = useState(null);
-  const [originalImage, setOriginalImage] = useState(null);
-  const [removedImage,  setRemovedImage]  = useState(null);
-  const [resultVisible, setResultVisible] = useState(false);
-  const [isDragging,    setIsDragging]    = useState(false);
+  const [file,        setFile]        = useState(null);
+  const [loading,     setLoading]     = useState(false);
+  const [error,       setError]       = useState(null);
+  const [resultUrl,   setResultUrl]   = useState(null);
+  const [isDragging,  setIsDragging]  = useState(false);
   const fileInputRef = useRef(null);
 
   const handleFileDrop = useCallback((f) => {
@@ -59,9 +55,7 @@ const WatermarkRemover = () => {
       return;
     }
     setFile(f);
-    setOriginalImage(URL.createObjectURL(f));
-    setRemovedImage(null);
-    setResultVisible(false);
+    setResultUrl(null);
     setError(null);
   }, []);
 
@@ -69,20 +63,19 @@ const WatermarkRemover = () => {
     if (!file) return;
     setLoading(true);
     setError(null);
-    setResultVisible(false);
+    setResultUrl(null);
     try {
       const userUid = localStorage.getItem('userUID') || '';
       const form = new FormData();
       form.append('image', file);
-      const res = await fetch(`${API}/api/tools/watermark-remove`, {
+      const res = await fetch(`${API}/api/tools/upscaler`, {
         method: 'POST',
         headers: { 'x-user-uid': userUid },
         body: form,
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Generation failed');
-      setRemovedImage(data.imageUrl);
-      setResultVisible(true);
+      setResultUrl(data.resultUrl ?? data.imageUrl);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -90,45 +83,30 @@ const WatermarkRemover = () => {
     }
   };
 
-  const h1 = t('watermarkRemover.hero.h1');
+  const h1 = t('imageUpscaler.hero.h1');
 
   return (
     <div className="py-12 flex flex-col items-center gap-20">
       <PageSEO
-        title={t('watermarkRemover.seo.title')}
-        description={t('watermarkRemover.seo.description')}
-        path="/tools/watermark-remover"
+        title={t('imageUpscaler.seo.title')}
+        description={t('imageUpscaler.seo.description')}
+        path="/tools/image-upscaler"
       />
 
       {/* Hero */}
       <div className="w-full max-w-[1440px] px-4 flex flex-col items-center gap-8">
 
-        {/* Tab switcher */}
-        <div className="inline-flex items-center gap-1 p-1 rounded-full border border-border bg-muted/20">
-          <span className="px-5 py-2 rounded-full bg-foreground text-background text-sm font-bold cursor-default">
-            {t('watermarkRemover.tabs.image')}
-          </span>
-          <LangLink
-            to="/tools/watermark-remover-video"
-            className="px-5 py-2 rounded-full text-sm font-bold text-muted-foreground hover:text-foreground transition-colors"
-          >
-            {t('watermarkRemover.tabs.video')}
-          </LangLink>
-        </div>
-
-        {/* Title */}
         <h1 className="text-[52px] leading-tight font-bold text-center">
-          {h1.startsWith('AI') ? (
+          {h1.startsWith('AI') || h1.includes('AI') ? (
             <>
               <span className="bg-gradient-to-r from-[#F5A623] to-[#FBCF33] bg-clip-text text-transparent">AI</span>
-              {' '}{h1.slice(3)}
+              {' '}{h1.replace(/^(Free\s+)?AI\s+/, h1.startsWith('Free') ? 'Free ' : '')}
             </>
           ) : h1}
         </h1>
 
-        {/* Subtitle */}
         <p className="text-[22px] text-muted-foreground text-center max-w-3xl leading-relaxed">
-          {t('watermarkRemover.hero.subtitle')}
+          {t('imageUpscaler.hero.subtitle')}
         </p>
 
         {/* Upload zone */}
@@ -165,7 +143,7 @@ const WatermarkRemover = () => {
                   {t('upload.button')}
                 </button>
                 <p className="text-muted-foreground text-base text-center">
-                  {t('upload.dropHint')} &nbsp;&middot;&nbsp; JPG, PNG, WEBP, HEIC &nbsp;&middot;&nbsp; {t('upload.maxSize', { max: MAX_MB })}
+                  {t('upload.dropHint')} &nbsp;&middot;&nbsp; JPG, PNG, WebP &nbsp;&middot;&nbsp; {t('upload.maxSize', { max: MAX_MB })}
                 </p>
               </>
             )}
@@ -176,22 +154,28 @@ const WatermarkRemover = () => {
           <button
             onClick={(e) => { e.stopPropagation(); handleSubmit(); }}
             disabled={loading || !file}
-            className="mt-3 w-full py-4 rounded-2xl bg-gradient-to-r from-[#F5A623] to-[#FBCF33] text-black font-bold text-lg hover:opacity-90 transition-opacity disabled:cursor-not-allowed"
+            className="mt-3 w-full py-4 rounded-2xl bg-gradient-to-r from-[#F5A623] to-[#FBCF33] text-black font-bold text-lg hover:opacity-90 transition-opacity disabled:cursor-not-allowed disabled:opacity-60"
           >
-            {loading ? t('watermarkRemover.hero.submitLoading') : t('watermarkRemover.hero.submit')}
+            {loading ? t('imageUpscaler.hero.submitLoading') : t('imageUpscaler.hero.submit')}
           </button>
         </div>
 
-        <Result
-          isVisible={resultVisible}
-          originalImage={originalImage}
-          removedImage={removedImage}
-        />
+        {resultUrl && (
+          <div className="w-[71%] mx-auto flex flex-col items-center gap-3">
+            <img src={resultUrl} alt="Upscaled result" className="w-full rounded-2xl" />
+            <a
+              href={resultUrl}
+              download
+              className="px-8 py-3 rounded-full bg-foreground text-background font-bold text-sm hover:opacity-80 transition-opacity"
+            >
+              Download
+            </a>
+          </div>
+        )}
       </div>
 
-      {/* Keywords + description + slider */}
+      {/* Description + slider */}
       <div className="w-full max-w-[1440px] px-4 flex flex-col items-center gap-10">
-
         <div className="flex flex-wrap gap-2 justify-center">
           {[
             { key: 'free', gold: true },
@@ -216,17 +200,17 @@ const WatermarkRemover = () => {
 
         <div className="w-full flex flex-col gap-3 text-center">
           <h2 className="text-[42px] font-bold leading-tight">
-            {t('watermarkRemover.description.h2')}
+            {t('imageUpscaler.description.h2')}
           </h2>
           <p className="text-[20px] text-muted-foreground leading-relaxed">
-            {t('watermarkRemover.description.text')}
+            {t('imageUpscaler.description.text')}
           </p>
         </div>
 
         <div className="w-[71%] mx-auto">
           <BeforeAfterSlider
-            beforeImage="/watermark_remover/before.webp"
-            afterImage="/watermark_remover/after.webp"
+            beforeImage="/upscaler/before.webp"
+            afterImage="/upscaler/after.webp"
             width="100%"
             aspectRatio="16/9"
             autoAnimate={true}
@@ -235,59 +219,59 @@ const WatermarkRemover = () => {
       </div>
 
       <StepsSection
-        title={t('watermarkRemover.steps.title')}
+        title={t('imageUpscaler.steps.title')}
         steps={STEPS}
         images={[
-          '/watermark_remover/before.webp',
-          '/watermark_remover/Remove-watermark-from-photo.webp',
-          '/watermark_remover/after.webp',
+          '/upscaler/step1.webp',
+          '/upscaler/step2.webp',
+          '/upscaler/step3.webp',
         ]}
         autoInterval={3000}
       />
 
       <BeforeAfterSection
-        title={t('watermarkRemover.beforeAfter.title')}
-        desc={t('watermarkRemover.beforeAfter.text')}
-        beforeImage="/watermark_remover/before.webp"
-        afterImage="/watermark_remover/after.webp"
+        title={t('imageUpscaler.beforeAfter.title')}
+        desc={t('imageUpscaler.beforeAfter.text')}
+        beforeImage="/upscaler/before.webp"
+        afterImage="/upscaler/after.webp"
       />
 
       <FeaturesGrid
-        title={t('watermarkRemover.features.title')}
+        title={t('imageUpscaler.features.title')}
         features={FEATURES}
       />
 
       <CardLeftImage
         noCard
-        title={t('watermarkRemover.cardLeft.title')}
-        text={t('watermarkRemover.cardLeft.text')}
-        imageUrl="/watermark_remover/remove-watermark-from-stock-sites-1024x613.jpg"
-        alt="Examples of different watermark types removed by AI"
+        title={t('imageUpscaler.cardLeft.title')}
+        text={t('imageUpscaler.cardLeft.text')}
+        imageUrl="/upscaler/product-photo.webp"
+        alt="AI upscaling product photos for e-commerce"
       />
 
       <CardRightImage
         noCard
-        title={t('watermarkRemover.cardRight.title')}
-        text={t('watermarkRemover.cardRight.text')}
-        imageUrl="/watermark_remover/before-and-after-effect-of-removing-watermark-from-white-flower-image-in-AI-Ease.webp"
-        alt="AI removing watermarks from scanned photos and graduation pictures"
+        title={t('imageUpscaler.cardRight.title')}
+        text={t('imageUpscaler.cardRight.text')}
+        imageUrl="/upscaler/old-photo-restored.webp"
+        alt="Old photo restored and upscaled to 4K print quality"
       />
 
       <FAQSection
-        title={t('watermarkRemover.faq.title')}
+        title={t('imageUpscaler.faq.title')}
         faqs={FAQS}
       />
 
-      <RelevantBlogs currentSlug="watermark-remover" />
+      <RelevantBlogs currentSlug="upscaler" />
 
       <TextSection
-        title={t('watermarkRemover.seoText.title')}
+        title={t('imageUpscaler.seoText.title')}
         text={SEO_TEXT}
       />
 
-      <OtherProducts currentSlug="watermark-remover" />
+      <OtherProducts currentSlug="upscaler" />
     </div>
   );
 };
 
-export default WatermarkRemover;
+export default ImageUpscaler;

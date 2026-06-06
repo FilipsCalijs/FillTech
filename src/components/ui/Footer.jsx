@@ -40,7 +40,7 @@ const Footer = () => {
         {/* ── Main columns ───────────────────────────────────────── */}
         <div className="py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
-          {/* Col 1 — Brand */}
+          {/* Col 1 - Brand */}
           <div className="flex flex-col gap-4 lg:col-span-1">
             <div>
               <img
@@ -59,7 +59,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Col 2 — Legal */}
+          {/* Col 2 - Legal */}
           <div>
             <ColHeading>{t('footer.legal')}</ColHeading>
             <div className="flex flex-col gap-2.5">
@@ -79,7 +79,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Col 3 — Tools */}
+          {/* Col 3 - Tools */}
           <div>
             <ColHeading>{t('footer.tools')}</ColHeading>
             <div className="flex flex-col gap-2.5">
@@ -95,7 +95,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Col 4 — reserved for social links */}
+          {/* Col 4 - reserved for social links */}
           <div />
         </div>
 
@@ -107,7 +107,7 @@ const Footer = () => {
           <p className="text-xs text-muted-foreground text-center sm:text-left">
             <span className="font-medium text-foreground">{LANG_NAMES[lang]}</span>
             {' · '}
-            Copyright © 2026 — {t('footer.rights')}
+            Copyright © 2026 - {t('footer.rights')}
           </p>
 
           {/* Language switcher */}

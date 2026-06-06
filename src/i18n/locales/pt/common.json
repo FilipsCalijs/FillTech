@@ -58,7 +58,7 @@
   "current": "Atual",
   "footer": {
     "rights": "Todos os direitos reservados.",
-    "description": "FillTech oferece ferramentas de IA para processamento de imagens e vídeos. Remova fundos, melhore fotos, troque roupas e muito mais — instantaneamente.",
+    "description": "FillTech oferece ferramentas de IA para processamento de imagens e vídeos. Remova fundos, melhore fotos, troque roupas e muito mais - instantaneamente.",
     "legal": "Legal",
     "tools": "Ferramentas",
     "terms": "Termos de Serviço",
@@ -67,15 +67,15 @@
   },
   "seo": {
     "explore": {
-      "title": "Explorar Ferramentas de IA — Todos os Efeitos | FillTech",
+      "title": "Explorar Ferramentas de IA - Todos os Efeitos | FillTech",
       "desc": "Descubra todas as ferramentas de IA: editor de retratos, removedor de fundo, removedor de marca d'água, colorizador de fotos e mais."
     },
     "history": {
-      "title": "Meu Histórico — Conteúdo Gerado | FillTech",
+      "title": "Meu Histórico - Conteúdo Gerado | FillTech",
       "desc": "Visualize e gerencie todo o seu conteúdo gerado por IA. Baixe ou exclua suas gerações. Resultados mantidos por 7 dias."
     },
     "billing": {
-      "title": "Cobrança — Saldo da Conta | FillTech",
+      "title": "Cobrança - Saldo da Conta | FillTech",
       "desc": "Gerencie seu saldo, visualize o histórico de gastos e configure recargas automáticas para gerações de IA."
     },
     "terms": {

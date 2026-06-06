@@ -22,7 +22,7 @@ export const cardVariants = cva('shadow-sm bg-card text-card-foreground', {
       full: 'rounded-full',
     },
     bordered: {
-      md: 'border-2 border-border',   // средняя — заметная, но не толстая
+      md: 'border-2 border-border',   // средняя - заметная, но не толстая
       lg: 'border-4 border-border',    // жирная граница
       disable: 'border-0',                // без границы
     },

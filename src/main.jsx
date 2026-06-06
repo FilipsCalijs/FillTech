@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Suspense fallback={null}>
           <App />
         </Suspense>
-      </BrowserRouter>rfer
+      </BrowserRouter>
     </AuthProvider>
   </React.StrictMode>,
 );

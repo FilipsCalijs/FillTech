@@ -11,7 +11,7 @@ const PageSEO = ({ title, description, path = '' }) => {
   return (
     <Helmet>
       <html lang={lang} />
-      <title>{title} — FillTech</title>
+      <title>{title} - FillTech</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={`${BASE_URL}/${lang}${cleanPath}`} />
 

@@ -7,7 +7,7 @@
   "paymentSoon": "Zahlungsmethoden demnächst",
   "autoTopUp": "Auto-Aufladung",
   "autoDisabled": "Deaktiviert",
-  "autoDesc": "Automatisch aufladen, wenn das Guthaben unter einen Schwellenwert fällt — demnächst",
+  "autoDesc": "Automatisch aufladen, wenn das Guthaben unter einen Schwellenwert fällt - demnächst",
   "history": "Abrechnungsverlauf",
   "autoBilling": "Automatische Abrechnung",
   "noHistory": "Noch kein Abrechnungsverlauf. Kosten erscheinen hier, sobald Werkzeuge kostenpflichtig sind.",
@@ -31,6 +31,6 @@
   "stripeDesc": "Karte · Apple Pay · Google Pay und mehr",
   "payWith": "Mit Stripe bezahlen",
   "redirecting": "Weiterleitung zu Stripe…",
-  "paySuccess": "Zahlung erfolgreich — Ihr Guthaben wurde aktualisiert.",
-  "payCancel": "Zahlung abgebrochen — keine Belastung erfolgt."
+  "paySuccess": "Zahlung erfolgreich - Ihr Guthaben wurde aktualisiert.",
+  "payCancel": "Zahlung abgebrochen - keine Belastung erfolgt."
 }

@@ -7,7 +7,7 @@
   "paymentSoon": "결제 수단 곧 추가 예정",
   "autoTopUp": "자동 충전",
   "autoDisabled": "비활성화",
-  "autoDesc": "잔액이 임계값 이하로 떨어지면 자동 충전 — 곧 출시",
+  "autoDesc": "잔액이 임계값 이하로 떨어지면 자동 충전 - 곧 출시",
   "history": "결제 내역",
   "autoBilling": "자동 결제",
   "noHistory": "결제 내역이 없습니다.",
@@ -31,6 +31,6 @@
   "stripeDesc": "카드 · Apple Pay · Google Pay 등",
   "payWith": "Stripe로 결제",
   "redirecting": "Stripe로 이동 중…",
-  "paySuccess": "결제 완료 — 잔액이 업데이트되었습니다.",
-  "payCancel": "결제 취소 — 청구되지 않았습니다."
+  "paySuccess": "결제 완료 - 잔액이 업데이트되었습니다.",
+  "payCancel": "결제 취소 - 청구되지 않았습니다."
 }
