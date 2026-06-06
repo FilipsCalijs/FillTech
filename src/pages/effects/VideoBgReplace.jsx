@@ -87,7 +87,7 @@ const VideoBgReplace = () => {
       <Typography variant="h2" weight="bold" className="block mb-2">
         Video BG Replace
       </Typography>
-      <Typography variant="body1" color="muted" className="block mb-10">
+      <Typography variant="lead" color="muted" className="block mb-10">
         Remove or replace the background of any video using AI.
       </Typography>
 

@@ -41,7 +41,9 @@
     "gender": "Gênero", "pickOne": "Escolha um", "woman": "Mulher", "man": "Homem",
     "style": "Estilo", "prompt": "Prompt", "promptHint": "Seja específico sobre cena, iluminação e humor.",
     "bodyPose": "Pose Corporal", "optional": "Opcional", "addPose": "Adicionar pose",
-    "aspectRatio": "Proporção", "clearPose": "Limpar pose"
+    "aspectRatio": "Proporção", "clearPose": "Limpar pose",
+    "stylesHint": "11 estilos",
+    "poseRef": "Referência de pose corporal"
   },
   "gameFilter": {
     "title": "Filtro de Jogo", "subtitle": "Transforme qualquer foto em uma captura de videogame.",
@@ -63,7 +65,8 @@
     "videoStep2": "A IA remove quadro a quadro",
     "videoStep3": "Baixe o vídeo limpo em qualidade original",
     "videoNote": "O tempo de processamento depende da duração do vídeo.",
-    "image": "Imagem", "video": "Vídeo"
+    "image": "Imagem", "video": "Vídeo",
+    "dropHint": "JPG ou PNG · melhor com marcas d'água de texto/logo"
   },
   "colorize": {
     "title": "Colorizador de Fotos", "subtitle": "Dê vida a fotos em preto e branco com colorização por IA.",
@@ -79,7 +82,10 @@
   },
   "upscaler": {
     "title": "Upscaler de IA", "subtitle": "Amplie imagens até 4× sem perder qualidade.",
-    "scale": "Escala", "backendSoon": "Backend em breve", "lowResHint": "JPG ou PNG · imagens de baixa resolução funcionam melhor"
+    "scale": "Escala", "backendSoon": "Backend em breve", "lowResHint": "JPG ou PNG · imagens de baixa resolução funcionam melhor",
+    "upscaleButton": "Ampliar Imagem",
+    "esrganDesc": "Amplia imagens com super-resolução de IA. Recupera detalhes finos, remove artefatos de compressão e aprimora bordas.",
+    "inDevelopment": "Esta ferramenta está em desenvolvimento e ainda não está disponível."
   },
   "voice": {
     "title": "Clonagem de Voz", "enterText": "Digite seu texto",

@@ -53,7 +53,9 @@
     "optional": "Neobligāti",
     "addPose": "Pievienot pozu",
     "aspectRatio": "Attēla proporcija",
-    "clearPose": "Noņemt pozu"
+    "clearPose": "Noņemt pozu",
+    "stylesHint": "11 stili",
+    "poseRef": "Ķermeņa pozas atsauce"
   },
   "gameFilter": {
     "title": "Spēļu filtrs",
@@ -82,7 +84,8 @@
     "videoStep3": "Lejupielādējiet tīru video",
     "videoNote": "Apstrādes laiks atkarīgs no video garuma.",
     "image": "Foto",
-    "video": "Video"
+    "video": "Video",
+    "dropHint": "JPG vai PNG · vislabāk darbojas ar teksta/logo ūdenszīmēm"
   },
   "colorize": {
     "title": "Foto iekrāsošana",
@@ -106,7 +109,10 @@
     "subtitle": "Palieliniet attēlu līdz 4× bez kvalitātes zuduma.",
     "scale": "Mērogs",
     "backendSoon": "Drīzumā pieejams",
-    "lowResHint": "JPG vai PNG · vislabāk darbojas ar zemas izšķirtspējas attēliem"
+    "lowResHint": "JPG vai PNG · vislabāk darbojas ar zemas izšķirtspējas attēliem",
+    "upscaleButton": "Palielināt attēlu",
+    "esrganDesc": "Palielina attēlus ar AI super-izšķirtspēju. Atgūst smalkas detaļas, noņem kompresijas artefaktus, asina malas.",
+    "inDevelopment": "Šis rīks pašlaik tiek izstrādāts un vēl nav pieejams."
   },
   "voice": {
     "title": "Balss klonēšana",

@@ -69,14 +69,14 @@ const PhotoColorize = () => {
     <div className={`py-12 ${CONTAINER.blog}`}>
       <PageSEO title={t('seo.colorize.title')} description={t('seo.colorize.desc')} path="/tools/photo-colorize" />
       <Typography variant="h2" weight="bold" className="block mb-2">{t('colorize.title')}</Typography>
-      <Typography variant="body1" color="muted" className="block mb-10">{t('colorize.subtitle')}</Typography>
+      <Typography variant="lead" color="muted" className="block mb-10">{t('colorize.subtitle')}</Typography>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
 
         {/* LEFT — drop zone */}
         <div className="flex flex-col gap-3">
           <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">
-            Your Photo
+            {t('upload.yourPhoto')}
           </span>
 
           <div
@@ -98,27 +98,27 @@ const PhotoColorize = () => {
                   <line x1="12" y1="3" x2="12" y2="15"/>
                 </svg>
                 <div>
-                  <p className="text-lg font-bold text-foreground mb-1">Drop your photo</p>
-                  <p className="text-sm text-muted-foreground">Black & white or grayscale images work best</p>
+                  <p className="text-lg font-bold text-foreground mb-1">{t('upload.dropPhoto')}</p>
+                  <p className="text-sm text-muted-foreground">{t('colorize.bwHint')}</p>
                 </div>
               </div>
             )}
 
             {preview && (
               <div className="absolute inset-0 rounded-2xl bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white text-sm font-semibold">Click to change photo</span>
+                <span className="text-white text-sm font-semibold">{t('upload.clickToChange')}</span>
               </div>
             )}
           </div>
 
           <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={e => pickFile(e.target.files?.[0])} />
-          <p className="text-xs text-muted-foreground">JPG or PNG · max {MAX_MB} MB</p>
+          <p className="text-xs text-muted-foreground">{t('upload.jpgPng')} · max {MAX_MB} MB</p>
         </div>
 
         {/* RIGHT — info + generate */}
         <div className="flex flex-col gap-6">
           <div className="rounded-2xl border border-border bg-card p-6 flex flex-col gap-4">
-            <Typography variant="h4" weight="semibold">How it works</Typography>
+            <Typography variant="h4" weight="semibold">{t('steps.howItWorks')}</Typography>
             <ul className="flex flex-col gap-3 text-sm text-muted-foreground">
               {[
                 t('colorize.step1'),
@@ -146,7 +146,7 @@ const PhotoColorize = () => {
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
                 </svg>
-                Colorizing…
+                {t('actions.colorizing')}
               </>
             ) : (
               <>

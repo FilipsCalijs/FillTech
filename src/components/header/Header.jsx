@@ -69,10 +69,10 @@ const Header = ({ isDark, toggleTheme }) => {
     setLangOpen(false);
   };
 
-  const linkCls = 'text-sm font-bold text-primary hover:underline';
+  const linkCls = 'text-base font-bold tracking-wide text-primary hover:underline';
 
   return (
-    <nav className='bg-background text-foreground flex items-center w-full top-0 left-0 z-20 py-5 px-[50px] gap-x-4 mb-4'>
+    <nav className='bg-background text-foreground flex items-center w-full top-0 left-0 z-20 py-5 px-[50px] gap-x-5 mb-4'>
       {/* Logo */}
       <NavLink to='/home' className='mr-10 shrink-0'>
         <img

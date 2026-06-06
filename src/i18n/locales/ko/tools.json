@@ -41,7 +41,9 @@
     "gender": "성별", "pickOne": "선택", "woman": "여성", "man": "남성",
     "style": "스타일", "prompt": "프롬프트", "promptHint": "장면, 조명, 분위기를 구체적으로 작성하세요.",
     "bodyPose": "포즈", "optional": "선택 사항", "addPose": "포즈 추가",
-    "aspectRatio": "화면 비율", "clearPose": "포즈 제거"
+    "aspectRatio": "화면 비율", "clearPose": "포즈 제거",
+    "stylesHint": "11가지 스타일",
+    "poseRef": "신체 포즈 참조"
   },
   "gameFilter": {
     "title": "게임 필터", "subtitle": "모든 사진을 게임 스크린샷으로 변환.",
@@ -63,7 +65,8 @@
     "videoStep2": "AI가 프레임별로 제거",
     "videoStep3": "원본 품질로 깨끗한 동영상 다운로드",
     "videoNote": "처리 시간은 동영상 길이에 따라 다릅니다.",
-    "image": "이미지", "video": "동영상"
+    "image": "이미지", "video": "동영상",
+    "dropHint": "JPG 또는 PNG · 텍스트/로고 워터마크에 최적"
   },
   "colorize": {
     "title": "사진 채색기", "subtitle": "AI로 흑백 사진에 색상 추가.",
@@ -79,7 +82,10 @@
   },
   "upscaler": {
     "title": "AI 업스케일러", "subtitle": "품질 손실 없이 이미지를 최대 4배 확대.",
-    "scale": "배율", "backendSoon": "백엔드 곧 출시", "lowResHint": "JPG 또는 PNG · 저해상도 이미지가 최적"
+    "scale": "배율", "backendSoon": "백엔드 곧 출시", "lowResHint": "JPG 또는 PNG · 저해상도 이미지가 최적",
+    "upscaleButton": "이미지 확대",
+    "esrganDesc": "AI 초고해상도로 이미지를 확대합니다. 세밀한 디테일 복원, 압축 아티팩트 제거, 엣지 선명화.",
+    "inDevelopment": "이 도구는 현재 개발 중이며 아직 사용할 수 없습니다."
   },
   "voice": {
     "title": "음성 복제", "enterText": "텍스트 입력",

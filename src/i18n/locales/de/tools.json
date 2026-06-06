@@ -53,7 +53,9 @@
     "optional": "Optional",
     "addPose": "Pose hinzufügen",
     "aspectRatio": "Seitenverhältnis",
-    "clearPose": "Pose entfernen"
+    "clearPose": "Pose entfernen",
+    "stylesHint": "11 Stile",
+    "poseRef": "Körperhaltungsreferenz"
   },
   "gameFilter": {
     "title": "Spielfilter",
@@ -82,7 +84,8 @@
     "videoStep3": "Sauberes Video herunterladen",
     "videoNote": "Verarbeitungszeit hängt von der Videolänge ab.",
     "image": "Foto",
-    "video": "Video"
+    "video": "Video",
+    "dropHint": "JPG oder PNG · bestes Ergebnis mit Text-/Logo-Wasserzeichen"
   },
   "colorize": {
     "title": "Foto einfärben",
@@ -106,7 +109,10 @@
     "subtitle": "Vergrößern Sie Bilder bis zu 4× ohne Qualitätsverlust.",
     "scale": "Skalierung",
     "backendSoon": "Demnächst verfügbar",
-    "lowResHint": "JPG oder PNG · bestes Ergebnis mit niedrig aufgelösten Bildern"
+    "lowResHint": "JPG oder PNG · bestes Ergebnis mit niedrig aufgelösten Bildern",
+    "upscaleButton": "Bild hochskalieren",
+    "esrganDesc": "Skaliert Bilder mit KI-Super-Resolution. Stellt feine Details wieder her, entfernt Kompressionsartefakte und schärft Kanten.",
+    "inDevelopment": "Dieses Tool befindet sich in Entwicklung und ist noch nicht verfügbar."
   },
   "voice": {
     "title": "Stimmklonen",

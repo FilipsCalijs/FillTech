@@ -75,7 +75,7 @@ const AiPortrait = () => {
     <div className={`py-12 ${CONTAINER.blog}`}>
       <PageSEO title={t('seo.portrait.title')} description={t('seo.portrait.desc')} path="/tools/portrait" />
       <Typography variant="h2" weight="bold" className="block mb-2">{t('portrait.title')}</Typography>
-      <Typography variant="body1" color="muted" className="block mb-10">{t('portrait.subtitle')}</Typography>
+      <Typography variant="lead" color="muted" className="block mb-10">{t('portrait.subtitle')}</Typography>
 
       {/* Two-column layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
@@ -83,8 +83,8 @@ const AiPortrait = () => {
         {/* LEFT — photo drop zone */}
         <div className="flex flex-col gap-3">
           <div className="flex justify-between items-center">
-            <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">Your Photo</span>
-            <span className="text-xs text-muted-foreground">Upload or pick a character</span>
+            <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">{t('upload.yourPhoto')}</span>
+            <span className="text-xs text-muted-foreground">{t('upload.uploadOrPick')}</span>
           </div>
 
           <div
@@ -106,13 +106,13 @@ const AiPortrait = () => {
                   <line x1="12" y1="3" x2="12" y2="15"/>
                 </svg>
                 <div>
-                  <p className="text-lg font-bold text-foreground mb-1">Drop your photo</p>
+                  <p className="text-lg font-bold text-foreground mb-1">{t('upload.dropPhoto')}</p>
                   <p className="text-sm text-muted-foreground">
-                    or click to browse · JPG or PNG · clear, well-lit selfie works best
+                    {t('upload.orClick')} · {t('upload.jpgPng')} · {t('upload.selfieHint')}
                   </p>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2 mt-2">
-                  {['11 styles', 'Body pose reference'].map(tag => (
+                  {[t('portrait.stylesHint'), t('portrait.poseRef')].map(tag => (
                     <span key={tag} className="text-xs border border-border rounded-full px-3 py-1 text-muted-foreground">
                       {tag}
                     </span>
@@ -124,7 +124,7 @@ const AiPortrait = () => {
             {/* Replace photo overlay */}
             {preview && (
               <div className="absolute inset-0 rounded-2xl bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white text-sm font-semibold">Click to change photo</span>
+                <span className="text-white text-sm font-semibold">{t('upload.clickToChange')}</span>
               </div>
             )}
           </div>
@@ -136,7 +136,7 @@ const AiPortrait = () => {
             className="hidden"
             onChange={e => pickFile(e.target.files?.[0])}
           />
-          <p className="text-xs text-muted-foreground mt-1">JPG or PNG · max {MAX_MB} MB</p>
+          <p className="text-xs text-muted-foreground mt-1">{t('upload.jpgPng')} · max {MAX_MB} MB</p>
         </div>
 
         {/* RIGHT — controls */}

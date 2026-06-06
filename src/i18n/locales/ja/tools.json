@@ -41,7 +41,9 @@
     "gender": "性別", "pickOne": "選択", "woman": "女性", "man": "男性",
     "style": "スタイル", "prompt": "プロンプト", "promptHint": "シーン、照明、雰囲気を具体的に。",
     "bodyPose": "ボーズ", "optional": "任意", "addPose": "ポーズを追加",
-    "aspectRatio": "アスペクト比", "clearPose": "ポーズをクリア"
+    "aspectRatio": "アスペクト比", "clearPose": "ポーズをクリア",
+    "stylesHint": "11スタイル",
+    "poseRef": "ボディポーズ参照"
   },
   "gameFilter": {
     "title": "ゲームフィルター", "subtitle": "任意の写真をゲームスクリーンショットに変換。",
@@ -63,7 +65,8 @@
     "videoStep2": "AIがフレームごとに削除",
     "videoStep3": "元品質でクリーンな動画をダウンロード",
     "videoNote": "処理時間は動画の長さによって異なります。",
-    "image": "画像", "video": "動画"
+    "image": "画像", "video": "動画",
+    "dropHint": "JPGまたはPNG · テキスト/ロゴ透かしに最適"
   },
   "colorize": {
     "title": "写真カラー化", "subtitle": "AIで白黒写真に色をつける。",
@@ -79,7 +82,10 @@
   },
   "upscaler": {
     "title": "AIアップスケーラー", "subtitle": "品質を損なわずに画像を最大4倍に拡大。",
-    "scale": "スケール", "backendSoon": "バックエンド近日公開", "lowResHint": "JPGまたはPNG · 低解像度画像が最適"
+    "scale": "スケール", "backendSoon": "バックエンド近日公開", "lowResHint": "JPGまたはPNG · 低解像度画像が最適",
+    "upscaleButton": "画像を拡大",
+    "esrganDesc": "AIスーパー解像度で画像を拡大。細部を回復し、圧縮アーティファクトを除去し、エッジを鮮明化します。",
+    "inDevelopment": "このツールは現在開発中でまだご利用いただけません。"
   },
   "voice": {
     "title": "音声クローン", "enterText": "テキストを入力",

@@ -54,7 +54,9 @@
     "optional": "Optional",
     "addPose": "Add pose",
     "aspectRatio": "Aspect Ratio",
-    "clearPose": "Clear pose"
+    "clearPose": "Clear pose",
+    "stylesHint": "11 styles",
+    "poseRef": "Body pose reference"
   },
   "gameFilter": {
     "title": "Game Filter",
@@ -83,7 +85,8 @@
     "videoStep3": "Download the clean video in original quality",
     "videoNote": "Processing time depends on video length — may take several minutes.",
     "image": "Image",
-    "video": "Video"
+    "video": "Video",
+    "dropHint": "JPG or PNG · works best with text/logo watermarks"
   },
   "colorize": {
     "title": "Photo Colorizer",
@@ -107,7 +110,10 @@
     "subtitle": "Upscale images up to 4× without losing quality.",
     "scale": "Scale",
     "backendSoon": "Backend coming soon",
-    "lowResHint": "JPG or PNG · low-res images work best"
+    "lowResHint": "JPG or PNG · low-res images work best",
+    "upscaleButton": "Upscale Image",
+    "esrganDesc": "Upscales images using AI super-resolution. Recovers fine details, removes compression artifacts, and sharpens edges.",
+    "inDevelopment": "This tool is currently under development and not yet available."
   },
   "voice": {
     "title": "Voice Cloning",

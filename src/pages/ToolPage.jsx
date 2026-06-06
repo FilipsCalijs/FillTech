@@ -62,7 +62,7 @@ const ToolPage = () => {
       </div>
 
       {effect.description && (
-        <Typography variant="body1" color="muted" className="block mb-10 max-w-2xl">
+        <Typography variant="lead" color="muted" className="block mb-10 max-w-2xl">
           {effect.description}
         </Typography>
       )}

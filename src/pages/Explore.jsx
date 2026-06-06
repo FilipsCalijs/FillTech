@@ -31,7 +31,7 @@ const Explore = () => {
     <div className={`py-12 ${CONTAINER.blog}`}>
       <PageSEO title={t('seo.explore.title')} description={t('seo.explore.desc')} path="/explore" />
       <Typography variant="h2" weight="bold" className="block mb-2">{t('nav.explore')}</Typography>
-      <Typography variant="body1" color="muted" className="block mb-10">{t('exploreSubtitle')}</Typography>
+      <Typography variant="lead" color="muted" className="block mb-10">{t('exploreSubtitle')}</Typography>
 
       {loading ? (
         <Typography variant="body2" color="muted" className="block">{t("loading")}</Typography>

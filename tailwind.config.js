@@ -20,9 +20,10 @@ export default {
         ],
       },
       fontSize: {
-        'h2': ['36px', { lineHeight: '1.2', fontWeight: '600' }],
+        'h2': ['40px', { lineHeight: '1.2', fontWeight: '600' }],
         'h3': ['28px', { lineHeight: '1.3', fontWeight: '600' }],
         'body': ['18px', { lineHeight: '1.6' }],
+        'lead': ['26px', { lineHeight: '1.5' }],
       },
       colors: {
         border: "var(--border)",

@@ -80,7 +80,7 @@ const Ps2Filter = () => {
     <div className={`py-12 ${CONTAINER.blog}`}>
       <PageSEO title={t('seo.gameFilter.title')} description={t('seo.gameFilter.desc')} path="/tools/game-filter" />
       <Typography variant="h2" weight="bold" className="block mb-2">{t('gameFilter.title')}</Typography>
-      <Typography variant="body1" color="muted" className="block mb-10">{t('gameFilter.subtitle')}</Typography>
+      <Typography variant="lead" color="muted" className="block mb-10">{t('gameFilter.subtitle')}</Typography>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
 

@@ -41,7 +41,9 @@
     "gender": "性别", "pickOne": "选择一个", "woman": "女性", "man": "男性",
     "style": "风格", "prompt": "提示词", "promptHint": "请具体描述场景、光线和氛围。",
     "bodyPose": "姿势", "optional": "可选", "addPose": "添加姿势",
-    "aspectRatio": "宽高比", "clearPose": "清除姿势"
+    "aspectRatio": "宽高比", "clearPose": "清除姿势",
+    "stylesHint": "11种风格",
+    "poseRef": "身体姿势参考"
   },
   "gameFilter": {
     "title": "游戏滤镜", "subtitle": "将任意照片变成游戏截图风格。",
@@ -63,7 +65,8 @@
     "videoStep2": "AI 逐帧去除水印",
     "videoStep3": "以原始质量下载干净视频",
     "videoNote": "处理时间取决于视频时长。",
-    "image": "图片", "video": "视频"
+    "image": "图片", "video": "视频",
+    "dropHint": "JPG 或 PNG · 最适合文字/Logo 水印"
   },
   "colorize": {
     "title": "照片上色器", "subtitle": "AI 为黑白照片添加色彩。",
@@ -79,7 +82,10 @@
   },
   "upscaler": {
     "title": "AI 图片放大器", "subtitle": "无损放大图片至 4 倍。",
-    "scale": "倍率", "backendSoon": "后端即将推出", "lowResHint": "JPG 或 PNG · 低分辨率图片效果最佳"
+    "scale": "倍率", "backendSoon": "后端即将推出", "lowResHint": "JPG 或 PNG · 低分辨率图片效果最佳",
+    "upscaleButton": "放大图片",
+    "esrganDesc": "使用 AI 超分辨率放大图片。恢复细节，去除压缩伪影，锐化边缘。",
+    "inDevelopment": "该工具目前正在开发中，尚未开放使用。"
   },
   "voice": {
     "title": "声音克隆", "enterText": "输入您的文字",

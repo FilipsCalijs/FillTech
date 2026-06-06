@@ -3,6 +3,7 @@ import { Typography } from '@/components/ui/Typography';
 import { CONTAINER } from '@/config/sizes';
 import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
+import { Construction } from 'lucide-react';
 
 const MAX_MB   = 22;
 const MAX_SIZE = MAX_MB * 1024 * 1024;
@@ -38,20 +39,22 @@ const Upscaler = () => {
   return (
     <div className={`py-12 ${CONTAINER.blog}`}>
       <PageSEO title={t('seo.upscaler.title')} description={t('seo.upscaler.desc')} path="/tools/upscaler" />
-      <Typography variant="h2" weight="bold" className="block mb-2">
-        AI Upscaler
-      </Typography>
-      <Typography variant="body1" color="muted" className="block mb-10">
-        Upscale images up to 4× without losing quality.
-      </Typography>
+      <Typography variant="h2" weight="bold" className="block mb-2">{t('upscaler.title')}</Typography>
+      <Typography variant="lead" color="muted" className="block mb-6">{t('upscaler.subtitle')}</Typography>
+
+      {/* Coming soon banner */}
+      <div className="mb-10 flex items-center gap-3 rounded-xl border border-yellow-400/40 bg-yellow-400/10 px-5 py-4">
+        <Construction size={20} className="text-yellow-400 shrink-0" />
+        <p className="text-sm text-yellow-400 font-medium">{t('upscaler.inDevelopment')}</p>
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
 
         {/* LEFT — drop zone */}
         <div className="flex flex-col gap-3">
-          <div className="flex justify-between items-center">
-            <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">Your Photo</span>
-          </div>
+          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground">
+            {t('upload.yourPhoto')}
+          </span>
 
           <div
             onClick={() => fileRef.current?.click()}
@@ -72,30 +75,29 @@ const Upscaler = () => {
                   <line x1="12" y1="3" x2="12" y2="15"/>
                 </svg>
                 <div>
-                  <p className="text-lg font-bold text-foreground mb-1">Drop your photo</p>
-                  <p className="text-sm text-muted-foreground">JPG or PNG · low-res images work best</p>
+                  <p className="text-lg font-bold text-foreground mb-1">{t('upload.dropPhoto')}</p>
+                  <p className="text-sm text-muted-foreground">{t('upscaler.lowResHint')}</p>
                 </div>
               </div>
             )}
 
             {preview && (
               <div className="absolute inset-0 rounded-2xl bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white text-sm font-semibold">Click to change photo</span>
+                <span className="text-white text-sm font-semibold">{t('upload.clickToChange')}</span>
               </div>
             )}
           </div>
 
           <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={e => pickFile(e.target.files?.[0])} />
-          <p className="text-xs text-muted-foreground">JPG or PNG · max {MAX_MB} MB</p>
+          <p className="text-xs text-muted-foreground">{t('upload.jpgPng')} · max {MAX_MB} MB</p>
         </div>
 
         {/* RIGHT — scale + generate */}
         <div className="flex flex-col gap-6">
 
-          {/* Scale selector */}
           <div>
             <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted-foreground block mb-3">
-              Scale
+              {t('upscaler.scale')}
             </span>
             <div className="grid grid-cols-2 gap-3">
               {SCALES.map(s => (
@@ -113,21 +115,16 @@ const Upscaler = () => {
             </div>
           </div>
 
-          {/* Info card */}
           <div className="rounded-2xl border border-border bg-card p-5 flex flex-col gap-3 text-sm text-muted-foreground">
             <p className="font-semibold text-foreground">Real-ESRGAN</p>
-            <p>Upscales images using AI super-resolution. Recovers fine details, removes compression artifacts, and sharpens edges.</p>
-            <div className="flex items-center gap-2 mt-1">
-              <span className="w-2 h-2 rounded-full bg-yellow-400" />
-              <span>{t('upscaler.backendSoon')}</span>
-            </div>
+            <p>{t('upscaler.esrganDesc')}</p>
           </div>
 
           <button
             disabled
             className="w-full py-4 rounded-full bg-muted text-muted-foreground font-bold text-xs tracking-[0.16em] uppercase cursor-not-allowed opacity-60"
           >
-            Upscale Image
+            {t('upscaler.upscaleButton')}
           </button>
 
           {error && <p className="text-red-500 text-sm">{error}</p>}

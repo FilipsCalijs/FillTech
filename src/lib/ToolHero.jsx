@@ -25,7 +25,7 @@ const ToolHero = ({
               {title}
             </Typography>
             {subtitle && (
-              <Typography variant="body1" color="muted" className="block">
+              <Typography variant="lead" color="muted" className="block">
                 {subtitle}
               </Typography>
             )}

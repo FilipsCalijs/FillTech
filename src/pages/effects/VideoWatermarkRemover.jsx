@@ -70,7 +70,7 @@ const VideoWatermarkRemover = () => {
       <Typography variant="h2" weight="bold" className="block mb-2">
         Video Watermark Remover
       </Typography>
-      <Typography variant="body1" color="muted" className="block mb-10">
+      <Typography variant="lead" color="muted" className="block mb-10">
         Remove text and logo watermarks from videos while preserving original quality.
       </Typography>
 
