@@ -3,6 +3,7 @@ import { CONTAINER } from '@/config/sizes';
 import AudioPlayer from '@/components/ui/AudioPlayer';
 import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
+import OtherProducts from '@/lib/OtherProducts';
 
 const API = 'http://localhost:5200';
 
@@ -197,6 +198,7 @@ const VoiceCloning = () => {
           </div>
         )}
       </div>
+      <OtherProducts currentSlug="voice-clone" />
     </div>
   );
 };

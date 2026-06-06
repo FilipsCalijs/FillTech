@@ -9,7 +9,7 @@ const BeforeAfterSection = ({
   afterImage,
 }) => {
   return (
-    <div className="w-full max-w-[1280px] px-4">
+    <div className="w-full max-w-[1440px] px-4">
       <Card bordered="lg" className="flex flex-col md:flex-row rounded-xl overflow-hidden">
         <CardContent className="flex-1 p-8 flex flex-col justify-center gap-4">
           <Typography variant="h2" weight="semibold">{title}</Typography>

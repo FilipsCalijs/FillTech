@@ -34,7 +34,7 @@ const DEMO_FAQS = [
 const PrimerBlock = ({ name, children }) => (
   <div className="flex flex-col items-center w-full gap-3">
     <div className="w-full">{children}</div>
-    <div className="flex items-center gap-3 w-full max-w-[1280px] px-4">
+    <div className="flex items-center gap-3 w-full max-w-[1440px] px-4">
       <div className="h-px flex-1 bg-border" />
       <span className="text-xs font-mono text-muted-foreground px-3 py-1 rounded-full border border-border bg-muted/30 shrink-0">
         {name}
@@ -49,7 +49,7 @@ const Primer = () => {
     <div className="py-12 flex flex-col items-center gap-20">
 
       {/* Header */}
-      <div className="w-full max-w-[1280px] px-4 flex flex-col gap-2">
+      <div className="w-full max-w-[1440px] px-4 flex flex-col gap-2">
         <Typography variant="h1" weight="bold" className="block gradient-text">
           Primer — Page Modules
         </Typography>

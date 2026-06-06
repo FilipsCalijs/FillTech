@@ -4,6 +4,7 @@ import { CONTAINER } from '@/config/sizes';
 import { PS2_STYLES, buildPs2Prompt } from '@/config/ps2Prompts';
 import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
+import OtherProducts from '@/lib/OtherProducts';
 import ResultPanel from '@/components/ui/ResultPanel';
 
 const API = 'http://localhost:5200';
@@ -222,6 +223,7 @@ const Ps2Filter = () => {
           generationId={generationId}
         />
       )}
+      <OtherProducts currentSlug="ps2-filter" />
     </div>
   );
 };

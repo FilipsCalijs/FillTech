@@ -3,6 +3,7 @@ import { Typography } from '@/components/ui/Typography';
 import { CONTAINER } from '@/config/sizes';
 import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
+import OtherProducts from '@/lib/OtherProducts';
 
 const API     = 'http://localhost:5200';
 const MAX_MB  = 500;
@@ -223,6 +224,7 @@ const VideoWatermarkRemover = () => {
           </div>
         </div>
       )}
+      <OtherProducts currentSlug="watermark-remover-video" />
     </div>
   );
 };

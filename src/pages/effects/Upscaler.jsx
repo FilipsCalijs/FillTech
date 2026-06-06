@@ -3,6 +3,7 @@ import { Typography } from '@/components/ui/Typography';
 import { CONTAINER } from '@/config/sizes';
 import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
+import OtherProducts from '@/lib/OtherProducts';
 import { Construction } from 'lucide-react';
 
 const MAX_MB   = 22;
@@ -130,6 +131,7 @@ const Upscaler = () => {
           {error && <p className="text-red-500 text-sm">{error}</p>}
         </div>
       </div>
+      <OtherProducts currentSlug="upscaler" />
     </div>
   );
 };

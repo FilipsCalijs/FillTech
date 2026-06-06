@@ -175,3 +175,9 @@ button {
   font-family: inherit;
 }
 
+
+
+@keyframes slideInFromTop {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(0); }
+}

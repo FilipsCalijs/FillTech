@@ -10,6 +10,7 @@ export const buttonVariants = cva(
         destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
         outline: 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
+        gold: 'bg-gradient-gold text-black hover:opacity-90',
       },
       size: {
         sm: 'h-9 px-3 text-sm',

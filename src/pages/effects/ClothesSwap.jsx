@@ -3,6 +3,7 @@ import { CONTAINER } from '@/config/sizes';
 import ResultPanel from '@/components/ui/ResultPanel';
 import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
+import OtherProducts from '@/lib/OtherProducts';
 
 const API = 'http://localhost:5200';
 
@@ -224,6 +225,7 @@ const ClothesSwap = () => {
           generationId={generationId}
         />
       )}
+      <OtherProducts currentSlug="clothes-swap" />
     </div>
   );
 };

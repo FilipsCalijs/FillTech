@@ -34,7 +34,7 @@ const Plan = () => {
 
   return (
     <div className="py-12">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-[1440px] mx-auto px-4">
         <Typography variant="h2" weight="bold" align="center" className="mb-10">
           Choose your plan
         </Typography>

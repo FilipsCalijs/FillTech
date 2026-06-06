@@ -3,7 +3,7 @@ import { Typography } from '@/components/ui/Typography';
 
 const FeaturesGrid = ({ title = 'Why Choose Us', features = [] }) => {
   return (
-    <div className="w-full max-w-[1280px] px-4">
+    <div className="w-full max-w-[1440px] px-4">
       {title && (
         <Typography variant="h1" weight="semibold" className="mb-8 text-center block">
           {title}

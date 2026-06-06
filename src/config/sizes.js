@@ -4,13 +4,13 @@
 // Стандартная ширина для разных страниц
 export const CONTAINER = {
   // Блог-сетка (широкий): desktop ~1152px
-  blog: 'max-w-6xl mx-auto px-4 sm:px-6 lg:px-8',
+  blog: 'max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8',
 
   // Статья / узкий текстовый контент: desktop ~768px
   post: 'max-w-3xl mx-auto px-4 sm:px-6',
 
-  // Дефолтный контент: desktop ~1024px
-  default: 'max-w-5xl mx-auto px-4 sm:px-6 lg:px-8',
+  // Дефолтный контент
+  default: 'max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8',
 };
 
 // ─── Скругления ────────────────────────────────────────────────────────────

@@ -65,7 +65,7 @@ const Result = ({ isVisible, originalImage, removedImage }) => {
   if (!isVisible) return null;
 
   return (
-    <div className="w-full max-w-[1280px] px-4 mt-8">
+    <div className="w-full max-w-[1440px] px-4 mt-8">
       <Card className="rounded-xl overflow-hidden">
         <CardContent className="p-6 flex flex-col gap-8">
           <div>

@@ -4,6 +4,7 @@ import { CONTAINER } from '@/config/sizes';
 import ResultPanel from '@/components/ui/ResultPanel';
 import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
+import OtherProducts from '@/lib/OtherProducts';
 
 const API = 'http://localhost:5200';
 const MAX_MB   = 22;
@@ -169,6 +170,7 @@ const PhotoColorize = () => {
           generationId={generationId}
         />
       )}
+      <OtherProducts currentSlug="photo-colorize" />
     </div>
   );
 };

@@ -93,7 +93,7 @@ function AppShell() {
     <div className="flex flex-col min-h-screen">
       {userLoggedIn && <Header isDark={isDark} toggleTheme={toggleTheme} />}
       <main className="flex-1 flex flex-col">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
           <Routes>
             <Route path="login"    element={<PublicRoute><Login /></PublicRoute>} />
             <Route path="register" element={<PublicRoute><Register /></PublicRoute>} />
@@ -129,6 +129,7 @@ function AppShell() {
             <Route path="tools/upscaler"               element={<Upscaler />} />
             <Route path="tools/ps2-filter"             element={<Testing />} />
             <Route path="tools/watermark-remover"      element={<WatermarkRemover />} />
+            <Route path="watermark-remover"             element={<WatermarkRemover />} />
             <Route path="tools/photo-colorize"         element={<PhotoColorize />} />
             <Route path="tools/clothes-swap"           element={<ClothesSwap />} />
             <Route path="tools/watermark-remover-video" element={<VideoWatermarkRemover />} />

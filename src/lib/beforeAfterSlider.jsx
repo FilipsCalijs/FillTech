@@ -5,9 +5,10 @@ export default function BeforeAfterSlider({
   afterImage,
   width = 640,
   height = 360,
+  aspectRatio,
   autoAnimate = true,
-  autoSpeed = 0.3,    // авто движение % за кадр
-  smoothFactor = 0.08 // lerp для плавности
+  autoSpeed = 0.3,
+  smoothFactor = 0.08
 }) {
   const [position, setPosition] = useState(50);
   const targetPos = useRef(50);
@@ -62,7 +63,7 @@ export default function BeforeAfterSlider({
     <div
       ref={containerRef}
       className="relative overflow-hidden rounded-lg border border-border cursor-ew-resize select-none bg-card"
-      style={{ width, height }}
+      style={aspectRatio ? { width, aspectRatio } : { width, height }}
       onMouseEnter={() => (isHovering.current = true)}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => (isHovering.current = false)}

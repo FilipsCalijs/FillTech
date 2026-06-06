@@ -5,6 +5,7 @@ import PortraitControls from '@/components/portrait/PortraitControls';
 import { buildPrompt } from '@/config/portraitPrompts';
 import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
+import OtherProducts from '@/lib/OtherProducts';
 import ResultPanel from '@/components/ui/ResultPanel';
 
 const API = 'http://localhost:5200';
@@ -158,6 +159,7 @@ const AiPortrait = () => {
           generationId={generationId}
         />
       )}
+      <OtherProducts currentSlug="portrait" />
     </div>
   );
 };

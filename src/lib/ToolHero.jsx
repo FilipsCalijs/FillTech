@@ -1,12 +1,13 @@
 import { Typography } from '@/components/ui/Typography';
 import { Button } from '@/components/ui/Button';
 import { Upload } from '@/components/ui/Upload';
-import { Card, CardContent } from '@/components/ui/Card';
+import { Card } from '@/components/ui/Card';
 
 const ToolHero = ({
   title,
   subtitle,
   buttonLabel = 'Generate',
+  buttonVariant = 'primary',
   file,
   loading,
   error,
@@ -15,35 +16,40 @@ const ToolHero = ({
   rightImage,
 }) => {
   return (
-    <div className="w-full max-w-[1280px] px-4">
+    <div className="w-full max-w-[1440px] px-4">
       <Card className="flex flex-col md:flex-row rounded-xl overflow-hidden">
 
         {/* Left — upload side */}
         <div className="flex-1 p-6 md:p-8 flex flex-col justify-between gap-6">
-          <div className="flex flex-col gap-2">
-            <Typography variant="h2" weight="semibold" className="block">
-              {title}
-            </Typography>
-            {subtitle && (
-              <Typography variant="lead" color="muted" className="block">
-                {subtitle}
-              </Typography>
-            )}
-          </div>
+          {(title || subtitle) && (
+            <div className="flex flex-col gap-2">
+              {title && (
+                <Typography variant="h2" weight="semibold" className="block">
+                  {title}
+                </Typography>
+              )}
+              {subtitle && (
+                <Typography variant="lead" color="muted" className="block">
+                  {subtitle}
+                </Typography>
+              )}
+            </div>
+          )}
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col">
             <Upload
-              onFileDrop={onFileDrop}
-              className="w-full h-48 md:h-56"
+              onFileDrop={(files) => onFileDrop?.(Array.isArray(files) ? files[0] : files)}
+              className="w-full h-48 md:h-56 border-0 rounded-b-none"
             />
             {error && (
-              <Typography variant="body2" className="text-destructive block">
+              <Typography variant="body2" className="text-destructive block mt-2">
                 {error}
               </Typography>
             )}
             <Button
+              variant={buttonVariant}
               size="md"
-              className="w-full"
+              className="w-full rounded-t-none"
               onClick={onSubmit}
               disabled={loading || !file}
               isLoading={loading}

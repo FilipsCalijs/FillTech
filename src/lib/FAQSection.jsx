@@ -6,7 +6,7 @@ const FAQSection = ({ title = 'Frequently Asked Questions', faqs = [] }) => {
   const [open, setOpen] = useState(null);
 
   return (
-    <div className="w-full max-w-[1280px] px-4">
+    <div className="w-full max-w-[1440px] px-4">
       <Typography variant="h1" weight="semibold" className="mb-8 block">
         {title}
       </Typography>

@@ -25,7 +25,11 @@ export default {
         'body': ['18px', { lineHeight: '1.6' }],
         'lead': ['26px', { lineHeight: '1.5' }],
       },
+      backgroundImage: {
+        'gradient-gold': 'linear-gradient(90deg, #F5A623 0%, #FBCF33 100%)',
+      },
       colors: {
+        gold: '#F5A623',
         border: "var(--border)",
         input: "var(--input)",
         ring: "var(--ring)",
