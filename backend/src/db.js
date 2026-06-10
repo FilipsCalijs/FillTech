@@ -129,8 +129,8 @@ export async function runMigrations() {
 
   // Сид начальных эффектов [name, slug, short_desc, icon, cover_url, status, sort_order]
   const effects = [
-    ['Watermark Remover', 'watermark-remover', 'Remove watermarks from any image with AI',       '🚫', null,                          'published', 1],
-    ['BG Remover',        'bg-remover',        'Remove background from photos in seconds',        '✂️', null,                          'published', 2],
+    ['Watermark Remover', 'watermark-remover', 'Remove watermarks from any image with AI',       '🚫', '/logo/watermark_remover.png', 'published', 1],
+    ['BG Remover',        'bg-remover',        'Remove background from photos in seconds',        '✂️', '/logo/bg_remover.png',        'published', 2],
     ['Upscaler',          'upscaler',          'Upscale images up to 4x without losing quality', '🔍', '/effects/upscaler.png',        'published', 3],
     ['Layers Cutter',     'layers-cutter',     'Cut objects from images into separate layers',    '🪄', null,                          'published', 4],
     ['PS2 Filter',        'ps2-filter',        'Apply retro PS2-era filter to any photo',        '🎮', '/effects/ps_filters.png',     'published', 5],
