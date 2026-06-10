@@ -12,7 +12,7 @@ import {
 import { useAuth } from '../../../contexts/authContext';
 import { syncUserWithBackend } from '../../../services/userService';
 import { Button } from '@/components/ui/Button';
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/Card';
 
 const Login = () => {
     const { userLoggedIn } = useAuth();

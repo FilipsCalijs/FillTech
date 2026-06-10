@@ -2,7 +2,7 @@ import express from 'express';
 import { db } from '../db.js';
 
 const router = express.Router();
-const BASE   = process.env.PUBLIC_URL || 'https://filltech.com';
+const BASE   = process.env.PUBLIC_URL || 'https://visaulio.com';
 const LANGS  = ['en', 'ru', 'lv', 'de'];
 
 const STATIC_PATHS = [

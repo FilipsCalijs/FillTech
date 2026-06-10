@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/Card';
 import { Typography } from '@/components/ui/Typography';
 
 const CardRightImage = ({ title, text, imageUrl, alt, noCard = false }) => {

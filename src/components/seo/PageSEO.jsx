@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { useLang } from '@/contexts/LangContext';
 import { SUPPORTED_LANGS } from '@/i18n/index';
 
-const BASE_URL = import.meta.env.VITE_PUBLIC_URL || 'https://filltech.com';
+const BASE_URL = import.meta.env.VITE_PUBLIC_URL || 'https://visaulio.com';
 
 const PageSEO = ({ title, description, path = '' }) => {
   const lang = useLang();
