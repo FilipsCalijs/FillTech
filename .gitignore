@@ -53,6 +53,12 @@ public/testing/
 *.webp
 *.pth
 
+# Site assets in public/ are needed for production build - keep them
+!public/**/*.png
+!public/**/*.jpg
+!public/**/*.jpeg
+!public/**/*.webp
+
 # AI model weights
 models/*
 !models/.gitkeep
