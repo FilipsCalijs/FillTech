@@ -6,8 +6,7 @@ import { Typography } from '@/components/ui/Typography';
 import { Upload } from '@/components/ui/Upload';
 import { Button } from '@/components/ui/Button';
 import { CONTAINER } from '@/config/sizes';
-
-const API = 'http://localhost:5200';
+import { API_URL as API } from '@/config/api';
 
 const ToolPage = () => {
   const { effectPath } = useParams();

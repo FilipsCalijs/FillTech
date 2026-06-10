@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useAuth } from '@/contexts/authContext';
+import { API_URL } from '@/config/api';
 
-const API_BASE = 'http://localhost:5200/api/tools';
+const API_BASE = `${API_URL}/api/tools`;
 
 /**
  * Универсальный хук для любого AI-инструмента.

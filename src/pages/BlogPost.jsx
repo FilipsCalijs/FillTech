@@ -11,8 +11,7 @@ import { CONTAINER } from '@/config/sizes';
 import { Typography } from '@/components/ui/Typography';
 import { Button } from '@/components/ui/Button';
 import Comments from '@/components/blog/Comments';
-
-const API = 'http://localhost:5200';
+import { API_URL as API } from '@/config/api';
 
 const BlogPost = () => {
   const { t }    = useTranslation('blog');

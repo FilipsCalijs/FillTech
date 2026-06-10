@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import { Upload, Link, Image, X, ChevronLeft, ChevronRight, Trash2, Check } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { API_URL } from '@/config/api';
 
-const API = 'http://localhost:5200/api/media';
+const API = `${API_URL}/api/media`;
 
 export default function MediaPicker({ onSelect, onClose }) {
   const [tab, setTab] = useState('library'); // library | upload | url

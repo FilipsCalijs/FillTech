@@ -3,8 +3,7 @@ import { CONTAINER } from '@/config/sizes';
 import AudioPlayer from '@/components/ui/AudioPlayer';
 import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
-
-const API = 'http://localhost:5200';
+import { API_URL as API } from '@/config/api';
 
 const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const fmtLabel = (ts) => {

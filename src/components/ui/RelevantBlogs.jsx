@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLang } from '@/contexts/LangContext';
 import { getRelatedBlogs } from '@/config/toolTags';
 import LangLink from '@/components/routing/LangLink';
-
-const API = 'http://localhost:5200';
+import { API_URL as API } from '@/config/api';
 
 const RelevantBlogs = ({ currentSlug }) => {
   const lang = useLang();

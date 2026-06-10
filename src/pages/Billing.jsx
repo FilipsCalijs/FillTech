@@ -4,8 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { CONTAINER } from '@/config/sizes';
 import PageSEO from '@/components/seo/PageSEO';
 import { useLang } from '@/contexts/LangContext';
-
-const API = 'http://localhost:5200';
+import { API_URL as API } from '@/config/api';
 
 const AMOUNTS = [5, 10, 50, 100, 1000, 5000];
 const AMOUNT_LABELS = {

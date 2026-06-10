@@ -8,8 +8,9 @@ import MediaPicker from '@/components/admin/MediaPicker';
 import RichEditor from '@/components/admin/RichEditor';
 import { Button } from '@/components/ui/Button';
 import { ArrowLeft, Globe, FileText, ImagePlus, X, Save, Eye } from 'lucide-react';
+import { API_URL } from '@/config/api';
 
-const API = 'http://localhost:5200/api/blog/admin/posts';
+const API = `${API_URL}/api/blog/admin/posts`;
 
 const AdminBlogEditor = () => {
   const { id } = useParams();

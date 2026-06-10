@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-const API = 'http://localhost:5200';
+import { API_URL as API } from '@/config/api';
 
 const ResultPanel = ({ referenceUrl, resultUrl, generationId }) => {
   const [deleted, setDeleted]   = useState(false);

@@ -7,8 +7,7 @@ import { Typography } from '@/components/ui/Typography';
 import { Button } from '@/components/ui/Button';
 import { formatDate } from '@/lib/utils';
 import LangLink from '@/components/routing/LangLink';
-
-const API = 'http://localhost:5200';
+import { API_URL as API } from '@/config/api';
 
 const Avatar = ({ src, name }) => {
   if (src) return <img src={src} alt={name} className="w-9 h-9 rounded-full object-cover shrink-0" />;

@@ -6,8 +6,7 @@ import { Typography } from '@/components/ui/Typography';
 import LangLink from '@/components/routing/LangLink';
 import { useLang } from '@/contexts/LangContext';
 import PageSEO from '@/components/seo/PageSEO';
-
-const API = 'http://localhost:5200';
+import { API_URL as API } from '@/config/api';
 
 const Blog = () => {
   const { t }   = useTranslation('blog');

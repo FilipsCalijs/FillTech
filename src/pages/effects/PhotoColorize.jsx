@@ -6,8 +6,8 @@ import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
 import OtherProducts from '@/lib/OtherProducts';
 import RelevantBlogs from '@/components/ui/RelevantBlogs';
+import { API_URL as API } from '@/config/api';
 
-const API = 'http://localhost:5200';
 const MAX_MB   = 22;
 const MAX_SIZE = MAX_MB * 1024 * 1024;
 

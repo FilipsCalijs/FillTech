@@ -4,8 +4,9 @@ import axios from 'axios';
 import AdminLayout from '@/components/admin/AdminLayout';
 import { Button } from '@/components/ui/Button';
 import { Typography } from '@/components/ui/Typography';
+import { API_URL } from '@/config/api';
 
-const API = 'http://localhost:5200/api/effects';
+const API = `${API_URL}/api/effects`;
 const headers = () => ({ 'x-user-uid': localStorage.getItem('userUID') });
 
 const toSlug = (str) =>

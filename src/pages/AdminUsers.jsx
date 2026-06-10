@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useTranslation } from 'react-i18next';
 import useLangNavigate from '@/hooks/useLangNavigate';
 import AdminLayout from '@/components/admin/AdminLayout';
+import { API_URL } from '@/config/api';
 
 const AdminUsers = () => {
   const { t } = useTranslation('blog');
@@ -20,7 +21,7 @@ const AdminUsers = () => {
       setLoading(false);
       return;
     }
-    axios.get('http://localhost:5200/api/admin/users', {
+    axios.get(`${API_URL}/api/admin/users`, {
       headers: { 'x-user-uid': uid, 'Authorization': `Bearer ${localStorage.getItem('userToken')}` }
     })
       .then(res => setUsers(res.data))

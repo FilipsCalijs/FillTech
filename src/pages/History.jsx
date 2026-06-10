@@ -5,8 +5,7 @@ import { CONTAINER } from '@/config/sizes';
 import AudioPlayer from '@/components/ui/AudioPlayer';
 import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
-
-const API = 'http://localhost:5200';
+import { API_URL as API } from '@/config/api';
 
 const TOOL_MAP = {
   'portrait':         { name: 'AI Portrait',       path: '/tools/portrait' },

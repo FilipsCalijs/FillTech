@@ -6,8 +6,9 @@ import AdminLayout from '@/components/admin/AdminLayout';
 import { Button } from '@/components/ui/Button';
 import { Plus, Pencil, Trash2, Globe, FileText } from 'lucide-react';
 import { useLang } from '@/contexts/LangContext';
+import { API_URL } from '@/config/api';
 
-const API = 'http://localhost:5200/api/blog/admin/posts';
+const API = `${API_URL}/api/blog/admin/posts`;
 
 const AdminBlog = () => {
   const { t } = useTranslation('blog');

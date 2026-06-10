@@ -6,8 +6,7 @@ import { doSignOut } from '../../firebase/auth';
 import { Button } from '@/components/ui/Button';
 import { SUPPORTED_LANGS } from '@/i18n/index';
 import { useLang } from '@/contexts/LangContext';
-
-const API = 'http://localhost:5200';
+import { API_URL as API } from '@/config/api';
 
 const LANG_LABELS = { en: 'EN', ru: 'RU', lv: 'LV', de: 'DE', pt: 'PT', es: 'ES', ja: '日本語', hi: 'हिंदी', ko: '한국어', zh: '中文' };
 

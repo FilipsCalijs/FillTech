@@ -7,8 +7,7 @@ import PageSEO from '@/components/seo/PageSEO';
 import OtherProducts from '@/lib/OtherProducts';
 import RelevantBlogs from '@/components/ui/RelevantBlogs';
 import ResultPanel from '@/components/ui/ResultPanel';
-
-const API = 'http://localhost:5200';
+import { API_URL as API } from '@/config/api';
 
 const RATIOS = ['1:1', '3:2', '2:3', '4:3', '3:4', '16:9', '9:16', '4:5', '5:4', '21:9'];
 

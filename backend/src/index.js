@@ -22,8 +22,12 @@ app.post('/api/billing/webhook', express.raw({ type: 'application/json' }), stri
 
 app.use(express.json());
 
+const corsOrigins = (process.env.CORS_ORIGINS || 'http://localhost:5173,http://localhost:5174')
+  .split(',')
+  .map(origin => origin.trim());
+
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:5174'],
+  origin: corsOrigins,
   credentials: true,
 }));
 

@@ -8,8 +8,7 @@ import PageSEO from '@/components/seo/PageSEO';
 import OtherProducts from '@/lib/OtherProducts';
 import RelevantBlogs from '@/components/ui/RelevantBlogs';
 import ResultPanel from '@/components/ui/ResultPanel';
-
-const API = 'http://localhost:5200';
+import { API_URL as API } from '@/config/api';
 
 const AiPortrait = () => {
   const { t } = useTranslation('tools');

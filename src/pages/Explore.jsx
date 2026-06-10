@@ -7,8 +7,7 @@ import { CONTAINER } from '@/config/sizes';
 import { useTranslation } from 'react-i18next';
 import { useLang } from '@/contexts/LangContext';
 import PageSEO from '@/components/seo/PageSEO';
-
-const API = 'http://localhost:5200';
+import { API_URL as API } from '@/config/api';
 
 const Explore = () => {
   const { t, i18n } = useTranslation('common');

@@ -16,8 +16,7 @@ import {
   Undo, Redo,
   ImagePlus, Loader2,
 } from 'lucide-react';
-
-const API = 'http://localhost:5200';
+import { API_URL as API } from '@/config/api';
 
 // ─── Кнопка тулбара ───────────────────────────────────────────
 const Btn = ({ onClick, active, disabled, title, children }) => (

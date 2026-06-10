@@ -5,8 +5,7 @@ import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
 import OtherProducts from '@/lib/OtherProducts';
 import RelevantBlogs from '@/components/ui/RelevantBlogs';
-
-const API = 'http://localhost:5200';
+import { API_URL as API } from '@/config/api';
 
 const MODEL_URLS = [
   'https://static.wavespeed.ai/examples/d2fc9d2482cf4cc28d915ae61e16eb02/1773776417433956840_AQfpxHQ0.jpeg',
