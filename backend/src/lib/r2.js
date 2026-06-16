@@ -13,10 +13,6 @@ const r2 = new S3Client({
   responseChecksumValidation: 'WHEN_REQUIRED',
 });
 
-/**
- * Превращает имя пользователя в безопасный идентификатор папки.
- * "Иван Петров" → "ivan-petrov", "John Doe" → "john-doe"
- */
 function toFolderName(label) {
   return label
     .toLowerCase()
@@ -27,14 +23,9 @@ function toFolderName(label) {
     .replace(/^-+|-+$/g, '') || 'user';
 }
 
-/**
- * Загружает Buffer напрямую в R2.
- * Возвращает публичный URL файла в R2.
- * @param {string} userLabel — display_name или email пользователя (человекочитаемый)
- */
-export async function uploadBuffer(buffer, contentType, userLabel, folder = 'generations') {
-  const ext = contentType.split('/')[1]?.split('+')[0] || 'png';
-  const key = `users/${toFolderName(userLabel)}/${folder}/${uuidv4()}.${ext}`;
+export async function uploadBuffer(buffer, contentType, userLabel, folder = 'generations', ext) {
+  const fileExt = ext || contentType.split('/')[1]?.split('+')[0] || 'png';
+  const key = `users/${toFolderName(userLabel)}/${folder}/${uuidv4()}.${fileExt}`;
 
   await r2.send(new PutObjectCommand({
     Bucket: process.env.R2_BUCKET_NAME,
@@ -46,11 +37,6 @@ export async function uploadBuffer(buffer, contentType, userLabel, folder = 'gen
   return `${process.env.R2_PUBLIC_URL}/${key}`;
 }
 
-/**
- * Скачивает файл по URL и загружает в R2.
- * Возвращает публичный URL файла в R2.
- * @param {string} userLabel — display_name или email пользователя (человекочитаемый)
- */
 export async function uploadFromUrl(sourceUrl, userLabel, folder = 'generations') {
   const response = await fetch(sourceUrl);
   if (!response.ok) throw new Error(`Failed to fetch file: ${response.status}`);
@@ -70,9 +56,6 @@ export async function uploadFromUrl(sourceUrl, userLabel, folder = 'generations'
   return `${process.env.R2_PUBLIC_URL}/${key}`;
 }
 
-/**
- * Удаляет файл из R2 по ключу.
- */
 export async function deleteFromR2(key) {
   await r2.send(new DeleteObjectCommand({
     Bucket: process.env.R2_BUCKET_NAME,

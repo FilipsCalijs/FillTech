@@ -46,12 +46,12 @@ const Footer = () => {
               <img
                 src="/logo/logo-light.png"
                 className="block dark:hidden h-8 w-auto"
-                alt="FillTech"
+                alt="Visaulio"
               />
               <img
                 src="/logo/logo-dark.png"
                 className="hidden dark:block h-8 w-auto"
-                alt="FillTech"
+                alt="Visaulio"
               />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">

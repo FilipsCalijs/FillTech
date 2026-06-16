@@ -89,7 +89,27 @@
     "uploadImage": "Augšupielādēt attēlu",
     "clickToChange": "Noklikšķiniet, lai mainītu",
     "woman": "Sieviete",
-    "man": "Vīrietis"
+    "man": "Vīrietis",
+    "heroTitle": "Virtuālā piemērošana",
+    "heroSubtitle": "Apskaties jebkuru apģērbu uz modeles - bez fotosesijas.",
+    "studioCta": "Izmēģini Virtuālās piemērošanas Studio bez maksas",
+    "studio": {
+      "uploadGarment": "Augšupielādēt apģērbu",
+      "uploadModel": "Augšupielādēt modeli",
+      "fileHint": "PNG, JPG vai WebP",
+      "chooseFromLibrary": "Izvēlēties no bibliotēkas",
+      "revealing": "Šis attēls saturu atklājošu vai intīmu apģērbu (piem., peldkostīmu, apakšveļu).",
+      "extraNotes": "Papildu piezīmes",
+      "optional": "Neobligāti",
+      "extraNotesPlaceholder": "Pievienojiet piezīmes par piegulumu, stilu vai saglabāšanu, piem., vaļīgs piegulums, nemainīt seju.",
+      "aiEnhance": "AI uzlabojums",
+      "aspectRatio": "Malu attiecība",
+      "auto": "Auto",
+      "resolution": "Izšķirtspēja",
+      "outputCount": "Rezultātu skaits",
+      "formula": "{{g}} apģērbs × {{m}} modelis × {{n}} = {{total}} attēls",
+      "clear": "Notīrīt"
+    }
   },
   "upscaler": {
     "title": "AI Palielinātājs",
@@ -115,64 +135,68 @@
   },
   "seo": {
     "portrait": {
-      "title": "AI Portreta redaktors - Pārveido fotogrāfijas | FillTech",
+      "title": "AI Portreta redaktors - Pārveido fotogrāfijas | Visaulio",
       "desc": "Augšupielādē fotogrāfiju un pārveido to ar AI. Izvēlies dzimumu, stilu, pozu un apgaismojumu."
     },
     "gameFilter": {
-      "title": "Spēļu filtrs - Pārveido fotogrāfijas par spēļu ekrānuzņēmumiem | FillTech",
+      "title": "Spēļu filtrs - Pārveido fotogrāfijas par spēļu ekrānuzņēmumiem | Visaulio",
       "desc": "Pārvērt jebkuru fotogrāfiju retro spēles ekrānuzņēmumā. 7 stili: PS2, Arcade, 8-bit, PS3, Anime, AAA un citi."
     },
     "bgRemover": {
-      "title": "Fona noņemšana - Bezmaksas AI fona noņemšana | FillTech",
+      "title": "Fona noņemšana - Bezmaksas AI fona noņemšana | Visaulio",
       "desc": "Noņem attēlu fonus uzreiz ar AI. Iegūsti caurspīdīgu PNG sekundēs. Lieliski piemērots produktu un portreta fotogrāfijām."
     },
     "watermark": {
-      "title": "Ūdenszīmju noņemšana - Noņem logotipus no fotogrāfijām | FillTech",
+      "title": "Ūdenszīmju noņemšana - Noņem logotipus no fotogrāfijām | Visaulio",
       "desc": "Inteliģenti noņem teksta un logotipu ūdenszīmes, saglabājot oriģinālo tekstūru."
     },
     "videoWatermark": {
-      "title": "Video ūdenszīmju noņemšana | FillTech",
+      "title": "Video ūdenszīmju noņemšana | Visaulio",
       "desc": "Noņem ūdenszīmes no jebkura video ar AI. Kadru pa kadram apstrāde saglabā oriģinālo kvalitāti."
     },
     "colorize": {
-      "title": "Foto iekrāsošana - Atdzīvini melnbaltos attēlus ar AI | FillTech",
+      "title": "Foto iekrāsošana - Atdzīvini melnbaltos attēlus ar AI | Visaulio",
       "desc": "Atdzīvini vecas melnbaltas fotogrāfijas ar AI iekrāsošanu. Reālistiskas krāsas tiek pievienotas automātiski."
     },
     "clothesSwap": {
-      "title": "Apģērbu maiņa - Virtuāli izmēģini apģērbu ar AI | FillTech",
+      "title": "Apģērbu maiņa - Virtuāli izmēģini apģērbu ar AI | Visaulio",
       "desc": "Izmēģini dažādus apģērbus virtuāli ar AI. Augšupielādē savu portreta un apģērba attēlu - redzi rezultātu uzreiz."
     },
     "videoBg": {
-      "title": "Video fona nomaiņa - Noņem vai nomainiet video fonu | FillTech",
+      "title": "Video fona nomaiņa - Noņem vai nomainiet video fonu | Visaulio",
       "desc": "Noņem vai nomainiet jebkura video fonu ar AI. Augšupielādē video un izvēlieties fona attēlu."
     },
     "upscaler": {
-      "title": "AI Attēlu palielināšana - 4× bez kvalitātes zuduma | FillTech",
+      "title": "AI Attēlu palielināšana - 4× bez kvalitātes zuduma | Visaulio",
       "desc": "Palielini fotogrāfijas līdz 4× ar AI super-izšķirtspēju. Atjaunini smalkas detaļas bez kvalitātes zuduma."
     },
     "voiceClone": {
-      "title": "Balss klonēšana - Klonē jebkuru balsi ar AI | FillTech",
+      "title": "Balss klonēšana - Klonē jebkuru balsi ar AI | Visaulio",
       "desc": "Klonē jebkuru balsi no 3–10 sekunžu audio parauga. Pārveido tekstu runā 600+ valodās ar savu balsi."
     },
     "vocalIsolator": {
-      "title": "Vokāla izolators - Atdaliet vokālu no mūzikas | FillTech",
+      "title": "Vokāla izolators - Atdaliet vokālu no mūzikas | Visaulio",
       "desc": "AI vokāla izolācija. Augšupielādējiet jebkuru dziesmu un uzreiz iegūstiet tīru vokālu bez instrumentāla."
     },
-    "explore": {
-      "title": "AI rīki - Visi efekti | FillTech",
+    "tools": {
+      "title": "AI rīki - Visi efekti | Visaulio",
       "desc": "Atklāj visus AI rīkus: portreta redaktors, fona noņemšana, ūdenszīmju noņemšana, foto iekrāsošana un citi."
     },
     "blog": {
-      "title": "Blogs - AI rīku padomi un jaunumi | FillTech",
-      "desc": "Lasi rakstus, pamācības un jaunumus par AI attēlu un video apstrādes rīkiem no FillTech komandas."
+      "title": "Blogs - AI rīku padomi un jaunumi | Visaulio",
+      "desc": "Lasi rakstus, pamācības un jaunumus par AI attēlu un video apstrādes rīkiem no Visaulio komandas."
     },
     "history": {
-      "title": "Vēsture - Manas ģenerācijas | FillTech",
+      "title": "Vēsture - Manas ģenerācijas | Visaulio",
       "desc": "Skatīt un pārvaldīt visas AI ģenerācijas. Lejupielādēt vai dzēst rezultātus. Saglabājas 7 dienas."
     },
     "billing": {
-      "title": "Norēķini - Konta atlikums | FillTech",
+      "title": "Norēķini - Konta atlikums | Visaulio",
       "desc": "Pārvaldīt atlikumu, skatīt tēriņu vēsturi un konfigurēt automātisko papildināšanu."
+    },
+    "clothesSwapStudio": {
+      "title": "Virtuālās piemērošanas Studio | Visaulio",
+      "desc": "Uzlabota virtuālās piemērošanas studija - augšupielādē apģērba un modeles foto, lai iegūtu reālistisku AI rezultātu."
     }
   },
   "watermarkRemover": {
@@ -462,6 +486,239 @@
         "Pārlūkprogrammā balstītas AI palielināšanas galvenā priekšrocība ir pieejamība. Nav jāinstalē programmatūra, nav nepieciešamas tehniskas zināšanas un nav finansiālo šķēršļu. Augšupielādējiet failu, uzgaidiet dažas sekundes un lejupielādējiet augstas izšķirtspējas rezultātu.",
         "Rīks pilnībā darbojas pārlūkprogrammā un nekad neglabā jūsu fotoattēlus uz mūsu serveriem ilgāk nekā nepieciešams apstrādei. Jūsu attēli ir droši un privāti."
       ]
+    }
+  },
+  "removeBg": {
+    "seo": {
+      "title": "Noņemt fonu no attēla bez maksas – AI fona noņemšana tiešsaistē",
+      "description": "Noņemiet fonu jebkuram attēlam dažu sekunžu laikā. Bez reģistrācijas. Lejupielādējiet caurspīdīgu PNG."
+    },
+    "hero": {
+      "h1": "Noņemt fonu no attēla – bez maksas un uzreiz",
+      "subtitle": "Augšupielādējiet foto un AI automātiski noņem fonu. Caurspīdīgs PNG – bez reģistrācijas, bez ūdenszīmes. Kostenlos un ātri.",
+      "submit": "Noņemt fonu",
+      "submitLoading": "Noņem fonu..."
+    },
+    "description": {
+      "h2": "Bezmaksas fona noņemšana tiešsaistē – vienkārši un precīzi",
+      "text": "Rīks izmanto AI, lai noteiktu objektu fotogrāfijā un precīzi noņemtu fonu. Darbojas ar matiem, kažokādu, sarežģītām malām un produktu fotogrāfijām. Augšupielādējiet JPG, PNG vai WebP – saņemiet caurspīdīgu PNG."
+    },
+    "steps": {
+      "title": "Kā noņemt fonu 3 soļos",
+      "items": [
+        {
+          "title": "Augšupielādējiet attēlu",
+          "text": "Velciet un nometiet JPG, PNG vai WebP failu vai noklikšķiniet, lai pārlūkotu. Labākais rezultāts – ar skaidri nodalītu objektu."
+        },
+        {
+          "title": "AI noņem fonu",
+          "text": "Mākslīgais intelekts automātiski atpazīst objektu un noņem fonu. Nav nepieciešama manuāla atlase. Process ilgst dažas sekundes."
+        },
+        {
+          "title": "Lejupielādējiet caurspīdīgu PNG",
+          "text": "Attēls ir gatavs kā augstas izšķirtspējas caurspīdīgs PNG. Izmantojiet dizainā vai nomainiet fonu."
+        }
+      ]
+    },
+    "beforeAfter": {
+      "title": "Pirms un pēc: salīdziniet rezultātu",
+      "text": "AI saglabā smalkas detaļas – matu šķipsnas, produkta malas un ēnas – pilnīgi noņemot fonu. Objekts paliek ass, malas tīras."
+    },
+    "features": {
+      "title": "Kāpēc izmantot šo rīku",
+      "items": [
+        {
+          "title": "AI malu noteikšana",
+          "text": "Modelis apstrādā smalkas malas, tostarp matus un kažokādu. Jūs saņemat tīru izgriešanu bez manuālas labošanas."
+        },
+        {
+          "title": "Bez maksas un bez ūdenszīmes",
+          "text": "Noņemiet fonus un lejupielādējiet tīrus PNG failus. Nav ūdenszīmes, nav konta."
+        },
+        {
+          "title": "Darbojas jebkurā ierīcē",
+          "text": "Rīks darbojas pārlūkprogrammā – datorā, planšetdatorā un mobilajā tālrunī."
+        },
+        {
+          "title": "Jūsu attēli ir droši",
+          "text": "Faili tiek apstrādāti droši un automātiski dzēsti pēc lejupielādes. Tie netiek glabāti vai kopīgoti."
+        }
+      ]
+    },
+    "cardLeft": {
+      "title": "Produktu fotogrāfijām un e-komercijas vajadzībām",
+      "text": "Sagatavojiet produktu fotogrāfijas ar baltu vai caurspīdīgu fonu tiešsaistes veikaliem un katalogiem. Nav nepieciešama fotogrāfija vai sarežģīta programmatūra."
+    },
+    "cardRight": {
+      "title": "Dizaineriem, radošajiem un mārketinga speciālistiem",
+      "text": "Izmantojiet rezultātu Photoshop, Canva, Figma vai jebkurā rīkā, kas atbalsta PNG ar caurspīdīgumu."
+    },
+    "faq": {
+      "title": "Biežāk uzdotie jautājumi",
+      "items": [
+        {
+          "q": "Kā darbojas fona noņemšana?",
+          "a": "AI modelis atpazīst galveno objektu fotogrāfijā, atdala to no fona un noņem fona slāni, atstājot caurspīdīgu PNG. Process ir automātisks."
+        },
+        {
+          "q": "Vai rīks ir bezmaksas?",
+          "a": "Jā, rīks ir pilnīgi bezmaksas. Varat noņemt fonus un lejupielādēt PNG failus bez maksas un bez konta."
+        },
+        {
+          "q": "Kādus failu formātus var augšupielādēt?",
+          "a": "Var augšupielādēt JPG, JPEG, PNG un WebP. Rezultāts vienmēr ir PNG ar caurspīdīgu fonu."
+        },
+        {
+          "q": "Vai fona noņemšana samazina attēla kvalitāti?",
+          "a": "Nē. AI saglabā oriģinālo izšķirtspēju un detaļas. Lejupielādētais fails ir augstas izšķirtspējas."
+        },
+        {
+          "q": "Vai var noņemt fonu no portreta?",
+          "a": "Jā. Rīks labi darbojas ar portretiem un pilna auguma fotogrāfijām, precīzi nosakot matu malas."
+        },
+        {
+          "q": "Kāds ir maksimālais faila izmērs?",
+          "a": "Varat augšupielādēt failus līdz 25 MB."
+        },
+        {
+          "q": "Vai var mainīt fonu pēc noņemšanas?",
+          "a": "Jā. Lejupielādējiet caurspīdīgu PNG un atveriet to Canva, Photoshop vai Figma, lai pievienotu jaunu fonu."
+        },
+        {
+          "q": "Vai rīks ir drošs komerciāliem attēliem?",
+          "a": "Jā. Faili tiek apstrādāti drošā savienojumā un automātiski dzēsti pēc apstrādes."
+        }
+      ]
+    },
+    "seoText": {
+      "title": "Par šo bezmaksas AI fona noņemšanas rīku",
+      "paragraphs": [
+        "Iepriekš fona noņemšana no attēla prasīja manuālu darbu grafiskajā redaktorā. Tagad AI to dara automātiski.",
+        "Rīks analizē jūsu attēlu, nosaka galveno objektu un atdala to no fona. Rezultāts ir caurspīdīgs PNG fails, ko var izmantot jebkurā projektā.",
+        "Tehnoloģija tiek galā ar grūtajiem gadījumiem: mati, kažokāda, plānas siksnas un sarežģīti foni. Nav nepieciešami nekādi iestatījumi.",
+        "E-komercijas pārdevējiem tas nozīmē profesionālas produktu fotogrāfijas bez studijas. Dizaineriem – ātrāku darba procesu.",
+        "Rezultāts ir standarta caurspīdīgs PNG, saderīgs ar Photoshop, Canva, Figma un citiem rīkiem.",
+        "Nav limitu, nav ūdenszīmes, nav reģistrācijas. Attēli automātiski tiek dzēsti pēc darba pabeigšanas."
+      ]
+    }
+  },
+  "pdfExtract": {
+    "toolName": "PDF teksta ekstraktors",
+    "title": "PDF teksta ekstraktors",
+    "subtitle": "Iegūstiet visu tekstu no jebkura PDF dokumenta uzreiz. Augšupielādējiet failu un dažu sekunžu laikā saņemiet tīru, kopējamu tekstu.",
+    "seo": {
+      "title": "PDF teksta ekstraktors - izvelc tekstu no PDF bez maksas | Visaulio",
+      "description": "Izvelciet tekstu no PDF failiem uzreiz ar AI. Augšupielādējiet jebkuru PDF un saņemiet tīru, kopējamu tekstu. Bez maksas, ātri, bez reģistrācijas."
+    },
+    "upload": {
+      "button": "Izvēlēties PDF failu",
+      "dropHint": "Ievelc PDF failu šeit",
+      "maxSize": "Maksimums {{max}}MB"
+    },
+    "submit": "Izvilkt tekstu",
+    "loading": "Teksta izvilkšana...",
+    "result": {
+      "pageCount": "Lapas: {{count}}",
+      "charCount": "Rakstzīmes: {{count}}",
+      "copy": "Kopēt tekstu",
+      "copied": "Nokopēts!",
+      "download": "Lejupielādēt .txt",
+      "reset": "Izvilkt no citas PDF"
+    },
+    "error": {
+      "fileType": "Atļauti tikai PDF faili",
+      "fileSize": "Fails pārsniedz {{max}}MB limitu",
+      "noText": "Šajā PDF nav atrasts teksts. Iespējams, tas ir skenēts dokuments.",
+      "generic": "Kaut kas nogāja greizi. Lūdzu, mēģiniet vēlreiz."
+    }
+  },
+  "textToSpeech": {
+    "toolName": "Teksts uz runu",
+    "title": "Teksta parveidosanas runa generators",
+    "subtitle": "Parverstiet jebkuru tekstu dabiski skanosa audio acumirkli",
+    "seo": {
+      "title": "Bezmaksas teksta uz runu generators - AI balss tiesasaiste",
+      "description": "Parveidojiet tekstu dabiga runa tiesasaiste bez maksas. Izvelieties balss stilus, lejupieladejiet audio, AI darbinats."
+    },
+    "textPlaceholder": "Ierakstiet tekstu, ko velaties parveidot runa...",
+    "promptPlaceholder": "Aprakstiet balsi (neobligati): mierigas sievietes balss, dzils virietis...",
+    "voiceLabel": "Balss apraksts",
+    "textLabel": "Jusu teksts",
+    "presetsLabel": "Atras iestatnes",
+    "preset": {
+      "calm": "Mieriga un profesionala",
+      "energetic": "Energiska un draudziga",
+      "deep": "Dzila un autoritativa",
+      "soft": "Maiga un patikama"
+    },
+    "submit": "Generēt runu",
+    "loading": "Generē audio...",
+    "result": {
+      "download": "Lejupielādēt audio",
+      "again": "Ģenerēt vēlreiz",
+      "saved": "Saglabāts vēsturē"
+    },
+    "error": {
+      "textRequired": "Lūdzu ievadiet tekstu",
+      "textTooLong": "Tekstam jābūt īsākam par 500 rakstzīmēm",
+      "generic": "Kaut kas nogāja greizi. Lūdzu mēģiniet vēlreiz."
+    },
+    "steps": {
+      "title": "Kā tas darbojas",
+      "0": {
+        "title": "Ievadiet savu tekstu",
+        "desc": "Ierakstiet vai ielīmējiet jebkuru tekstu, ko vēlaties pārveidot runā. Līdz 500 rakstzīmēm vienā ģenerācijā."
+      },
+      "1": {
+        "title": "Izvēlieties balss stilu",
+        "desc": "Izvēlieties no iepriekš iestatītiem balss stiliem vai aprakstiet savas balss īpašības."
+      },
+      "2": {
+        "title": "Lejupielādējiet audio",
+        "desc": "Klausieties ģenerēto audio pārlūkprogrammā, pēc tam lejupielādējiet to kā audio failu."
+      }
+    },
+    "features": {
+      "title": "Kāpēc izmantot mūsu TTS",
+      "0": {
+        "title": "Dabīgi skanošas balsis",
+        "desc": "AI darbinātas balsis, kas skan pārsteidzoši cilvēcīgi un dabiski."
+      },
+      "1": {
+        "title": "500 rakstzīmes vienā ģenerācijā",
+        "desc": "Pietiek pilnam rindkopam vai īsai runai ar vienu klikšķi."
+      },
+      "2": {
+        "title": "Tūlītēji rezultāti",
+        "desc": "Saņemiet audio failu sekundēs, bez gaidīšanas."
+      },
+      "3": {
+        "title": "Saglabāts vēsturē",
+        "desc": "Katra ģenerācija tiek saglabāta un ir pieejama atkārtotai atskaņošanai un lejupielādei."
+      }
+    },
+    "faq": {
+      "title": "Bieži uzdotie jautājumi",
+      "0": {
+        "q": "Kādas valodas tiek atbalstītas?",
+        "a": "Rīks atbalsta vairākas valodas. Izvades valoda ir atkarīga no ievadītā teksta - vienkārši rakstiet vēlamajā valodā."
+      },
+      "1": {
+        "q": "Cik garš var būt teksts?",
+        "a": "Katra ģenerācija atbalsta līdz 500 rakstzīmēm - pietiekami īsai rindkopai vai paziņojumam."
+      },
+      "2": {
+        "q": "Vai es varu lejupielādēt audio?",
+        "a": "Jā, visus ģenerētos audio failus var lejupielādēt tieši no rezultātu paneļa. Faili tiek saglabāti jūsu vēsturē 7 dienas."
+      },
+      "3": {
+        "q": "Vai tas ir bezmaksas?",
+        "a": "Jā, teksta uz runu rīks pašlaik ir bezmaksas. Izveidojiet kontu, lai sāktu un saglabātu savas ģenerācijas."
+      }
+    },
+    "seoText": {
+      "title": "Par AI teksta uz runu tehnoloģiju",
+      "text": "Teksta uz runu tehnoloģija pārvērš rakstītu tekstu runātā audio, izmantojot uzlabotas AI modeļus. Mūsu rīks izmanto MiniMax balss dizainu, lai ģenerētu dabīgas, izteiksmīgas balsis no jebkura teksta ievades.\n\nNeatkarīgi no tā, vai jums ir nepieciešami video komentāri, pieejamības funkcijas, valodu mācīšanās rīki vai vienkārši vēlaties dzirdēt savu tekstu skaļi nolasītu, mūsu AI TTS ģenerators nekavējoties nodrošina augstas kvalitātes audio. Nav nepieciešams instalēt programmatūru - vienkārši ierakstiet, ģenerējiet un lejupielādējiet."
     }
   }
 }

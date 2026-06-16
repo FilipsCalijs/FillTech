@@ -1,6 +1,6 @@
 {
-  "title": "Blog",
-  "subtitle": "Insights, tutorials and updates from the FillTech team.",
+  "title": "AI Editing Tips and Tutorials - Visaulio Blog",
+  "subtitle": "Guides, tutorials, and updates on AI photo and video editing. Learn how to use Visaulio tools to get better results faster.",
   "readMore": "Read more",
   "publishedAt": "Published",
   "noPosts": "No posts found.",
@@ -63,5 +63,10 @@
     "edited": "(edited)",
     "deleteConfirm": "Delete comment?",
     "loginPrompt": "Sign in to leave a comment"
+  },
+  "likes": {
+    "like": "Like",
+    "liked": "Liked",
+    "count": "{{count}} likes"
   }
 }

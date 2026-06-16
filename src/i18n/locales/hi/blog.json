@@ -1,6 +1,6 @@
 {
   "title": "ब्लॉग",
-  "subtitle": "FillTech टीम से insights, tutorials और updates।",
+  "subtitle": "Visaulio टीम से insights, tutorials और updates।",
   "readMore": "और पढ़ें",
   "publishedAt": "प्रकाशित",
   "noPosts": "कोई पोस्ट नहीं मिली।",
@@ -63,5 +63,10 @@
     "edited": "(संपादित)",
     "deleteConfirm": "टिप्पणी हटाएं?",
     "loginPrompt": "टिप्पणी करने के लिए साइन इन करें"
+  },
+  "likes": {
+    "like": "पसंद करें",
+    "liked": "पसंद किया",
+    "count": "{{count}} पसंद"
   }
 }

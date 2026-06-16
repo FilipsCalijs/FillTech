@@ -1,13 +1,55 @@
 {
-  "watermark-remover": { "name": "워터마크 제거기", "desc": "AI로 모든 이미지에서 워터마크 제거" },
-  "bg-remover": { "name": "배경 제거기", "desc": "수초 만에 사진 배경 제거" },
-  "upscaler": { "name": "업스케일러", "desc": "품질 손실 없이 이미지를 최대 4배 확대" },
-  "layers-cutter": { "name": "레이어 커터", "desc": "이미지에서 개체를 별도 레이어로 분리" },
-  "ps2-filter": { "name": "PS2 필터", "desc": "모든 사진에 레트로 PS2 스타일 필터 적용" },
-  "ai-svg-maker": { "name": "AI SVG 메이커", "desc": "모든 이미지를 깔끔한 SVG 벡터로 변환" },
-  "clothes-swap": { "name": "옷 교체", "desc": "AI로 다양한 의상 착용해보기" },
-  "photo-colorize": { "name": "사진 채색", "desc": "AI로 흑백 사진 채색" },
-  "pdf-extractor": { "name": "PDF 추출기", "desc": "PDF 파일에서 텍스트 및 데이터 추출" },
-  "portrait": { "name": "포트레이트", "desc": "AI로 멋진 인물 사진 만들기" },
+  "watermark-remover": {
+    "name": "워터마크 제거기",
+    "desc": "AI로 모든 이미지에서 워터마크 제거"
+  },
+  "bg-remover": {
+    "name": "배경 제거기",
+    "desc": "수초 만에 사진 배경 제거"
+  },
+  "upscaler": {
+    "name": "업스케일러",
+    "desc": "품질 손실 없이 이미지를 최대 4배 확대"
+  },
+  "layers-cutter": {
+    "name": "레이어 커터",
+    "desc": "이미지에서 개체를 별도 레이어로 분리"
+  },
+  "ps2-filter": {
+    "name": "PS2 필터",
+    "desc": "모든 사진에 레트로 PS2 스타일 필터 적용"
+  },
+  "ai-svg-maker": {
+    "name": "AI SVG 메이커",
+    "desc": "모든 이미지를 깔끔한 SVG 벡터로 변환"
+  },
+  "clothes-swap": {
+    "name": "옷 교체",
+    "desc": "AI로 다양한 의상 착용해보기"
+  },
+  "photo-colorize": {
+    "name": "사진 채색",
+    "desc": "AI로 흑백 사진 채색"
+  },
+  "pdf-extractor": {
+    "name": "PDF 추출기",
+    "desc": "PDF 파일에서 텍스트 및 데이터 추출"
+  },
+  "portrait": {
+    "name": "포트레이트",
+    "desc": "AI로 멋진 인물 사진 만들기"
+  },
+  "voice-clone": {
+    "name": "음성 복제",
+    "desc": "짧은 오디오 샘플로 모든 음성을 복제"
+  },
+  "vocal-isolator": {
+    "name": "보컬 분리기",
+    "desc": "모든 오디오 트랙에서 보컬을 음악과 분리"
+  },
+  "text-to-speech": {
+    "name": "텍스트를 음성으로",
+    "desc": "모든 텍스트를 자연스러운 오디오로 변환하세요"
+  },
   "tryIt": "→ 사용해보기"
 }

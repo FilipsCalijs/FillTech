@@ -9,6 +9,7 @@ import OtherProducts from '@/lib/OtherProducts';
 import RelevantBlogs from '@/components/ui/RelevantBlogs';
 import ResultPanel from '@/components/ui/ResultPanel';
 import { API_URL as API } from '@/config/api';
+import { useAuthModal } from '@/contexts/AuthModalContext';
 
 const AiPortrait = () => {
   const { t } = useTranslation('tools');
@@ -20,6 +21,7 @@ const AiPortrait = () => {
   const [generationId, setGenerationId] = useState(null);
   const [error,        setError]        = useState(null);
   const fileRef = useRef(null);
+  const { requireAuth } = useAuthModal();
 
   const MAX_MB   = 22;
   const MAX_SIZE = MAX_MB * 1024 * 1024;
@@ -44,6 +46,7 @@ const AiPortrait = () => {
 
   const handleGenerate = async ({ prompt, gender, style, poseId, ratio }) => {
     if (!file) return;
+    if (!requireAuth()) return;
     const fullPrompt = buildPrompt({ gender, style, userPrompt: prompt, poseId });
     setLoading(true);
     setError(null);

@@ -6,7 +6,7 @@ const BASE   = process.env.PUBLIC_URL || 'https://visaulio.com';
 const LANGS  = ['en', 'ru', 'lv', 'de'];
 
 const STATIC_PATHS = [
-  '/explore',
+  '/tools',
   '/blog',
   '/tools/portrait',
   '/tools/bg-remover',

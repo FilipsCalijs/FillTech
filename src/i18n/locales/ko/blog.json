@@ -1,6 +1,6 @@
 {
   "title": "블로그",
-  "subtitle": "FillTech 팀의 인사이트, 튜토리얼 및 업데이트.",
+  "subtitle": "Visaulio 팀의 인사이트, 튜토리얼 및 업데이트.",
   "readMore": "더 읽기",
   "publishedAt": "게시됨",
   "noPosts": "게시물이 없습니다.",
@@ -63,5 +63,10 @@
     "edited": "(수정됨)",
     "deleteConfirm": "댓글을 삭제할까요?",
     "loginPrompt": "댓글을 남기려면 로그인하세요"
+  },
+  "likes": {
+    "like": "좋아요",
+    "liked": "좋아요 누름",
+    "count": "좋아요 {{count}}개"
   }
 }

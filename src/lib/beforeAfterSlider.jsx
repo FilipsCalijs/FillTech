@@ -17,7 +17,6 @@ export default function BeforeAfterSlider({
   const direction = useRef(1);
   const animationRef = useRef(null);
 
-  // Авто-анимация target
   useEffect(() => {
     if (!autoAnimate) return;
 
@@ -33,7 +32,6 @@ export default function BeforeAfterSlider({
         }
       }
 
-      // Лерп к targetPos
       setPosition((pos) => pos + (targetPos.current - pos) * smoothFactor);
 
       animationRef.current = requestAnimationFrame(animate);
@@ -44,7 +42,6 @@ export default function BeforeAfterSlider({
     return () => cancelAnimationFrame(animationRef.current);
   }, [autoAnimate, autoSpeed, smoothFactor]);
 
-  // Hover → плавно к мышке
   const handleMouseMove = (e) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();

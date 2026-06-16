@@ -5,13 +5,6 @@ import { API_URL } from '@/config/api';
 
 const API_BASE = `${API_URL}/api/tools`;
 
-/**
- * Универсальный хук для любого AI-инструмента.
- * @param {string} toolName - название инструмента (watermark-remove, bg-remove, etc.)
- *
- * Использование:
- *   const { file, previewUrl, loading, resultUrl, error, handleFileDrop, handleSubmit } = useToolProcessor('watermark-remove');
- */
 export function useToolProcessor(toolName) {
   const { currentUser } = useAuth();
   const [file, setFile] = useState(null);

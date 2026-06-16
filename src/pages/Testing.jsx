@@ -8,6 +8,7 @@ import OtherProducts from '@/lib/OtherProducts';
 import RelevantBlogs from '@/components/ui/RelevantBlogs';
 import ResultPanel from '@/components/ui/ResultPanel';
 import { API_URL as API } from '@/config/api';
+import { useAuthModal } from '@/contexts/AuthModalContext';
 
 const RATIOS = ['1:1', '3:2', '2:3', '4:3', '3:4', '16:9', '9:16', '4:5', '5:4', '21:9'];
 
@@ -25,6 +26,7 @@ const Ps2Filter = () => {
   const [ratioOpen,  setRatioOpen]  = useState(false);
   const fileRef  = useRef(null);
   const ratioRef = useRef(null);
+  const { requireAuth } = useAuthModal();
 
   const MAX_MB   = 22;
   const MAX_SIZE = MAX_MB * 1024 * 1024;
@@ -49,6 +51,7 @@ const Ps2Filter = () => {
 
   const handleGenerate = async () => {
     if (!file) return;
+    if (!requireAuth()) return;
     setLoading(true);
     setError(null);
     setResultUrl(null);
@@ -79,7 +82,7 @@ const Ps2Filter = () => {
 
   return (
     <div className={`py-12 ${CONTAINER.blog}`}>
-      <PageSEO title={t('seo.gameFilter.title')} description={t('seo.gameFilter.desc')} path="/tools/game-filter" />
+      <PageSEO title={t('seo.gameFilter.title')} description={t('seo.gameFilter.desc')} path="/tools/ps2-filter" />
       <Typography variant="h2" weight="bold" className="block mb-2">{t('gameFilter.title')}</Typography>
       <Typography variant="lead" color="muted" className="block mb-10">{t('gameFilter.subtitle')}</Typography>
 

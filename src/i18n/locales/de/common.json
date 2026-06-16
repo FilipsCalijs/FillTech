@@ -1,6 +1,6 @@
 {
   "nav": {
-    "explore": "Entdecken",
+    "tools": "Werkzeuge",
     "blog": "Blog",
     "gameFilter": "Spielfilter",
     "voice": "Stimmklon",
@@ -45,7 +45,7 @@
     "required": "Dieses Feld ist erforderlich",
     "wentWrong": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
   },
-  "exploreSubtitle": "Leistungsstarke KI-Werkzeuge zur Bearbeitung von Bildern und Dateien.",
+  "toolsSubtitle": "Leistungsstarke KI-Werkzeuge zur Bearbeitung von Bildern und Dateien.",
   "notFound": {
     "title": "Seite nicht gefunden",
     "desc": "Diese Seite existiert leider nicht oder wurde verschoben.",
@@ -58,37 +58,42 @@
   "current": "Aktuell",
   "footer": {
     "rights": "Alle Rechte vorbehalten.",
-    "description": "FillTech bietet KI-gestützte Werkzeuge für Bild- und Videoverarbeitung. Hintergründe entfernen, Fotos verbessern, Kleidung tauschen und mehr - sofort und mühelos. Probieren Sie FillTech heute aus.",
+    "description": "Visaulio bietet KI-gestützte Werkzeuge für Bild- und Videoverarbeitung. Hintergründe entfernen, Fotos verbessern, Kleidung tauschen und mehr - sofort und mühelos. Probieren Sie Visaulio heute aus.",
     "legal": "Rechtliches",
     "tools": "Werkzeuge",
     "terms": "Nutzungsbedingungen",
     "privacy": "Datenschutzrichtlinie",
-    "cookies": "Cookie-Richtlinie"
+    "cookies": "Cookie-Richtlinie",
+    "contact": "Kontakt"
   },
   "seo": {
-    "explore": {
-      "title": "KI-Werkzeuge entdecken - Alle Effekte | FillTech",
+    "tools": {
+      "title": "KI-Werkzeuge - Alle Effekte | Visaulio",
       "desc": "Entdecke alle KI-Werkzeuge: Porträt-Editor, Hintergrundentferner, Wasserzeichen-Entferner, Foto-Colorizer und mehr."
     },
+    "contact": {
+      "title": "Kontakt | Visaulio",
+      "desc": "Kontaktieren Sie das Visaulio-Team für Support, Feedback oder Partnerschaftsanfragen."
+    },
     "history": {
-      "title": "Verlauf - Meine Generierungen | FillTech",
-      "desc": "Alle KI-Generierungen anzeigen und verwalten. Ergebnisse herunterladen oder löschen. Wird 7 Tage gespeichert."
+      "title": "Generierungsverlauf | Visaulio",
+      "desc": "Sieh und verwalte alle deine KI-generierten Inhalte: Bilder, Audio, Videos. Herunterladen oder löschen. Dateien werden 7 Tage aufbewahrt."
     },
     "billing": {
-      "title": "Abrechnung - Kontoguthaben | FillTech",
+      "title": "Abrechnung - Kontoguthaben | Visaulio",
       "desc": "Guthaben verwalten, Ausgabenhistorie anzeigen und automatische Aufladung für KI-Generierungen konfigurieren."
     },
     "terms": {
-      "title": "Nutzungsbedingungen | FillTech",
-      "desc": "Lesen Sie die Nutzungsbedingungen von FillTech."
+      "title": "Nutzungsbedingungen | Visaulio",
+      "desc": "Lesen Sie die Nutzungsbedingungen von Visaulio."
     },
     "privacy": {
-      "title": "Datenschutzrichtlinie | FillTech",
-      "desc": "Erfahren Sie, wie FillTech Ihre persönlichen Daten erhebt, verwendet und schützt."
+      "title": "Datenschutzrichtlinie | Visaulio",
+      "desc": "Erfahren Sie, wie Visaulio Ihre persönlichen Daten erhebt, verwendet und schützt."
     },
     "cookies": {
-      "title": "Cookie-Richtlinie | FillTech",
-      "desc": "Erfahren Sie, wie FillTech Cookies und ähnliche Technologien verwendet."
+      "title": "Cookie-Richtlinie | Visaulio",
+      "desc": "Erfahren Sie, wie Visaulio Cookies und ähnliche Technologien verwendet."
     }
   }
 }

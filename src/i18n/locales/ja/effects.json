@@ -1,13 +1,55 @@
 {
-  "watermark-remover": { "name": "透かし除去", "desc": "AIで画像から透かしを除去" },
-  "bg-remover": { "name": "背景削除", "desc": "数秒で写真から背景を削除" },
-  "upscaler": { "name": "アップスケーラー", "desc": "品質を損なわずに画像を最大4倍に拡大" },
-  "layers-cutter": { "name": "レイヤーカッター", "desc": "画像からオブジェクトを個別レイヤーに切り取り" },
-  "ps2-filter": { "name": "PS2フィルター", "desc": "PS2スタイルのレトロフィルターを任意の写真に適用" },
-  "ai-svg-maker": { "name": "AI SVGメーカー", "desc": "任意の画像をクリーンなSVGベクターに変換" },
-  "clothes-swap": { "name": "服装交換", "desc": "AIで異なる服装を試着" },
-  "photo-colorize": { "name": "写真カラー化", "desc": "AIで白黒写真をカラー化" },
-  "pdf-extractor": { "name": "PDF抽出ツール", "desc": "PDFファイルからテキストとデータを抽出" },
-  "portrait": { "name": "ポートレート", "desc": "AIでスタイリッシュなポートレート写真を作成" },
+  "watermark-remover": {
+    "name": "透かし除去",
+    "desc": "AIで画像から透かしを除去"
+  },
+  "bg-remover": {
+    "name": "背景削除",
+    "desc": "数秒で写真から背景を削除"
+  },
+  "upscaler": {
+    "name": "アップスケーラー",
+    "desc": "品質を損なわずに画像を最大4倍に拡大"
+  },
+  "layers-cutter": {
+    "name": "レイヤーカッター",
+    "desc": "画像からオブジェクトを個別レイヤーに切り取り"
+  },
+  "ps2-filter": {
+    "name": "PS2フィルター",
+    "desc": "PS2スタイルのレトロフィルターを任意の写真に適用"
+  },
+  "ai-svg-maker": {
+    "name": "AI SVGメーカー",
+    "desc": "任意の画像をクリーンなSVGベクターに変換"
+  },
+  "clothes-swap": {
+    "name": "服装交換",
+    "desc": "AIで異なる服装を試着"
+  },
+  "photo-colorize": {
+    "name": "写真カラー化",
+    "desc": "AIで白黒写真をカラー化"
+  },
+  "pdf-extractor": {
+    "name": "PDF抽出ツール",
+    "desc": "PDFファイルからテキストとデータを抽出"
+  },
+  "portrait": {
+    "name": "ポートレート",
+    "desc": "AIでスタイリッシュなポートレート写真を作成"
+  },
+  "voice-clone": {
+    "name": "ボイスクローン",
+    "desc": "短い音声サンプルから声を複製"
+  },
+  "vocal-isolator": {
+    "name": "ボーカルアイソレーター",
+    "desc": "音楽からボーカルを分離"
+  },
+  "text-to-speech": {
+    "name": "テキスト読み上げ",
+    "desc": "任意のテキストを自然な音声に変換します"
+  },
   "tryIt": "→ 試す"
 }

@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Globe, Sun, Moon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../contexts/authContext';
 import { doSignOut } from '../../firebase/auth';
 import { Button } from '@/components/ui/Button';
 import { SUPPORTED_LANGS } from '@/i18n/index';
 import { useLang } from '@/contexts/LangContext';
+import { useAuthModal } from '@/contexts/AuthModalContext';
 import { API_URL as API } from '@/config/api';
 
 const LANG_LABELS = { en: 'EN', ru: 'RU', lv: 'LV', de: 'DE', pt: 'PT', es: 'ES', ja: '日本語', hi: 'हिंदी', ko: '한국어', zh: '中文' };
@@ -27,6 +29,7 @@ const Header = ({ isDark, toggleTheme }) => {
   const lang                           = useLang();
   const userRole                       = localStorage.getItem('userRole');
   const placeholderAvatar              = '/vite.svg';
+  const { openAuthModal }              = useAuthModal();
 
   const [open,       setOpen]       = useState(false);
   const [langOpen,   setLangOpen]   = useState(false);
@@ -56,7 +59,7 @@ const Header = ({ isDark, toggleTheme }) => {
     doSignOut().then(() => {
       localStorage.removeItem('userRole');
       setOpen(false);
-      navigate(`/${lang}/login`);
+      navigate(`/${lang}/tools`);
     });
   };
 
@@ -76,19 +79,13 @@ const Header = ({ isDark, toggleTheme }) => {
       <NavLink to='/home' className='mr-10 shrink-0'>
         <img
           src={isDark ? '/logo/logo-dark.png' : '/logo/logo-light.png'}
-          alt="FillTech"
+          alt="Visaulio"
           className='h-8 w-auto'
         />
       </NavLink>
 
-      <NavLink to='/explore' className={linkCls}>{t('nav.explore')}</NavLink>
-      <NavLink to='/blog'    className={linkCls}>{t('nav.blog')}</NavLink>
-      <NavLink to='/testing' className={linkCls}>{t('nav.gameFilter')}</NavLink>
-      <NavLink to='/testing-2'           className={linkCls}>{t('nav.voice')}</NavLink>
-      <NavLink to='/tools/vocal-isolator' className={linkCls}>{t('nav.vocalIsolator')}</NavLink>
-      <NavLink to='/tools/clothes-swap' className={linkCls}>{t('nav.clothes')}</NavLink>
-      <NavLink to='/plan'    className={linkCls}>{t('nav.plan')}</NavLink>
-      <NavLink to='/primer'  className={linkCls}>Primer</NavLink>
+      <NavLink to='/tools' className={linkCls}>{t('nav.tools')}</NavLink>
+      <NavLink to='/blog'  className={linkCls}>{t('nav.blog')}</NavLink>
 
       {userLoggedIn && userRole === 'admin' && (
         <NavLink to='/admin/users'
@@ -103,8 +100,9 @@ const Header = ({ isDark, toggleTheme }) => {
       <div ref={langMenuRef} className='relative'>
         <button
           onClick={() => setLangOpen(v => !v)}
-          className='flex items-center gap-1 px-2.5 py-1 rounded-lg border border-border text-xs font-bold text-foreground hover:border-foreground/40 transition-all'
+          className='flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-border text-xs font-bold text-foreground hover:border-foreground/40 transition-all'
         >
+          <Globe size={14} />
           {LANG_LABELS[lang] ?? lang.toUpperCase()}
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
             className={`transition-transform ${langOpen ? 'rotate-180' : ''}`}>
@@ -124,34 +122,28 @@ const Header = ({ isDark, toggleTheme }) => {
         )}
       </div>
 
-      <Button onClick={toggleTheme} variant="outline" size="sm">
-        {isDark ? t('theme.light') : t('theme.dark')}
+      <Button onClick={toggleTheme} variant="outline" size="sm" aria-label={isDark ? t('theme.light') : t('theme.dark')}>
+        {isDark ? <Sun size={16} /> : <Moon size={16} />}
       </Button>
 
       {userLoggedIn && currentUser ? (
         <>
-          {/* Balance */}
-          <div className='flex items-center gap-1.5'>
-            <NavLink to='/billing'
-              className='text-sm font-mono font-semibold text-foreground hover:text-primary transition-colors'>
-              {balance === null ? '...' : `$${parseFloat(balance).toFixed(2)}`}
-            </NavLink>
-            <NavLink to='/billing' title={t('actions.addFunds')}
-              className='w-5 h-5 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/60 transition-all'>
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-              </svg>
-            </NavLink>
-          </div>
-
-          {/* Avatar dropdown */}
-          <div ref={dropdownRef} className='relative ml-1'>
-            <button onClick={() => setOpen(v => !v)}
-              className='flex items-center gap-1.5 rounded-full focus:outline-none'>
-              <img src={currentUser.photoURL || placeholderAvatar} alt="Profile"
-                className='w-8 h-8 rounded-full border border-border object-cover'
-                onError={(e) => { e.target.src = placeholderAvatar; }} />
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+          {/* Combined avatar + balance pill */}
+          <div ref={dropdownRef} className='relative'>
+            <button
+              onClick={() => setOpen(v => !v)}
+              className='flex items-center gap-2 pl-1 pr-3 py-1 rounded-full border border-border bg-card hover:border-foreground/40 transition-all focus:outline-none'
+            >
+              <img
+                src={currentUser.photoURL || placeholderAvatar}
+                alt="Profile"
+                className='w-7 h-7 rounded-full object-cover shrink-0'
+                onError={(e) => { e.target.src = placeholderAvatar; }}
+              />
+              <span className='text-sm font-mono font-semibold text-foreground'>
+                {balance === null ? '...' : `$${parseFloat(balance).toFixed(2)}`}
+              </span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
                 className={`text-muted-foreground transition-transform duration-200 ${open ? 'rotate-180' : ''}`}>
                 <path d="M6 9l6 6 6-6"/>
               </svg>
@@ -177,10 +169,6 @@ const Header = ({ isDark, toggleTheme }) => {
                       {balance !== null && `$${parseFloat(balance).toFixed(2)}`}
                     </span>
                   </NavLink>
-                  <NavLink to='/plan' onClick={() => setOpen(false)}
-                    className='flex items-center gap-2 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors'>
-                    {t('nav.plan')}
-                  </NavLink>
                 </div>
                 <div className='border-t border-border pt-1'>
                   <button onClick={handleSignOut}
@@ -194,8 +182,8 @@ const Header = ({ isDark, toggleTheme }) => {
         </>
       ) : (
         <div className='flex gap-x-4'>
-          <NavLink to='/login'    className='text-sm text-primary underline'>{t('nav.login')}</NavLink>
-          <NavLink to='/register' className='text-sm text-primary underline'>{t('nav.register')}</NavLink>
+          <button onClick={() => openAuthModal('login')}    className='text-sm text-primary underline'>{t('nav.login')}</button>
+          <button onClick={() => openAuthModal('register')} className='text-sm text-primary underline'>{t('nav.register')}</button>
         </div>
       )}
     </nav>

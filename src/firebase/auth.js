@@ -41,9 +41,8 @@ export const doSignInWithEmailAndPassword = async (email, password) => {
     const result = await signInWithEmailAndPassword(auth, email, password);
     return result;
   } catch (error) {
-    // Это позволит увидеть конкретную причину ошибки (например, INVALID_PASSWORD)
     console.error("Firebase Auth Error:", error.code, error.message);
-    throw error; // Пробрасываем ошибку дальше в компонент Login
+    throw error;
   }
 };
 

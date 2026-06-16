@@ -1,6 +1,6 @@
 {
   "nav": {
-    "explore": "探索",
+    "tools": "ツール",
     "blog": "ブログ",
     "gameFilter": "ゲームフィルター",
     "voice": "音声クローン",
@@ -45,7 +45,7 @@
     "required": "このフィールドは必須です",
     "wentWrong": "エラーが発生しました。もう一度お試しください。"
   },
-  "exploreSubtitle": "画像やファイルを変換する強力なAIツール。",
+  "toolsSubtitle": "画像やファイルを変換する強力なAIツール。",
   "notFound": {
     "title": "ページが見つかりません",
     "desc": "申し訳ありませんが、このページは存在しないか移動されました。",
@@ -58,37 +58,42 @@
   "current": "現在",
   "footer": {
     "rights": "全著作権所有。",
-    "description": "FillTechは画像・動画処理のAIツールを提供します。背景削除、写真強化、衣装交換など、即座に簡単に。",
+    "description": "Visaulioは画像・動画処理のAIツールを提供します。背景削除、写真強化、衣装交換など、即座に簡単に。",
     "legal": "法的情報",
     "tools": "ツール",
     "terms": "利用規約",
     "privacy": "プライバシーポリシー",
-    "cookies": "Cookieポリシー"
+    "cookies": "Cookieポリシー",
+    "contact": "お問い合わせ"
   },
   "seo": {
-    "explore": {
-      "title": "AIツールを探索 - 全エフェクト | FillTech",
+    "tools": {
+      "title": "AIツール - 全エフェクト | Visaulio",
       "desc": "すべてのAIツールを発見: ポートレートエディター、背景削除、透かし削除、写真カラー化など。"
     },
+    "contact": {
+      "title": "お問い合わせ | Visaulio",
+      "desc": "サポート、フィードバック、提携に関するお問い合わせはVisaulioチームまでご連絡ください。"
+    },
     "history": {
-      "title": "マイ履歴 - 生成コンテンツ | FillTech",
-      "desc": "AI生成コンテンツをすべて表示・管理。生成物をダウンロードまたは削除できます。結果は7日間保持。"
+      "title": "生成履歴 | Visaulio",
+      "desc": "AI生成したすべてのコンテンツ（画像、音声、動画）を表示・管理できます。ダウンロードまたは削除可能。ファイルは7日間保存されます。"
     },
     "billing": {
-      "title": "請求 - アカウント残高 | FillTech",
+      "title": "請求 - アカウント残高 | Visaulio",
       "desc": "残高管理、支出履歴の確認、AI生成の自動チャージ設定。"
     },
     "terms": {
-      "title": "利用規約 | FillTech",
-      "desc": "FillTechの利用規約と使用条件をお読みください。"
+      "title": "利用規約 | Visaulio",
+      "desc": "Visaulioの利用規約と使用条件をお読みください。"
     },
     "privacy": {
-      "title": "プライバシーポリシー | FillTech",
-      "desc": "FillTechが個人データをどのように収集・使用・保護するかをご覧ください。"
+      "title": "プライバシーポリシー | Visaulio",
+      "desc": "Visaulioが個人データをどのように収集・使用・保護するかをご覧ください。"
     },
     "cookies": {
-      "title": "Cookieポリシー | FillTech",
-      "desc": "FillTechがCookieおよび追跡技術をどのように使用するかをご理解ください。"
+      "title": "Cookieポリシー | Visaulio",
+      "desc": "VisaulioがCookieおよび追跡技術をどのように使用するかをご理解ください。"
     }
   }
 }

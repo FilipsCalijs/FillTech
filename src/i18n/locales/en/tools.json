@@ -90,7 +90,27 @@
     "uploadImage": "Upload Image",
     "clickToChange": "Click to change",
     "woman": "Woman",
-    "man": "Man"
+    "man": "Man",
+    "heroTitle": "Virtual Try-On",
+    "heroSubtitle": "See any garment on a model - no photoshoot needed.",
+    "studioCta": "Try Virtual Try-On Studio for free",
+    "studio": {
+      "uploadGarment": "Upload Garment",
+      "uploadModel": "Upload Model",
+      "fileHint": "PNG, JPG or WebP",
+      "chooseFromLibrary": "Choose from Library",
+      "revealing": "This upload contains revealing or intimate apparel (e.g. swimwear, lingerie).",
+      "extraNotes": "Extra Notes",
+      "optional": "Optional",
+      "extraNotesPlaceholder": "Add fit, styling or preservation notes, e.g. loose fit, keep face unchanged.",
+      "aiEnhance": "AI Enhance",
+      "aspectRatio": "Aspect Ratio",
+      "auto": "Auto",
+      "resolution": "Resolution",
+      "outputCount": "Output Count",
+      "formula": "{{g}} garment × {{m}} model × {{n}} = {{total}} image",
+      "clear": "Clear"
+    }
   },
   "upscaler": {
     "title": "AI Upscaler",
@@ -116,70 +136,74 @@
   },
   "seo": {
     "portrait": {
-      "title": "AI Portrait Editor - Transform Your Photos | FillTech",
-      "desc": "Upload your photo and transform it with AI portrait editing. Choose gender, style, pose and lighting. Powered by Google Gemini."
+      "title": "AI Portrait Generator - Turn Photos into Art - Visaulio",
+      "desc": "Transform any photo into a styled AI portrait. Choose gender, pose, and artistic style. Upload your photo and get a result in under 30 seconds."
     },
     "gameFilter": {
-      "title": "Game Filter - Turn Photos into Game Screenshots | FillTech",
-      "desc": "Convert any photo into a retro video game screenshot. 7 styles: PS2, Arcade, 8-bit, PS3, Anime, AAA and more."
+      "title": "Game Filter - Turn Photos into Game Screenshots - Visaulio",
+      "desc": "Transform any photo into a retro game screenshot with AI. Choose from Arcade, 8-bit, 16-bit, PS2, PS3, Anime, and AAA styles."
     },
     "bgRemover": {
-      "title": "Background Remover - Free AI Background Removal | FillTech",
-      "desc": "Remove image backgrounds instantly with AI. Get transparent PNG in seconds. Perfect for product photos and portraits."
+      "title": "Background Remover - Remove Image Background - Visaulio",
+      "desc": "Remove the background from any photo with AI. Upload your image, get a clean cutout in seconds. No manual selection, no Photoshop needed."
     },
     "watermark": {
-      "title": "Watermark Remover - Remove Watermarks with AI | FillTech",
-      "desc": "Intelligently remove text and logo watermarks from photos while preserving original texture and quality."
+      "title": "Watermark Remover - Remove Watermarks from Photos - Visaulio",
+      "desc": "Remove watermarks from photos with AI. Upload your image and get a clean version in seconds. Works on text watermarks, logos, and stamps."
     },
     "videoWatermark": {
-      "title": "Video Watermark Remover - Remove Watermarks from Video | FillTech",
-      "desc": "Remove watermarks from any video with AI. Frame-by-frame processing preserves original video quality."
+      "title": "Video Watermark Remover - Clean Any Video - Visaulio",
+      "desc": "Remove watermarks from video files with AI. Upload a video up to 500 MB and get a clean version without logos, text overlays, or stamps."
     },
     "colorize": {
-      "title": "Photo Colorizer - Colorize Black & White Photos | FillTech",
-      "desc": "Bring old black and white photos to life with AI colorization. Realistic colors added automatically in seconds."
+      "title": "Photo Colorizer - Colorize Black and White Photos - Visaulio",
+      "desc": "Add color to black and white photos with AI. Upload any old photo and get a realistic colorized version in seconds. Works on portraits and landscapes."
     },
     "clothesSwap": {
-      "title": "Clothes Swap - Try On Outfits with AI | FillTech",
-      "desc": "Try on different outfits virtually with AI. Upload your portrait and a clothing image to see the instant result."
+      "title": "Clothes Swap - Try On Any Outfit with AI - Visaulio",
+      "desc": "Put any outfit on a photo with AI. Upload a model photo and an outfit image, and get a realistic virtual try-on result in under a minute."
     },
     "videoBg": {
-      "title": "Video BG Replace - Replace Video Backgrounds with AI | FillTech",
-      "desc": "Remove or replace the background of any video using AI. Upload a video and an optional background image."
+      "title": "Video Background Remover and Replacer - Visaulio",
+      "desc": "Remove or replace the background in any video with AI. No green screen needed. Upload a video up to 500 MB and add any background image."
     },
     "upscaler": {
-      "title": "AI Upscaler - Enlarge Images 4× Without Quality Loss | FillTech",
-      "desc": "Upscale photos and images up to 4× using AI super-resolution. Recover fine details without any quality loss."
+      "title": "AI Image Upscaler - Increase Photo Resolution - Visaulio",
+      "desc": "Upscale any image up to 4x with AI. Increase photo resolution without losing quality. Works on portraits, landscapes, and product photos."
     },
     "voiceClone": {
-      "title": "Voice Cloning - Clone Any Voice with AI | FillTech",
-      "desc": "Clone any voice from a 3–10 second audio sample. Convert text to speech in 600+ languages with your voice."
+      "title": "Voice Cloning - Clone Any Voice with AI - Visaulio",
+      "desc": "Clone any voice from a short audio sample with AI. Upload 3 to 10 seconds of audio, type your text, and get a realistic voice clone in seconds."
     },
     "vocalIsolator": {
-      "title": "Vocal Isolator - Separate Vocals from Music | FillTech",
-      "desc": "AI-powered vocal isolation. Upload any song and extract clean vocals from the instrumental track instantly."
+      "title": "Vocal Isolator - Separate Vocals from Music - Visaulio",
+      "desc": "Separate vocals from any song or audio track with AI. Upload an audio file and get isolated vocals and instrumental stems as separate downloads."
     },
-    "explore": {
-      "title": "Explore AI Tools - All Effects | FillTech",
+    "tools": {
+      "title": "AI Tools - All Effects | Visaulio",
       "desc": "Discover all AI-powered tools: portrait editor, background remover, watermark remover, photo colorizer and more."
     },
     "blog": {
-      "title": "Blog - AI Tools Tips & News | FillTech",
-      "desc": "Read articles, tutorials and news about AI image and video processing tools from the FillTech team."
+      "title": "Blog - AI Tools Tips & News | Visaulio",
+      "desc": "Read articles, tutorials and news about AI image and video processing tools from the Visaulio team."
     },
     "history": {
-      "title": "My History - Generated Content | FillTech",
+      "title": "My History - Generated Content | Visaulio",
       "desc": "View and manage all your AI-generated content. Download or delete your generations. Results kept for 7 days."
     },
     "billing": {
-      "title": "Billing - Account Balance | FillTech",
+      "title": "Billing - Account Balance | Visaulio",
       "desc": "Manage your balance, view spending history and configure automatic top-ups for AI generations."
+    },
+    "clothesSwapStudio": {
+      "title": "Virtual Try-On Studio | Visaulio",
+      "desc": "Advanced virtual try-on studio - upload a garment and a model photo to generate a realistic AI try-on result."
     }
   },
   "watermarkRemover": {
     "seo": {
-      "title": "Free AI Watermark Remover - Remove Watermarks Online",
-      "description": "Remove watermarks from photos online for free. AI erases text, logos, timestamps in seconds. No Photoshop, no sign-up needed."
+      "title": "Watermark Remover - Remove Watermarks from Photos - Visaulio",
+      "description": "Remove watermarks from photos with AI. Upload your image and get a clean version in seconds. Works on text watermarks, logos, and stamps."
     },
     "hero": {
       "h1": "AI Online Watermark Remover",
@@ -367,8 +391,8 @@
   },
   "imageUpscaler": {
     "seo": {
-      "title": "Free AI Image Upscaler – Increase Resolution to 4K Online",
-      "description": "Upscale any image to 4K for free with our AI image upscaler. Increase photo resolution without losing quality. No sign-up, no watermark. Works on JPG, PNG, WebP."
+      "title": "AI Image Upscaler - Increase Photo Resolution - Visaulio",
+      "description": "Upscale any image up to 4x with AI. Increase photo resolution without losing quality. Works on portraits, landscapes, and product photos."
     },
     "hero": {
       "h1": "Free AI Image Upscaler",
@@ -485,6 +509,247 @@
         "Restoring old photographs is another practical use. Scanned analog photos, screenshots from old video footage, or images from early digital cameras often have limited resolution by modern standards. AI reconstruction fills in missing detail with high accuracy, making the image look as if it was shot on modern hardware.",
         "The key advantage of browser-based AI upscaling is accessibility. There is no software to install, no technical knowledge required, and no cost barrier. Upload your file, wait a few seconds, and download a high-resolution result you can use immediately across any platform or format."
       ]
+    }
+  },
+  "removeBg": {
+    "seo": {
+      "title": "Remove Background from Image Free – AI Background Remover Online",
+      "description": "Remove background from any image in seconds. Free AI background remover with no sign-up. Download transparent PNG for e-commerce, social media, print, and design."
+    },
+    "hero": {
+      "h1": "Remove Background from Image – Free & Instant",
+      "subtitle": "Upload a photo and our AI removes the background automatically. Get a clean transparent PNG in seconds – no sign-up, no watermarks.",
+      "submit": "Remove Background",
+      "submitLoading": "Removing background..."
+    },
+    "description": {
+      "h2": "Free Online Background Remover That Actually Works",
+      "text": "This tool uses AI to detect the subject in your photo and erase the background with precision. It handles hair, fur, complex edges, and product shots without manual selection. Upload a JPG, PNG, or WebP file and download a transparent PNG ready for any use – product listings, social posts, print materials, or creative projects."
+    },
+    "steps": {
+      "title": "How to Remove an Image Background in 3 Steps",
+      "items": [
+        {
+          "title": "Upload Your Image",
+          "text": "Drag and drop a JPG, PNG, or WebP file onto the tool, or click to browse your device. For the cleanest result, use a photo where the subject is clearly defined."
+        },
+        {
+          "title": "AI Removes the Background",
+          "text": "The AI detects the foreground subject and erases the background automatically. No manual masking or selection needed. The process takes a few seconds."
+        },
+        {
+          "title": "Download Your Transparent PNG",
+          "text": "Your image is ready as a high-resolution transparent PNG. Use it directly in your designs, upload it to your store, or replace the background with a solid color or new scene."
+        }
+      ]
+    },
+    "beforeAfter": {
+      "title": "See the Difference: Before and After Background Removal",
+      "text": "The before-and-after comparison shows how the AI preserves fine details like hair strands, product edges, and soft shadows while fully erasing the background. The subject stays sharp, edges stay clean, and the output is print and web ready."
+    },
+    "features": {
+      "title": "Why Use This Background Remover",
+      "items": [
+        {
+          "title": "AI-Powered Edge Detection",
+          "text": "The model handles fine edges, including hair, fur, and complex product outlines. You get smooth, natural cutouts without any manual touch-up in most cases."
+        },
+        {
+          "title": "Free With No Watermarks",
+          "text": "Remove backgrounds at no cost and download clean, full-resolution transparent PNGs. No watermark is added to your output, and no account is required."
+        },
+        {
+          "title": "Works on Any Device",
+          "text": "The tool runs entirely in your browser. It works on desktop, tablet, and mobile without installing any software or app."
+        },
+        {
+          "title": "Your Images Stay Private",
+          "text": "Uploaded files are processed securely and not stored or shared. Once you download your result, the image is removed from the server automatically."
+        }
+      ]
+    },
+    "cardLeft": {
+      "title": "Perfect for E-commerce Product Photos",
+      "text": "Product listings on Amazon, Etsy, Shopify, and other platforms require clean images on white or transparent backgrounds. This tool lets you prepare product photos to meet those standards without hiring a photographer or using complex editing software. Upload your product shot and get a background-free image ready to publish."
+    },
+    "cardRight": {
+      "title": "Built for Designers, Creators, and Marketers",
+      "text": "Graphic designers use it for mock-ups and composites. Social media managers use it for branded content and thumbnails. Photographers use it for portrait retouching and catalog work. The output works in Photoshop, Canva, Figma, or any design tool that accepts PNG with transparency."
+    },
+    "faq": {
+      "title": "Background Remover – Frequently Asked Questions",
+      "items": [
+        {
+          "q": "How does the background remover work?",
+          "a": "The tool uses an AI model trained on millions of images to detect the main subject in your photo. It separates the foreground from the background and removes the background layer, leaving a transparent PNG. The whole process is automatic and takes a few seconds."
+        },
+        {
+          "q": "Is this background remover completely free?",
+          "a": "Yes, the tool is free to use. You can remove backgrounds and download transparent PNG files without paying or creating an account."
+        },
+        {
+          "q": "What image formats can I upload?",
+          "a": "You can upload JPG, JPEG, PNG, and WebP files. The output is always a PNG file with a transparent background, which is the standard format for images without a background."
+        },
+        {
+          "q": "Does removing the background reduce image quality?",
+          "a": "No. The AI preserves the original resolution and detail of your subject. Edges are kept as clean and natural as possible. The downloaded file is high-resolution and suitable for both web and print."
+        },
+        {
+          "q": "Can I remove the background from a photo of a person?",
+          "a": "Yes. The tool works well on portraits and full-body shots. It detects hair edges and skin tones accurately. It handles complex hairstyles better than most manual selection tools."
+        },
+        {
+          "q": "What is the maximum file size I can upload?",
+          "a": "You can upload images up to 25 MB. Keeping your file within this limit ensures fast processing and a high-quality result."
+        },
+        {
+          "q": "Can I change the background after removing it?",
+          "a": "Once you download the transparent PNG, you can place it on any background using a design tool like Canva, Photoshop, or Figma. You can use a solid color, a gradient, or another photo as the new background."
+        },
+        {
+          "q": "Does the tool work for product photos with white backgrounds?",
+          "a": "Yes. Product photos with white or light backgrounds are among the easiest for the AI to process. The result is a clean cutout ready for e-commerce platforms, catalogs, or print materials."
+        },
+        {
+          "q": "Can the AI handle images with complex backgrounds?",
+          "a": "It works on most complex backgrounds, including outdoor scenes, patterned backgrounds, and low-contrast situations. For very busy or blurry backgrounds where the subject blends in, results may vary. Using a photo with a clear, well-lit subject gives the best output."
+        },
+        {
+          "q": "Is the tool safe to use for business or commercial images?",
+          "a": "Yes. Uploaded images are processed over a secure connection and automatically deleted from the server after processing. They are not used for training, shared with third parties, or stored beyond the session."
+        }
+      ]
+    },
+    "seoText": {
+      "title": "About This Free AI Background Remover",
+      "paragraphs": [
+        "Removing the background from an image used to require manual work in photo editing software. You would need to trace the subject, refine the mask, and clean up edges by hand. For anyone who is not a professional editor, that process takes too long and rarely looks right on the first try.",
+        "This tool does that work automatically. The AI analyzes the structure of your image, identifies the main subject, and separates it from the background. The result is a transparent PNG file you can use anywhere – in a design project, on a website, in a printed material, or as part of a product listing.",
+        "The technology handles the cases that make manual editing difficult: flyaway hair, fur, thin straps, partially transparent objects, and subjects photographed against cluttered scenes. You do not need to adjust any settings or mask anything manually. Upload, wait a few seconds, and download.",
+        "For e-commerce sellers, this means product photos that meet marketplace standards without a studio setup or retouching budget. For designers and content creators, it means faster workflows and consistent results across a large number of images. For anyone preparing a profile photo, presentation graphic, or printed design, it removes a step that would otherwise slow the project down.",
+        "The output is a standard transparent PNG, compatible with every major design tool and publishing platform. You can bring it into Photoshop, Canva, Figma, InDesign, Google Slides, or any web editor and place it on whatever background you need.",
+        "There are no usage limits to create an account for, and no watermarks are added to your file. The tool is accessible from any browser on any device, and your images are automatically deleted from the server once you are done. It is a straightforward tool for a task most people need done quickly and correctly."
+      ]
+    }
+  },
+  "pdfExtract": {
+    "toolName": "PDF Text Extractor",
+    "title": "PDF Text Extractor",
+    "subtitle": "Extract all text from any PDF document instantly. Upload your file and get clean, copyable text in seconds.",
+    "seo": {
+      "title": "PDF Text Extractor - Extract Text from PDF - Visaulio",
+      "description": "Extract text from any PDF file in seconds. Upload a PDF up to 20 MB and get the full text ready to copy or download. No account needed to start."
+    },
+    "upload": {
+      "button": "Choose PDF File",
+      "dropHint": "Drag & drop your PDF here",
+      "maxSize": "Max {{max}}MB"
+    },
+    "submit": "Extract Text",
+    "loading": "Extracting text...",
+    "result": {
+      "pageCount": "Pages: {{count}}",
+      "charCount": "Characters: {{count}}",
+      "copy": "Copy Text",
+      "copied": "Copied!",
+      "download": "Download .txt",
+      "reset": "Extract Another PDF"
+    },
+    "error": {
+      "fileType": "Only PDF files are allowed",
+      "fileSize": "File exceeds {{max}}MB limit",
+      "noText": "No text found in this PDF. It may be a scanned document.",
+      "generic": "Something went wrong. Please try again."
+    }
+  },
+  "textToSpeech": {
+    "toolName": "Text to Speech",
+    "title": "Text to Speech Generator",
+    "subtitle": "Convert any text into natural-sounding audio instantly",
+    "seo": {
+      "title": "Text to Speech - Convert Text to AI Voice - Visaulio",
+      "description": "Convert any text to natural-sounding speech with AI. Choose from multiple voices and languages. Download the audio file when done."
+    },
+    "textPlaceholder": "Type the text you want to convert to speech...",
+    "promptPlaceholder": "Describe the voice (optional): calm female, deep male, energetic...",
+    "voiceLabel": "Voice Description",
+    "textLabel": "Your Text",
+    "presetsLabel": "Quick Presets",
+    "preset": {
+      "calm": "Calm & Professional",
+      "energetic": "Energetic & Friendly",
+      "deep": "Deep & Authoritative",
+      "soft": "Soft & Gentle"
+    },
+    "submit": "Generate Speech",
+    "loading": "Generating audio...",
+    "result": {
+      "download": "Download Audio",
+      "again": "Generate Again",
+      "saved": "Saved to history"
+    },
+    "error": {
+      "textRequired": "Please enter some text",
+      "textTooLong": "Text must be under 500 characters",
+      "generic": "Something went wrong. Please try again."
+    },
+    "steps": {
+      "title": "How It Works",
+      "0": {
+        "title": "Enter Your Text",
+        "desc": "Type or paste any text you want to convert to speech. Up to 500 characters per generation."
+      },
+      "1": {
+        "title": "Choose a Voice Style",
+        "desc": "Pick from preset voice styles or describe your own custom voice characteristics."
+      },
+      "2": {
+        "title": "Download Your Audio",
+        "desc": "Listen to the generated audio in your browser, then download it as an audio file."
+      }
+    },
+    "features": {
+      "title": "Why Use Our TTS",
+      "0": {
+        "title": "Natural Sounding Voices",
+        "desc": "AI-powered voices that sound remarkably human and natural."
+      },
+      "1": {
+        "title": "500 Characters Per Generation",
+        "desc": "Enough for a full paragraph or short speech in one click."
+      },
+      "2": {
+        "title": "Instant Results",
+        "desc": "Get your audio file in seconds, no waiting required."
+      },
+      "3": {
+        "title": "Saved to Your History",
+        "desc": "Every generation is saved and available for replay and download."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "0": {
+        "q": "What languages are supported?",
+        "a": "The tool supports multiple languages. The output language depends on the text you enter - simply write in your desired language."
+      },
+      "1": {
+        "q": "How long can the text be?",
+        "a": "Each generation supports up to 500 characters. This is enough for a short paragraph or announcement."
+      },
+      "2": {
+        "q": "Can I download the audio?",
+        "a": "Yes, all generated audio files can be downloaded directly from the result panel. Files are also saved to your history for 7 days."
+      },
+      "3": {
+        "q": "Is it free?",
+        "a": "Yes, the Text to Speech tool is currently free to use. Create an account to get started and save your generations."
+      }
+    },
+    "seoText": {
+      "title": "About AI Text to Speech Technology",
+      "text": "Text to speech technology converts written text into spoken audio using advanced AI models. Our tool uses MiniMax voice design to generate natural, expressive voices from any text input.\n\nWhether you need voiceovers for videos, accessibility features, language learning tools, or just want to hear your text read aloud, our AI TTS generator delivers high-quality audio instantly. No software to install - just type, generate, and download."
     }
   }
 }

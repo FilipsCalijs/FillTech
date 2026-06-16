@@ -1,0 +1,83 @@
+{
+  "seo": {
+    "title": "AI Photo and Video Editing - Visaulio",
+    "description": "Edit photos and videos with AI in your browser. Remove backgrounds, swap clothes, colorize photos, clone voices and more. 11 tools, no install needed."
+  },
+  "hero": {
+    "h1": "AI Photo and Video Editing Made Simple",
+    "subheadline": "Visaulio gives you 11 AI tools for photo and video editing, all in one browser tab. No account required to get started.",
+    "badges": ["11 AI Tools", "No Install Needed", "10 Languages"],
+    "ctaPrimary": "Try for Free",
+    "ctaSecondary": "Browse All Tools"
+  },
+  "socialProof": {
+    "stats": [
+      { "value": "11", "label": "AI tools in one place" },
+      { "value": "10", "label": "Languages supported" },
+      { "value": "30s", "label": "Average processing time" },
+      { "value": "0", "label": "Software to install" }
+    ]
+  },
+  "toolSpotlight": {
+    "heading": "Four tools people open first",
+    "tools": [
+      { "slug": "portrait", "name": "AI Portrait", "desc": "Transforms a photo into a styled portrait with adjusted lighting and tone." },
+      { "slug": "bg-remover", "name": "Background Remover", "desc": "Detects the subject and removes the background in one click." },
+      { "slug": "clothes-swap", "name": "Clothes Swap", "desc": "Replaces the outfit in a photo with a different item or style." },
+      { "slug": "video-bg-replace", "name": "Video BG Replace", "desc": "Swaps the background in a video clip without green screen hardware." }
+    ],
+    "cta": "See all 11 tools"
+  },
+  "howItWorks": {
+    "heading": "Three steps, any tool",
+    "steps": [
+      { "title": "Upload your file", "desc": "Drag in a photo or video from your device. JPG, PNG, MP4 and more are supported." },
+      { "title": "Choose a tool and describe what you want", "desc": "Pick from 11 AI tools and type a short instruction or leave the default setting." },
+      { "title": "Download the result", "desc": "The processed file is ready in around 30 seconds. Download it directly to your device." }
+    ]
+  },
+  "features": {
+    "heading": "Why people use Visaulio",
+    "items": [
+      { "icon": "Layers", "title": "11 tools in one place", "desc": "Background removal, voice cloning, upscaling, PDF extraction and more live under one URL. No switching between apps." },
+      { "icon": "Monitor", "title": "Works in any browser", "desc": "Visaulio runs entirely in the browser. Chrome, Safari, Firefox - open a tab and start editing." },
+      { "icon": "Globe", "title": "10 languages", "desc": "The interface is available in English, Russian, Latvian, German, Portuguese, Spanish, Japanese, Hindi, Korean and Chinese." },
+      { "icon": "Shield", "title": "Your files are not stored forever", "desc": "Uploaded files are used for processing only and are deleted automatically. Visaulio does not build a library of your content." }
+    ]
+  },
+  "useCases": {
+    "heading": "Built for anyone who works with visuals",
+    "personas": [
+      { "role": "Content Creators", "desc": "Remove backgrounds from thumbnail photos in seconds. Apply Game Filter to get a PS2 or anime look without opening a desktop editor." },
+      { "role": "Marketers", "desc": "Swap product backgrounds for different campaign versions. Clone a voice to localize video ads across multiple markets." },
+      { "role": "Designers", "desc": "Use the Upscaler to enlarge low-resolution assets for print. Extract images and tables from PDFs without copy-paste work." },
+      { "role": "Everyday Users", "desc": "Colorize old black-and-white family photos. Remove a watermark from a personal image you own the rights to." }
+    ]
+  },
+  "testimonials": {
+    "heading": "What people say",
+    "items": [
+      { "name": "Marta Lindqvist", "role": "YouTube Creator", "text": "I used to spend 20 minutes cutting out backgrounds in Photoshop. With Visaulio it takes about 30 seconds. The Clothes Swap tool is something I did not expect to work as well as it does." },
+      { "name": "David Osei", "role": "Digital Marketing Manager", "text": "We produce product visuals for four markets. Being able to swap backgrounds and clone a voice track in the same browser tab cut our turnaround from two days to a few hours. The 10-language interface also helps when the team is spread across regions." },
+      { "name": "Yuki Tanaka", "role": "Freelance Graphic Designer", "text": "The Upscaler handles assets that clients send at 72 dpi. I run them through Visaulio before placing them in layouts. The PDF Extractor has also saved me a lot of manual work when clients share reference files." }
+    ]
+  },
+  "faq": {
+    "heading": "Frequently asked questions",
+    "items": [
+      { "q": "What is Visaulio?", "a": "Visaulio is a web platform with 11 AI tools for editing photos and videos. The tools include background removal, clothes swapping, photo colorization, voice cloning, video background replacement, upscaling and more. Everything runs in the browser with no software to download." },
+      { "q": "Is Visaulio free to use?", "a": "Visaulio offers access to all 11 tools with a set number of free uses per tool. For higher volume or priority processing, paid plans are available through the billing section." },
+      { "q": "Do I need to install anything?", "a": "No. Visaulio runs entirely in your browser. Open the site, upload a file and start editing. There is no desktop app, browser extension or plugin to install." },
+      { "q": "Which AI tools are available?", "a": "Visaulio includes 11 tools: AI Portrait, Background Remover (image), Watermark Remover (image and video), Photo Colorizer, Clothes Swap, Video BG Replace, Game Filter, Voice Cloning, PDF Extractor and Upscaler." },
+      { "q": "Is my data safe?", "a": "Files you upload are used only for processing the task you requested. Visaulio deletes uploaded files automatically after processing. The platform does not sell or share your content with third parties." },
+      { "q": "What languages are supported?", "a": "The Visaulio interface is available in 10 languages: English, Russian, Latvian, German, Portuguese, Spanish, Japanese, Hindi, Korean and Chinese. You can switch languages via the URL structure (e.g. visaulio.com/ru/)." },
+      { "q": "Do I need an account to use Visaulio?", "a": "You can try the tools without creating an account. An account is required to access the full usage limits and to manage your billing plan." },
+      { "q": "How long does processing take?", "a": "Most tasks finish in around 30 seconds depending on file size and the tool used. Video tools may take slightly longer for longer clips. Paid plans receive priority in the processing queue." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Start editing in seconds",
+    "subtext": "Open a browser tab, upload your file and get a result in about 30 seconds. No account, no download, no waiting.",
+    "cta": "Open Visaulio"
+  }
+}

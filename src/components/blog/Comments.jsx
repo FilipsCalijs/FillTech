@@ -6,7 +6,7 @@ import { Pencil, Trash2, Check, X } from 'lucide-react';
 import { Typography } from '@/components/ui/Typography';
 import { Button } from '@/components/ui/Button';
 import { formatDate } from '@/lib/utils';
-import LangLink from '@/components/routing/LangLink';
+import { useAuthModal } from '@/contexts/AuthModalContext';
 import { API_URL as API } from '@/config/api';
 
 const Avatar = ({ src, name }) => {
@@ -85,6 +85,7 @@ const Comments = ({ postId }) => {
   const { t } = useTranslation('blog');
   const { t: tc } = useTranslation('common');
   const { userLoggedIn, currentUser } = useAuth();
+  const { openAuthModal } = useAuthModal();
   const [comments, setComments] = useState([]);
   const [loading, setLoading]   = useState(true);
   const [text, setText]         = useState('');
@@ -168,9 +169,7 @@ const Comments = ({ postId }) => {
       ) : (
         <div className="rounded-lg border border-border p-4 text-center">
           <Typography variant="body2" color="muted" className="block mb-2">{t('comments.loginPrompt')}</Typography>
-          <LangLink to="/login">
-            <Button size="sm" variant="outline">{tc('nav.login')}</Button>
-          </LangLink>
+          <Button size="sm" variant="outline" onClick={() => openAuthModal('login')}>{tc('nav.login')}</Button>
         </div>
       )}
     </section>

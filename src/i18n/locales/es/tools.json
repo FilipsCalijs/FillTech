@@ -90,7 +90,27 @@
     "uploadImage": "Subir Imagen",
     "clickToChange": "Clic para cambiar",
     "woman": "Mujer",
-    "man": "Hombre"
+    "man": "Hombre",
+    "heroTitle": "Prueba Virtual",
+    "heroSubtitle": "Mira cualquier prenda en un modelo - sin sesión de fotos.",
+    "studioCta": "Prueba el Studio de Prueba Virtual gratis",
+    "studio": {
+      "uploadGarment": "Subir Prenda",
+      "uploadModel": "Subir Modelo",
+      "fileHint": "PNG, JPG o WebP",
+      "chooseFromLibrary": "Elegir de la Biblioteca",
+      "revealing": "Esta imagen contiene ropa reveladora o íntima (p. ej., bañador, lencería).",
+      "extraNotes": "Notas Adicionales",
+      "optional": "Opcional",
+      "extraNotesPlaceholder": "Agrega notas sobre ajuste, estilo o preservación, p. ej., ajuste holgado, mantener el rostro sin cambios.",
+      "aiEnhance": "Mejora con IA",
+      "aspectRatio": "Relación de Aspecto",
+      "auto": "Auto",
+      "resolution": "Resolución",
+      "outputCount": "Cantidad de Resultados",
+      "formula": "{{g}} prenda × {{m}} modelo × {{n}} = {{total}} imagen",
+      "clear": "Limpiar"
+    }
   },
   "upscaler": {
     "title": "Escalador de IA",
@@ -116,64 +136,68 @@
   },
   "seo": {
     "portrait": {
-      "title": "Editor de Retratos con IA | FillTech",
+      "title": "Editor de Retratos con IA | Visaulio",
       "desc": "Transforma tus fotos con edición de retratos por IA."
     },
     "gameFilter": {
-      "title": "Filtro de Juego | FillTech",
+      "title": "Filtro de Juego | Visaulio",
       "desc": "Convierte fotos en capturas de videojuego retro."
     },
     "bgRemover": {
-      "title": "Eliminador de Fondo | FillTech",
+      "title": "Eliminador de Fondo | Visaulio",
       "desc": "Elimina fondos de imágenes al instante con IA."
     },
     "watermark": {
-      "title": "Eliminador de Marca de Agua | FillTech",
+      "title": "Eliminador de Marca de Agua | Visaulio",
       "desc": "Elimina marcas de agua de fotos con IA."
     },
     "videoWatermark": {
-      "title": "Eliminador de Marca de Agua en Vídeo | FillTech",
+      "title": "Eliminador de Marca de Agua en Vídeo | Visaulio",
       "desc": "Elimina marcas de agua de vídeos con IA."
     },
     "colorize": {
-      "title": "Colorizador de Fotos | FillTech",
+      "title": "Colorizador de Fotos | Visaulio",
       "desc": "Coloriza fotos en blanco y negro con IA."
     },
     "clothesSwap": {
-      "title": "Cambio de Ropa | FillTech",
+      "title": "Cambio de Ropa | Visaulio",
       "desc": "Prueba ropa virtualmente con IA."
     },
     "videoBg": {
-      "title": "Reemplazo de Fondo en Vídeo | FillTech",
+      "title": "Reemplazo de Fondo en Vídeo | Visaulio",
       "desc": "Reemplaza el fondo de cualquier vídeo con IA."
     },
     "upscaler": {
-      "title": "Escalador de IA | FillTech",
+      "title": "Escalador de IA | Visaulio",
       "desc": "Amplía imágenes hasta 4× sin pérdida de calidad."
     },
     "voiceClone": {
-      "title": "Clonación de Voz | FillTech",
+      "title": "Clonación de Voz | Visaulio",
       "desc": "Clona cualquier voz con IA."
     },
     "vocalIsolator": {
-      "title": "Aislador Vocal | FillTech",
+      "title": "Aislador Vocal | Visaulio",
       "desc": "Aísla vocales de la música con IA."
     },
-    "explore": {
-      "title": "Explorar Herramientas de IA | FillTech",
+    "tools": {
+      "title": "Herramientas de IA | Visaulio",
       "desc": "Descubre todas las herramientas de IA."
     },
     "blog": {
-      "title": "Blog | FillTech",
+      "title": "Blog | Visaulio",
       "desc": "Artículos y noticias sobre IA."
     },
     "history": {
-      "title": "Mi Historial | FillTech",
+      "title": "Mi Historial | Visaulio",
       "desc": "Visualiza tu contenido generado."
     },
     "billing": {
-      "title": "Facturación | FillTech",
+      "title": "Facturación | Visaulio",
       "desc": "Gestiona tu saldo e historial."
+    },
+    "clothesSwapStudio": {
+      "title": "Studio de Prueba Virtual | Visaulio",
+      "desc": "Studio avanzado de prueba virtual - sube una foto de la prenda y del modelo para generar un resultado realista con IA."
     }
   },
   "watermarkRemover": {
@@ -484,6 +508,247 @@
         "La restauración de fotos antiguas es otro uso práctico. Las fotos analógicas escaneadas o las imágenes de cámaras digitales antiguas suelen tener una resolución limitada para los estándares actuales. La reconstrucción con IA rellena los detalles que faltan con gran precisión, haciendo que la imagen parezca tomada con hardware moderno.",
         "La principal ventaja del upscale de IA en el navegador es la accesibilidad. No hay software que instalar, no se requieren conocimientos técnicos y no hay barrera de coste. Sube tu archivo, espera unos segundos y descarga un resultado en alta resolución que puedes usar de inmediato en cualquier plataforma."
       ]
+    }
+  },
+  "removeBg": {
+    "seo": {
+      "title": "Eliminar fondo de imagen gratis – Removedor de fondo con IA online",
+      "description": "Quita el fondo de cualquier imagen en segundos. Gratis, sin registro. Descarga PNG transparente para e-commerce, redes sociales, impresión y diseño."
+    },
+    "hero": {
+      "h1": "Quitar fondo a una imagen – gratis e instantáneo",
+      "subtitle": "Sube tu foto y la IA elimina el fondo automáticamente. PNG transparente sin marca de agua, sin registro. Resultado en segundos.",
+      "submit": "Eliminar fondo",
+      "submitLoading": "Eliminando fondo..."
+    },
+    "description": {
+      "h2": "Removedor de fondo online gratis que realmente funciona",
+      "text": "La herramienta usa IA para detectar el sujeto en tu foto y borrar el fondo con precisión. Funciona con cabello, pelaje, bordes complejos y fotos de productos sin selección manual. Sube JPG, PNG o WebP y descarga un PNG transparente listo para Amazon, Etsy, Shopify, redes sociales o proyectos de diseño."
+    },
+    "steps": {
+      "title": "Cómo eliminar el fondo de una imagen en 3 pasos",
+      "items": [
+        {
+          "title": "Sube tu imagen",
+          "text": "Arrastra y suelta un archivo JPG, PNG o WebP en la herramienta o haz clic para buscarlo en tu dispositivo. Para el resultado más limpio, usa una foto donde el sujeto esté bien definido."
+        },
+        {
+          "title": "La IA quita el fondo",
+          "text": "La IA detecta el sujeto principal y borra el fondo automáticamente. Sin selección manual ni máscaras. El proceso tarda unos pocos segundos."
+        },
+        {
+          "title": "Descarga el PNG transparente",
+          "text": "Tu imagen queda lista como PNG transparente en alta resolución. Úsala en tus diseños, súbela a tu tienda o reemplaza el fondo con un color sólido o una nueva escena."
+        }
+      ]
+    },
+    "beforeAfter": {
+      "title": "Antes y después: compara el resultado",
+      "text": "La comparación muestra cómo la IA preserva detalles finos como hebras de cabello, bordes de producto y sombras suaves mientras borra completamente el fondo. El sujeto queda nítido, los bordes limpios y el archivo listo para impresión y web."
+    },
+    "features": {
+      "title": "Por qué usar este removedor de fondo",
+      "items": [
+        {
+          "title": "Detección de bordes con IA",
+          "text": "El modelo procesa bordes finos: cabello, pelaje y contornos complejos de productos. Obtienes recortes suaves y naturales sin retoque manual."
+        },
+        {
+          "title": "Gratis y sin marca de agua",
+          "text": "Elimina fondos y descarga PNG en resolución completa sin marca de agua y sin crear cuenta. Sin condiciones ocultas."
+        },
+        {
+          "title": "Funciona en cualquier dispositivo",
+          "text": "La herramienta corre en el navegador. Funciona en ordenador, tableta y móvil sin instalar ninguna aplicación."
+        },
+        {
+          "title": "Tus imágenes son privadas",
+          "text": "Los archivos subidos se procesan de forma segura y se eliminan automáticamente del servidor tras la descarga. No se usan para entrenar modelos ni se comparten con terceros."
+        }
+      ]
+    },
+    "cardLeft": {
+      "title": "Perfecto para fotos de productos en e-commerce",
+      "text": "Marketplaces como Amazon, Etsy y Shopify requieren imágenes con fondo blanco o transparente. Esta herramienta te permite preparar fotos de productos para cumplir esos estándares sin contratar fotógrafo ni usar software complejo. Sube la foto del producto y obtén la imagen lista para publicar."
+    },
+    "cardRight": {
+      "title": "Para diseñadores, creadores y equipos de marketing",
+      "text": "Los diseñadores gráficos lo usan para mockups y composiciones. Los gestores de redes sociales para contenido de marca y miniaturas. Los fotógrafos para retoques de retrato y catálogos. El resultado funciona en Photoshop, Canva, Figma o cualquier herramienta que acepte PNG con transparencia."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre eliminar fondo de imagen",
+      "items": [
+        {
+          "q": "¿Cómo funciona el removedor de fondo?",
+          "a": "La herramienta usa un modelo de IA entrenado con millones de imágenes para detectar el sujeto principal en la foto. Separa el primer plano del fondo y elimina la capa de fondo, dejando un PNG transparente. El proceso es automático y tarda unos segundos."
+        },
+        {
+          "q": "¿Es completamente gratis?",
+          "a": "Sí. La herramienta es completamente gratuita. Puedes quitar fondos y descargar archivos PNG transparentes sin pagar y sin crear cuenta."
+        },
+        {
+          "q": "¿Qué formatos de imagen puedo subir?",
+          "a": "Puedes subir JPG, JPEG, PNG y WebP. El resultado siempre es un archivo PNG con fondo transparente."
+        },
+        {
+          "q": "¿Se reduce la calidad de la imagen al borrar el fondo?",
+          "a": "No. La IA conserva la resolución y el detalle original del sujeto. Los bordes se mantienen lo más limpios y naturales posible. El archivo descargado es de alta resolución, válido para web e impresión."
+        },
+        {
+          "q": "¿Funciona para fotos de personas?",
+          "a": "Sí. La herramienta funciona bien en retratos y fotos de cuerpo entero. Detecta con precisión los bordes del cabello y los tonos de piel."
+        },
+        {
+          "q": "¿Cuál es el tamaño máximo de archivo?",
+          "a": "Puedes subir imágenes de hasta 25 MB. Dentro de ese límite el procesamiento es rápido y el resultado de alta calidad."
+        },
+        {
+          "q": "¿Puedo cambiar el fondo después de eliminarlo?",
+          "a": "Sí. Descarga el PNG transparente y colócalo sobre cualquier fondo usando Canva, Photoshop o Figma. Puedes usar un color sólido, un degradado o cualquier otra foto."
+        },
+        {
+          "q": "¿Funciona para fotos de productos con fondo blanco?",
+          "a": "Sí. Las fotos de productos con fondo blanco o claro son las más fáciles para la IA. El resultado es un recorte limpo listo para marketplaces, catálogos o materiales impresos."
+        },
+        {
+          "q": "¿La IA puede gestionar fondos complejos?",
+          "a": "Sí, funciona con la mayoría de fondos complejos: escenas exteriores, fondos con patrones y situaciones de bajo contraste. Para fondos muy cargados donde el sujeto se confunde con el fondo los resultados pueden variar. Una foto clara y bien iluminada da el mejor resultado."
+        },
+        {
+          "q": "¿Es seguro usarlo con imágenes comerciales?",
+          "a": "Sí. Las imágenes subidas se procesan en conexión segura y se eliminan automáticamente del servidor tras el procesamiento. No se usan para entrenamiento ni se comparten con terceros."
+        }
+      ]
+    },
+    "seoText": {
+      "title": "Sobre este removedor de fondo gratis con IA",
+      "paragraphs": [
+        "Antes, quitar el fondo de una imagen requería trabajo manual en software de edición de fotos. Era necesario trazar el sujeto, refinar la máscara y limpiar los bordes a mano. Para quienes no son editores profesionales, ese proceso lleva demasiado tiempo y pocas veces queda bien al primer intento.",
+        "Esta herramienta hace ese trabajo automáticamente. La IA analiza la estructura de la imagen, identifica el sujeto principal y lo separa del fondo. El resultado es un archivo PNG transparente que puedes usar en cualquier lugar: en un proyecto de diseño, en una web, en material impreso o en un listado de producto.",
+        "La tecnología maneja los casos que hacen difícil la edición manual: cabellos sueltos, pelaje, tirantes finos, objetos parcialmente transparentes y sujetos fotografiados ante escenas saturadas. No hace falta ajustar configuraciones ni seleccionar nada manualmente. Subes, esperas unos segundos y descargas.",
+        "Para vendedores en Amazon, Etsy y Shopify, esto significa fotos de producto que cumplen los estándares de los marketplaces sin necesidad de estudio fotográfico. Para diseñadores y creadores de contenido, significa flujos de trabajo más rápidos y resultados consistentes en grandes volúmenes de imágenes. Para cualquiera que prepare una foto de perfil, un gráfico para presentación o un diseño impreso, elimina un paso que de otro modo llevaría mucho tiempo.",
+        "El resultado es un PNG transparente estándar, compatible con todas las herramientas de diseño y plataformas de publicación principales. Puedes abrirlo en Photoshop, Canva, Figma, InDesign, Google Slides o cualquier editor web y colocarlo sobre el fondo que necesites.",
+        "Sin límites de uso, sin registro, sin marca de agua. La herramienta funciona en cualquier navegador en cualquier dispositivo, y las imágenes se eliminan automáticamente del servidor al terminar."
+      ]
+    }
+  },
+  "pdfExtract": {
+    "toolName": "Extractor de Texto de PDF",
+    "title": "Extractor de Texto de PDF",
+    "subtitle": "Extrae todo el texto de cualquier documento PDF al instante. Sube tu archivo y obtén texto limpio y copiable en segundos.",
+    "seo": {
+      "title": "Extractor de Texto de PDF - Extrae Texto de PDF Gratis | Visaulio",
+      "description": "Extrae texto de archivos PDF al instante con IA. Sube cualquier PDF y obtén texto limpio y copiable. Gratis, rápido y sin necesidad de registro."
+    },
+    "upload": {
+      "button": "Elegir archivo PDF",
+      "dropHint": "Arrastra y suelta tu PDF aquí",
+      "maxSize": "Máx. {{max}}MB"
+    },
+    "submit": "Extraer texto",
+    "loading": "Extrayendo texto...",
+    "result": {
+      "pageCount": "Páginas: {{count}}",
+      "charCount": "Caracteres: {{count}}",
+      "copy": "Copiar texto",
+      "copied": "¡Copiado!",
+      "download": "Descargar .txt",
+      "reset": "Extraer otro PDF"
+    },
+    "error": {
+      "fileType": "Solo se permiten archivos PDF",
+      "fileSize": "El archivo supera el límite de {{max}}MB",
+      "noText": "No se encontró texto en este PDF. Puede ser un documento escaneado.",
+      "generic": "Algo salió mal. Inténtalo de nuevo."
+    }
+  },
+  "textToSpeech": {
+    "toolName": "Texto a Voz",
+    "title": "Generador de Texto a Voz",
+    "subtitle": "Convierte cualquier texto en audio con sonido natural al instante",
+    "seo": {
+      "title": "Generador de Texto a Voz Gratuito - Voz AI en Línea",
+      "description": "Convierte texto en voz natural en línea gratis. Elige estilos de voz, descarga audio, impulsado por IA."
+    },
+    "textPlaceholder": "Escribe el texto que deseas convertir a voz...",
+    "promptPlaceholder": "Describe la voz (opcional): femenina tranquila, masculina profunda...",
+    "voiceLabel": "Descripción de Voz",
+    "textLabel": "Tu Texto",
+    "presetsLabel": "Ajustes Rápidos",
+    "preset": {
+      "calm": "Tranquilo y Profesional",
+      "energetic": "Energético y Amigable",
+      "deep": "Profundo y Autoritario",
+      "soft": "Suave y Delicado"
+    },
+    "submit": "Generar Voz",
+    "loading": "Generando audio...",
+    "result": {
+      "download": "Descargar Audio",
+      "again": "Generar de Nuevo",
+      "saved": "Guardado en historial"
+    },
+    "error": {
+      "textRequired": "Por favor, introduce algún texto",
+      "textTooLong": "El texto debe tener menos de 500 caracteres",
+      "generic": "Algo salió mal. Por favor, inténtalo de nuevo."
+    },
+    "steps": {
+      "title": "Cómo Funciona",
+      "0": {
+        "title": "Introduce tu Texto",
+        "desc": "Escribe o pega cualquier texto que quieras convertir en voz. Hasta 500 caracteres por generación."
+      },
+      "1": {
+        "title": "Elige un Estilo de Voz",
+        "desc": "Elige entre estilos de voz preestablecidos o describe tus propias características de voz."
+      },
+      "2": {
+        "title": "Descarga tu Audio",
+        "desc": "Escucha el audio generado en tu navegador y luego descárgalo como archivo de audio."
+      }
+    },
+    "features": {
+      "title": "Por Qué Usar Nuestro TTS",
+      "0": {
+        "title": "Voces con Sonido Natural",
+        "desc": "Voces impulsadas por IA que suenan notablemente humanas y naturales."
+      },
+      "1": {
+        "title": "500 Caracteres por Generación",
+        "desc": "Suficiente para un párrafo completo o un discurso corto en un clic."
+      },
+      "2": {
+        "title": "Resultados Instantáneos",
+        "desc": "Obtén tu archivo de audio en segundos, sin espera necesaria."
+      },
+      "3": {
+        "title": "Guardado en tu Historial",
+        "desc": "Cada generación se guarda y está disponible para reproducción y descarga."
+      }
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "0": {
+        "q": "¿Qué idiomas son compatibles?",
+        "a": "La herramienta es compatible con varios idiomas. El idioma de salida depende del texto que introduzcas - simplemente escribe en el idioma deseado."
+      },
+      "1": {
+        "q": "¿Cuánto tiempo puede tener el texto?",
+        "a": "Cada generación admite hasta 500 caracteres - suficiente para un párrafo corto o un anuncio."
+      },
+      "2": {
+        "q": "¿Puedo descargar el audio?",
+        "a": "Sí, todos los archivos de audio generados se pueden descargar directamente desde el panel de resultados. Los archivos también se guardan en tu historial durante 7 días."
+      },
+      "3": {
+        "q": "¿Es gratuito?",
+        "a": "Sí, la herramienta de Texto a Voz es actualmente gratuita. Crea una cuenta para empezar y guardar tus generaciones."
+      }
+    },
+    "seoText": {
+      "title": "Sobre la Tecnología AI de Texto a Voz",
+      "text": "La tecnología de texto a voz convierte texto escrito en audio hablado usando modelos AI avanzados. Nuestra herramienta usa el diseño de voz MiniMax para generar voces naturales y expressivas a partir de cualquier entrada de texto.\n\nYa sea que necesites voiceovers para videos, funciones de accesibilidad, herramientas de aprendizaje de idiomas o simplemente quieras escuchar tu texto leído en voz alta, nuestro generador AI TTS entrega audio de alta calidad instantáneamente. No hay software que instalar - simplemente escribe, genera y descarga."
     }
   }
 }

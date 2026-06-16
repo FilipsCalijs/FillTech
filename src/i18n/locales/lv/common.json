@@ -1,6 +1,6 @@
 {
   "nav": {
-    "explore": "Pārlūkot",
+    "tools": "Rīki",
     "blog": "Blogs",
     "gameFilter": "Spēļu filtrs",
     "voice": "Balss klons",
@@ -45,7 +45,7 @@
     "required": "Šis lauks ir obligāts",
     "wentWrong": "Kaut kas nogāja greizi. Lūdzu, mēģiniet vēlreiz."
   },
-  "exploreSubtitle": "Jaudīgi AI rīki attēlu un failu apstrādei.",
+  "toolsSubtitle": "Jaudīgi AI rīki attēlu un failu apstrādei.",
   "notFound": {
     "title": "Lapa nav atrasta",
     "desc": "Diemžēl šāda lapa neeksistē vai ir pārvietota.",
@@ -58,37 +58,42 @@
   "current": "Pašreizējais",
   "footer": {
     "rights": "Visas tiesības aizsargātas.",
-    "description": "FillTech piedāvā AI rīkus attēlu un video apstrādei. Noņem fonus, uzlabo fotogrāfijas, maini apģērbu un daudz ko citu - uzreiz un bez piepūles. Izmēģini FillTech šodien.",
+    "description": "Visaulio piedāvā AI rīkus attēlu un video apstrādei. Noņem fonus, uzlabo fotogrāfijas, maini apģērbu un daudz ko citu - uzreiz un bez piepūles. Izmēģini Visaulio šodien.",
     "legal": "Juridiskā info",
     "tools": "Rīki",
     "terms": "Lietošanas noteikumi",
     "privacy": "Privātuma politika",
-    "cookies": "Sīkdatņu politika"
+    "cookies": "Sīkdatņu politika",
+    "contact": "Sazinies ar mums"
   },
   "seo": {
-    "explore": {
-      "title": "AI rīki - Visi efekti | FillTech",
+    "tools": {
+      "title": "AI rīki - Visi efekti | Visaulio",
       "desc": "Atklāj visus AI rīkus: portreta redaktors, fona noņemšana, ūdenszīmju noņemšana, foto iekrāsošana un citi."
     },
+    "contact": {
+      "title": "Sazinies ar mums | Visaulio",
+      "desc": "Sazinieties ar Visaulio komandu par atbalstu, atsauksmēm vai sadarbību."
+    },
     "history": {
-      "title": "Vēsture - Manas ģenerācijas | FillTech",
-      "desc": "Skatīt un pārvaldīt visas AI ģenerācijas. Lejupielādēt vai dzēst rezultātus. Saglabājas 7 dienas."
+      "title": "Ģenerāciju vēsture | Visaulio",
+      "desc": "Skatiet un pārvaldiet visas savas AI ģenerācijas: attēli, audio, video. Lejupielādējiet vai dzēsiet. Faili tiek glabāti 7 dienas."
     },
     "billing": {
-      "title": "Norēķini - Konta atlikums | FillTech",
+      "title": "Norēķini - Konta atlikums | Visaulio",
       "desc": "Pārvaldīt atlikumu, skatīt tēriņu vēsturi un konfigurēt automātisko papildināšanu."
     },
     "terms": {
-      "title": "Lietošanas noteikumi | FillTech",
-      "desc": "Iepazīstieties ar FillTech lietošanas noteikumiem."
+      "title": "Lietošanas noteikumi | Visaulio",
+      "desc": "Iepazīstieties ar Visaulio lietošanas noteikumiem."
     },
     "privacy": {
-      "title": "Privātuma politika | FillTech",
-      "desc": "Uzziniet, kā FillTech vāc, izmanto un aizsargā jūsu personas datus."
+      "title": "Privātuma politika | Visaulio",
+      "desc": "Uzziniet, kā Visaulio vāc, izmanto un aizsargā jūsu personas datus."
     },
     "cookies": {
-      "title": "Sīkdatņu politika | FillTech",
-      "desc": "Uzziniet, kā FillTech izmanto sīkdatnes un līdzīgas tehnoloģijas."
+      "title": "Sīkdatņu politika | Visaulio",
+      "desc": "Uzziniet, kā Visaulio izmanto sīkdatnes un līdzīgas tehnoloģijas."
     }
   }
 }

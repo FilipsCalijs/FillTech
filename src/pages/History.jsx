@@ -19,9 +19,11 @@ const TOOL_MAP = {
   'video-watermark-remove': { name: 'Video Watermark', path: '/tools/watermark-remover-video' },
   'video-bg-replace': { name: 'Video BG Replace',     path: '/tools/video-bg-replace' },
   'vocal-isolator':   { name: 'Vocal Isolator',       path: '/tools/vocal-isolator' },
+  'pdf-extract':      { name: 'PDF Text Extractor',   path: '/tools/pdf-extractor' },
+  'text-to-speech':   { name: 'Text to Speech',       path: '/tools/text-to-speech' },
 };
 
-const AUDIO_TYPES = new Set(['voice-clone', 'vocal-isolator']);
+const AUDIO_TYPES = new Set(['voice-clone', 'vocal-isolator', 'text-to-speech']);
 const isAudio = (gen) => AUDIO_TYPES.has(gen.tool_type) || /\.(mp3|wav|m4a|ogg|mpeg|aac)(\?|$)/i.test(gen.output_url ?? '');
 
 const STATUS_STYLES = {
@@ -207,7 +209,7 @@ const GenerationsTable = ({ items, onDelete, adminMode }) => {
             </thead>
             <tbody className="divide-y divide-border">
               {paginated.map(gen => {
-                const tool  = TOOL_MAP[gen.tool_type] ?? { name: gen.tool_type, path: '/explore' };
+                const tool  = TOOL_MAP[gen.tool_type] ?? { name: gen.tool_type, path: '/tools' };
                 const audio = isAudio(gen);
                 return (
                   <tr key={gen.id} className={`hover:bg-muted/50 transition-colors ${selected.has(gen.id) ? 'bg-primary/5' : 'bg-card'}`}>

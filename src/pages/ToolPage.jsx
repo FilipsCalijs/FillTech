@@ -7,6 +7,7 @@ import { Upload } from '@/components/ui/Upload';
 import { Button } from '@/components/ui/Button';
 import { CONTAINER } from '@/config/sizes';
 import { API_URL as API } from '@/config/api';
+import PageSEO from '@/components/seo/PageSEO';
 
 const ToolPage = () => {
   const { effectPath } = useParams();
@@ -30,7 +31,7 @@ const ToolPage = () => {
   if (notFound || !effect) return (
     <div className="py-24 text-center flex flex-col items-center gap-4">
       <Typography variant="h2" weight="semibold">Инструмент не найден</Typography>
-      <Link to="/explore">
+      <Link to="/tools">
         <Button variant="outline" size="sm">← Все инструменты</Button>
       </Link>
     </div>
@@ -38,9 +39,14 @@ const ToolPage = () => {
 
   return (
     <div className={`py-12 ${CONTAINER.default}`}>
+      <PageSEO
+        title="AI Editing Tool - Visaulio"
+        description="Use AI to edit photos and videos directly in your browser. No install needed. Part of the Visaulio suite of 11 AI tools."
+        path="/tools"
+      />
       {/* Nav */}
       <Link
-        to="/explore"
+        to="/tools"
         className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors mb-8"
       >
         <ArrowLeft size={14} />

@@ -39,5 +39,17 @@
     "name": "Portrets",
     "desc": "Veidojiet satriecošus AI portreta fotoattēlus"
   },
+  "voice-clone": {
+    "name": "Balss klonēšana",
+    "desc": "Klonējiet jebkuru balsi no īsa audio fragmenta"
+  },
+  "vocal-isolator": {
+    "name": "Vokāla izolators",
+    "desc": "Atdala vokālu no mūzikas jebkurā audio failā"
+  },
+  "text-to-speech": {
+    "name": "Teksts uz runu",
+    "desc": "Parverstiet jebkuru tekstu dabiski skanosa audio"
+  },
   "tryIt": "→ Izmēģināt"
 }

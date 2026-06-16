@@ -8,7 +8,6 @@ import { resolveUserLabel } from '../lib/userLabel.js';
 const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 10 * 1024 * 1024 } });
 
-// GET /api/media?page=1  — список всех медиафайлов (50 на страницу)
 router.get('/', checkAdmin, async (req, res) => {
   const page = Math.max(1, parseInt(req.query.page) || 1);
   const limit = 50;
@@ -27,7 +26,6 @@ router.get('/', checkAdmin, async (req, res) => {
   }
 });
 
-// POST /api/media/upload  — загрузка файла из формы
 router.post('/upload', checkAdmin, upload.single('file'), async (req, res) => {
   if (!req.file) return res.status(400).json({ error: 'No file provided' });
 
@@ -48,7 +46,6 @@ router.post('/upload', checkAdmin, upload.single('file'), async (req, res) => {
   }
 });
 
-// POST /api/media/from-url  — загрузка по внешнему URL → R2
 router.post('/from-url', checkAdmin, async (req, res) => {
   const { url: sourceUrl } = req.body;
   if (!sourceUrl) return res.status(400).json({ error: 'url is required' });
@@ -71,7 +68,6 @@ router.post('/from-url', checkAdmin, async (req, res) => {
   }
 });
 
-// DELETE /api/media/:id  — удалить из R2 и БД
 router.delete('/:id', checkAdmin, async (req, res) => {
   try {
     const [[row]] = await db.query('SELECT * FROM media WHERE id = ?', [req.params.id]);

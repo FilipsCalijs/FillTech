@@ -14,6 +14,7 @@ import FAQSection from '@/lib/FAQSection';
 import TextSection from '@/lib/TextSection';
 import OtherProducts from '@/lib/OtherProducts';
 import RelevantBlogs from '@/components/ui/RelevantBlogs';
+import { useAuthModal } from '@/contexts/AuthModalContext';
 import { API_URL as API } from '@/config/api';
 
 const MAX_MB = 22;
@@ -51,6 +52,7 @@ const WatermarkRemover = () => {
   const [resultVisible, setResultVisible] = useState(false);
   const [isDragging,    setIsDragging]    = useState(false);
   const fileInputRef = useRef(null);
+  const { requireAuth } = useAuthModal();
 
   const handleFileDrop = useCallback((f) => {
     if (!f) return;
@@ -67,6 +69,7 @@ const WatermarkRemover = () => {
 
   const handleSubmit = async () => {
     if (!file) return;
+    if (!requireAuth()) return;
     setLoading(true);
     setError(null);
     setResultVisible(false);

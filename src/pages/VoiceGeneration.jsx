@@ -52,12 +52,9 @@ const VoiceGeneration = () => {
 
       <div className="flex flex-col items-center mt-4 gap-2">
         <Typography variant="p" weight="normal">Presets</Typography>
-        {/* здесь должна быть кнопкпа при нажатии на которую нужно выбрать язык из выплывающих */}
         <div>
-          {/* здесь должен будет быть присеты из трех компонентов: слева иконка - по середине название присета - а с права демо версия */}
         </div>
         <Typography variant="p" weight="normal">Or</Typography>
-        {/* здесь должен быть upload field */}
       </div>
 
       <Button

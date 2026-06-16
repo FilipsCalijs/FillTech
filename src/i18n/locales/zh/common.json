@@ -1,6 +1,6 @@
 {
   "nav": {
-    "explore": "探索",
+    "tools": "工具",
     "blog": "博客",
     "gameFilter": "游戏滤镜",
     "voice": "声音克隆",
@@ -45,7 +45,7 @@
     "required": "此字段为必填项",
     "wentWrong": "出现错误，请重试。"
   },
-  "exploreSubtitle": "强大的 AI 工具，轻松变换您的图片和文件。",
+  "toolsSubtitle": "强大的 AI 工具，轻松变换您的图片和文件。",
   "notFound": {
     "title": "页面未找到",
     "desc": "抱歉，此页面不存在或已被移动。",
@@ -58,37 +58,42 @@
   "current": "当前",
   "footer": {
     "rights": "版权所有。",
-    "description": "FillTech 提供 AI 驱动的图像和视频处理工具。即时轻松地去除背景、增强照片、换装等。",
+    "description": "Visaulio 提供 AI 驱动的图像和视频处理工具。即时轻松地去除背景、增强照片、换装等。",
     "legal": "法律",
     "tools": "工具",
     "terms": "服务条款",
     "privacy": "隐私政策",
-    "cookies": "Cookie 政策"
+    "cookies": "Cookie 政策",
+    "contact": "联系我们"
   },
   "seo": {
-    "explore": {
-      "title": "探索 AI 工具 - 所有效果 | FillTech",
+    "tools": {
+      "title": "AI 工具 - 所有效果 | Visaulio",
       "desc": "发现所有 AI 工具：人像编辑器、背景去除器、水印去除器、照片上色器等。"
     },
+    "contact": {
+      "title": "联系我们 | Visaulio",
+      "desc": "如需支持、反馈或合作咨询，请联系 Visaulio 团队。"
+    },
     "history": {
-      "title": "我的历史 - 生成内容 | FillTech",
-      "desc": "查看和管理所有 AI 生成内容。下载或删除您的生成结果。结果保留 7 天。"
+      "title": "生成历史 | Visaulio",
+      "desc": "查看和管理所有AI生成的内容：图片、音频、视频。可下载或删除。文件保存7天。"
     },
     "billing": {
-      "title": "账单 - 账户余额 | FillTech",
+      "title": "账单 - 账户余额 | Visaulio",
       "desc": "管理余额、查看消费历史并配置 AI 生成的自动充值。"
     },
     "terms": {
-      "title": "服务条款 | FillTech",
-      "desc": "阅读 FillTech 的服务条款和使用条件。"
+      "title": "服务条款 | Visaulio",
+      "desc": "阅读 Visaulio 的服务条款和使用条件。"
     },
     "privacy": {
-      "title": "隐私政策 | FillTech",
-      "desc": "了解 FillTech 如何收集、使用和保护您的个人数据。"
+      "title": "隐私政策 | Visaulio",
+      "desc": "了解 Visaulio 如何收集、使用和保护您的个人数据。"
     },
     "cookies": {
-      "title": "Cookie 政策 | FillTech",
-      "desc": "了解 FillTech 如何使用 Cookie 和追踪技术。"
+      "title": "Cookie 政策 | Visaulio",
+      "desc": "了解 Visaulio 如何使用 Cookie 和追踪技术。"
     }
   }
 }

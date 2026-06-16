@@ -4,7 +4,6 @@ import { checkAdmin } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
-// GET /api/effects — публичный, только опубликованные
 router.get('/', async (_req, res) => {
   const [rows] = await pool.execute(
     `SELECT id, name, slug, short_desc, icon, cover_url, status, sort_order
@@ -13,7 +12,6 @@ router.get('/', async (_req, res) => {
   res.json(rows);
 });
 
-// GET /api/effects/:slug — одиночный эффект (публичный)
 router.get('/:slug', async (req, res) => {
   const [rows] = await pool.execute(
     `SELECT * FROM effects WHERE slug = ?`,
@@ -25,7 +23,6 @@ router.get('/:slug', async (req, res) => {
 
 // ── Admin routes ──────────────────────────────────────────────────
 
-// GET /api/effects/admin/all — все эффекты для админа
 router.get('/admin/all', checkAdmin, async (_req, res) => {
   const [rows] = await pool.execute(
     `SELECT * FROM effects ORDER BY sort_order ASC, id ASC`
@@ -33,7 +30,6 @@ router.get('/admin/all', checkAdmin, async (_req, res) => {
   res.json(rows);
 });
 
-// POST /api/effects/admin — создать эффект
 router.post('/admin', checkAdmin, async (req, res) => {
   const { name, slug, short_desc, description, icon, cover_url, status, sort_order } = req.body;
   if (!name || !slug) return res.status(400).json({ error: 'name and slug are required' });
@@ -47,7 +43,6 @@ router.post('/admin', checkAdmin, async (req, res) => {
   res.status(201).json(rows[0]);
 });
 
-// PUT /api/effects/admin/:id — обновить эффект
 router.put('/admin/:id', checkAdmin, async (req, res) => {
   const { name, slug, short_desc, description, icon, cover_url, status, sort_order } = req.body;
   if (!name || !slug) return res.status(400).json({ error: 'name and slug are required' });
@@ -61,7 +56,6 @@ router.put('/admin/:id', checkAdmin, async (req, res) => {
   res.json(rows[0]);
 });
 
-// PATCH /api/effects/admin/:id/publish — переключить статус
 router.patch('/admin/:id/publish', checkAdmin, async (req, res) => {
   const [rows] = await pool.execute('SELECT status FROM effects WHERE id = ?', [req.params.id]);
   if (!rows.length) return res.status(404).json({ error: 'Not found' });
@@ -71,7 +65,6 @@ router.patch('/admin/:id/publish', checkAdmin, async (req, res) => {
   res.json({ status: newStatus });
 });
 
-// DELETE /api/effects/admin/:id — удалить эффект
 router.delete('/admin/:id', checkAdmin, async (req, res) => {
   await pool.execute('DELETE FROM effects WHERE id = ?', [req.params.id]);
   res.json({ success: true });

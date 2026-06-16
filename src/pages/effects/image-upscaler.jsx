@@ -13,6 +13,7 @@ import TextSection from '@/lib/TextSection';
 import OtherProducts from '@/lib/OtherProducts';
 import RelevantBlogs from '@/components/ui/RelevantBlogs';
 import { API_URL as API } from '@/config/api';
+import { useAuthModal } from '@/contexts/AuthModalContext';
 
 const MAX_MB = 22;
 const MAX_SIZE = MAX_MB * 1024 * 1024;
@@ -47,6 +48,7 @@ const ImageUpscaler = () => {
   const [resultUrl,   setResultUrl]   = useState(null);
   const [isDragging,  setIsDragging]  = useState(false);
   const fileInputRef = useRef(null);
+  const { requireAuth } = useAuthModal();
 
   const handleFileDrop = useCallback((f) => {
     if (!f) return;
@@ -61,6 +63,7 @@ const ImageUpscaler = () => {
 
   const handleSubmit = async () => {
     if (!file) return;
+    if (!requireAuth()) return;
     setLoading(true);
     setError(null);
     setResultUrl(null);
@@ -90,7 +93,7 @@ const ImageUpscaler = () => {
       <PageSEO
         title={t('imageUpscaler.seo.title')}
         description={t('imageUpscaler.seo.description')}
-        path="/tools/image-upscaler"
+        path="/tools/upscaler"
       />
 
       {/* Hero */}

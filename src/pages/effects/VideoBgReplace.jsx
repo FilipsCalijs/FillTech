@@ -6,6 +6,7 @@ import PageSEO from '@/components/seo/PageSEO';
 import OtherProducts from '@/lib/OtherProducts';
 import RelevantBlogs from '@/components/ui/RelevantBlogs';
 import { API_URL as API } from '@/config/api';
+import { useAuthModal } from '@/contexts/AuthModalContext';
 
 const MAX_MB = 500;
 
@@ -23,6 +24,7 @@ const VideoBgReplace = () => {
 
   const videoRef = useRef(null);
   const bgRef    = useRef(null);
+  const { requireAuth } = useAuthModal();
 
   const pickVideo = (f) => {
     if (!f) return;
@@ -58,6 +60,7 @@ const VideoBgReplace = () => {
 
   const handleGenerate = async () => {
     if (!videoFile) return;
+    if (!requireAuth()) return;
     setLoading(true);
     setError(null);
     setResultUrl(null);

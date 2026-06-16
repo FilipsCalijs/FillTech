@@ -12,7 +12,6 @@ const requireUid = (req, res, next) => {
   next();
 };
 
-// GET /api/generations — история текущего пользователя
 router.get('/', requireUid, async (req, res) => {
   const [rows] = await pool.execute(
     `SELECT id, tool_type, output_url, status, cost, created_at, expires_at
@@ -24,7 +23,6 @@ router.get('/', requireUid, async (req, res) => {
   res.json(rows);
 });
 
-// GET /api/generations/admin — все генерации (только для админов)
 router.get('/admin', checkAdmin, async (_req, res) => {
   const [rows] = await pool.execute(
     `SELECT g.id, g.user_uid, g.tool_type, g.output_url, g.status, g.cost, g.created_at, g.expires_at,
@@ -36,7 +34,6 @@ router.get('/admin', checkAdmin, async (_req, res) => {
   res.json(rows);
 });
 
-// DELETE /api/generations/:id — владелец удаляет свою
 router.delete('/:id', requireUid, async (req, res) => {
   const [[gen]] = await pool.execute(
     'SELECT output_url FROM generations WHERE id = ? AND user_uid = ?',
@@ -48,7 +45,6 @@ router.delete('/:id', requireUid, async (req, res) => {
   res.json({ success: true });
 });
 
-// DELETE /api/generations/admin/:id — админ удаляет любую
 router.delete('/admin/:id', checkAdmin, async (req, res) => {
   const [[gen]] = await pool.execute(
     'SELECT output_url FROM generations WHERE id = ?',

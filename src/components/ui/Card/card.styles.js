@@ -22,9 +22,9 @@ export const cardVariants = cva('shadow-sm bg-card text-card-foreground', {
       full: 'rounded-full',
     },
     bordered: {
-      md: 'border-2 border-border',   // средняя - заметная, но не толстая
-      lg: 'border-4 border-border',    // жирная граница
-      disable: 'border-0',                // без границы
+      md: 'border-2 border-border',
+      lg: 'border-4 border-border',
+      disable: 'border-0',
     },
   },
   defaultVariants: {
@@ -77,7 +77,6 @@ export const cardFooterVariants = cva('flex items-center', {
   },
 });
 
-// Функции для получения классов
 export const getCardClasses = (variant, padding, radius, bordered) =>
   cardVariants({ variant, padding, radius, bordered });
 

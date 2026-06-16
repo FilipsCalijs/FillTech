@@ -43,13 +43,12 @@ app.use('/api/billing', billingRouter);
 app.use('/sitemap.xml', sitemapRouter);
 app.use('/api/generations', generationsRouter);
 
-// Проверка здоровья
 app.get('/health', (_req, res) => res.send('Server is alive!'));
 
 const PORT = process.env.PORT || 5200;
 app.listen(PORT, '0.0.0.0', async () => {
     await runMigrations();
     await cleanupExpiredGenerations();
-    setInterval(cleanupExpiredGenerations, 60 * 60 * 1000); // каждый час
+    setInterval(cleanupExpiredGenerations, 60 * 60 * 1000);
     console.log(`🚀 Server running on http://localhost:${PORT}`);
 });

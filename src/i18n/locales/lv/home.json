@@ -1,0 +1,83 @@
+{
+  "seo": {
+    "title": "AI foto un video rediģēšana - Visaulio",
+    "description": "Rediģē fotogrāfijas un video ar AI tieši pārlūkprogrammā. Noņem fonus, maini apģērbu, krāso fotogrāfijas, klono balsis un vēl vairāk. 11 rīki, instalācija nav vajadzīga."
+  },
+  "hero": {
+    "h1": "AI foto un video rediģēšana bez liekiem soļiem",
+    "subheadline": "Visaulio piedāvā 11 AI rīkus foto un video rediģēšanai — visi vienā pārlūka cilnē. Lai sāktu, konts nav vajadzīgs.",
+    "badges": ["11 AI rīki", "Bez instalācijas", "10 valodas"],
+    "ctaPrimary": "Izmēģināt",
+    "ctaSecondary": "Visi rīki"
+  },
+  "socialProof": {
+    "stats": [
+      { "value": "11", "label": "AI rīki vienuviet" },
+      { "value": "10", "label": "Atbalstītās valodas" },
+      { "value": "30s", "label": "Vidējais apstrādes laiks" },
+      { "value": "0", "label": "Programmas jāinstalē" }
+    ]
+  },
+  "toolSpotlight": {
+    "heading": "Četri rīki, ko atver biežāk",
+    "tools": [
+      { "slug": "portrait", "name": "AI Portrait", "desc": "Pārveido fotogrāfiju stilizētā portretā ar pielāgotu apgaismojumu un toni." },
+      { "slug": "bg-remover", "name": "Background Remover", "desc": "Atpazīst objektu un noņem fonu ar vienu klikšķi." },
+      { "slug": "clothes-swap", "name": "Clothes Swap", "desc": "Aizstāj apģērbu fotogrāfijā ar citu priekšmetu vai stilu." },
+      { "slug": "video-bg-replace", "name": "Video BG Replace", "desc": "Nomaina fonu video klipā bez zaļā ekrāna aprīkojuma." }
+    ],
+    "cta": "Visi 11 rīki"
+  },
+  "howItWorks": {
+    "heading": "Trīs soļi - jebkurš rīks",
+    "steps": [
+      { "title": "Augšupielādē failu", "desc": "Ievelc fotogrāfiju vai video no ierīces. Tiek atbalstīti JPG, PNG, MP4 un citi formāti." },
+      { "title": "Izvēlies rīku un apraksti uzdevumu", "desc": "Izvēlies vienu no 11 AI rīkiem un ieraksti īsu norādījumu vai atstāj noklusējuma iestatījumus." },
+      { "title": "Lejupielādē rezultātu", "desc": "Apstrādātais fails būs gatavs aptuveni 30 sekundēs. Lejupielādē to tieši uz ierīces." }
+    ]
+  },
+  "features": {
+    "heading": "Kāpēc cilvēki izvēlas Visaulio",
+    "items": [
+      { "icon": "Layers", "title": "11 rīki vienā vietā", "desc": "Fona noņemšana, balss klonēšana, uzlabošana, PDF datu izvilkšana un vēl vairāk - viss zem viena URL. Nevajag pārslēgties starp programmām." },
+      { "icon": "Monitor", "title": "Darbojas jebkurā pārlūkā", "desc": "Visaulio pilnībā darbojas pārlūkprogrammā. Chrome, Safari, Firefox - atver cilni un sāc rediģēt." },
+      { "icon": "Globe", "title": "10 valodas", "desc": "Saskarne ir pieejama angļu, krievu, latviešu, vācu, portugāļu, spāņu, japāņu, hindi, korejiešu un ķīniešu valodā." },
+      { "icon": "Shield", "title": "Tavi faili netiek glabāti mūžīgi", "desc": "Augšupielādētie faili tiek izmantoti tikai apstrādei un pēc tam automātiski dzēsti. Visaulio nevēido tava satura bibliotēku." }
+    ]
+  },
+  "useCases": {
+    "heading": "Piemērots ikvienam, kas strādā ar vizuālo saturu",
+    "personas": [
+      { "role": "Satura veidotāji", "desc": "Noņem fonu no miniatūrām dažu sekunžu laikā. Lieto Game Filter, lai iegūtu PS2 vai anime izskatu bez darbvirsmas redaktora." },
+      { "role": "Tirgotāji", "desc": "Maini produktu fonus dažādām kampaņu versijām. Klono balsi, lai lokalizētu video reklāmas vairākos tirgos." },
+      { "role": "Dizaineri", "desc": "Izmanto Upscaler, lai palielinātu zemas izšķirtspējas materiālus drukāšanai. Izvilkt attēlus un tabulas no PDF failiem bez manuālas kopēšanas." },
+      { "role": "Ikdienišķi lietotāji", "desc": "Nokrāso vecos melnbaltos ģimenes fotoattēlus. Noņem ūdenszīmi no personīga attēla, kuram tev ir tiesības." }
+    ]
+  },
+  "testimonials": {
+    "heading": "Ko saka lietotāji",
+    "items": [
+      { "name": "Marta Lindqvist", "role": "YouTube autore", "text": "Agrāk pavadīju 20 minūtes, izgriežot fonus Photoshop. Visaulio tas aizņem apmēram 30 sekundes. Clothes Swap darbojas labāk, nekā gaidīju." },
+      { "name": "David Osei", "role": "Digital mārketinga menedžeris", "text": "Mēs veidojam produktu vizuāļus četriem tirgiem. Spēja mainīt fonus un klonēt balss ierakstu vienā pārlūka cilnē saīsināja mūsu ciklu no divām dienām līdz dažām stundām. Saskarne 10 valodās arī palīdz, kad komanda ir izkaisīta pa reģioniem." },
+      { "name": "Yuki Tanaka", "role": "Ārštata grafiskais dizainers", "text": "Upscaler tiek galā ar materiāliem, ko klienti sūta 72 dpi. Es tos palaiž caur Visaulio pirms izkārtojumā. PDF Extractor arī ietaupījis daudz manuālā darba, kad klienti sūta atsauces PDF failos." }
+    ]
+  },
+  "faq": {
+    "heading": "Bieži uzdotie jautājumi",
+    "items": [
+      { "q": "Kas ir Visaulio?", "a": "Visaulio ir tīmekļa platforma ar 11 AI rīkiem foto un video rediģēšanai. Rīki ietver fona noņemšanu, apģērba maiņu, foto krāsošanu, balss klonēšanu, video fona nomaiņu, uzlabošanu un citus. Viss darbojas pārlūkā - nekas nav jālejupielādē." },
+      { "q": "Vai Visaulio ir bez maksas?", "a": "Visi 11 rīki ir pieejami ar ierobežotu bezmaksas lietošanas skaitu. Lielākam apjomam vai prioritārai apstrādei norēķinu sadaļā ir pieejami maksas plāni." },
+      { "q": "Vai man kaut kas jāinstalē?", "a": "Nē. Visaulio pilnībā darbojas pārlūkā. Atver vietni, augšupielādē failu un sāc rediģēt. Nav nevienas darbvirsmas lietotnes, pārlūka paplašinājuma vai spraudņa." },
+      { "q": "Kādi AI rīki ir pieejami?", "a": "Visaulio ietver 11 rīkus: AI Portrait, Background Remover (attēlam), Watermark Remover (attēlam un video), Photo Colorizer, Clothes Swap, Video BG Replace, Game Filter, Voice Cloning, PDF Extractor un Upscaler." },
+      { "q": "Vai mani dati ir drošībā?", "a": "Augšupielādētie faili tiek izmantoti tikai pieprasītā uzdevuma veikšanai. Pēc apstrādes tie tiek automātiski dzēsti. Visaulio nepārdod un nenodod tavu saturu trešajām pusēm." },
+      { "q": "Kādas valodas tiek atbalstītas?", "a": "Visaulio saskarne ir pieejama 10 valodās: angļu, krievu, latviešu, vācu, portugāļu, spāņu, japāņu, hindi, korejiešu un ķīniešu. Valodu var mainīt, izmantojot URL struktūru (piemēram, visaulio.com/lv/)." },
+      { "q": "Vai man ir vajadzīgs konts, lai lietotu Visaulio?", "a": "Rīkus var izmēģināt bez konta izveides. Konts ir nepieciešams, lai piekļūtu pilnam lietošanas limitam un pārvaldītu norēķinu plānu." },
+      { "q": "Cik ilgi aizņem apstrāde?", "a": "Lielākā daļa uzdevumu tiek pabeigti apmēram 30 sekundēs atkarībā no faila lieluma un rīka. Video rīki garākiem klipiem var aizņemt nedaudz ilgāk. Maksas plāni saņem prioritāti rindā." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Sāc rediģēt dažu sekunžu laikā",
+    "subtext": "Atver pārlūka cilni, augšupielādē failu un saņem rezultātu aptuveni 30 sekundēs. Bez konta, bez lejupielādes, bez gaidīšanas.",
+    "cta": "Atvērt Visaulio"
+  }
+}

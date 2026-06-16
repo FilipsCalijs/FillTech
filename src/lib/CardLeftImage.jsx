@@ -8,7 +8,6 @@ const CardLeftImage = ({ title, text, imageUrl, alt, noCard = false }) => {
   return (
     <Wrapper className="flex flex-col md:flex-row rounded-xl overflow-hidden items-stretch w-full max-w-[1440px] mx-auto px-4">
 
-      {/* Картинка слева */}
       <div className="md:w-1/2 h-full min-h-[300px] flex justify-center items-center">
         <img
           src={imageUrl}
@@ -17,7 +16,6 @@ const CardLeftImage = ({ title, text, imageUrl, alt, noCard = false }) => {
         />
       </div>
 
-      {/* Текст справа */}
       <Content className="flex-1 p-6 md:p-10 flex flex-col justify-center gap-4">
         <Typography variant="h3" weight="semibold">{title}</Typography>
         <Typography variant="body1">{text}</Typography>

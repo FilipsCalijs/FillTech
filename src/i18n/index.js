@@ -16,7 +16,7 @@ i18n
     fallbackLng:   DEFAULT_LANG,
     supportedLngs: SUPPORTED_LANGS,
     defaultNS:     'common',
-    ns:            ['common', 'tools', 'blog', 'history', 'auth'],
+    ns:            ['common', 'tools', 'blog', 'history', 'auth', 'home'],
     detection: {
       order:             ['path', 'localStorage', 'navigator'],
       lookupLocalStorage: 'preferredLang',

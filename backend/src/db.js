@@ -12,7 +12,6 @@ export const pool = mysql.createPool({
   queueLimit: 0
 })
 
-// алиас — весь старый код использует { db }
 export const db = pool;
 
 export async function runMigrations() {
@@ -47,7 +46,6 @@ export async function runMigrations() {
       updated_at       DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )
   `)
-  // Добавить cover_url если колонки ещё нет
   const [[coverCol]] = await db.query(`
     SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS
     WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'posts' AND COLUMN_NAME = 'cover_url'
@@ -61,7 +59,6 @@ export async function runMigrations() {
     UPDATE posts SET slug = CONCAT('post-', id) WHERE slug = '' OR slug IS NULL
   `);
 
-  // Таблица generations
   await pool.query(`
     CREATE TABLE IF NOT EXISTS generations (
       id            VARCHAR(36)   NOT NULL PRIMARY KEY,
@@ -79,15 +76,11 @@ export async function runMigrations() {
     )
   `)
 
-  // Исправить колонки — старый migration.sql сделал их NOT NULL без дефолта
   await pool.query(`ALTER TABLE generations MODIFY COLUMN output_url VARCHAR(1000) NULL`).catch(() => {});
   await pool.query(`ALTER TABLE generations MODIFY COLUMN model VARCHAR(100) NULL`).catch(() => {});
-  // Убрать FK на users — auth идёт через Firebase, constraint только мешает
   await pool.query(`ALTER TABLE generations DROP FOREIGN KEY generations_ibfk_1`).catch(() => {});
-  // Добавить 'processing' в ENUM status (старый migration.sql не включал его)
   await pool.query(`ALTER TABLE generations MODIFY COLUMN status ENUM('pending','processing','completed','failed') NOT NULL DEFAULT 'pending'`).catch(() => {});
 
-  // Generations: добавить новые колонки если их нет (для старых инсталляций)
   const newCols = [
     { name: 'input_url',      def: 'VARCHAR(1000) NULL AFTER user_uid' },
     { name: 'tool_type',      def: "VARCHAR(100) NOT NULL DEFAULT 'watermark-remove' AFTER input_url" },
@@ -110,7 +103,6 @@ export async function runMigrations() {
     }
   }
 
-  // Таблица эффектов (AI инструменты)
   await pool.query(`
     CREATE TABLE IF NOT EXISTS effects (
       id          INT           NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -127,18 +119,20 @@ export async function runMigrations() {
     )
   `)
 
-  // Сид начальных эффектов [name, slug, short_desc, icon, cover_url, status, sort_order]
   const effects = [
     ['Watermark Remover', 'watermark-remover', 'Remove watermarks from any image with AI',       '🚫', '/logo/watermark_remover.png', 'published', 1],
     ['BG Remover',        'bg-remover',        'Remove background from photos in seconds',        '✂️', '/logo/bg_remover.png',        'published', 2],
     ['Upscaler',          'upscaler',          'Upscale images up to 4x without losing quality', '🔍', '/effects/upscaler.png',        'published', 3],
-    ['Layers Cutter',     'layers-cutter',     'Cut objects from images into separate layers',    '🪄', null,                          'published', 4],
+    ['Layers Cutter',     'layers-cutter',     'Cut objects from images into separate layers',    '🪄', null,                          'draft', 4],
     ['PS2 Filter',        'ps2-filter',        'Apply retro PS2-era filter to any photo',        '🎮', '/effects/ps_filters.png',     'published', 5],
     ['AI SVG Maker',      'ai-svg-maker',      'Convert any image to clean SVG vector',          '🖼️', null,                          'published', 6],
     ['Clothes Swap',      'clothes-swap',      'Try on different clothes with AI',               '👕', null,                          'published', 7],
     ['Photo Colorize',    'photo-colorize',    'Colorize black & white photos with AI',          '🎨', '/effects/coloriezed.png',     'published', 8],
     ['PDF Extractor',     'pdf-extractor',     'Extract text and data from PDF files',           '📄', null,                          'published', 9],
     ['Portrait',          'portrait',          'Create stunning AI portrait photos with style',  '🎭', null,                          'published', 10],
+    ['Voice Cloning',     'voice-clone',       'Clone any voice from a short audio sample',      '🎙️', '/effects/voice-cloning.png',  'published', 11],
+    ['Vocal Isolator',    'vocal-isolator',    'Separate vocals from music in any audio track',  '🎵', '/effects/voice-isolator.png', 'published', 12],
+    ['Text to Speech',    'text-to-speech',    'Convert any text into natural-sounding audio',    '🔊', null,                          'published', 13],
   ];
   for (const [name, slug, short_desc, icon, cover_url, status, sort_order] of effects) {
     await pool.query(
@@ -150,7 +144,6 @@ export async function runMigrations() {
     );
   }
 
-  // Таблица комментариев
   await pool.query(`
     CREATE TABLE IF NOT EXISTS comments (
       id           INT           NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -164,13 +157,21 @@ export async function runMigrations() {
     )
   `)
 
-  // Добавить balance к users если нет
   await pool.query(`ALTER TABLE users ADD COLUMN balance DECIMAL(10,4) NOT NULL DEFAULT 0.0000`).catch(() => {});
 
-  // i18n: добавить lang и translations к posts
   await pool.query(`ALTER TABLE posts ADD COLUMN lang ENUM('en','ru','lv','de') NOT NULL DEFAULT 'en' AFTER tags`).catch(() => {});
   await pool.query(`ALTER TABLE posts ADD COLUMN translations JSON NULL AFTER lang`).catch(() => {});
   await pool.query(`ALTER TABLE posts ADD INDEX idx_posts_lang_status (lang, status, published_at)`).catch(() => {});
+
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS post_likes (
+      id         INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
+      post_id    INT          NOT NULL,
+      user_uid   VARCHAR(255) NOT NULL,
+      created_at TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      UNIQUE KEY unique_like (post_id, user_uid)
+    )
+  `)
 
   console.log('✅ Migrations done')
 }

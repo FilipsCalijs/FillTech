@@ -1,6 +1,6 @@
 import express from 'express';
 import { db } from '../db.js';
-import { checkAdmin } from '../middleware/authMiddleware.js';
+import { checkAdmin, checkAuth } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
@@ -22,8 +22,6 @@ const parseTags = (raw) => {
   if (Array.isArray(raw)) return raw;
   try { return JSON.parse(raw); } catch { return []; }
 };
-
-// ─── Публичные ────────────────────────────────────────────────────────────
 
 const VALID_LANGS = ['en', 'ru', 'lv', 'de'];
 const safeLang = (l) => VALID_LANGS.includes(l) ? l : null;
@@ -66,9 +64,56 @@ router.get('/posts/:slug', async (req, res) => {
   }
 });
 
+// ─── Likes ──────────────────────────────────────────────────────────────
+
+// GET /api/blog/posts/:id/likes
+router.get('/posts/:id/likes', async (req, res) => {
+  try {
+    const postId  = req.params.id;
+    const userUid = req.headers['x-user-uid'];
+
+    const [[{ count }]] = await db.query('SELECT COUNT(*) AS count FROM post_likes WHERE post_id = ?', [postId]);
+
+    let liked = false;
+    if (userUid) {
+      const [rows] = await db.query('SELECT id FROM post_likes WHERE post_id = ? AND user_uid = ?', [postId, userUid]);
+      liked = rows.length > 0;
+    }
+
+    res.json({ count, liked });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// POST /api/blog/posts/:id/like - toggle like
+router.post('/posts/:id/like', checkAuth, async (req, res) => {
+  try {
+    const postId  = req.params.id;
+    const userUid = req.userUid;
+
+    const [existing] = await db.query('SELECT id FROM post_likes WHERE post_id = ? AND user_uid = ?', [postId, userUid]);
+
+    let liked;
+    if (existing.length) {
+      await db.query('DELETE FROM post_likes WHERE post_id = ? AND user_uid = ?', [postId, userUid]);
+      liked = false;
+    } else {
+      await db.query('INSERT INTO post_likes (post_id, user_uid) VALUES (?, ?)', [postId, userUid]);
+      liked = true;
+    }
+
+    const [[{ count }]] = await db.query('SELECT COUNT(*) AS count FROM post_likes WHERE post_id = ?', [postId]);
+    res.json({ liked, count });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 // ─── Admin ────────────────────────────────────────────────────────────────
 
-// GET /api/blog/admin/posts/:id — один пост полностью (для редактора)
 router.get('/admin/posts/:id', checkAdmin, async (req, res) => {
   try {
     const [rows] = await db.query('SELECT * FROM posts WHERE id = ?', [req.params.id]);
@@ -94,7 +139,6 @@ router.get('/admin/posts', checkAdmin, async (_req, res) => {
   }
 });
 
-// POST /api/blog/admin/posts — создать + сразу опубликовать если publish=true
 router.post('/admin/posts', checkAdmin, async (req, res) => {
   const { title, content, excerpt, cover_url, seo_title, seo_description, tags, publish } = req.body;
   if (!title || !content) return res.status(400).json({ error: 'title and content are required' });
@@ -126,7 +170,6 @@ router.post('/admin/posts', checkAdmin, async (req, res) => {
   }
 });
 
-// PUT /api/blog/admin/posts/:id — обновить + опубликовать если publish=true
 router.put('/admin/posts/:id', checkAdmin, async (req, res) => {
   const { title, content, excerpt, cover_url, seo_title, seo_description, tags, publish } = req.body;
   const { id } = req.params;
@@ -171,7 +214,6 @@ router.put('/admin/posts/:id', checkAdmin, async (req, res) => {
   }
 });
 
-// PATCH /api/blog/admin/posts/:id/publish — переключить статус
 router.patch('/admin/posts/:id/publish', checkAdmin, async (req, res) => {
   const { id } = req.params;
   try {

@@ -89,7 +89,27 @@
     "uploadImage": "Bild hochladen",
     "clickToChange": "Klicken zum Ändern",
     "woman": "Frau",
-    "man": "Mann"
+    "man": "Mann",
+    "heroTitle": "Virtuelle Anprobe",
+    "heroSubtitle": "Sieh jedes Kleidungsstück an einem Model - ohne Fotoshooting.",
+    "studioCta": "Teste das Virtual Try-On Studio kostenlos",
+    "studio": {
+      "uploadGarment": "Kleidungsstück hochladen",
+      "uploadModel": "Model hochladen",
+      "fileHint": "PNG, JPG oder WebP",
+      "chooseFromLibrary": "Aus Bibliothek wählen",
+      "revealing": "Dieses Bild enthält freizügige oder intime Kleidung (z. B. Bademode, Dessous).",
+      "extraNotes": "Zusätzliche Hinweise",
+      "optional": "Optional",
+      "extraNotesPlaceholder": "Füge Hinweise zu Passform, Stil oder Erhalt hinzu, z. B. weite Passform, Gesicht unverändert lassen.",
+      "aiEnhance": "KI-Optimierung",
+      "aspectRatio": "Seitenverhältnis",
+      "auto": "Auto",
+      "resolution": "Auflösung",
+      "outputCount": "Anzahl Ergebnisse",
+      "formula": "{{g}} Kleidungsstück × {{m}} Model × {{n}} = {{total}} Bild",
+      "clear": "Zurücksetzen"
+    }
   },
   "upscaler": {
     "title": "KI-Upscaler",
@@ -115,64 +135,68 @@
   },
   "seo": {
     "portrait": {
-      "title": "KI-Porträt-Editor - Fotos transformieren | FillTech",
+      "title": "KI-Porträt-Editor - Fotos transformieren | Visaulio",
       "desc": "Lade dein Foto hoch und transformiere es mit KI. Wähle Geschlecht, Stil, Pose und Beleuchtung."
     },
     "gameFilter": {
-      "title": "Spielfilter - Fotos in Spielscreenshots umwandeln | FillTech",
+      "title": "Spielfilter - Fotos in Spielscreenshots umwandeln | Visaulio",
       "desc": "Verwandle jedes Foto in einen Retro-Videospiel-Screenshot. 7 Stile: PS2, Arcade, 8-bit, PS3, Anime, AAA und mehr."
     },
     "bgRemover": {
-      "title": "Hintergrundentferner - Kostenlose KI-Hintergrundentfernung | FillTech",
+      "title": "Hintergrundentferner - Kostenlose KI-Hintergrundentfernung | Visaulio",
       "desc": "Entferne Bildhintergründe sofort mit KI. Erhalte transparente PNGs in Sekunden. Perfekt für Produkt- und Portraitfotos."
     },
     "watermark": {
-      "title": "Wasserzeichen entfernen - Logos aus Fotos entfernen | FillTech",
+      "title": "Wasserzeichen entfernen - Logos aus Fotos entfernen | Visaulio",
       "desc": "Entferne Text- und Logo-Wasserzeichen intelligent, während die ursprüngliche Textur erhalten bleibt."
     },
     "videoWatermark": {
-      "title": "Video-Wasserzeichen entfernen | FillTech",
+      "title": "Video-Wasserzeichen entfernen | Visaulio",
       "desc": "Entferne Wasserzeichen aus jedem Video mit KI. Bild-für-Bild-Verarbeitung erhält die ursprüngliche Qualität."
     },
     "colorize": {
-      "title": "Foto einfärben - Schwarzweißfotos mit KI colorieren | FillTech",
+      "title": "Foto einfärben - Schwarzweißfotos mit KI colorieren | Visaulio",
       "desc": "Erwecke alte Schwarzweißfotos mit KI-Colorierung zum Leben. Realistische Farben werden automatisch hinzugefügt."
     },
     "clothesSwap": {
-      "title": "Kleidungstausch - Outfits virtuell anprobieren mit KI | FillTech",
+      "title": "Kleidungstausch - Outfits virtuell anprobieren mit KI | Visaulio",
       "desc": "Probiere verschiedene Kleidung virtuell mit KI an. Lade dein Portrait und ein Kleidungsbild hoch."
     },
     "videoBg": {
-      "title": "Video-Hintergrundersatz - Videohintergrund ersetzen | FillTech",
+      "title": "Video-Hintergrundersatz - Videohintergrund ersetzen | Visaulio",
       "desc": "Entferne oder ersetze den Hintergrund eines Videos mit KI. Lade ein Video und ein optionales Hintergrundbild hoch."
     },
     "upscaler": {
-      "title": "KI-Bildvergrößerer - 4× ohne Qualitätsverlust | FillTech",
+      "title": "KI-Bildvergrößerer - 4× ohne Qualitätsverlust | Visaulio",
       "desc": "Vergrößere Fotos bis zu 4× mit KI-Hochskalierung. Feine Details werden ohne Qualitätsverlust wiederhergestellt."
     },
     "voiceClone": {
-      "title": "Stimmklonen - Jede Stimme mit KI klonen | FillTech",
+      "title": "Stimmklonen - Jede Stimme mit KI klonen | Visaulio",
       "desc": "Klone jede Stimme aus einer 3–10-sekündigen Audioprobe. Konvertiere Text in Sprache in 600+ Sprachen."
     },
     "vocalIsolator": {
-      "title": "Vokal-Isolator - Gesang aus Musik trennen | FillTech",
+      "title": "Vokal-Isolator - Gesang aus Musik trennen | Visaulio",
       "desc": "KI-gestützte Vokal-Isolierung. Lade jeden Song hoch und extrahiere sofort sauberen Gesang vom Instrumental."
     },
-    "explore": {
-      "title": "KI-Werkzeuge entdecken - Alle Effekte | FillTech",
+    "tools": {
+      "title": "KI-Werkzeuge - Alle Effekte | Visaulio",
       "desc": "Entdecke alle KI-Werkzeuge: Porträt-Editor, Hintergrundentferner, Wasserzeichen-Entferner, Foto-Colorizer und mehr."
     },
     "blog": {
-      "title": "Blog - KI-Werkzeug-Tipps und Neuigkeiten | FillTech",
-      "desc": "Lese Artikel, Tutorials und Neuigkeiten über KI-Bild- und Videoverarbeitungswerkzeuge vom FillTech-Team."
+      "title": "Blog - KI-Werkzeug-Tipps und Neuigkeiten | Visaulio",
+      "desc": "Lese Artikel, Tutorials und Neuigkeiten über KI-Bild- und Videoverarbeitungswerkzeuge vom Visaulio-Team."
     },
     "history": {
-      "title": "Verlauf - Meine Generierungen | FillTech",
+      "title": "Verlauf - Meine Generierungen | Visaulio",
       "desc": "Alle KI-Generierungen anzeigen und verwalten. Ergebnisse herunterladen oder löschen. Wird 7 Tage gespeichert."
     },
     "billing": {
-      "title": "Abrechnung - Kontoguthaben | FillTech",
+      "title": "Abrechnung - Kontoguthaben | Visaulio",
       "desc": "Guthaben verwalten, Ausgabenhistorie anzeigen und automatische Aufladung für KI-Generierungen konfigurieren."
+    },
+    "clothesSwapStudio": {
+      "title": "Virtual Try-On Studio | Visaulio",
+      "desc": "Erweitertes Virtual-Try-On-Studio - lade ein Kleidungsstück und ein Modelfoto hoch, um ein realistisches KI-Ergebnis zu erhalten."
     }
   },
   "watermarkRemover": {
@@ -484,6 +508,247 @@
         "Die Wiederherstellung alter Fotos ist ein weiterer praktischer Anwendungsfall. Gescannte Analogfotos oder Bilder früher Digitalkameras haben nach heutigen Maßstäben oft eine begrenzte Auflösung. KI-Rekonstruktion ergänzt fehlende Details mit hoher Genauigkeit und lässt das Bild aussehen, als wäre es mit moderner Hardware aufgenommen worden.",
         "Der wichtigste Vorteil des browserbasierten KI-Hochskalierens ist die Datenschutzkonformität nach DSGVO. Bilder werden ausschließlich für die Verarbeitung verwendet und danach automatisch gelöscht – keine Datenspeicherung, keine Weitergabe, keine Registrierung nötig. Das macht es zur sicheren Wahl für Unternehmen in Deutschland und der EU."
       ]
+    }
+  },
+  "removeBg": {
+    "seo": {
+      "title": "Hintergrund entfernen kostenlos – KI-Hintergrundentferner online",
+      "description": "Hintergrund von Bildern in Sekunden entfernen. Kostenloser KI-Hintergrundentferner ohne Anmeldung. Transparentes PNG für E-Commerce, Social Media, Druck und Design."
+    },
+    "hero": {
+      "h1": "Hintergrund aus Bild entfernen – kostenlos freistellen",
+      "subtitle": "Bild hochladen – KI entfernt den Hintergrund automatisch. Transparentes PNG kostenlos herunterladen. Ohne Anmeldung, ohne Wasserzeichen.",
+      "submit": "Hintergrund entfernen",
+      "submitLoading": "Hintergrund wird entfernt..."
+    },
+    "description": {
+      "h2": "Kostenloser Online-Hintergrundentferner – präzise und zuverlässig",
+      "text": "Das Tool nutzt KI, um das Motiv im Bild zu erkennen und den Hintergrund exakt freizustellen. Es verarbeitet Haare, Fell, komplexe Konturen und Produktfotos ohne manuelle Auswahl. JPG, PNG oder WebP hochladen – transparentes PNG für Produktkataloge, Social-Media-Posts, Druckmaterialien oder Kreativprojekte herunterladen."
+    },
+    "steps": {
+      "title": "Bild in 3 Schritten freistellen",
+      "items": [
+        {
+          "title": "Bild hochladen",
+          "text": "JPG-, PNG- oder WebP-Datei per Drag & Drop einfügen oder per Klick auswählen. Das sauberste Ergebnis liefern Bilder mit klar abgegrenztem Motiv."
+        },
+        {
+          "title": "KI entfernt den Hintergrund",
+          "text": "Die KI erkennt das Motiv automatisch und löscht den Hintergrund. Kein manuelles Maskieren nötig. Der Vorgang dauert wenige Sekunden."
+        },
+        {
+          "title": "Freisteller als PNG herunterladen",
+          "text": "Das fertige Bild steht als hochauflösender Freisteller im PNG-Format bereit. Direkt in Design-Tools verwenden, ins Online-Shopsystem laden oder mit neuem Hintergrund kombinieren."
+        }
+      ]
+    },
+    "beforeAfter": {
+      "title": "Vorher und nachher: Ergebnis der Hintergrundentfernung",
+      "text": "Der Vorher-Nachher-Vergleich zeigt, wie die KI feine Details wie einzelne Haare, Produktkanten und weiche Schatten erhält und gleichzeitig den Hintergrund vollständig entfernt. Das Motiv bleibt scharf, die Kanten sauber."
+    },
+    "features": {
+      "title": "Vorteile dieses Hintergrundentferners",
+      "items": [
+        {
+          "title": "Präzise KI-Kantenerkennung",
+          "text": "Das Modell verarbeitet feine Konturen – Haare, Fell und komplexe Produktsilhouetten. Das Ergebnis ist ein sauberer Freisteller ohne nachträgliche Bearbeitung."
+        },
+        {
+          "title": "Kostenlos ohne Wasserzeichen – DSGVO-konform",
+          "text": "Hintergrund entfernen und saubere PNG-Dateien in voller Auflösung herunterladen – ohne Wasserzeichen, ohne Konto. Die Verarbeitung erfolgt DSGVO-konform: Ihre Bilder werden nicht gespeichert oder weitergegeben."
+        },
+        {
+          "title": "Funktioniert auf jedem Gerät",
+          "text": "Das Tool läuft vollständig im Browser – auf Desktop, Tablet und Smartphone. Keine Installation, keine Software erforderlich."
+        },
+        {
+          "title": "Datenschutz: Ihre Bilder bleiben privat",
+          "text": "Hochgeladene Dateien werden sicher übertragen und nach dem Download automatisch vom Server gelöscht. Sie werden nicht für KI-Training genutzt und nicht an Dritte weitergegeben – vollständig DSGVO-konform."
+        }
+      ]
+    },
+    "cardLeft": {
+      "title": "Perfekt für Produktfotografie im E-Commerce",
+      "text": "Marktplätze wie Amazon, eBay und Etsy sowie Shopify-Shops verlangen Produktbilder auf weißem oder transparentem Hintergrund. Dieses Tool bereitet Produktfotos plattformgerecht auf – ohne Fotostudio und ohne komplexe Bildbearbeitungssoftware. Einfach Produktbild hochladen, Freisteller herunterladen, hochladen."
+    },
+    "cardRight": {
+      "title": "Für Designer, Kreative und Marketingteams",
+      "text": "Grafikdesigner nutzen es für Mockups und Composings. Social-Media-Manager für gebrandete Inhalte und Thumbnails. Fotografen für Portraitretusche und Katalogbilder. Das Ergebnis ist in Photoshop, Canva, Figma oder jedem anderen Tool einsetzbar, das transparentes PNG unterstützt."
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen zum Hintergrund entfernen",
+      "items": [
+        {
+          "q": "Wie funktioniert das Freistellen per KI?",
+          "a": "Das Tool nutzt ein KI-Modell, das auf Millionen von Bildern trainiert wurde. Es erkennt das Hauptmotiv, trennt es vom Hintergrund und entfernt den Hintergrundbereich, sodass ein transparentes PNG entsteht. Der Vorgang läuft vollautomatisch in wenigen Sekunden ab."
+        },
+        {
+          "q": "Ist der Hintergrundentferner wirklich kostenlos?",
+          "a": "Ja. Das Tool ist komplett kostenlos. Hintergrund entfernen und transparente PNG-Dateien herunterladen – ohne Bezahlung und ohne Konto."
+        },
+        {
+          "q": "Welche Dateiformate werden unterstützt?",
+          "a": "Es können JPG, JPEG, PNG und WebP hochgeladen werden. Das Ergebnis ist immer eine PNG-Datei mit transparentem Hintergrund."
+        },
+        {
+          "q": "Verliert das Bild durch die Freistellung an Qualität?",
+          "a": "Nein. Die KI erhält die ursprüngliche Auflösung und Detailgenauigkeit. Die Kanten werden so sauber und natürlich wie möglich gehalten. Die heruntergeladene Datei eignet sich für Web und Druck."
+        },
+        {
+          "q": "Funktioniert das Tool für Portraitfotos?",
+          "a": "Ja. Das Tool arbeitet zuverlässig bei Portraits und Ganzaufnahmen. Haarkanten und Hauttöne werden präzise erkannt."
+        },
+        {
+          "q": "Wie groß darf die Bilddatei sein?",
+          "a": "Dateien bis 25 MB können hochgeladen werden. Innerhalb dieses Limits ist eine schnelle Verarbeitung und ein hochwertiges Ergebnis gewährleistet."
+        },
+        {
+          "q": "Kann ich nach dem Freistellen einen neuen Hintergrund hinzufügen?",
+          "a": "Ja. Das transparente PNG kann in Canva, Photoshop oder Figma auf jeden beliebigen Hintergrund gelegt werden – Vollton, Verlauf oder ein anderes Bild."
+        },
+        {
+          "q": "Funktioniert das Tool für Produktfotos auf weißem Hintergrund?",
+          "a": "Ja. Produktbilder auf weißem oder hellem Hintergrund gehören zu den einfachsten Fällen für die KI. Das Ergebnis ist ein sauberer Freisteller für Marktplätze, Kataloge oder Druckmaterialien."
+        },
+        {
+          "q": "Ist das Tool DSGVO-konform?",
+          "a": "Ja. Die hochgeladenen Bilder werden über eine verschlüsselte Verbindung übertragen und nach der Verarbeitung automatisch vom Server gelöscht. Sie werden nicht für KI-Training genutzt und nicht an Dritte weitergegeben."
+        },
+        {
+          "q": "Eignet sich das Tool für kommerzielle Nutzung?",
+          "a": "Ja. Die Verarbeitung erfolgt sicher und DSGVO-konform. Bilder werden nicht gespeichert oder für andere Zwecke genutzt."
+        }
+      ]
+    },
+    "seoText": {
+      "title": "Über diesen kostenlosen KI-Hintergrundentferner",
+      "paragraphs": [
+        "Früher erforderte das Freistellen eines Bildes manuelle Arbeit in Bildbearbeitungsprogrammen wie Photoshop. Man musste das Motiv umranden, die Maske verfeinern und Kanten von Hand nacharbeiten. Für alle ohne professionelle Retuscherfahrung dauerte das zu lange und sah selten beim ersten Versuch überzeugend aus.",
+        "Dieses Tool übernimmt diese Arbeit automatisch. Die KI analysiert die Struktur des Bildes, erkennt das Hauptmotiv und trennt es vom Hintergrund. Das Ergebnis ist eine transparente PNG-Datei, die sich überall einsetzen lässt: im Designprojekt, auf der Website, in gedruckten Materialien oder in Produktlistings.",
+        "Die Technologie bewältigt die Fälle, die manuelles Bearbeiten schwierig machen: abstehende Haare, Fell, dünne Träger, teiltransparente Objekte und Motive vor unruhigen Hintergründen. Keine Einstellungen, keine manuelle Auswahl – hochladen, wenige Sekunden warten, herunterladen.",
+        "Für E-Commerce-Händler bedeutet das professionelle Produktfotos ohne Fotostudio-Budget. Für Designer und Content Creator schnellere Workflows und konsistente Ergebnisse bei großen Bildmengen. Für alle, die ein Bewerbungsfoto, eine Präsentationsgrafik oder ein Druckdesign vorbereiten, entfällt ein Schritt, der sonst viel Zeit kostet.",
+        "Das Ergebnis ist ein standardkonformes transparentes PNG, kompatibel mit allen gängigen Design-Tools. Es lässt sich direkt in Photoshop, Canva, Figma, InDesign oder Google Slides importieren und auf jeden gewünschten Hintergrund legen.",
+        "Keine Nutzungslimits, keine Registrierung, kein Wasserzeichen. Das Tool läuft im Browser auf jedem Gerät. Die Bilder werden DSGVO-konform nach der Verarbeitung automatisch vom Server gelöscht."
+      ]
+    }
+  },
+  "pdfExtract": {
+    "toolName": "PDF-Textextraktor",
+    "title": "PDF-Textextraktor",
+    "subtitle": "Extrahieren Sie sofort den gesamten Text aus jedem PDF-Dokument. Laden Sie Ihre Datei hoch und erhalten Sie in Sekunden sauberen, kopierbaren Text.",
+    "seo": {
+      "title": "PDF-Textextraktor - Text aus PDF kostenlos extrahieren | Visaulio",
+      "description": "Extrahieren Sie sofort Text aus PDF-Dateien mit KI. Laden Sie eine beliebige PDF hoch und erhalten Sie sauberen, kopierbaren Text. Kostenlos, schnell, ohne Anmeldung."
+    },
+    "upload": {
+      "button": "PDF-Datei auswählen",
+      "dropHint": "PDF hier per Drag & Drop ablegen",
+      "maxSize": "Max. {{max}}MB"
+    },
+    "submit": "Text extrahieren",
+    "loading": "Text wird extrahiert...",
+    "result": {
+      "pageCount": "Seiten: {{count}}",
+      "charCount": "Zeichen: {{count}}",
+      "copy": "Text kopieren",
+      "copied": "Kopiert!",
+      "download": ".txt herunterladen",
+      "reset": "Weitere PDF extrahieren"
+    },
+    "error": {
+      "fileType": "Nur PDF-Dateien sind erlaubt",
+      "fileSize": "Datei überschreitet das Limit von {{max}}MB",
+      "noText": "Kein Text in dieser PDF gefunden. Es könnte sich um ein gescanntes Dokument handeln.",
+      "generic": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+    }
+  },
+  "textToSpeech": {
+    "toolName": "Text zu Sprache",
+    "title": "Text-zu-Sprache-Generator",
+    "subtitle": "Wandle jeden Text sofort in natürlich klingendes Audio um",
+    "seo": {
+      "title": "Kostenloser Text-zu-Sprache-Generator - KI-Stimme online",
+      "description": "Text online kostenlos in natürliche Sprache umwandeln. Stimmen wählen, Audio herunterladen, KI-gestützt."
+    },
+    "textPlaceholder": "Gib den Text ein, der in Sprache umgewandelt werden soll...",
+    "promptPlaceholder": "Beschreibe die Stimme (optional): ruhig weiblich, tief männlich...",
+    "voiceLabel": "Stimmbeschreibung",
+    "textLabel": "Dein Text",
+    "presetsLabel": "Schnellvorlagen",
+    "preset": {
+      "calm": "Ruhig & professionell",
+      "energetic": "Energisch & freundlich",
+      "deep": "Tief & autoritär",
+      "soft": "Sanft & weich"
+    },
+    "submit": "Sprache generieren",
+    "loading": "Audio wird generiert...",
+    "result": {
+      "download": "Audio herunterladen",
+      "again": "Erneut generieren",
+      "saved": "In Verlauf gespeichert"
+    },
+    "error": {
+      "textRequired": "Bitte gib einen Text ein",
+      "textTooLong": "Text muss unter 500 Zeichen lang sein",
+      "generic": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
+    },
+    "steps": {
+      "title": "So funktioniert es",
+      "0": {
+        "title": "Text eingeben",
+        "desc": "Tippe oder füge beliebigen Text ein, den du in Sprache umwandeln möchtest. Bis zu 500 Zeichen pro Generierung."
+      },
+      "1": {
+        "title": "Stimme auswählen",
+        "desc": "Wähle aus voreingestellten Stimmstilen oder beschreibe deine eigenen Stimmcharakteristiken."
+      },
+      "2": {
+        "title": "Audio herunterladen",
+        "desc": "Höre das generierte Audio im Browser an und lade es dann als Audiodatei herunter."
+      }
+    },
+    "features": {
+      "title": "Warum unser TTS?",
+      "0": {
+        "title": "Natürlich klingende Stimmen",
+        "desc": "KI-gestützte Stimmen, die bemerkenswert menschlich und natürlich klingen."
+      },
+      "1": {
+        "title": "500 Zeichen pro Generierung",
+        "desc": "Genug für einen vollständigen Absatz oder eine kurze Rede mit einem Klick."
+      },
+      "2": {
+        "title": "Sofortige Ergebnisse",
+        "desc": "Erhalte deine Audiodatei in Sekunden, kein Warten nötig."
+      },
+      "3": {
+        "title": "Im Verlauf gespeichert",
+        "desc": "Jede Generierung wird gespeichert und steht für Wiedergabe und Download zur Verfügung."
+      }
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "0": {
+        "q": "Welche Sprachen werden unterstützt?",
+        "a": "Das Tool unterstützt mehrere Sprachen. Die Ausgabesprache hängt vom eingegebenen Text ab - schreibe einfach in der gewünschten Sprache."
+      },
+      "1": {
+        "q": "Wie lang kann der Text sein?",
+        "a": "Jede Generierung unterstützt bis zu 500 Zeichen - genug für einen kurzen Absatz oder eine Ankündigung."
+      },
+      "2": {
+        "q": "Kann ich das Audio herunterladen?",
+        "a": "Ja, alle generierten Audiodateien können direkt aus dem Ergebnisbereich heruntergeladen werden. Dateien werden auch 7 Tage in deinem Verlauf gespeichert."
+      },
+      "3": {
+        "q": "Ist es kostenlos?",
+        "a": "Ja, das Text-zu-Sprache-Tool ist derzeit kostenlos. Erstelle ein Konto, um loszulegen und deine Generierungen zu speichern."
+      }
+    },
+    "seoText": {
+      "title": "Über KI-Text-zu-Sprache-Technologie",
+      "text": "Text-zu-Sprache-Technologie wandelt geschriebenen Text mithilfe fortschrittlicher KI-Modelle in gesprochenes Audio um. Unser Tool nutzt MiniMax Voice Design, um natürliche, ausdrucksstarke Stimmen aus beliebigen Texteingaben zu generieren.\n\nOb du Voiceovers für Videos, Barrierefreiheitsfunktionen, Sprachlerntools benötigst oder deinen Text einfach laut vorlesen lassen möchtest - unser KI-TTS-Generator liefert sofort hochwertige Audioqualität. Keine Software-Installation nötig - einfach tippen, generieren und herunterladen."
     }
   }
 }

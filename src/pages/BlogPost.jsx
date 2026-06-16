@@ -6,11 +6,12 @@ import { useTranslation } from 'react-i18next';
 import { useLang } from '@/contexts/LangContext';
 import LangLink from '@/components/routing/LangLink';
 import PageSEO from '@/components/seo/PageSEO';
-import { ArrowLeft, Pencil } from 'lucide-react';
+import { ArrowLeft, Pencil, Heart } from 'lucide-react';
 import { CONTAINER } from '@/config/sizes';
 import { Typography } from '@/components/ui/Typography';
 import { Button } from '@/components/ui/Button';
 import Comments from '@/components/blog/Comments';
+import { useAuthModal } from '@/contexts/AuthModalContext';
 import { API_URL as API } from '@/config/api';
 
 const BlogPost = () => {
@@ -18,9 +19,13 @@ const BlogPost = () => {
   const { t: tc } = useTranslation('common');
   const lang     = useLang();
   const { slug } = useParams();
+  const { openAuthModal } = useAuthModal();
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
+  const [likeCount, setLikeCount] = useState(0);
+  const [isLiked, setIsLiked] = useState(false);
+  const [likeLoading, setLikeLoading] = useState(false);
 
   useEffect(() => {
     axios.get(`${API}/api/blog/posts/${slug}`)
@@ -28,6 +33,40 @@ const BlogPost = () => {
       .catch(() => setNotFound(true))
       .finally(() => setLoading(false));
   }, [slug]);
+
+  useEffect(() => {
+    if (!post?.id) return;
+    const userUid = localStorage.getItem('userUID');
+    axios.get(`${API}/api/blog/posts/${post.id}/likes`, {
+      headers: userUid ? { 'x-user-uid': userUid } : {},
+    })
+      .then(({ data }) => { setLikeCount(data.count); setIsLiked(data.liked); })
+      .catch(() => {});
+  }, [post?.id]);
+
+  const handleLike = async () => {
+    const userUid = localStorage.getItem('userUID');
+    if (!userUid) { openAuthModal('login'); return; }
+    if (likeLoading) return;
+
+    const nextLiked = !isLiked;
+    setIsLiked(nextLiked);
+    setLikeCount(c => c + (nextLiked ? 1 : -1));
+    setLikeLoading(true);
+
+    try {
+      const { data } = await axios.post(`${API}/api/blog/posts/${post.id}/like`, {}, {
+        headers: { 'x-user-uid': userUid },
+      });
+      setIsLiked(data.liked);
+      setLikeCount(data.count);
+    } catch {
+      setIsLiked(!nextLiked);
+      setLikeCount(c => c + (nextLiked ? -1 : 1));
+    } finally {
+      setLikeLoading(false);
+    }
+  };
 
   if (loading) return (
     <div className="py-12 text-center">
@@ -50,7 +89,7 @@ const BlogPost = () => {
   return (
     <>
       <Helmet>
-        <title>{seoTitle} - FillTech</title>
+        <title>{seoTitle} - Visaulio</title>
         <meta name="description" content={seoDesc} />
         <meta property="og:title" content={seoTitle} />
         <meta property="og:description" content={seoDesc} />
@@ -80,7 +119,6 @@ const BlogPost = () => {
         </div>
       </div>
 
-      {/* Обложка - на всю ширину страницы */}
       {post.cover_url && (
         <div className="w-full aspect-[21/9] overflow-hidden">
           <img
@@ -91,7 +129,6 @@ const BlogPost = () => {
         </div>
       )}
 
-      {/* Контент статьи */}
       <div className={`pb-16 ${CONTAINER.post}`}>
         <article className="pt-8">
           <Typography variant="h2" weight="bold" className="block mb-3">
@@ -110,6 +147,23 @@ const BlogPost = () => {
             className="rich-editor-output leading-relaxed text-foreground"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
+
+          <div className="mt-10 pt-6 border-t border-border flex items-center">
+            <button
+              onClick={handleLike}
+              disabled={likeLoading}
+              className="flex items-center gap-2 px-4 py-2 rounded-full border border-border hover:border-foreground/40 transition-colors disabled:opacity-60"
+              aria-label={isLiked ? t('likes.liked') : t('likes.like')}
+            >
+              <Heart
+                size={18}
+                className={isLiked ? 'fill-red-500 text-red-500' : 'text-muted-foreground'}
+              />
+              <Typography variant="body2" className="block">
+                {t('likes.count', { count: likeCount })}
+              </Typography>
+            </button>
+          </div>
 
           <Comments postId={post.id} />
         </article>

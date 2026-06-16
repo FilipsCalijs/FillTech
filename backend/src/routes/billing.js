@@ -74,7 +74,7 @@ router.post('/create-checkout-session', requireUid, async (req, res) => {
       line_items: [{
         price_data: {
           currency: 'usd',
-          product_data: { name: 'FillTech Balance Top-up' },
+          product_data: { name: 'Visaulio Balance Top-up' },
           unit_amount: Math.round(amount * 100),
         },
         quantity: 1,

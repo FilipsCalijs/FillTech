@@ -6,6 +6,7 @@ import PageSEO from '@/components/seo/PageSEO';
 import OtherProducts from '@/lib/OtherProducts';
 import RelevantBlogs from '@/components/ui/RelevantBlogs';
 import { API_URL as API } from '@/config/api';
+import { useAuthModal } from '@/contexts/AuthModalContext';
 
 const VoiceCloning = () => {
   const { t } = useTranslation('tools');
@@ -17,6 +18,7 @@ const VoiceCloning = () => {
   const [results,  setResults]  = useState([]); // [{ url, ts }]
   const [error,    setError]    = useState(null);
   const fileRef = useRef(null);
+  const { requireAuth } = useAuthModal();
 
   const pickFile = (f) => { if (f) { setFile(f); setError(null); } };
 
@@ -28,6 +30,7 @@ const VoiceCloning = () => {
 
   const handleGenerate = async () => {
     if (!text.trim() || !file) return;
+    if (!requireAuth()) return;
     setLoading(true);
     setError(null);
 

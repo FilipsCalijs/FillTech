@@ -39,5 +39,17 @@
     "name": "Portrait",
     "desc": "Create stunning AI portrait photos with style"
   },
+  "voice-clone": {
+    "name": "Voice Cloning",
+    "desc": "Clone any voice from a short audio sample"
+  },
+  "vocal-isolator": {
+    "name": "Vocal Isolator",
+    "desc": "Separate vocals from music in any audio track"
+  },
+  "text-to-speech": {
+    "name": "Text to Speech",
+    "desc": "Convert any text into natural-sounding audio"
+  },
   "tryIt": "→ Try it"
 }

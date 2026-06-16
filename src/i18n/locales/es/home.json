@@ -1,0 +1,83 @@
+{
+  "seo": {
+    "title": "Edición de fotos y vídeos con IA - Visaulio",
+    "description": "Edita fotos y vídeos con IA directamente en el navegador. Elimina fondos, cambia ropa, coloriza fotos, clona voces y mucho más. 11 herramientas, sin instalación."
+  },
+  "hero": {
+    "h1": "Edición de fotos y vídeos con IA sin complicaciones",
+    "subheadline": "Visaulio te da 11 herramientas de IA para editar fotos y vídeos, todo en una pestaña del navegador. No hace falta crear una cuenta para empezar.",
+    "badges": ["11 Herramientas de IA", "Sin instalación", "10 Idiomas"],
+    "ctaPrimary": "Probar gratis",
+    "ctaSecondary": "Ver todas las herramientas"
+  },
+  "socialProof": {
+    "stats": [
+      { "value": "11", "label": "Herramientas de IA en un solo lugar" },
+      { "value": "10", "label": "Idiomas compatibles" },
+      { "value": "30s", "label": "Tiempo medio de procesado" },
+      { "value": "0", "label": "Software que instalar" }
+    ]
+  },
+  "toolSpotlight": {
+    "heading": "Cuatro herramientas que la gente abre primero",
+    "tools": [
+      { "slug": "portrait", "name": "AI Portrait", "desc": "Transforma una foto en un retrato estilizado con iluminación y tono ajustados." },
+      { "slug": "bg-remover", "name": "Background Remover", "desc": "Detecta el sujeto y elimina el fondo con un solo clic." },
+      { "slug": "clothes-swap", "name": "Clothes Swap", "desc": "Reemplaza la ropa en una foto por otra prenda o estilo diferente." },
+      { "slug": "video-bg-replace", "name": "Video BG Replace", "desc": "Cambia el fondo de un clip de vídeo sin necesidad de croma." }
+    ],
+    "cta": "Ver las 11 herramientas"
+  },
+  "howItWorks": {
+    "heading": "Tres pasos, cualquier herramienta",
+    "steps": [
+      { "title": "Sube tu archivo", "desc": "Arrastra una foto o vídeo desde tu dispositivo. Se admiten JPG, PNG, MP4 y más formatos." },
+      { "title": "Elige una herramienta y describe lo que quieres", "desc": "Selecciona una de las 11 herramientas de IA y escribe una instrucción corta o deja la configuración por defecto." },
+      { "title": "Descarga el resultado", "desc": "El archivo procesado está listo en unos 30 segundos. Descárgalo directamente a tu dispositivo." }
+    ]
+  },
+  "features": {
+    "heading": "Por qué la gente usa Visaulio",
+    "items": [
+      { "icon": "Layers", "title": "11 herramientas en un solo lugar", "desc": "Eliminación de fondo, clonación de voz, upscaling, extracción de PDF y más, todo bajo una misma URL. Sin cambiar de aplicación." },
+      { "icon": "Monitor", "title": "Funciona en cualquier navegador", "desc": "Visaulio se ejecuta completamente en el navegador. Chrome, Safari, Firefox - abre una pestaña y empieza a editar." },
+      { "icon": "Globe", "title": "10 idiomas", "desc": "La interfaz está disponible en inglés, ruso, letón, alemán, portugués, español, japonés, hindi, coreano y chino." },
+      { "icon": "Shield", "title": "Tus archivos no se almacenan para siempre", "desc": "Los archivos subidos se usan solo para el procesado y se eliminan automáticamente después. Visaulio no crea una biblioteca con tu contenido." }
+    ]
+  },
+  "useCases": {
+    "heading": "Hecho para cualquier persona que trabaje con imágenes",
+    "personas": [
+      { "role": "Creadores de Contenido", "desc": "Elimina fondos de fotos de miniaturas en segundos. Aplica el Game Filter para conseguir un look de PS2 o anime sin abrir un editor de escritorio." },
+      { "role": "Profesionales de Marketing", "desc": "Cambia fondos de productos para diferentes versiones de campaña. Clona una voz para localizar anuncios en vídeo en varios mercados." },
+      { "role": "Diseñadores", "desc": "Usa el Upscaler para ampliar recursos de baja resolución para impresión. Extrae imágenes y tablas de PDFs sin trabajo manual de copiar y pegar." },
+      { "role": "Usuarios Cotidianos", "desc": "Coloriza fotos familiares antiguas en blanco y negro. Elimina una marca de agua de una imagen personal sobre la que tienes los derechos." }
+    ]
+  },
+  "testimonials": {
+    "heading": "Lo que dice la gente",
+    "items": [
+      { "name": "Marta Lindqvist", "role": "Creadora en YouTube", "text": "Antes tardaba 20 minutos recortando fondos en Photoshop. Con Visaulio tarda unos 30 segundos. El Clothes Swap funciona mejor de lo que esperaba." },
+      { "name": "David Osei", "role": "Director de Marketing Digital", "text": "Producimos visuales de producto para cuatro mercados. Poder cambiar fondos y clonar una pista de voz en la misma pestaña del navegador redujo nuestro ciclo de dos días a pocas horas. La interfaz en 10 idiomas también ayuda cuando el equipo está repartido por varias regiones." },
+      { "name": "Yuki Tanaka", "role": "Diseñadora Gráfica Freelance", "text": "El Upscaler se encarga de los recursos que los clientes envían a 72 dpi. Los paso por Visaulio antes de colocarlos en las maquetaciones. El PDF Extractor también me ha ahorrado mucho trabajo manual cuando los clientes comparten archivos de referencia." }
+    ]
+  },
+  "faq": {
+    "heading": "Preguntas frecuentes",
+    "items": [
+      { "q": "¿Qué es Visaulio?", "a": "Visaulio es una plataforma web con 11 herramientas de IA para editar fotos y vídeos. Las herramientas incluyen eliminación de fondos, cambio de ropa, colorización de fotos, clonación de voz, sustitución de fondo en vídeo, upscaling y más. Todo funciona en el navegador, sin software que descargar." },
+      { "q": "¿Visaulio es gratuito?", "a": "Todas las 11 herramientas están disponibles con un número limitado de usos gratuitos. Para mayor volumen o procesado prioritario, hay planes de pago disponibles en la sección de facturación." },
+      { "q": "¿Necesito instalar algo?", "a": "No. Visaulio funciona completamente en tu navegador. Abre el sitio, sube un archivo y empieza a editar. No hay aplicación de escritorio, extensión de navegador ni plugin que instalar." },
+      { "q": "¿Qué herramientas de IA están disponibles?", "a": "Visaulio incluye 11 herramientas: AI Portrait, Background Remover (imagen), Watermark Remover (imagen y vídeo), Photo Colorizer, Clothes Swap, Video BG Replace, Game Filter, Voice Cloning, PDF Extractor y Upscaler." },
+      { "q": "¿Están seguros mis datos?", "a": "Los archivos que subes se usan solo para procesar la tarea solicitada. Visaulio los elimina automáticamente tras el procesado. La plataforma no vende ni comparte tu contenido con terceros." },
+      { "q": "¿Qué idiomas son compatibles?", "a": "La interfaz de Visaulio está disponible en 10 idiomas: inglés, ruso, letón, alemán, portugués, español, japonés, hindi, coreano y chino. Puedes cambiar de idioma mediante la estructura de URL (p. ej. visaulio.com/es/)." },
+      { "q": "¿Necesito una cuenta para usar Visaulio?", "a": "Puedes probar las herramientas sin crear una cuenta. Se necesita una cuenta para acceder al límite completo de usos y gestionar tu plan de facturación." },
+      { "q": "¿Cuánto tarda el procesado?", "a": "La mayoría de las tareas se completan en unos 30 segundos, según el tamaño del archivo y la herramienta. Las herramientas de vídeo pueden tardar algo más con clips largos. Los planes de pago tienen prioridad en la cola." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Empieza a editar en segundos",
+    "subtext": "Abre una pestaña del navegador, sube tu archivo y obtén un resultado en unos 30 segundos. Sin cuenta, sin descarga, sin esperas.",
+    "cta": "Abrir Visaulio"
+  }
+}

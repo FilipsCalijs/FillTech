@@ -1,6 +1,6 @@
 {
   "title": "博客",
-  "subtitle": "来自 FillTech 团队的见解、教程和更新。",
+  "subtitle": "来自 Visaulio 团队的见解、教程和更新。",
   "readMore": "阅读更多",
   "publishedAt": "发布于",
   "noPosts": "未找到文章。",
@@ -63,5 +63,10 @@
     "edited": "(已编辑)",
     "deleteConfirm": "删除评论？",
     "loginPrompt": "登录后发表评论"
+  },
+  "likes": {
+    "like": "点赞",
+    "liked": "已点赞",
+    "count": "{{count}} 个赞"
   }
 }

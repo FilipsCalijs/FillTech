@@ -1,11 +1,18 @@
 import { useState, useRef, useCallback } from 'react';
+import { Plus, ArrowRight } from 'lucide-react';
 import { CONTAINER } from '@/config/sizes';
+import { cn } from '@/lib/utils';
+import { Typography } from '@/components/ui/Typography';
+import { getButtonClasses } from '@/components/ui/Button/button.styles';
+import { Card } from '@/components/ui/Card';
 import ResultPanel from '@/components/ui/ResultPanel';
 import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
+import LangLink from '@/components/routing/LangLink';
 import OtherProducts from '@/lib/OtherProducts';
 import RelevantBlogs from '@/components/ui/RelevantBlogs';
 import { API_URL as API } from '@/config/api';
+import { useAuthModal } from '@/contexts/AuthModalContext';
 
 const MODEL_URLS = [
   'https://static.wavespeed.ai/examples/d2fc9d2482cf4cc28d915ae61e16eb02/1773776417433956840_AQfpxHQ0.jpeg',
@@ -111,6 +118,7 @@ const ClothesSwap = () => {
 
   const modelRef  = useRef(null);
   const outfitRef = useRef(null);
+  const { requireAuth } = useAuthModal();
 
   const handleModelFile = (f) => {
     setModelFile(f);
@@ -144,6 +152,7 @@ const ClothesSwap = () => {
 
   const handleGenerate = async () => {
     if (!canGenerate) return;
+    if (!requireAuth()) return;
     setLoading(true);
     setError(null);
     setResultUrl(null);
@@ -177,6 +186,32 @@ const ClothesSwap = () => {
   return (
     <div className={`py-12 ${CONTAINER.blog}`}>
       <PageSEO title={t('seo.clothesSwap.title')} description={t('seo.clothesSwap.desc')} path="/tools/clothes-swap" />
+
+      {/* Hero */}
+      <div className="flex flex-col items-center text-center gap-4 mb-8">
+        <Typography variant="h2">{t('clothes.heroTitle')}</Typography>
+        <Typography variant="lead" color="muted" className="max-w-2xl">
+          {t('clothes.heroSubtitle')}
+        </Typography>
+        <LangLink
+          to="/tools/clothes-swap/studio"
+          className={cn(getButtonClasses('gold', 'lg'), 'mt-2')}
+        >
+          {t('clothes.studioCta')}
+        </LangLink>
+      </div>
+
+      {/* Demo illustration */}
+      <Card variant="elevated" bordered="disable" padding="lg" className="mb-12">
+        <div className="flex items-center justify-center gap-4 md:gap-8 flex-wrap">
+          <img src={OUTFIT_URLS[0]} alt="garment" className="w-28 md:w-40 aspect-[3/4] object-cover rounded-xl" />
+          <Plus className="w-6 h-6 text-muted-foreground shrink-0" />
+          <img src={MODEL_URLS[0]} alt="model" className="w-28 md:w-40 aspect-[3/4] object-cover rounded-xl" />
+          <ArrowRight className="w-6 h-6 text-muted-foreground shrink-0" />
+          <img src={MODEL_URLS[1]} alt="result" className="w-28 md:w-40 aspect-[3/4] object-cover rounded-xl" />
+        </div>
+      </Card>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <UploadZone
           label={t('clothes.step1')}

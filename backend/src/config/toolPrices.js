@@ -10,6 +10,8 @@ export const TOOL_PRICES = {
   'video-watermark-remove': 0.00,
   'video-bg-replace':      0.00,
   'vocal-isolator':        0.00,
+  'pdf-extract':           0.00,
+  'text-to-speech':        0.00,
 };
 
 export const getPrice = (toolType) => TOOL_PRICES[toolType] ?? 0.00;

@@ -39,5 +39,17 @@
     "name": "Porträt",
     "desc": "Atemberaubende KI-Porträtfotos erstellen"
   },
+  "voice-clone": {
+    "name": "Stimmenklonen",
+    "desc": "Klonen Sie jede Stimme aus einer kurzen Audioprobe"
+  },
+  "vocal-isolator": {
+    "name": "Vocal-Isolator",
+    "desc": "Trennt Gesang von der Musik in jedem Audiotrack"
+  },
+  "text-to-speech": {
+    "name": "Text zu Sprache",
+    "desc": "Wandle jeden Text in natuerlich klingendes Audio um"
+  },
   "tryIt": "→ Ausprobieren"
 }

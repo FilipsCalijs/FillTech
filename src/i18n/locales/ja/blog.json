@@ -1,6 +1,6 @@
 {
   "title": "ブログ",
-  "subtitle": "FillTechチームからのインサイト、チュートリアル、アップデート。",
+  "subtitle": "Visaulioチームからのインサイト、チュートリアル、アップデート。",
   "readMore": "続きを読む",
   "publishedAt": "公開日",
   "noPosts": "投稿が見つかりません。",
@@ -63,5 +63,10 @@
     "edited": "(編集済み)",
     "deleteConfirm": "コメントを削除しますか？",
     "loginPrompt": "コメントするにはサインインしてください"
+  },
+  "likes": {
+    "like": "いいね",
+    "liked": "いいね済み",
+    "count": "{{count}} いいね"
   }
 }

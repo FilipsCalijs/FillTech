@@ -1,13 +1,55 @@
 {
-  "watermark-remover": { "name": "水印去除器", "desc": "AI 去除任意图片水印" },
-  "bg-remover": { "name": "背景去除器", "desc": "秒级去除照片背景" },
-  "upscaler": { "name": "图片放大器", "desc": "无损放大图片至 4 倍" },
-  "layers-cutter": { "name": "图层分割器", "desc": "将图片中的对象切割为独立图层" },
-  "ps2-filter": { "name": "PS2 滤镜", "desc": "为任意照片应用复古 PS2 风格滤镜" },
-  "ai-svg-maker": { "name": "AI SVG 生成器", "desc": "将任意图片转换为干净的 SVG 矢量图" },
-  "clothes-swap": { "name": "换装", "desc": "用 AI 试穿不同服装" },
-  "photo-colorize": { "name": "照片上色", "desc": "AI 为黑白照片上色" },
-  "pdf-extractor": { "name": "PDF 提取器", "desc": "从 PDF 文件中提取文字和数据" },
-  "portrait": { "name": "人像", "desc": "用 AI 创作精美人像照片" },
+  "watermark-remover": {
+    "name": "水印去除器",
+    "desc": "AI 去除任意图片水印"
+  },
+  "bg-remover": {
+    "name": "背景去除器",
+    "desc": "秒级去除照片背景"
+  },
+  "upscaler": {
+    "name": "图片放大器",
+    "desc": "无损放大图片至 4 倍"
+  },
+  "layers-cutter": {
+    "name": "图层分割器",
+    "desc": "将图片中的对象切割为独立图层"
+  },
+  "ps2-filter": {
+    "name": "PS2 滤镜",
+    "desc": "为任意照片应用复古 PS2 风格滤镜"
+  },
+  "ai-svg-maker": {
+    "name": "AI SVG 生成器",
+    "desc": "将任意图片转换为干净的 SVG 矢量图"
+  },
+  "clothes-swap": {
+    "name": "换装",
+    "desc": "用 AI 试穿不同服装"
+  },
+  "photo-colorize": {
+    "name": "照片上色",
+    "desc": "AI 为黑白照片上色"
+  },
+  "pdf-extractor": {
+    "name": "PDF 提取器",
+    "desc": "从 PDF 文件中提取文字和数据"
+  },
+  "portrait": {
+    "name": "人像",
+    "desc": "用 AI 创作精美人像照片"
+  },
+  "voice-clone": {
+    "name": "声音克隆",
+    "desc": "通过简短音频样本克隆任意声音"
+  },
+  "vocal-isolator": {
+    "name": "人声分离器",
+    "desc": "从任意音轨中分离人声与伴奏"
+  },
+  "text-to-speech": {
+    "name": "文字转语音",
+    "desc": "将任意文字转换为自然流畅的语音"
+  },
   "tryIt": "→ 立即体验"
 }

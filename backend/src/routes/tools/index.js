@@ -9,6 +9,8 @@ import clothesSwap from './clothesSwap.js';
 import videoWatermarkRemove from './videoWatermarkRemove.js';
 import videoBgReplace from './videoBgReplace.js';
 import vocalIsolator from './vocalIsolator.js';
+import pdfExtract from './pdfExtract.js';
+import textToSpeech from './textToSpeech.js';
 
 const router = express.Router();
 
@@ -22,5 +24,7 @@ router.use('/clothes-swap', clothesSwap);
 router.use('/video-watermark-remove', videoWatermarkRemove);
 router.use('/video-bg-replace', videoBgReplace);
 router.use('/vocal-isolator', vocalIsolator);
+router.use('/pdf-extract', pdfExtract);
+router.use('/text-to-speech', textToSpeech);
 
 export default router;

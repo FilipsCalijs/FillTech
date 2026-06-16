@@ -1,6 +1,6 @@
 {
   "title": "Blog",
-  "subtitle": "Insights, tutoriais e atualizações da equipe FillTech.",
+  "subtitle": "Insights, tutoriais e atualizações da equipe Visaulio.",
   "readMore": "Ler mais",
   "publishedAt": "Publicado",
   "noPosts": "Nenhuma postagem encontrada.",
@@ -63,5 +63,10 @@
     "edited": "(editado)",
     "deleteConfirm": "Excluir comentário?",
     "loginPrompt": "Entre para deixar um comentário"
+  },
+  "likes": {
+    "like": "Curtir",
+    "liked": "Curtido",
+    "count": "{{count}} curtidas"
   }
 }

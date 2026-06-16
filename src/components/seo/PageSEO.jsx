@@ -11,7 +11,7 @@ const PageSEO = ({ title, description, path = '' }) => {
   return (
     <Helmet>
       <html lang={lang} />
-      <title>{title} - FillTech</title>
+      <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={`${BASE_URL}/${lang}${cleanPath}`} />
 
@@ -23,7 +23,7 @@ const PageSEO = ({ title, description, path = '' }) => {
           href={`${BASE_URL}/${l}${cleanPath}`}
         />
       ))}
-      <link rel="alternate" hrefLang="x-default" href={`${BASE_URL}/en${cleanPath}`} />
+      <link rel="alternate" hrefLang="x-default" href={`${BASE_URL}/`} />
     </Helmet>
   );
 };

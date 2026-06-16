@@ -1,0 +1,83 @@
+{
+  "seo": {
+    "title": "AI 照片和视频编辑 - Visaulio",
+    "description": "在浏览器中使用 AI 编辑照片和视频。去除背景、更换服装、照片上色、克隆声音等 11 种工具，无需安装。"
+  },
+  "hero": {
+    "h1": "AI 照片和视频编辑，简单上手",
+    "subheadline": "Visaulio 将 11 种 AI 照片和视频编辑工具集于一个浏览器标签页。无需注册账号即可开始使用。",
+    "badges": ["11 种 AI 工具", "无需安装", "10 种语言"],
+    "ctaPrimary": "免费试用",
+    "ctaSecondary": "查看所有工具"
+  },
+  "socialProof": {
+    "stats": [
+      { "value": "11", "label": "一站式 AI 工具" },
+      { "value": "10", "label": "支持语言" },
+      { "value": "30秒", "label": "平均处理时间" },
+      { "value": "0", "label": "需要安装的软件" }
+    ]
+  },
+  "toolSpotlight": {
+    "heading": "用户最常打开的四种工具",
+    "tools": [
+      { "slug": "portrait", "name": "AI Portrait", "desc": "调整光线与色调，将普通照片转换为精致人像。" },
+      { "slug": "bg-remover", "name": "Background Remover", "desc": "自动识别主体，一键去除背景。" },
+      { "slug": "clothes-swap", "name": "Clothes Swap", "desc": "将照片中的服装替换为其他款式或搭配。" },
+      { "slug": "video-bg-replace", "name": "Video BG Replace", "desc": "无需绿幕设备，直接替换视频片段的背景。" }
+    ],
+    "cta": "查看全部 11 种工具"
+  },
+  "howItWorks": {
+    "heading": "三步完成，适用任意工具",
+    "steps": [
+      { "title": "上传文件", "desc": "从设备拖入照片或视频，支持 JPG、PNG、MP4 等格式。" },
+      { "title": "选择工具并描述需求", "desc": "从 11 种 AI 工具中选择一个，输入简短指令或保留默认设置。" },
+      { "title": "下载结果", "desc": "处理完成的文件约 30 秒内就绪，直接下载到设备即可。" }
+    ]
+  },
+  "features": {
+    "heading": "用户选择 Visaulio 的理由",
+    "items": [
+      { "icon": "Layers", "title": "11 种工具，一站搞定", "desc": "背景去除、声音克隆、图像放大、PDF 提取等功能，全部集中在同一个 URL。无需在多个应用之间切换。" },
+      { "icon": "Monitor", "title": "支持所有主流浏览器", "desc": "Visaulio 完全在浏览器中运行。Chrome、Safari、Firefox，打开标签页即可开始编辑。" },
+      { "icon": "Globe", "title": "10 种语言", "desc": "界面支持英语、俄语、拉脱维亚语、德语、葡萄牙语、西班牙语、日语、印地语、韩语和中文。" },
+      { "icon": "Shield", "title": "文件不会被永久保存", "desc": "上传的文件仅用于处理请求，之后会自动删除。Visaulio 不会建立您的内容档案库。" }
+    ]
+  },
+  "useCases": {
+    "heading": "为所有与视觉内容打交道的人而生",
+    "personas": [
+      { "role": "内容创作者", "desc": "几秒内去除缩略图背景。无需打开桌面编辑器，用 Game Filter 就能获得 PS2 或动漫风格。" },
+      { "role": "营销人员", "desc": "为不同营销活动版本更换产品背景。克隆声音，实现视频广告的多语言本地化。" },
+      { "role": "设计师", "desc": "用 Upscaler 放大低分辨率素材以满足印刷需求。从 PDF 中提取图片和表格，无需手动复制粘贴。" },
+      { "role": "普通用户", "desc": "为老旧的黑白家庭照片上色。去除您拥有权利的图片上的水印。" }
+    ]
+  },
+  "testimonials": {
+    "heading": "用户怎么说",
+    "items": [
+      { "name": "Marta Lindqvist", "role": "YouTube 创作者", "text": "以前在 Photoshop 里抠背景要花 20 分钟。用 Visaulio 大概 30 秒就搞定了。Clothes Swap 的效果比我预期的好很多。" },
+      { "name": "David Osei", "role": "数字营销经理", "text": "我们需要为四个市场制作产品视觉素材。能在同一个浏览器标签页里完成背景更换和声音克隆，让我们的交付周期从两天缩短到几小时。团队分布在不同地区时，10 种语言的界面也很有帮助。" },
+      { "name": "Yuki Tanaka", "role": "自由平面设计师", "text": "客户发来的素材分辨率经常只有 72 dpi，我都会先用 Upscaler 处理再放进排版里。客户用 PDF 分享参考文件时，PDF Extractor 也省去了大量手动操作。" }
+    ]
+  },
+  "faq": {
+    "heading": "常见问题",
+    "items": [
+      { "q": "Visaulio 是什么？", "a": "Visaulio 是一个提供 11 种 AI 工具的网络平台，用于编辑照片和视频。工具涵盖背景去除、服装替换、照片上色、声音克隆、视频背景替换、图像放大等功能。全部在浏览器中运行，无需下载软件。" },
+      { "q": "Visaulio 免费吗？", "a": "所有 11 种工具均提供有限次数的免费使用。如需更多用量或优先处理，可在账单页面选择付费方案。" },
+      { "q": "需要安装什么吗？", "a": "不需要。Visaulio 完全在浏览器中运行。打开网站，上传文件，即可开始编辑。无需安装桌面应用、浏览器扩展或插件。" },
+      { "q": "有哪些 AI 工具？", "a": "Visaulio 包含 11 种工具：AI Portrait、Background Remover（图片）、Watermark Remover（图片和视频）、Photo Colorizer、Clothes Swap、Video BG Replace、Game Filter、Voice Cloning、PDF Extractor 和 Upscaler。" },
+      { "q": "我的数据安全吗？", "a": "上传的文件仅用于处理请求的任务，处理完成后会自动删除。Visaulio 不会将您的内容出售或共享给第三方。" },
+      { "q": "支持哪些语言？", "a": "Visaulio 界面支持 10 种语言：英语、俄语、拉脱维亚语、德语、葡萄牙语、西班牙语、日语、印地语、韩语和中文。您可以通过 URL 结构切换语言（例如 visaulio.com/zh/）。" },
+      { "q": "使用 Visaulio 需要账号吗？", "a": "无需注册账号即可试用工具。如需使用完整用量额度和管理付费方案，则需要账号。" },
+      { "q": "处理需要多长时间？", "a": "大多数任务根据文件大小和使用的工具，约 30 秒内完成。视频工具处理较长的片段可能需要更多时间。付费方案在处理队列中享有优先权。" }
+    ]
+  },
+  "finalCta": {
+    "heading": "几秒内开始编辑",
+    "subtext": "打开浏览器标签页，上传文件，约 30 秒即可获得结果。无需账号，无需下载，无需等待。",
+    "cta": "打开 Visaulio"
+  }
+}

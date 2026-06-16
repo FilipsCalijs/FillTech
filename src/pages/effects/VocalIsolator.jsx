@@ -4,6 +4,7 @@ import AudioPlayer from '@/components/ui/AudioPlayer';
 import { useTranslation } from 'react-i18next';
 import PageSEO from '@/components/seo/PageSEO';
 import { API_URL as API } from '@/config/api';
+import { useAuthModal } from '@/contexts/AuthModalContext';
 
 const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const fmtLabel = (ts) => {
@@ -20,6 +21,7 @@ const VocalIsolator = () => {
   const [results,  setResults]  = useState([]);
   const [error,    setError]    = useState(null);
   const fileRef = useRef(null);
+  const { requireAuth } = useAuthModal();
 
   const pickFile = (f) => { if (f) { setFile(f); setError(null); } };
 
@@ -31,6 +33,7 @@ const VocalIsolator = () => {
 
   const handleGenerate = async () => {
     if (!file) return;
+    if (!requireAuth()) return;
     setLoading(true);
     setError(null);
 

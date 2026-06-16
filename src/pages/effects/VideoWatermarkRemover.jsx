@@ -6,6 +6,7 @@ import PageSEO from '@/components/seo/PageSEO';
 import OtherProducts from '@/lib/OtherProducts';
 import RelevantBlogs from '@/components/ui/RelevantBlogs';
 import { API_URL as API } from '@/config/api';
+import { useAuthModal } from '@/contexts/AuthModalContext';
 
 const MAX_MB  = 500;
 const MAX_SIZE = MAX_MB * 1024 * 1024;
@@ -20,6 +21,7 @@ const VideoWatermarkRemover = () => {
   const [generationId, setGenerationId] = useState(null);
   const [error,        setError]        = useState(null);
   const fileRef = useRef(null);
+  const { requireAuth } = useAuthModal();
 
   const pickFile = (f) => {
     if (!f) return;
@@ -41,6 +43,7 @@ const VideoWatermarkRemover = () => {
 
   const handleGenerate = async () => {
     if (!file) return;
+    if (!requireAuth()) return;
     setLoading(true);
     setError(null);
     setResultUrl(null);

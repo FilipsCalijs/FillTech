@@ -1,6 +1,6 @@
 {
   "nav": {
-    "explore": "Explorar",
+    "tools": "Ferramentas",
     "blog": "Blog",
     "gameFilter": "Filtro de Jogo",
     "voice": "Clonar Voz",
@@ -45,7 +45,7 @@
     "required": "Este campo é obrigatório",
     "wentWrong": "Algo deu errado. Por favor, tente novamente."
   },
-  "exploreSubtitle": "Ferramentas de IA poderosas para transformar suas imagens e arquivos.",
+  "toolsSubtitle": "Ferramentas de IA poderosas para transformar suas imagens e arquivos.",
   "notFound": {
     "title": "Página não encontrada",
     "desc": "Infelizmente, esta página não existe ou foi movida.",
@@ -58,37 +58,42 @@
   "current": "Atual",
   "footer": {
     "rights": "Todos os direitos reservados.",
-    "description": "FillTech oferece ferramentas de IA para processamento de imagens e vídeos. Remova fundos, melhore fotos, troque roupas e muito mais - instantaneamente.",
+    "description": "Visaulio oferece ferramentas de IA para processamento de imagens e vídeos. Remova fundos, melhore fotos, troque roupas e muito mais - instantaneamente.",
     "legal": "Legal",
     "tools": "Ferramentas",
     "terms": "Termos de Serviço",
     "privacy": "Política de Privacidade",
-    "cookies": "Política de Cookies"
+    "cookies": "Política de Cookies",
+    "contact": "Contate-nos"
   },
   "seo": {
-    "explore": {
-      "title": "Explorar Ferramentas de IA - Todos os Efeitos | FillTech",
+    "tools": {
+      "title": "Ferramentas de IA - Todos os Efeitos | Visaulio",
       "desc": "Descubra todas as ferramentas de IA: editor de retratos, removedor de fundo, removedor de marca d'água, colorizador de fotos e mais."
     },
+    "contact": {
+      "title": "Contate-nos | Visaulio",
+      "desc": "Entre em contato com a equipe Visaulio para suporte, feedback ou parcerias."
+    },
     "history": {
-      "title": "Meu Histórico - Conteúdo Gerado | FillTech",
-      "desc": "Visualize e gerencie todo o seu conteúdo gerado por IA. Baixe ou exclua suas gerações. Resultados mantidos por 7 dias."
+      "title": "Histórico de Gerações | Visaulio",
+      "desc": "Veja e gerencie todo o seu conteúdo gerado por IA: imagens, áudio, vídeos. Baixe ou exclua. Arquivos mantidos por 7 dias."
     },
     "billing": {
-      "title": "Cobrança - Saldo da Conta | FillTech",
+      "title": "Cobrança - Saldo da Conta | Visaulio",
       "desc": "Gerencie seu saldo, visualize o histórico de gastos e configure recargas automáticas para gerações de IA."
     },
     "terms": {
-      "title": "Termos de Serviço | FillTech",
-      "desc": "Leia os termos de serviço e condições de uso do FillTech."
+      "title": "Termos de Serviço | Visaulio",
+      "desc": "Leia os termos de serviço e condições de uso do Visaulio."
     },
     "privacy": {
-      "title": "Política de Privacidade | FillTech",
-      "desc": "Saiba como o FillTech coleta, usa e protege seus dados pessoais."
+      "title": "Política de Privacidade | Visaulio",
+      "desc": "Saiba como o Visaulio coleta, usa e protege seus dados pessoais."
     },
     "cookies": {
-      "title": "Política de Cookies | FillTech",
-      "desc": "Entenda como o FillTech usa cookies e tecnologias de rastreamento."
+      "title": "Política de Cookies | Visaulio",
+      "desc": "Entenda como o Visaulio usa cookies e tecnologias de rastreamento."
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "title": "Blogs",
-  "subtitle": "Raksti, pamācības un jaunumi no FillTech komandas.",
+  "subtitle": "Raksti, pamācības un jaunumi no Visaulio komandas.",
   "readMore": "Lasīt vairāk",
   "publishedAt": "Publicēts",
   "noPosts": "Raksti nav atrasti.",
@@ -63,5 +63,10 @@
     "edited": "(rediģēts)",
     "deleteConfirm": "Dzēst komentāru?",
     "loginPrompt": "Piesakieties, lai atstātu komentāru"
+  },
+  "likes": {
+    "like": "Patīk",
+    "liked": "Patīk",
+    "count": "{{count}} patīk"
   }
 }

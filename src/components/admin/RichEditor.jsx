@@ -18,7 +18,6 @@ import {
 } from 'lucide-react';
 import { API_URL as API } from '@/config/api';
 
-// ─── Кнопка тулбара ───────────────────────────────────────────
 const Btn = ({ onClick, active, disabled, title, children }) => (
   <button
     type="button"
@@ -37,7 +36,6 @@ const Btn = ({ onClick, active, disabled, title, children }) => (
 
 const Sep = () => <div className="w-px h-5 bg-border mx-1 shrink-0 self-center" />;
 
-// ─── Редактор ─────────────────────────────────────────────────
 const RichEditor = ({ value, onChange, placeholder = 'Текст поста...' }) => {
   const fileRef = useRef(null);
   const [uploading, setUploading] = useState(false);
@@ -62,7 +60,6 @@ const RichEditor = ({ value, onChange, placeholder = 'Текст поста...' 
 
   if (!editor) return null;
 
-  // ── Ссылка ──────────────────────────────────────────────────
   const handleLink = () => {
     const prev = editor.getAttributes('link').href || '';
     const url = window.prompt('URL ссылки', prev);
@@ -72,7 +69,6 @@ const RichEditor = ({ value, onChange, placeholder = 'Текст поста...' 
       : editor.chain().focus().setLink({ href: url, target: '_blank' }).run();
   };
 
-  // ── Загрузка картинки с компьютера ──────────────────────────
   const handleImageFile = async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -94,7 +90,6 @@ const RichEditor = ({ value, onChange, placeholder = 'Текст поста...' 
     }
   };
 
-  // ── Вставка картинки по URL ──────────────────────────────────
   const handleImageUrl = () => {
     const url = window.prompt('URL изображения');
     if (url) editor.chain().focus().setImage({ src: url }).run();
@@ -103,10 +98,8 @@ const RichEditor = ({ value, onChange, placeholder = 'Текст поста...' 
   return (
     <div className="flex flex-col border border-border rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-ring bg-card">
 
-      {/* ── Тулбар ── */}
       <div className="flex flex-wrap items-center gap-0.5 px-3 py-2 border-b border-border bg-muted/30">
 
-        {/* История */}
         <Btn title="Отменить (Ctrl+Z)" onClick={() => editor.chain().focus().undo().run()} disabled={!editor.can().undo()}>
           <Undo size={14} />
         </Btn>
@@ -116,7 +109,6 @@ const RichEditor = ({ value, onChange, placeholder = 'Текст поста...' 
 
         <Sep />
 
-        {/* Заголовки */}
         <Btn title="Заголовок H2" active={editor.isActive('heading', { level: 2 })} onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}>
           <Heading2 size={14} />
         </Btn>
@@ -126,7 +118,6 @@ const RichEditor = ({ value, onChange, placeholder = 'Текст поста...' 
 
         <Sep />
 
-        {/* Форматирование текста */}
         <Btn title="Жирный (Ctrl+B)" active={editor.isActive('bold')} onClick={() => editor.chain().focus().toggleBold().run()}>
           <Bold size={14} />
         </Btn>
@@ -145,7 +136,6 @@ const RichEditor = ({ value, onChange, placeholder = 'Текст поста...' 
 
         <Sep />
 
-        {/* Ссылки */}
         <Btn title="Добавить ссылку" active={editor.isActive('link')} onClick={handleLink}>
           <LinkIcon size={14} />
         </Btn>
@@ -155,7 +145,6 @@ const RichEditor = ({ value, onChange, placeholder = 'Текст поста...' 
 
         <Sep />
 
-        {/* Списки и блоки */}
         <Btn title="Маркированный список" active={editor.isActive('bulletList')} onClick={() => editor.chain().focus().toggleBulletList().run()}>
           <List size={14} />
         </Btn>
@@ -174,7 +163,6 @@ const RichEditor = ({ value, onChange, placeholder = 'Текст поста...' 
 
         <Sep />
 
-        {/* Выравнивание */}
         <Btn title="По левому краю" active={editor.isActive({ textAlign: 'left' })} onClick={() => editor.chain().focus().setTextAlign('left').run()}>
           <AlignLeft size={14} />
         </Btn>
@@ -190,7 +178,6 @@ const RichEditor = ({ value, onChange, placeholder = 'Текст поста...' 
 
         <Sep />
 
-        {/* Изображение */}
         <Btn
           title="Вставить изображение с компьютера"
           disabled={uploading}
@@ -202,7 +189,6 @@ const RichEditor = ({ value, onChange, placeholder = 'Текст поста...' 
           <span className="text-[10px] font-mono font-bold leading-none px-0.5">URL</span>
         </Btn>
 
-        {/* Скрытый file input */}
         <input
           ref={fileRef}
           type="file"
@@ -212,7 +198,6 @@ const RichEditor = ({ value, onChange, placeholder = 'Текст поста...' 
         />
       </div>
 
-      {/* ── Область редактирования ── */}
       <EditorContent
         editor={editor}
         className="rich-editor min-h-[450px] px-6 py-4 text-foreground focus:outline-none"

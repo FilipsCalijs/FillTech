@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, Navigate, useLocation, useParams } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { useAuth } from './contexts/authContext';
+import { AuthModalProvider } from './contexts/AuthModalContext';
 import Footer from '@/components/ui/Footer';
 import LangRouter from '@/components/routing/LangRouter';
 
@@ -16,8 +17,8 @@ import AdminBlog from './pages/AdminBlog';
 import AdminBlogEditor from './pages/AdminBlogEditor';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
-import Plan from './components/plan/Plan';
-import Explore from './pages/Explore';
+import Tools from './pages/Tools';
+import Contact from './pages/Contact';
 import Testing from './pages/Testing';
 import Testing2 from './pages/Testing2';
 import ToolPage from './pages/ToolPage';
@@ -25,12 +26,14 @@ import BgRemover from './pages/effects/BgRemover';
 import WatermarkRemover from './pages/effects/WatermarkRemover';
 import PhotoColorize from './pages/effects/PhotoColorize';
 import ClothesSwap from './pages/effects/ClothesSwap';
+import ClothesSwapStudio from './pages/effects/ClothesSwapStudio';
 import VideoWatermarkRemover from './pages/effects/VideoWatermarkRemover';
 import VideoBgReplace from './pages/effects/VideoBgReplace';
 import VocalIsolator from './pages/effects/VocalIsolator';
+import PdfExtractor from './pages/effects/PdfExtractor';
+import TextToSpeech from './pages/effects/TextToSpeech';
 import Portrait from './pages/effects/Portrait';
 import ImageUpscaler from './pages/effects/image-upscaler';
-import Primer from './pages/Primer';
 import AdminEffects from './pages/AdminEffects';
 import AdminEffectEditor from './pages/AdminEffectEditor';
 import History from './pages/History';
@@ -42,12 +45,17 @@ import Cookies from './pages/Cookies';
 import { SUPPORTED_LANGS } from '@/i18n/index';
 
 // Redirect / to preferred or browser lang
-const LangRedirect = ({ to = '/home' }) => {
+const LangRedirect = ({ to = '/tools' }) => {
   const saved    = localStorage.getItem('preferredLang');
   const browser  = navigator.language?.slice(0, 2);
   const detected = SUPPORTED_LANGS.includes(saved) ? saved
     : SUPPORTED_LANGS.includes(browser) ? browser : 'en';
   return <Navigate to={`/${detected}${to}`} replace />;
+};
+
+const WatermarkRedirect = () => {
+  const { lang } = useParams();
+  return <Navigate to={`/${lang}/tools/watermark-remover`} replace />;
 };
 
 function AppShell() {
@@ -91,7 +99,7 @@ function AppShell() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {userLoggedIn && <Header isDark={isDark} toggleTheme={toggleTheme} />}
+      <Header isDark={isDark} toggleTheme={toggleTheme} />
       <main className="flex-1 flex flex-col">
         <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
           <Routes>
@@ -108,18 +116,17 @@ function AppShell() {
             <Route path="admin/effects/:id/edit"   element={<AdminRoute><AdminEffectEditor /></AdminRoute>} />
 
             {/* Protected */}
-            <Route path="home"    element={<ProtectedRoute><Home /></ProtectedRoute>} />
-            <Route path="plan"    element={<ProtectedRoute><Plan /></ProtectedRoute>} />
+            <Route path="home"    element={<Home />} />
             <Route path="history" element={<ProtectedRoute><History /></ProtectedRoute>} />
             <Route path="billing" element={<ProtectedRoute><Billing /></ProtectedRoute>} />
 
             {/* Public */}
             <Route path="blog"          element={<Blog />} />
             <Route path="blog/:slug"    element={<BlogPost />} />
-            <Route path="explore"       element={<Explore />} />
+            <Route path="tools"         element={<Tools />} />
+            <Route path="contact"       element={<Contact />} />
             <Route path="testing"       element={<Testing />} />
             <Route path="testing-2"     element={<Testing2 />} />
-            <Route path="primer"        element={<Primer />} />
             <Route path="terms"         element={<Terms />} />
             <Route path="privacy"       element={<Privacy />} />
             <Route path="cookies"       element={<Cookies />} />
@@ -129,16 +136,20 @@ function AppShell() {
             <Route path="tools/upscaler"               element={<ImageUpscaler />} />
             <Route path="tools/ps2-filter"             element={<Testing />} />
             <Route path="tools/watermark-remover"      element={<WatermarkRemover />} />
-            <Route path="watermark-remover"             element={<WatermarkRemover />} />
+            <Route path="watermark-remover"             element={<WatermarkRedirect />} />
             <Route path="tools/photo-colorize"         element={<PhotoColorize />} />
             <Route path="tools/clothes-swap"           element={<ClothesSwap />} />
+            <Route path="tools/clothes-swap/studio"    element={<ClothesSwapStudio />} />
             <Route path="tools/watermark-remover-video" element={<VideoWatermarkRemover />} />
             <Route path="tools/video-bg-replace" element={<VideoBgReplace />} />
             <Route path="tools/vocal-isolator"   element={<VocalIsolator />} />
+            <Route path="tools/pdf-extractor"    element={<PdfExtractor />} />
+            <Route path="tools/text-to-speech"  element={<TextToSpeech />} />
+            <Route path="tools/voice-clone"      element={<Testing2 />} />
             <Route path="tools/:effectPath"            element={<ToolPage />} />
 
-            <Route index element={<Navigate to={`/${lang}/home`} replace />} />
-            <Route path="*" element={userLoggedIn ? <NotFound /> : <Navigate to={`/${lang}/login`} replace />} />
+            <Route index element={<Home />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </main>
@@ -150,16 +161,18 @@ function AppShell() {
 function App() {
   return (
     <HelmetProvider>
-      <Routes>
-        {/* /:lang prefix - all app routes live here */}
-        <Route path="/:lang" element={<LangRouter />}>
-          <Route path="*" element={<AppShell />} />
-        </Route>
+      <AuthModalProvider>
+        <Routes>
+          {/* /:lang prefix - all app routes live here */}
+          <Route path="/:lang" element={<LangRouter />}>
+            <Route path="*" element={<AppShell />} />
+          </Route>
 
-        {/* Redirect / and unknown paths to detected lang */}
-        <Route path="/" element={<LangRedirect />} />
-        <Route path="*" element={<LangRedirect />} />
-      </Routes>
+          {/* Redirect / and unknown paths to detected lang */}
+          <Route path="/" element={<LangRedirect />} />
+          <Route path="*" element={<LangRedirect />} />
+        </Routes>
+      </AuthModalProvider>
     </HelmetProvider>
   );
 }
