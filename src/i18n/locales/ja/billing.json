@@ -33,6 +33,10 @@
   "redirecting": "Stripeへ移動中…",
   "paySuccess": "支払い完了 - 残高が更新されました。",
   "payCancel": "支払いがキャンセルされました - 請求はありません。",
+  "payments": "チャージ履歴",
+  "noPayments": "まだチャージがありません。最初の購入後にここに支払いが表示されます。",
+  "payDate": "日付",
+  "payAmount": "金額",
   "topup": {
     "title": "クレジットを追加",
     "subtitle": "残高をチャージするパッケージを選択してください",

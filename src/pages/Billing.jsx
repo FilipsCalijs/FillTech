@@ -136,10 +136,11 @@ const Billing = () => {
   const { currentUser } = useAuth();
   const [balance,    setBalance]    = useState(null);
   const [spentMonth, setSpentMonth] = useState(null);
-  const [tab,        setTab]        = useState('history');
+  const [tab,        setTab]        = useState('payments');
   const [history,    setHistory]    = useState([]);
   const [histPage,   setHistPage]   = useState(1);
   const [histPages,  setHistPages]  = useState(1);
+  const [payments,   setPayments]   = useState([]);
   const [loading,    setLoading]    = useState(true);
   const [toast,      setToast]      = useState(null); // 'success' | 'cancel' | null
   // Prefer auth context uid (always fresh); fall back to localStorage for the rare edge case
@@ -161,15 +162,25 @@ const Billing = () => {
       window.history.replaceState({}, '', window.location.pathname);
       setToast('success');
       if (sessionId && uid) {
-        // Verify payment with backend and credit balance idempotently
         fetch(`${API}/api/billing/verify-session?session_id=${sessionId}`, {
           headers: { 'x-user-uid': uid },
         })
           .then(r => r.json())
-          .then(() => fetchBalance())
+          .then(() => {
+            fetchBalance();
+            // Refresh payments list
+            fetch(`${API}/api/billing/payments`, { headers: { 'x-user-uid': uid } })
+              .then(r => r.json())
+              .then(d => setPayments(d.rows ?? []));
+            // Notify header to refresh balance
+            window.dispatchEvent(new CustomEvent('visaulio:balance-updated'));
+          })
           .catch(() => setTimeout(fetchBalance, 2000));
       } else {
-        setTimeout(fetchBalance, 2000);
+        setTimeout(() => {
+          fetchBalance();
+          window.dispatchEvent(new CustomEvent('visaulio:balance-updated'));
+        }, 2000);
       }
     } else if (params.get('cancel') === 'true') {
       setToast('cancel');
@@ -185,6 +196,13 @@ const Billing = () => {
       .then(r => r.json())
       .then(d => { setHistory(d.rows ?? []); setHistPages(d.pages ?? 1); });
   }, [uid, tab, histPage]);
+
+  useEffect(() => {
+    if (!uid || tab !== 'payments') return;
+    fetch(`${API}/api/billing/payments`, { headers: { 'x-user-uid': uid } })
+      .then(r => r.json())
+      .then(d => setPayments(d.rows ?? []));
+  }, [uid, tab]);
 
   return (
     <div className={`py-10 ${CONTAINER.blog}`}>
@@ -231,7 +249,7 @@ const Billing = () => {
             <BlockLabel>{t('spentMonth')}</BlockLabel>
             <p className="text-4xl font-bold text-foreground">{loading ? '-' : fmt(spentMonth)}</p>
             <p className="text-xs text-muted-foreground">
-              {new Date().toLocaleString('en', { month: 'long', year: 'numeric' })}
+              {new Date().toLocaleString(lang, { month: 'long', year: 'numeric' })}
             </p>
           </Block>
         </div>
@@ -243,8 +261,9 @@ const Billing = () => {
       {/* Tabs */}
       <div className="flex gap-2 mb-5">
         {[
-          { id: 'history', label: t('history') },
-          { id: 'auto',    label: t('autoBilling') },
+          { id: 'payments', label: t('payments') },
+          { id: 'history',  label: t('history')  },
+          { id: 'auto',     label: t('autoBilling') },
         ].map(tb => (
           <button
             key={tb.id}
@@ -259,7 +278,33 @@ const Billing = () => {
         ))}
       </div>
 
-      {/* History tab */}
+      {/* Top-up payments tab */}
+      {tab === 'payments' && (
+        <div className="rounded-2xl border border-border overflow-hidden">
+          {payments.length === 0 ? (
+            <div className="px-6 py-10 text-center text-muted-foreground text-sm">{t('noPayments')}</div>
+          ) : (
+            <table className="w-full text-sm">
+              <thead className="bg-muted text-muted-foreground text-xs uppercase tracking-wide">
+                <tr>
+                  <th className="px-5 py-3 text-left">{t('payDate')}</th>
+                  <th className="px-5 py-3 text-right">{t('payAmount')}</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border bg-card">
+                {payments.map(row => (
+                  <tr key={row.session_id} className="hover:bg-muted/40 transition-colors">
+                    <td className="px-5 py-3 text-muted-foreground">{timeAgo(row.created_at)}</td>
+                    <td className="px-5 py-3 text-right font-mono font-semibold text-foreground">+{fmt(row.amount)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </div>
+      )}
+
+      {/* Spending history tab */}
       {tab === 'history' && (
         <div className="rounded-2xl border border-border overflow-hidden">
           {history.length === 0 ? (

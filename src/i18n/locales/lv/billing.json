@@ -33,6 +33,10 @@
   "redirecting": "Pāreja uz Stripe…",
   "paySuccess": "Maksājums veiksmīgs - atlikums atjaunināts.",
   "payCancel": "Maksājums atcelts - nauda netika norakstīta.",
+  "payments": "Papildināšanas vēsture",
+  "noPayments": "Papildinājumu vēl nav. Maksājumi parādīsies šeit pēc pirmā pirkuma.",
+  "payDate": "Datums",
+  "payAmount": "Summa",
   "topup": {
     "title": "Papildināt atlikumu",
     "subtitle": "Izvēlieties paketi, lai papildinātu kontu",

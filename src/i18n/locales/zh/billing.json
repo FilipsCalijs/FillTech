@@ -33,6 +33,10 @@
   "redirecting": "正在跳转至 Stripe…",
   "paySuccess": "支付成功 - 您的余额已更新。",
   "payCancel": "支付已取消 - 未产生任何费用。",
+  "payments": "充值记录",
+  "noPayments": "暂无充值记录。首次购买后付款将显示在此处。",
+  "payDate": "日期",
+  "payAmount": "金额",
   "topup": {
     "title": "充值积分",
     "subtitle": "选择套餐为账户充值",

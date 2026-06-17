@@ -33,6 +33,10 @@
   "redirecting": "Stripe로 이동 중…",
   "paySuccess": "결제 완료 - 잔액이 업데이트되었습니다.",
   "payCancel": "결제 취소 - 청구되지 않았습니다.",
+  "payments": "충전 내역",
+  "noPayments": "아직 충전 내역이 없습니다. 첫 구매 후 결제 내역이 여기에 표시됩니다.",
+  "payDate": "날짜",
+  "payAmount": "금액",
   "topup": {
     "title": "크레딧 추가",
     "subtitle": "잔액을 충전할 패키지를 선택하세요",

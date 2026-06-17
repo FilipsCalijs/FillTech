@@ -33,6 +33,10 @@
   "redirecting": "Redirigiendo a Stripe…",
   "paySuccess": "Pago realizado - tu saldo ha sido actualizado.",
   "payCancel": "Pago cancelado - no se realizó ningún cargo.",
+  "payments": "Historial de recargas",
+  "noPayments": "Aún no hay recargas. Los pagos aparecerán aquí después de la primera compra.",
+  "payDate": "Fecha",
+  "payAmount": "Importe",
   "topup": {
     "title": "Agregar créditos",
     "subtitle": "Elige un paquete para recargar tu saldo",

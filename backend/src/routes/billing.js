@@ -135,6 +135,15 @@ router.get('/verify-session', requireUid, async (req, res) => {
   }
 });
 
+// GET /api/billing/payments — Stripe top-up history
+router.get('/payments', requireUid, async (req, res) => {
+  const [rows] = await pool.query(
+    `SELECT session_id, amount, created_at FROM stripe_payments WHERE user_uid = ? ORDER BY created_at DESC`,
+    [req.userUid]
+  );
+  res.json({ rows });
+});
+
 // Mounted in index.js BEFORE express.json() so Stripe can verify the raw body
 export const stripeWebhookHandler = async (req, res) => {
   const sig           = req.headers['stripe-signature'];
@@ -152,14 +161,24 @@ export const stripeWebhookHandler = async (req, res) => {
   }
 
   if (event.type === 'checkout.session.completed') {
-    const session  = event.data.object;
+    const session   = event.data.object;
     const { userUid } = session.metadata ?? {};
-    const amount   = session.amount_total / 100;
-    if (userUid) {
-      await pool.execute(
-        'UPDATE users SET balance = balance + ? WHERE uid = ?',
-        [amount, userUid]
-      );
+    const amount    = session.amount_total / 100;
+    const sessionId = session.id;
+    if (userUid && sessionId) {
+      try {
+        // Idempotent: skip if verify-session already processed this session
+        await pool.execute(
+          `INSERT INTO stripe_payments (session_id, user_uid, amount) VALUES (?, ?, ?)`,
+          [sessionId, userUid, amount]
+        );
+        await pool.execute(
+          'UPDATE users SET balance = balance + ? WHERE uid = ?',
+          [amount, userUid]
+        );
+      } catch (err) {
+        if (err.code !== 'ER_DUP_ENTRY') console.error('[webhook]', err);
+      }
     }
   }
 

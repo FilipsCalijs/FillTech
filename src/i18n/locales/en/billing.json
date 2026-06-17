@@ -33,6 +33,10 @@
   "redirecting": "Redirecting to Stripe…",
   "paySuccess": "Payment successful - your balance has been updated.",
   "payCancel": "Payment cancelled - no charge was made.",
+  "payments": "Top-up History",
+  "noPayments": "No top-ups yet. Payments will appear here after your first purchase.",
+  "payDate": "Date",
+  "payAmount": "Amount",
   "topup": {
     "title": "Add Credits",
     "subtitle": "Choose a package to top up your balance",

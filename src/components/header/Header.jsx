@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Globe, Sun, Moon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -37,7 +37,7 @@ const Header = ({ isDark, toggleTheme }) => {
   const dropdownRef  = useRef(null);
   const langMenuRef  = useRef(null);
 
-  useEffect(() => {
+  const fetchBalance = useCallback(() => {
     const uid = localStorage.getItem('userUID');
     if (!userLoggedIn || !uid) return;
     fetch(`${API}/api/billing`, { headers: { 'x-user-uid': uid } })
@@ -45,6 +45,15 @@ const Header = ({ isDark, toggleTheme }) => {
       .then(d => setBalance(d.balance ?? 0))
       .catch(() => {});
   }, [userLoggedIn]);
+
+  useEffect(() => {
+    fetchBalance();
+  }, [fetchBalance]);
+
+  useEffect(() => {
+    window.addEventListener('visaulio:balance-updated', fetchBalance);
+    return () => window.removeEventListener('visaulio:balance-updated', fetchBalance);
+  }, [fetchBalance]);
 
   useEffect(() => {
     const handler = (e) => {

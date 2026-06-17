@@ -33,6 +33,10 @@
   "redirecting": "Weiterleitung zu Stripe…",
   "paySuccess": "Zahlung erfolgreich - Ihr Guthaben wurde aktualisiert.",
   "payCancel": "Zahlung abgebrochen - keine Belastung erfolgt.",
+  "payments": "Aufladungsverlauf",
+  "noPayments": "Noch keine Aufladungen. Zahlungen erscheinen hier nach dem ersten Kauf.",
+  "payDate": "Datum",
+  "payAmount": "Betrag",
   "topup": {
     "title": "Guthaben aufladen",
     "subtitle": "Wählen Sie ein Paket zum Aufladen Ihres Guthabens",
