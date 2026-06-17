@@ -52,11 +52,58 @@ router.post('/sync-user', async (req, res) => {
 });
 router.get('/admin/users', checkAdmin, async (req, res) => {
   try {
-    const [rows] = await db.query(`
-      SELECT uid, email, display_name, photo_url, role, created_at, last_login_at, updated_at 
-      FROM users
-    `);
-    res.json(rows);
+    const page  = Math.max(1, parseInt(req.query.page)  || 1);
+    const limit = Math.min(100, parseInt(req.query.limit) || 20);
+    const offset = (page - 1) * limit;
+
+    const [[{ total }]] = await db.query('SELECT COUNT(*) AS total FROM users');
+    const [rows] = await db.query(
+      `SELECT uid, email, display_name, photo_url, role, balance, created_at, last_login_at
+       FROM users ORDER BY created_at DESC LIMIT ${limit} OFFSET ${offset}`
+    );
+    res.json({ rows, total, page, pages: Math.ceil(total / limit) });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// PATCH /api/admin/users/:uid — update role and/or balance
+router.patch('/admin/users/:uid', checkAdmin, async (req, res) => {
+  const { uid } = req.params;
+  const { role, balance } = req.body;
+
+  const allowed = ['user', 'admin'];
+  if (role !== undefined && !allowed.includes(role))
+    return res.status(400).json({ error: 'Invalid role' });
+  if (balance !== undefined && isNaN(parseFloat(balance)))
+    return res.status(400).json({ error: 'Invalid balance' });
+
+  try {
+    const sets = [];
+    const vals = [];
+    if (role    !== undefined) { sets.push('role = ?');    vals.push(role); }
+    if (balance !== undefined) { sets.push('balance = ?'); vals.push(parseFloat(balance)); }
+    if (!sets.length) return res.status(400).json({ error: 'Nothing to update' });
+
+    vals.push(uid);
+    await db.query(`UPDATE users SET ${sets.join(', ')} WHERE uid = ?`, vals);
+    const [[user]] = await db.query('SELECT uid, email, display_name, role, balance FROM users WHERE uid = ?', [uid]);
+    res.json(user);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// DELETE /api/admin/users/:uid
+router.delete('/admin/users/:uid', checkAdmin, async (req, res) => {
+  const { uid } = req.params;
+  if (uid === req.headers['x-user-uid'])
+    return res.status(400).json({ error: 'Cannot delete yourself' });
+  try {
+    await db.query('DELETE FROM users WHERE uid = ?', [uid]);
+    res.json({ deleted: true });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Internal server error' });

@@ -27,6 +27,7 @@ const AdminBlogEditor = () => {
   const [postStatus, setPostStatus] = useState('draft');
   const [postLang, setPostLang] = useState('en');
   const [currentSlug, setCurrentSlug] = useState('');
+  const [dataLoaded, setDataLoaded] = useState(!id); // new post = already loaded
   const [saving, setSaving] = useState(false);
   const [publishing, setPublishing] = useState(false);
   const [error, setError] = useState('');
@@ -50,6 +51,7 @@ const AdminBlogEditor = () => {
       setPostStatus(data.status || 'draft');
       setCurrentSlug(data.slug || '');
       setPostLang(data.lang || 'en');
+      setDataLoaded(true);
     });
   }, [id]);
 
@@ -210,11 +212,18 @@ const AdminBlogEditor = () => {
           <div className="flex flex-col gap-1.5">
             <label className="text-sm font-medium">{t('admin.content')} <span className="text-destructive">*</span></label>
             <div className={fieldErrors.content ? 'ring-1 ring-destructive rounded-lg' : ''}>
-              <RichEditor
-                value={form.content}
-                onChange={(html) => { setForm((f) => ({ ...f, content: html })); setFieldErrors((p) => ({ ...p, content: '' })); }}
-                placeholder={t('admin.contentPlaceholder')}
-              />
+              {dataLoaded ? (
+                <RichEditor
+                  key={id || 'new'}
+                  value={form.content}
+                  onChange={(html) => { setForm((f) => ({ ...f, content: html })); setFieldErrors((p) => ({ ...p, content: '' })); }}
+                  placeholder={t('admin.contentPlaceholder')}
+                />
+              ) : (
+                <div className="min-h-[450px] flex items-center justify-center border border-border rounded-lg bg-card text-muted-foreground text-sm">
+                  Loading...
+                </div>
+              )}
             </div>
             {fieldErrors.content && <span className="text-xs text-destructive">{fieldErrors.content}</span>}
           </div>
