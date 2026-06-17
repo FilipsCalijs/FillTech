@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/Button';
 import Comments from '@/components/blog/Comments';
 import { useAuthModal } from '@/contexts/AuthModalContext';
 import { API_URL as API } from '@/config/api';
+import { PageLoader } from '@/components/ui/Spinner';
 
 const BlogPost = () => {
   const { t }    = useTranslation('blog');
@@ -68,11 +69,7 @@ const BlogPost = () => {
     }
   };
 
-  if (loading) return (
-    <div className="py-12 text-center">
-      <Typography variant="body2" color="muted">{tc('loading')}</Typography>
-    </div>
-  );
+  if (loading) return <PageLoader />;
 
   if (notFound) return (
     <div className="py-12 text-center flex flex-col items-center gap-4">

@@ -150,7 +150,7 @@ const Header = ({ isDark, toggleTheme }) => {
                 onError={(e) => { e.target.src = placeholderAvatar; }}
               />
               <span className='text-sm font-mono font-semibold text-foreground'>
-                {balance === null ? '...' : `$${parseFloat(balance).toFixed(2)}`}
+                {`$${parseFloat(balance ?? 0).toFixed(2)}`}
               </span>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
                 className={`text-muted-foreground transition-transform duration-200 ${open ? 'rotate-180' : ''}`}>
@@ -175,7 +175,7 @@ const Header = ({ isDark, toggleTheme }) => {
                     className='flex items-center justify-between gap-2 px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors'>
                     <span>{t('nav.billing')}</span>
                     <span className='text-xs font-mono text-muted-foreground'>
-                      {balance !== null && `$${parseFloat(balance).toFixed(2)}`}
+                      {`$${parseFloat(balance ?? 0).toFixed(2)}`}
                     </span>
                   </NavLink>
                 </div>

@@ -7,6 +7,7 @@ import LangLink from '@/components/routing/LangLink';
 import { useLang } from '@/contexts/LangContext';
 import PageSEO from '@/components/seo/PageSEO';
 import { API_URL as API } from '@/config/api';
+import { PageLoader } from '@/components/ui/Spinner';
 
 const Blog = () => {
   const { t }   = useTranslation('blog');
@@ -29,7 +30,7 @@ const Blog = () => {
         <Typography variant="h2" weight="bold" className="block mb-8">{t('title')}</Typography>
 
         {loading ? (
-          <Typography variant="body2" color="muted" className="block">{t('common:loading', 'Loading...')}</Typography>
+          <PageLoader />
         ) : posts.length === 0 ? (
           <Typography variant="body2" color="muted" className="block">{t('noPosts')}</Typography>
         ) : (

@@ -51,7 +51,7 @@ const AdminBlog = () => {
       </div>
 
       {loading ? (
-        <p className="text-muted-foreground text-center py-12">{tc('loading')}</p>
+        <div className="py-12 flex justify-center"><svg className="animate-spin text-muted-foreground" width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="44" strokeDashoffset="30"/></svg></div>
       ) : posts.length === 0 ? (
         <p className="text-muted-foreground text-center py-12">{t('admin.noPostsYet')}</p>
       ) : (

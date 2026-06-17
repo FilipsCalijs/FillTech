@@ -174,8 +174,12 @@ const AdminUsers = () => {
   useEffect(() => { load(1); }, [load]);
 
   function handleSaved(updated) {
-    setUsers(prev => prev.map(u => u.uid === updated.uid ? { ...u, ...updated } : u));
+    // Normalize balance to float so fmt() renders consistently
+    const normalized = { ...updated, balance: parseFloat(updated.balance ?? 0) };
+    setUsers(prev => prev.map(u => u.uid === normalized.uid ? { ...u, ...normalized } : u));
     setEditing(null);
+    // If admin edited their own account, refresh header balance pill
+    window.dispatchEvent(new CustomEvent('visaulio:balance-updated'));
   }
 
   function handleDeleted(uid) {
@@ -218,7 +222,7 @@ const AdminUsers = () => {
           <tbody className="divide-y divide-border bg-card">
             {loading ? (
               <tr>
-                <td colSpan={6} className="px-5 py-10 text-center text-muted-foreground">Loading...</td>
+                <td colSpan={6} className="px-5 py-10 text-center"><svg className="animate-spin text-muted-foreground mx-auto" width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="44" strokeDashoffset="30"/></svg></td>
               </tr>
             ) : users.length === 0 ? (
               <tr>

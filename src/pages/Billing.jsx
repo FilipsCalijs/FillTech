@@ -147,14 +147,18 @@ const Billing = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
         <div className="rounded-2xl border border-border bg-card p-6 flex flex-col">
           <p className="text-[11px] font-bold tracking-[0.1em] uppercase text-muted-foreground mb-3">{t('balance')}</p>
-          <p className="text-[40px] font-bold leading-none text-foreground">{loading ? '-' : fmt(balance)}</p>
+          {loading
+            ? <svg className="animate-spin text-muted-foreground mt-2" width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="44" strokeDashoffset="30"/></svg>
+            : <p className="text-[40px] font-bold leading-none text-foreground">{fmt(balance)}</p>}
           <p className="text-xs text-muted-foreground mt-6">{t('creditsNeverExpire')}</p>
         </div>
         <div className="rounded-2xl border border-border bg-card p-6 flex flex-col">
           <p className="text-[11px] font-bold tracking-[0.1em] uppercase text-muted-foreground mb-3">{t('spentMonth')}</p>
-          <p className="text-[40px] font-bold leading-none text-foreground">{loading ? '-' : fmt(spentMonth)}</p>
+          {loading
+            ? <svg className="animate-spin text-muted-foreground mt-2" width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="44" strokeDashoffset="30"/></svg>
+            : <p className="text-[40px] font-bold leading-none text-foreground">{fmt(spentMonth)}</p>}
           <p className="text-xs text-muted-foreground mt-6">
-            <span className="font-mono font-semibold text-foreground">{loading ? '-' : fmt(dailyAvg)}</span>
+            <span className="font-mono font-semibold text-foreground">{loading ? '...' : fmt(dailyAvg)}</span>
             {' '}{t('dailyAvg')}
           </p>
         </div>

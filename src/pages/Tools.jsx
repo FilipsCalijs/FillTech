@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { useLang } from '@/contexts/LangContext';
 import PageSEO from '@/components/seo/PageSEO';
 import { API_URL as API } from '@/config/api';
+import { PageLoader } from '@/components/ui/Spinner';
 
 const Tools = () => {
   const { t } = useTranslation('common');
@@ -33,7 +34,7 @@ const Tools = () => {
       <Typography variant="lead" color="muted" className="block mb-10">{t('toolsSubtitle')}</Typography>
 
       {loading ? (
-        <Typography variant="body2" color="muted" className="block">{t("loading")}</Typography>
+        <PageLoader />
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {effects.map((effect) => (
