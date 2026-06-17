@@ -32,5 +32,15 @@
   "payWith": "Maksāt ar Stripe",
   "redirecting": "Pāreja uz Stripe…",
   "paySuccess": "Maksājums veiksmīgs - atlikums atjaunināts.",
-  "payCancel": "Maksājums atcelts - nauda netika norakstīta."
+  "payCancel": "Maksājums atcelts - nauda netika norakstīta.",
+  "topup": {
+    "title": "Papildināt atlikumu",
+    "subtitle": "Izvēlieties paketi, lai papildinātu kontu",
+    "credits": "${{amount}} kredīti",
+    "buy": "Pirkt",
+    "loading": "Novirze...",
+    "successMsg": "Maksājums veiksmīgs! Atlikums atjaunināts.",
+    "cancelMsg": "Maksājums atcelts.",
+    "popular": "Populārs"
+  }
 }

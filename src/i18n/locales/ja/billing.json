@@ -32,5 +32,15 @@
   "payWith": "Stripeで支払う",
   "redirecting": "Stripeへ移動中…",
   "paySuccess": "支払い完了 - 残高が更新されました。",
-  "payCancel": "支払いがキャンセルされました - 請求はありません。"
+  "payCancel": "支払いがキャンセルされました - 請求はありません。",
+  "topup": {
+    "title": "クレジットを追加",
+    "subtitle": "残高をチャージするパッケージを選択してください",
+    "credits": "${{amount}} クレジット",
+    "buy": "今すぐ購入",
+    "loading": "リダイレクト中...",
+    "successMsg": "支払い成功！残高が更新されました。",
+    "cancelMsg": "支払いがキャンセルされました。",
+    "popular": "人気"
+  }
 }

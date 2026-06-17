@@ -32,5 +32,15 @@
   "payWith": "Pay with Stripe",
   "redirecting": "Redirecting to Stripe…",
   "paySuccess": "Payment successful - your balance has been updated.",
-  "payCancel": "Payment cancelled - no charge was made."
+  "payCancel": "Payment cancelled - no charge was made.",
+  "topup": {
+    "title": "Add Credits",
+    "subtitle": "Choose a package to top up your balance",
+    "credits": "${{amount}} Credits",
+    "buy": "Buy Now",
+    "loading": "Redirecting...",
+    "successMsg": "Payment successful! Your balance has been updated.",
+    "cancelMsg": "Payment cancelled.",
+    "popular": "Popular"
+  }
 }

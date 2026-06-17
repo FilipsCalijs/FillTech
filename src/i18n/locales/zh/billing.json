@@ -32,5 +32,15 @@
   "payWith": "通过 Stripe 支付",
   "redirecting": "正在跳转至 Stripe…",
   "paySuccess": "支付成功 - 您的余额已更新。",
-  "payCancel": "支付已取消 - 未产生任何费用。"
+  "payCancel": "支付已取消 - 未产生任何费用。",
+  "topup": {
+    "title": "充值积分",
+    "subtitle": "选择套餐为账户充值",
+    "credits": "${{amount}} 积分",
+    "buy": "立即购买",
+    "loading": "正在跳转...",
+    "successMsg": "支付成功！您的余额已更新。",
+    "cancelMsg": "支付已取消。",
+    "popular": "热门"
+  }
 }

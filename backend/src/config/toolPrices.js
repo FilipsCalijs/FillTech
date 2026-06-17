@@ -12,6 +12,7 @@ export const TOOL_PRICES = {
   'vocal-isolator':        0.00,
   'pdf-extract':           0.00,
   'text-to-speech':        0.00,
+  'upscaler':              0.00,
 };
 
 export const getPrice = (toolType) => TOOL_PRICES[toolType] ?? 0.00;

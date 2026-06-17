@@ -32,5 +32,15 @@
   "payWith": "Mit Stripe bezahlen",
   "redirecting": "Weiterleitung zu Stripe…",
   "paySuccess": "Zahlung erfolgreich - Ihr Guthaben wurde aktualisiert.",
-  "payCancel": "Zahlung abgebrochen - keine Belastung erfolgt."
+  "payCancel": "Zahlung abgebrochen - keine Belastung erfolgt.",
+  "topup": {
+    "title": "Guthaben aufladen",
+    "subtitle": "Wählen Sie ein Paket zum Aufladen Ihres Guthabens",
+    "credits": "{{amount}}$ Guthaben",
+    "buy": "Jetzt kaufen",
+    "loading": "Weiterleitung...",
+    "successMsg": "Zahlung erfolgreich! Ihr Guthaben wurde aktualisiert.",
+    "cancelMsg": "Zahlung abgebrochen.",
+    "popular": "Beliebt"
+  }
 }

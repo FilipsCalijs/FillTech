@@ -32,5 +32,15 @@
   "payWith": "Pagar con Stripe",
   "redirecting": "Redirigiendo a Stripe…",
   "paySuccess": "Pago realizado - tu saldo ha sido actualizado.",
-  "payCancel": "Pago cancelado - no se realizó ningún cargo."
+  "payCancel": "Pago cancelado - no se realizó ningún cargo.",
+  "topup": {
+    "title": "Agregar créditos",
+    "subtitle": "Elige un paquete para recargar tu saldo",
+    "credits": "{{amount}}$ Créditos",
+    "buy": "Comprar ahora",
+    "loading": "Redirigiendo...",
+    "successMsg": "Pago exitoso. Tu saldo ha sido actualizado.",
+    "cancelMsg": "Pago cancelado.",
+    "popular": "Popular"
+  }
 }

@@ -11,6 +11,7 @@ import videoBgReplace from './videoBgReplace.js';
 import vocalIsolator from './vocalIsolator.js';
 import pdfExtract from './pdfExtract.js';
 import textToSpeech from './textToSpeech.js';
+import upscaler from './upscaler.js';
 
 const router = express.Router();
 
@@ -26,5 +27,6 @@ router.use('/video-bg-replace', videoBgReplace);
 router.use('/vocal-isolator', vocalIsolator);
 router.use('/pdf-extract', pdfExtract);
 router.use('/text-to-speech', textToSpeech);
+router.use('/upscaler', upscaler);
 
 export default router;
