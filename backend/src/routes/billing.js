@@ -79,13 +79,58 @@ router.post('/create-checkout-session', requireUid, async (req, res) => {
         },
         quantity: 1,
       }],
-      success_url: `${base}/${lang}/billing?success=true`,
+      // session_id appended so frontend can verify the payment on return
+      success_url: `${base}/${lang}/billing?success=true&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url:  `${base}/${lang}/billing?cancel=true`,
       metadata: { userUid: req.userUid },
     });
 
     res.json({ url: session.url });
   } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// GET /api/billing/verify-session?session_id=xxx
+// Called on return from Stripe success URL — credits balance idempotently
+router.get('/verify-session', requireUid, async (req, res) => {
+  const { session_id } = req.query;
+  if (!session_id) return res.status(400).json({ error: 'session_id required' });
+
+  try {
+    // Check if already processed
+    const [[existing]] = await pool.execute(
+      `SELECT id FROM stripe_payments WHERE session_id = ?`,
+      [session_id]
+    );
+    if (existing) return res.json({ already_credited: true });
+
+    // Retrieve session from Stripe
+    const session = await stripe.checkout.sessions.retrieve(session_id);
+    if (session.payment_status !== 'paid') {
+      return res.status(400).json({ error: 'Payment not completed' });
+    }
+
+    const amount  = session.amount_total / 100;
+    const userUid = session.metadata?.userUid;
+
+    if (!userUid || userUid !== req.userUid) {
+      return res.status(403).json({ error: 'Session does not belong to this user' });
+    }
+
+    // Record payment and credit balance atomically
+    await pool.execute(
+      `INSERT INTO stripe_payments (session_id, user_uid, amount) VALUES (?, ?, ?)`,
+      [session_id, userUid, amount]
+    );
+    await pool.execute(
+      `UPDATE users SET balance = balance + ? WHERE uid = ?`,
+      [amount, userUid]
+    );
+
+    res.json({ credited: true, amount });
+  } catch (err) {
+    console.error('[verify-session]', err);
     res.status(500).json({ error: err.message });
   }
 });

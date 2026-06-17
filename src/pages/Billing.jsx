@@ -157,14 +157,25 @@ const Billing = () => {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.get('success') === 'true') {
-      setToast('success');
+      const sessionId = params.get('session_id');
       window.history.replaceState({}, '', window.location.pathname);
-      setTimeout(fetchBalance, 2000);
+      setToast('success');
+      if (sessionId && uid) {
+        // Verify payment with backend and credit balance idempotently
+        fetch(`${API}/api/billing/verify-session?session_id=${sessionId}`, {
+          headers: { 'x-user-uid': uid },
+        })
+          .then(r => r.json())
+          .then(() => fetchBalance())
+          .catch(() => setTimeout(fetchBalance, 2000));
+      } else {
+        setTimeout(fetchBalance, 2000);
+      }
     } else if (params.get('cancel') === 'true') {
       setToast('cancel');
       window.history.replaceState({}, '', window.location.pathname);
     }
-  }, [fetchBalance]);
+  }, [fetchBalance, uid]);
 
   useEffect(fetchBalance, [fetchBalance]);
 
