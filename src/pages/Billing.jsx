@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { CONTAINER } from '@/config/sizes';
 import PageSEO from '@/components/seo/PageSEO';
 import { useLang } from '@/contexts/LangContext';
+import { useAuth } from '@/contexts/authContext';
 import { API_URL as API } from '@/config/api';
 
 const TOOL_NAMES = {
@@ -51,11 +52,10 @@ const PACKAGES = [
   { amount: 25, popular: false },
 ];
 
-function TopUpBlock({ lang }) {
+function TopUpBlock({ lang, uid }) {
   const { t } = useTranslation('billing');
   const [checkoutLoading, setCheckoutLoading] = useState(null);
   const [error, setError] = useState('');
-  const uid = localStorage.getItem('userUID') || '';
 
   async function handleTopUp(pkg) {
     setCheckoutLoading(pkg);
@@ -133,6 +133,7 @@ const Billing = () => {
   const { t }      = useTranslation('billing');
   const { t: tc }  = useTranslation('common');
   const lang       = useLang();
+  const { currentUser } = useAuth();
   const [balance,    setBalance]    = useState(null);
   const [spentMonth, setSpentMonth] = useState(null);
   const [tab,        setTab]        = useState('history');
@@ -141,7 +142,8 @@ const Billing = () => {
   const [histPages,  setHistPages]  = useState(1);
   const [loading,    setLoading]    = useState(true);
   const [toast,      setToast]      = useState(null); // 'success' | 'cancel' | null
-  const uid = localStorage.getItem('userUID') || '';
+  // Prefer auth context uid (always fresh); fall back to localStorage for the rare edge case
+  const uid = currentUser?.uid || localStorage.getItem('userUID') || '';
 
   const fetchBalance = useCallback(() => {
     if (!uid) return;
@@ -224,7 +226,7 @@ const Billing = () => {
         </div>
 
         {/* Top-up */}
-        <TopUpBlock lang={lang}/>
+        <TopUpBlock lang={lang} uid={uid}/>
       </div>
 
       {/* Tabs */}
