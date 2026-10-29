@@ -95,6 +95,7 @@ const Header = ({ isDark, toggleTheme }) => {
 
       <NavLink to='/tools' className={linkCls}>{t('nav.tools')}</NavLink>
       <NavLink to='/blog'  className={linkCls}>{t('nav.blog')}</NavLink>
+      <span className='text-[15px] font-medium text-foreground'>test sharpify</span>
 
       {userLoggedIn && userRole === 'admin' && (
         <NavLink to='/admin/users'
