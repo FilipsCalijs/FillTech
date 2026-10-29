@@ -1,5 +1,4 @@
-old
 node_modules
-site/node_modules
 .env
+dist
 *.log

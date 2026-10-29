@@ -1,18 +1,15 @@
-# Demo build. Put the demo into site/:
-#  - plain HTML/CSS/JS -> served as-is
-#  - app with package.json (Vite/React/...) -> npm run build, serves dist/ or build/
 FROM node:20-alpine AS builder
 WORKDIR /app
-COPY site/ ./
-RUN mkdir -p /out && \
-    if [ -f package.json ]; then \
-      (npm ci || npm install) && npm run build && \
-      if [ -d dist ]; then cp -r dist/. /out/; elif [ -d build ]; then cp -r build/. /out/; else cp -r out/. /out/; fi; \
-    else \
-      cp -r . /out/; \
-    fi
+COPY package*.json ./
+RUN npm install
+COPY . .
+ARG VITE_PUBLIC_URL
+ARG VITE_API_URL=""
+ENV VITE_PUBLIC_URL=$VITE_PUBLIC_URL
+ENV VITE_API_URL=$VITE_API_URL
+RUN npm run build
 
 FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=builder /out /usr/share/nginx/html
 EXPOSE 80
