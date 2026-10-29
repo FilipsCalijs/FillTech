@@ -1,0 +1,315 @@
+---
+import { SITUATIONS } from '../scripts/situations';
+const initial = SITUATIONS[0];
+// Fixed offsets so the settle-in looks hand-placed, not random noise.
+const jitter = 'nesakārtos'.split('').map((ch, i) => ({
+  ch,
+  y: [-14, 9, -6, 12, -10, 7, -12, 5, 10, -8][i % 10],
+  r: [-9, 6, -4, 8, -7, 5, -10, 4, 7, -5][i % 10],
+}));
+---
+<section id="top" class="hero bg-night text-on-night">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1 class="t-display hero-title">
+        Nākamais gads <span class="jitter" aria-hidden="true">{jitter.map((l, i) => (
+          <span style={`--y:${l.y}px;--r:${l.r}deg;--d:${i * 35}ms`}>{l.ch}</span>
+        ))}</span><span class="sr-only">nesakārtos</span> iepriekšējo.
+      </h1>
+      <p class="t-lead hero-sub text-on-night-soft">
+        Kavēti gada pārskati vai vēstule no VID? Bezmaksas konsultācijā izrunāsim tavu situāciju. Strādājam attālināti visā Latvijā.
+      </p>
+
+      <fieldset class="sit">
+        <legend class="sit-legend">Kas notika?</legend>
+        <div class="tabs">
+          {SITUATIONS.map((s) => (
+            <label class="tab">
+              <input class="sr-only" type="radio" name="hero-situation" value={s.key} />
+              <span>{s.label}</span>
+            </label>
+          ))}
+        </div>
+        <p class="sit-hint">Izvēlies, kas ir tuvāk. Atzīmēsim to pieteikumā.</p>
+      </fieldset>
+
+      <a href="#pieteikums" class="btn btn-go hero-cta">Pieteikt bezmaksas konsultāciju</a>
+    </div>
+
+    <div class="hero-visual" id="hero-visual">
+      <div class="pile" aria-hidden="true">
+        <img class="pile-static" src="/hero-pile.webp" width="900" height="679" alt="" fetchpriority="low" decoding="async" />
+        <canvas class="pile-canvas"></canvas>
+      </div>
+
+      <article class="card" id="status-card" data-state="after" aria-live="polite">
+        <header class="card-head">
+          <div>
+            <h2 class="t-h3">Tavas SIA statuss</h2>
+            <p class="card-note">Ilustrācija: kā situācija mainās, kad to sakārtojam</p>
+          </div>
+          <p class="card-no">Nr. 0247</p>
+        </header>
+        <ul class="years" aria-label="Gadi">
+          <li>2023</li><li>2024</li><li>2025</li>
+        </ul>
+        <ol class="rows">
+          {initial.rows.map((r, i) => (
+            <li class="row" style={`--i:${i}`}>
+              <span class="row-label">{r.label}</span>
+              <span class="row-states">
+                <span class="row-before">{r.before}</span>
+                <span class="stamp stamp-done row-after">
+                  <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" /></svg>
+                  <span class="row-after-text">{r.after}</span>
+                </span>
+              </span>
+            </li>
+          ))}
+        </ol>
+        <p class="card-foot">Apjomu un termiņus izrunāsim konsultācijā.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero { padding-block: clamp(2rem, 5vw, 4.5rem) clamp(4rem, 8vw, 7rem); overflow: clip; }
+  .hero-grid { display: grid; gap: 3rem; align-items: center; }
+  @media (min-width: 64rem) {
+    .hero-grid { grid-template-columns: 1.2fr 1fr; gap: clamp(3rem, 5vw, 5rem); }
+  }
+  .hero-title { max-width: 14ch; color: var(--color-on-night); }
+  .jitter { white-space: nowrap; }
+  .jitter span {
+    display: inline-block;
+    animation: settle 800ms var(--ease-out) var(--d) both;
+  }
+  @keyframes settle {
+    from { transform: translateY(var(--y)) rotate(var(--r)); }
+    to { transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { .jitter span { animation: none; } }
+  .hero-sub { margin-top: 1.5rem; max-width: 34em; }
+
+  /* Situation picker: folder divider tabs */
+  .sit { margin-top: 2.25rem; }
+  .sit-legend { font-weight: 700; font-stretch: 108%; font-size: 1.0625rem; color: var(--color-on-night); margin-bottom: 0.75rem; }
+  .tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 4px;
+    align-items: end;
+    border-bottom: 4px solid var(--color-paper);
+  }
+  @media (min-width: 48rem) { .tabs { display: flex; gap: 4px; } }
+  .tab {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 3rem;
+    padding: 0.625rem 0.875rem;
+    border-radius: 10px 10px 0 0;
+    background: #2C5446;
+    color: var(--color-on-night);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    font-stretch: 104%;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: background-color 160ms var(--ease-out), padding 160ms var(--ease-out), color 160ms var(--ease-out);
+  }
+  .tab:nth-child(even) { background: #24493C; }
+  .tab:hover { background: #3A6656; }
+  .tab:has(input:checked) {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    padding-top: 0.95rem;
+    font-weight: 750;
+  }
+  .tab:has(input:focus-visible) { outline: 3px solid var(--color-go); outline-offset: 2px; }
+  .sit-hint { margin-top: 0.625rem; font-size: var(--text-small); color: var(--color-on-night-soft); }
+  .hero-cta { margin-top: 1.75rem; }
+
+  /* Visual: 3D pile behind a paper form */
+  .hero-visual { position: relative; display: grid; place-items: center; min-height: 26rem; }
+  .pile {
+    position: absolute;
+    inset: -8% -18% -12% -18%;
+    pointer-events: none;
+  }
+  .pile-static, .pile-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 400ms var(--ease-out);
+  }
+  .pile-canvas { opacity: 0; }
+  .pile[data-live] .pile-canvas { opacity: 1; }
+  .pile[data-live] .pile-static { opacity: 0; }
+  @media (max-width: 63.99rem) {
+    .hero-visual { min-height: 0; padding-block: 2rem 1rem; }
+    .pile { inset: -4% -10% auto -10%; height: 70%; opacity: 0.6; }
+  }
+
+  .card {
+    position: relative;
+    width: 100%;
+    max-width: 30rem;
+    background-color: #FFFFFF;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .05 0 0 0 0 .1 0 0 0 0 .08 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    color: var(--color-ink);
+    border-radius: 6px;
+    padding: 1.5rem 1.5rem 1.25rem;
+    transform: rotate(-1.5deg);
+    box-shadow:
+      0 1px 0 rgb(0 0 0 / 0.04),
+      0 2px 6px rgb(0 0 0 / 0.18),
+      0 40px 80px -36px rgb(0 0 0 / 0.65);
+  }
+  @media (min-width: 48rem) { .card { padding: 2rem 2rem 1.5rem; } }
+  .card.is-stamped { animation: shake 280ms var(--ease-out); }
+  @keyframes shake {
+    0%, 100% { transform: rotate(-1.5deg) translate(0, 0); }
+    25% { transform: rotate(-1.5deg) translate(-3px, 1px); }
+    50% { transform: rotate(-1.5deg) translate(2px, -2px); }
+    75% { transform: rotate(-1.5deg) translate(-1px, 2px); }
+  }
+  .card-head { display: flex; justify-content: space-between; gap: 1rem; align-items: flex-start; }
+  .card-note { margin-top: 0.25rem; font-size: 0.875rem; color: var(--color-ink-soft); }
+  .card-no {
+    flex: none;
+    font-size: 0.875rem;
+    font-weight: 650;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-ink-soft);
+    padding-bottom: 0.15rem;
+    border-bottom: 1.5px solid var(--color-line);
+  }
+  .years { display: flex; gap: 0.375rem; margin-top: 1rem; }
+  .years li {
+    padding: 0.2rem 0.55rem;
+    border: 1.5px solid var(--color-line);
+    border-radius: var(--radius-stamp);
+    font-size: 0.8125rem;
+    font-weight: 650;
+    font-variant-numeric: tabular-nums;
+    transition: background-color 220ms var(--ease-out), border-color 220ms var(--ease-out);
+  }
+  .card[data-state="after"] .years li { border-color: var(--color-done-wash); background: var(--color-done-wash); color: var(--color-done-ink); }
+  .rows { margin-top: 1rem; }
+  .row {
+    display: grid;
+    gap: 0.375rem;
+    padding-block: 0.875rem;
+    border-top: 1px solid var(--color-line);
+  }
+  @media (min-width: 30rem) {
+    .row { grid-template-columns: 1fr auto; align-items: center; column-gap: 1rem; }
+  }
+  .row-label { font-weight: 600; }
+  .row-states { display: flex; align-items: center; gap: 0.625rem; flex-wrap: wrap; }
+  @media (min-width: 30rem) { .row-states { justify-content: flex-end; } }
+  .row-before {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-due);
+    background: var(--color-due-wash);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-stamp);
+  }
+  .row-after {
+    transform-origin: 50% 60%;
+    transition: opacity 160ms var(--ease-out), transform 260ms cubic-bezier(.3, 1.6, .5, 1);
+    transition-delay: calc(var(--i) * 140ms);
+  }
+  .row-after svg { fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+  .row-after path {
+    stroke-dasharray: 26;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 300ms var(--ease-out);
+    transition-delay: calc(var(--i) * 140ms + 120ms);
+  }
+  .card[data-state="before"] .row-after { opacity: 0; transform: scale(1.15) rotate(-5deg); transition-delay: 0ms; }
+  .card[data-state="before"] .row-after path { stroke-dashoffset: 26; transition-delay: 0ms; }
+  .card[data-state="after"] .row-before {
+    color: var(--color-ink-soft);
+    background: transparent;
+    text-decoration: line-through;
+    text-decoration-thickness: 1.5px;
+    padding-inline: 0;
+  }
+  .card-foot {
+    margin-top: 0.5rem;
+    padding-top: 0.875rem;
+    border-top: 1px solid var(--color-line);
+    font-size: 0.8125rem;
+    color: var(--color-ink-soft);
+  }
+</style>
+
+<script>
+  import { SITUATIONS, type SituationKey } from '../scripts/situations';
+  import { readLead, writeLead } from '../scripts/lead-store';
+
+  const card = document.getElementById('status-card')!;
+  const list = card.querySelector('.rows')!;
+  const radios = document.querySelectorAll<HTMLInputElement>('input[name="hero-situation"]');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let timers: number[] = [];
+
+  function render(key: SituationKey, animate: boolean) {
+    const s = SITUATIONS.find((x) => x.key === key);
+    if (!s) return;
+    timers.forEach(clearTimeout);
+    timers = [];
+    list.querySelectorAll('.row').forEach((row, i) => {
+      const r = s.rows[i];
+      if (!r) return;
+      row.querySelector('.row-label')!.textContent = r.label;
+      row.querySelector('.row-before')!.textContent = r.before;
+      row.querySelector('.row-after-text')!.textContent = r.after;
+    });
+    if (!animate || reduced.matches) { card.dataset.state = 'after'; return; }
+    card.dataset.state = 'before';
+    card.classList.remove('is-stamped');
+    timers.push(window.setTimeout(() => {
+      card.dataset.state = 'after';
+      // The card jolts as the stamp lands (response to the click only).
+      void card.offsetWidth;
+      card.classList.add('is-stamped');
+    }, 550));
+    timers.push(window.setTimeout(() => card.classList.remove('is-stamped'), 900));
+  }
+
+  const saved = readLead().situations?.[0] as SituationKey | undefined;
+  const savedRadio = Array.from(radios).find((x) => x.value === saved);
+  if (saved && savedRadio) { savedRadio.checked = true; render(saved, false); }
+
+  radios.forEach((radio) => {
+    radio.addEventListener('change', () => {
+      const key = radio.value as SituationKey;
+      render(key, true);
+      writeLead({ situations: [key] });
+      document.dispatchEvent(new CustomEvent('irg:situation', { detail: key }));
+    });
+  });
+
+  // 3D pile behind the card: desktop, motion allowed, started after the page has loaded.
+  const visual = document.getElementById('hero-visual')!;
+  const pile = visual.querySelector<HTMLElement>('.pile')!;
+  const canvas = visual.querySelector<HTMLCanvasElement>('.pile-canvas')!;
+  const wide = window.matchMedia('(min-width: 64rem)');
+  if (wide.matches && !reduced.matches) {
+    const start = async () => {
+      const { createKalnsScene } = await import('../scripts/kalns-scene');
+      await document.fonts.ready;
+      createKalnsScene(canvas, { docs: 34, envelopes: 10, spread: 2.2, clearColor: null, interactive: true, pointerHost: visual });
+      requestAnimationFrame(() => pile.setAttribute('data-live', ''));
+    };
+    if (document.readyState === 'complete') setTimeout(start, 300);
+    else window.addEventListener('load', () => setTimeout(start, 300), { once: true });
+  }
+</script>

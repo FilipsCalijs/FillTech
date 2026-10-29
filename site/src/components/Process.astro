@@ -1,0 +1,86 @@
+---
+const steps = [
+  { title: 'Bezmaksas konsultācija', text: 'Pastāsti, kas notika. Noskaidrojam, par kuriem gadiem pārskati nav iesniegti.' },
+  { title: 'Dokumentu saraksts', text: 'Saņem īsu sarakstu, kas vajadzīgs. Dokumentus nodod tiešsaistē.' },
+  { title: 'Sakārtošana', text: 'Sakārtojam uzskaiti par katru gadu un atjaunojam trūkstošo.' },
+  { title: 'Iesniegšana VID', text: 'Iesniedzam gada pārskatus EDS un atbildam uz VID jautājumiem.' },
+];
+---
+<section class="process bg-paper text-ink on-light section" aria-labelledby="process-title">
+  <div class="wrap">
+    <h2 id="process-title" class="t-h2 process-title">Nākamais solis ir saruna.</h2>
+    <p class="t-lead measure mt-5 text-ink-soft">Četri soļi no pirmā zvana līdz iesniegtam pārskatam.</p>
+
+    <ol class="steps">
+      {steps.map((s, i) => (
+        <li class="step">
+          <span class="step-no" aria-hidden="true">{i + 1}</span>
+          <h3 class="t-h3">{s.title}</h3>
+          <p class="text-ink-soft">{s.text}</p>
+        </li>
+      ))}
+    </ol>
+
+    <p class="long-debt">
+      <strong>Nav kārtots vairāk par 2 gadiem?</strong> Sāc tāpat, ar sarunu.
+    </p>
+  </div>
+</section>
+
+<style>
+  .process-title { max-width: 14ch; }
+  .steps {
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+    display: grid;
+    counter-reset: step;
+  }
+  @media (min-width: 64rem) { .steps { grid-template-columns: repeat(4, 1fr); } }
+  .step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
+    padding-bottom: 2rem;
+  }
+  .step > :not(.step-no) { grid-column: 2; }
+  /* the line joining steps: vertical on mobile, horizontal on desktop */
+  .step::before {
+    content: "";
+    position: absolute;
+    left: 1.5rem;
+    top: 3rem;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-line);
+  }
+  .step:last-child::before { display: none; }
+  .step-no {
+    grid-row: 1 / span 2;
+    width: 3rem;
+    height: 3rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-sheet);
+    border: 2px solid var(--color-ink);
+    font-weight: 800;
+    font-stretch: 125%;
+    font-size: 1.125rem;
+  }
+  .step:last-child .step-no { background: var(--color-done); border-color: var(--color-done); color: #fff; }
+  @media (min-width: 64rem) {
+    .step { grid-template-columns: 1fr; padding: 0 2rem 0 0; }
+    .step > :not(.step-no) { grid-column: 1; }
+    .step-no { grid-row: auto; margin-bottom: 1rem; }
+    .step::before { left: 3rem; right: 0; top: 1.5rem; bottom: auto; width: auto; height: 2px; }
+  }
+  .long-debt {
+    margin-top: clamp(2rem, 4vw, 3rem);
+    padding: 1.25rem 1.5rem;
+    background: var(--color-sheet);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-field);
+    max-width: 48rem;
+  }
+</style>

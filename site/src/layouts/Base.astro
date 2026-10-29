@@ -1,0 +1,49 @@
+---
+import '@fontsource-variable/archivo/wdth.css';
+import '../styles/global.css';
+import latinFont from '@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2?url';
+import latinExtFont from '@fontsource-variable/archivo/files/archivo-latin-ext-wdth-normal.woff2?url';
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="lv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#0A1F18" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="lv_LV" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" href={latinFont} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={latinExtFont} as="font" type="font/woff2" crossorigin />
+    {pixelId && (
+      <script is:inline define:vars={{ pixelId }}>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', pixelId);
+        fbq('track', 'PageView');
+      </script>
+    )}
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

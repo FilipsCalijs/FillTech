@@ -1,0 +1,39 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="footer bg-graphite text-on-night">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-brand">
+        <span class="footer-tile"><img src="/logo-owl.png" width="29" height="34" alt="" loading="lazy" /></span>
+        IR&amp; Grāmatvedības birojs
+      </p>
+      <p class="mt-2 text-on-night-soft">SIA „IR.GRĀMATVEDĪBAS BIROJS“</p>
+    </div>
+    <dl class="footer-req">
+      <div><dt>Reģ. Nr.</dt><dd>40000000000</dd></div>
+      <div><dt>Adrese</dt><dd>Rīga, Latvija</dd></div>
+      <div><dt>Tālrunis</dt><dd><a href="tel:+37120000000">+371 20 000 000</a></dd></div>
+      <div><dt>E-pasts</dt><dd><a href="mailto:info@irgramatvediba.lv">info@irgramatvediba.lv</a></dd></div>
+    </dl>
+    <div class="footer-links">
+      <a href="/privatuma-politika">Privātuma politika</a>
+      <p class="text-on-night-soft">© {year} SIA „IR.GRĀMATVEDĪBAS BIROJS“</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer { padding-block: 3.5rem 6.5rem; font-size: var(--text-small); }
+  @media (min-width: 64rem) { .footer { padding-bottom: 3.5rem; } }
+  .footer-grid { display: grid; gap: 2rem; }
+  @media (min-width: 64rem) { .footer-grid { grid-template-columns: 1fr 1.4fr 1fr; } }
+  .footer-brand { display: flex; align-items: center; gap: 0.75rem; font-size: 1.25rem; font-weight: 800; font-stretch: 120%; }
+  .footer-tile { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: var(--radius-action); background: var(--color-paper); }
+  .footer-tile img { width: 29px; height: 34px; }
+  .footer-req { display: grid; gap: 0.75rem; }
+  @media (min-width: 30rem) { .footer-req { grid-template-columns: 1fr 1fr; } }
+  .footer-req dt { color: var(--color-on-night-soft); }
+  .footer-links { display: grid; gap: 0.75rem; align-content: start; }
+  .footer-links a { text-underline-offset: 3px; }
+</style>
